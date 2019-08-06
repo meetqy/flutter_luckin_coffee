@@ -17,6 +17,13 @@ class MyApp extends StatelessWidget {
       ),
       routes: router.getRoutes(),
       initialRoute: '/',
+      onGenerateRoute: handleRoute
     );
   }
+}
+
+
+Route<dynamic> handleRoute(RouteSettings settings) {
+  print(settings);
+  return null;
 }

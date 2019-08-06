@@ -1,20 +1,58 @@
+/*
+ * @Author: meetqy
+ * @since: 2019-08-06 11:39:22
+ * @lastTime: 2019-08-06 16:24:36
+ * @LastEditors: meetqy
+ */
+
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:luckin_coffee_flutter/utils/Icon.dart';
 
+
 class NavBottomBar extends StatefulWidget {
   final ValueChanged onChange;
+  final int initRoute;
 
-  NavBottomBar(this.onChange);
+  static NavBottomBar _singleton;
+
+  /// 导航菜单 单例模式
+  /// ```
+  /// @param {int} initRoute - 默认选中
+  /// @param {ValueChanged<int>} onChange - 导航菜单改变时的回调 返回当前导航的索引
+  /// ```
+  /// return BottomNavigationBar 
+  factory NavBottomBar(int initRoute, ValueChanged<int> onChange) {
+    if(_singleton == null) {
+      _singleton = NavBottomBar._internal(initRoute, onChange);
+    }
+
+    return _singleton;
+  }
+
+  NavBottomBar._internal(this.initRoute, this.onChange);
+
 
   _NavBottomBarState createState() => _NavBottomBarState();
 }
 
 class _NavBottomBarState extends State<NavBottomBar> {
-  static int _currentIndex = 0;
+  static int _currentIndex = 0;  // 当前导航的索引
+  static bool flag = true;  // 判断是否需要初始化导航
+
+  // 初始化导航
+  // flag = true 代表第一次加载导航需要初始化导航
+  _initIndex() {
+    if(!flag) return ;
+    flag = false;
+    setState(() {
+      _currentIndex = widget.initRoute;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
+    _initIndex();
     return BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,

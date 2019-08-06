@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:39:22
- * @lastTime: 2019-08-06 16:58:33
+ * @lastTime: 2019-08-06 16:58:58
  * @LastEditors: meetqy
  */
 
@@ -19,7 +19,7 @@ class NavBottomBar extends StatefulWidget {
   /// 导航菜单 单例模式
   /// ```
   /// @param {int} initRoute - 默认选中
-  /// @param {ValueChanged<int>} onChange - 导航菜单改变时的回调 返回当前导航的索引
+  /// @param {ValueChanged} onChange - 导航菜单改变时的回调 返回当前导航的索引
   /// ```
   /// return BottomNavigationBar 
   factory NavBottomBar(int initRoute, ValueChanged onChange) {

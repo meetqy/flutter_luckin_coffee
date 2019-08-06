@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-08-06 16:18:41
+ * @lastTime: 2019-08-06 17:16:08
  * @LastEditors: meetqy
  */
 
@@ -26,6 +26,7 @@ class Toolbar extends StatefulWidget {
   static Toolbar _singleton; 
 
   /// 底部导航  使用单例模式
+  /// 在routes/index.dart文件中去设置初始导航页面
   /// ```
   /// @param {String} routeName - default: '/', 设置初始导航页面
   /// ```

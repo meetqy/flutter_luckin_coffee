@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:39:22
- * @lastTime: 2019-08-06 16:24:36
+ * @lastTime: 2019-08-06 16:58:33
  * @LastEditors: meetqy
  */
 
@@ -22,7 +22,7 @@ class NavBottomBar extends StatefulWidget {
   /// @param {ValueChanged<int>} onChange - 导航菜单改变时的回调 返回当前导航的索引
   /// ```
   /// return BottomNavigationBar 
-  factory NavBottomBar(int initRoute, ValueChanged<int> onChange) {
+  factory NavBottomBar(int initRoute, ValueChanged onChange) {
     if(_singleton == null) {
       _singleton = NavBottomBar._internal(initRoute, onChange);
     }

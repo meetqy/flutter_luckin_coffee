@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-07 14:53:53
- * @lastTime: 2019-08-07 14:58:57
+ * @lastTime: 2019-08-07 16:12:14
  * @LastEditors: meetqy
  */
 
@@ -12,10 +12,19 @@ class HomeIcon extends StatelessWidget {
   final bool border;
   final Icon icon;
   final Color bgColor;
+  final EdgeInsets margin;
 
+  /// home公用icon 
+  /// ```
+  /// @param {bool} border - 是否显示border
+  /// @param {Icon} icon - icon
+  /// @param {Color} bgColor
+  /// @param {EdgeInsets} margin - icon定位不在中心需要微调
+  /// ```
   HomeIcon(this.icon, {
     this.bgColor,
-    this.border = true
+    this.border = true,
+    this.margin = EdgeInsets.zero,
   });
 
   @override
@@ -33,7 +42,7 @@ class HomeIcon extends StatelessWidget {
         width: 24,
         height: 24,
         alignment: Alignment.center,
-        padding: EdgeInsets.only(right: 3),
+        margin: margin,
         child: icon,
       )
     );

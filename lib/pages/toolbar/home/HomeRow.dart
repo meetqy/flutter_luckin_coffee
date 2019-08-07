@@ -20,6 +20,7 @@ class HomeRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: EdgeInsets.symmetric(vertical: 15),
+        height: 70,
         decoration: BoxDecoration(
           border: Border(bottom: BorderSide(color: rgba(242, 242, 242, 1), width: bottomBorder ? 1 : 0))
         ),

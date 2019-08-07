@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-07 16:22:59
+ * @lastTime: 2019-08-07 18:08:47
  * @LastEditors: meetqy
  */
 
@@ -72,26 +72,26 @@ class _HomeState extends State<Home> {
             HomeRow('火车南站', '距您52m', titleBold: false,),
             HomeRow('现在下单', 'ORDER NOW', 
               right: HomeIcon(
-                icontupian3(size: 20, color: rgba(99, 71, 58, 1)),
+                icontupian3(size: 20, color: rgba(104, 68, 60, 1)),
                 margin: EdgeInsets.only(left: 2),
               ),
             ),
             HomeRow('咖啡钱包', 'COFFRR WALLET',
               right: HomeIcon(
-                icontupian(size: 20, color: rgba(99, 71, 58, 1)),
+                icontupian(size: 20, color: rgba(104, 68, 60, 1)),
                 margin: EdgeInsets.only(left: 2),
               ),
             ),
             HomeRow('送Ta咖啡', 'SEND COFFEE',
               right: HomeIcon(
-                icontupian1(size: 20, color: rgba(99, 71, 58, 1)),
+                icontupian1(size: 20, color: rgba(104, 68, 60, 1)),
                 margin: EdgeInsets.only(left: 2),
               ),
             ),
             HomeRow('企业账户', 'ENTERPRISE ACCOUNT',
               bottomBorder: false,
               right: HomeIcon(
-                icontupian2(size: 20, color: rgba(99, 71, 58, 1)),
+                icontupian2(size: 20, color: rgba(104, 68, 60, 1)),
                 margin: EdgeInsets.only(left: 1, bottom: 3),
               ),
             ),

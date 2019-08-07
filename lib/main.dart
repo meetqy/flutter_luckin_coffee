@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:luckin_coffee_flutter/routes/index.dart';
+import 'package:flutter_luckin_coffee/routes/index.dart';
 
 final router = Router();
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Luckin Coffee Flutter',
+      title: 'Flutter Luckin Coffee',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

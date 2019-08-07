@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:luckin_coffee_flutter/pages/toolbar/index.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 class Router {
   static final _routes = {

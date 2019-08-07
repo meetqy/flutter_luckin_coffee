@@ -1,17 +1,17 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-08-07 10:21:50
+ * @lastTime: 2019-08-07 10:31:35
  * @LastEditors: meetqy
  */
 
 import 'package:flutter/material.dart';
-import 'package:luckin_coffee_flutter/pages/toolbar/NavBottomBar.dart';
-import 'package:luckin_coffee_flutter/pages/toolbar/home/index.dart';
-import 'package:luckin_coffee_flutter/pages/toolbar/menu/index.dart';
-import 'package:luckin_coffee_flutter/pages/toolbar/mine/index.dart';
-import 'package:luckin_coffee_flutter/pages/toolbar/order/index.dart';
-import 'package:luckin_coffee_flutter/pages/toolbar/shoppingCart/index.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/NavBottomBar.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/home/index.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/menu/index.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/mine/index.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/order/index.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/index.dart';
 
 class Toolbar extends StatefulWidget {
   final String routeName;
@@ -26,7 +26,6 @@ class Toolbar extends StatefulWidget {
 
   // 所有导航页面
   final Map<int, Map> pages = { 
-    // appbar 是否显示appbar
     0: _createPage(_home, appbar: _home.appbar),
     1: _createPage(_menu, appbar: _menu.appbar),
     2: _createPage(_order, appbar: _order.appbar),

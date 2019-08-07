@@ -7,7 +7,7 @@
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:luckin_coffee_flutter/utils/Icon.dart';
+import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 
 class NavBottomBar extends StatefulWidget {

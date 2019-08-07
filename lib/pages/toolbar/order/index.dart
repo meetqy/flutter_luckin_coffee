@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Order extends StatefulWidget {
+  /// Appbar配置
+  final AppBar appbar = AppBar();
+
   Order({Key key}) : super(key: key);
 
   _OrderState createState() => _OrderState();

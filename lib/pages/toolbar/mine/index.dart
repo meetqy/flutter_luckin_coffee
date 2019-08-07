@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Mine extends StatefulWidget {
+  /// Appbar配置
+  final AppBar appbar = AppBar();
+
   Mine({Key key}) : super(key: key);
+  
 
   _MineState createState() => _MineState();
 }

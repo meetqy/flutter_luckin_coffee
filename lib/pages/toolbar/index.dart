@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-08-06 17:16:08
+ * @lastTime: 2019-08-07 10:21:50
  * @LastEditors: meetqy
  */
 
@@ -15,13 +15,37 @@ import 'package:luckin_coffee_flutter/pages/toolbar/shoppingCart/index.dart';
 
 class Toolbar extends StatefulWidget {
   final String routeName;
-  final List<Widget> pages = [ // 所有导航页面
-    Home(),
-    Menu(),
-    Order(),
-    ShoppingCart(),
-    Mine()
-  ];
+
+  // 初始化所有的toolbar页面
+  static Home _home = Home();
+  static Menu _menu = Menu();
+  static Order _order = Order();
+  static ShoppingCart _shoppingCart = ShoppingCart();
+  static Mine _mine = Mine();
+
+
+  // 所有导航页面
+  final Map<int, Map> pages = { 
+    // appbar 是否显示appbar
+    0: _createPage(_home, appbar: _home.appbar),
+    1: _createPage(_menu, appbar: _menu.appbar),
+    2: _createPage(_order, appbar: _order.appbar),
+    3: _createPage(_shoppingCart, appbar: _shoppingCart.appbar),
+    4: _createPage(_mine, appbar: _mine.appbar)
+  };
+  
+
+  /// 创建页面map
+  /// ```
+  /// @param {Widget} page - 页面
+  /// @param {Appbar} appbar - 当前页面是否显示appbar 默认为true
+  /// ```
+  static Map _createPage(Widget page, { AppBar appbar}) {
+    return {
+      "widget": page,
+      "appbar": appbar
+    };
+  }
 
   static Toolbar _singleton; 
 
@@ -75,9 +99,11 @@ class _NavigationState extends State<Toolbar> {
   @override
   Widget build(BuildContext context) {
     _initRoute();
+    var page = widget.pages[_index];
+
     return Scaffold(
-      appBar: AppBar(),
-      body: widget.pages[_index],
+      appBar: page['appbar'],
+      body: page['widget'],
       bottomNavigationBar: NavBottomBar(_index, (index) {
         setState(() {
           _index = index;

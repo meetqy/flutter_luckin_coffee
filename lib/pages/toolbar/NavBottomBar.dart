@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:39:22
- * @lastTime: 2019-08-06 16:58:58
+ * @lastTime: 2019-08-07 14:19:52
  * @LastEditors: meetqy
  */
 
@@ -62,7 +62,7 @@ class _NavBottomBarState extends State<NavBottomBar> {
             title: Text('首页'),
           ),
           BottomNavigationBarItem(
-            icon: iconcaidan1(),
+            icon: iconcaidan(),
             title: Text('菜单'),
           ),
           BottomNavigationBarItem(

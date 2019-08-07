@@ -31,13 +31,43 @@ Icon icongouwuche({double size = 18.0, Color color}) => Icon(
 );
 
 Icon iconcaidan({double size = 18.0, Color color}) => Icon(
-  IconData(0xe601, fontFamily: 'iconfont'),
+  IconData(0xe602, fontFamily: 'iconfont'),
   size: size,
   color: color,
 );
 
-Icon iconcaidan1({double size = 18.0, Color color}) => Icon(
-  IconData(0xe602, fontFamily: 'iconfont'),
+Icon icontupian({double size = 18.0, Color color}) => Icon(
+  IconData(0xe607, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian1({double size = 18.0, Color color}) => Icon(
+  IconData(0xe608, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian2({double size = 18.0, Color color}) => Icon(
+  IconData(0xe609, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian3({double size = 18.0, Color color}) => Icon(
+  IconData(0xe60a, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian4({double size = 18.0, Color color}) => Icon(
+  IconData(0xe60b, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon iconsaoerweima({double size = 18.0, Color color}) => Icon(
+  IconData(0xe601, fontFamily: 'iconfont'),
   size: size,
   color: color,
 );

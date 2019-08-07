@@ -1,4 +1,4 @@
-package com.example.luckin_coffee_flutter;
+package com.example.flutter_luckin_coffee;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

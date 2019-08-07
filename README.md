@@ -1,4 +1,4 @@
-# luckin_coffee_flutter
+# flutter_luckin_coffee
 
 A new Flutter project.
 

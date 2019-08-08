@@ -1,6 +1,6 @@
 # flutter_luckin_coffee
 
-使用flutter实现luckin coffee
+使用flutter还原luckin coffee。
 
 ## 前言
 

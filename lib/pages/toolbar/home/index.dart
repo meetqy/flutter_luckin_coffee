@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-07 18:08:47
+ * @lastTime: 2019-08-08 09:44:39
  * @LastEditors: meetqy
  */
 
@@ -69,7 +69,42 @@ class _HomeState extends State<Home> {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(children: <Widget>[
-            HomeRow('火车南站', '距您52m', titleBold: false,),
+            HomeRow('火车南站', '距您52m', 
+              titleBold: false,
+              right: Container(
+                padding: EdgeInsets.all(3),
+                width: 90,
+                height: 36,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1,color: rgba(136, 175, 213, 1)),
+                  borderRadius: BorderRadius.circular(18)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                      width: 44,
+                      height: 30,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: rgba(136, 175, 213, 1),
+                        borderRadius: BorderRadius.circular(15)
+                      ),
+                      child: Text('自提', style: TextStyle(color: rgba(255, 255, 255, 1),fontSize: 12),)
+                    ),
+                    Container(
+                      height: 30,
+                      margin: EdgeInsets.only(right: 9),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15)
+                      ),
+                      child: Text('外送', style: TextStyle(color: rgba(136, 175, 213, 1),fontSize: 12),)
+                    )
+                  ],
+                )
+              ),
+            ),
             HomeRow('现在下单', 'ORDER NOW', 
               right: HomeIcon(
                 icontupian3(size: 20, color: rgba(104, 68, 60, 1)),

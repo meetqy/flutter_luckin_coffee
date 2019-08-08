@@ -1,14 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-08 09:44:39
+ * @lastTime: 2019-08-08 16:30:28
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_luckin_coffee/widgets/index.dart';
 
 import 'HomeIcon.dart';
 import 'HomeRow.dart';
@@ -26,31 +26,16 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
-      color: hex('#fff'),
       child: Column(children: <Widget>[
         // 头部banner
         Stack(children: <Widget>[
           // 轮播图
           Positioned(child: 
-            Container(
-              height: 288,
-              child: Swiper(
-                itemBuilder: (BuildContext context,int index){
-                  return Image.asset('lib/assets/images/home/swiper${index+1}.jpg', fit: BoxFit.cover);
-                },
-                itemCount: 3,
-                pagination: SwiperPagination(
-                  builder:  DotSwiperPaginationBuilder(
-                    size: 8,
-                    activeSize: 8
-                  )
-                ),
-                autoplay: true,
-                duration: 500,
-                autoplayDelay: 5000
-              ),
-            ),
+            CustomSwiper([
+              'lib/assets/images/home/swiper1.jpg',
+              'lib/assets/images/home/swiper2.jpg',
+              'lib/assets/images/home/swiper3.jpg',
+            ]),
           ),
 
           // 扫描二维码
@@ -142,4 +127,5 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
 

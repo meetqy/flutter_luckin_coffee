@@ -1,10 +1,11 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-08-07 10:31:35
+ * @lastTime: 2019-08-08 16:27:24
  * @LastEditors: meetqy
  */
 
+import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/NavBottomBar.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/home/index.dart';
@@ -102,7 +103,10 @@ class _NavigationState extends State<Toolbar> {
 
     return Scaffold(
       appBar: page['appbar'],
-      body: page['widget'],
+      body: Container( // 套一层Container便于集中控制
+        color: hex('#fff'),
+        child: page['widget'],
+      ),
       bottomNavigationBar: NavBottomBar(_index, (index) {
         setState(() {
           _index = index;

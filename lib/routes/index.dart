@@ -3,7 +3,7 @@ import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 class Router {
   static final _routes = {
-    '/': (BuildContext context) => Toolbar(routeName: '/home'),
+    '/': (BuildContext context) => Toolbar(routeName: '/menu'),
   };
   static final Router _singleton = Router._internal();
 

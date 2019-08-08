@@ -12,7 +12,7 @@
 
 > luckin coffee在网上能搜索到原型+设计图好像是开源的，为了方便。[luckin coffee原型+设计图](https://www.xiaopiu.com/user?uid=5d478fe8174ff47f357b8b00&tab=collectProject&libPop=project&libId=5c306b252d5cd56e70a1e640)
 
-##### 正常下单请到luckin coffee官方客户端
+##### - 注： 正常下单请到luckin coffee官方客户端
 
 ## 开发规范
 
@@ -42,5 +42,7 @@
 
 
 ## 预览图
+
+更多预览图请到[readme/images](./readme/images)下查看。
 
 ![](./readme/images/1.PNG)

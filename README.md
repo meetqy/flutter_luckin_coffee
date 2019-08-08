@@ -45,4 +45,4 @@
 
 更多预览图请到[readme/images](./readme/images)下查看。
 
-![](./readme/images/1.PNG = 375x)
+<img src="./readme/images/1.PNG" width="375"/>

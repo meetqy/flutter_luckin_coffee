@@ -66,8 +66,86 @@ Icon icontupian4({double size = 18.0, Color color}) => Icon(
   color: color,
 );
 
-Icon iconsaoerweima({double size = 18.0, Color color}) => Icon(
+Icon icontubiao({double size = 18.0, Color color}) => Icon(
   IconData(0xe601, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontubiao1({double size = 18.0, Color color}) => Icon(
+  IconData(0xe60c, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontubiao2({double size = 18.0, Color color}) => Icon(
+  IconData(0xe60d, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian5({double size = 18.0, Color color}) => Icon(
+  IconData(0xe60e, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian6({double size = 18.0, Color color}) => Icon(
+  IconData(0xe60f, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian7({double size = 18.0, Color color}) => Icon(
+  IconData(0xe610, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian8({double size = 18.0, Color color}) => Icon(
+  IconData(0xe611, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian9({double size = 18.0, Color color}) => Icon(
+  IconData(0xe612, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian10({double size = 18.0, Color color}) => Icon(
+  IconData(0xe613, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian11({double size = 18.0, Color color}) => Icon(
+  IconData(0xe614, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian12({double size = 18.0, Color color}) => Icon(
+  IconData(0xe615, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian13({double size = 18.0, Color color}) => Icon(
+  IconData(0xe616, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian14({double size = 18.0, Color color}) => Icon(
+  IconData(0xe617, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian15({double size = 18.0, Color color}) => Icon(
+  IconData(0xe618, fontFamily: 'iconfont'),
   size: size,
   color: color,
 );

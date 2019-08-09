@@ -10,8 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
 
-import 'HomeIcon.dart';
-import 'HomeRow.dart';
+import 'widgets/HomeIcon.dart';
+import 'widgets/HomeRow.dart';
+
 
 class Home extends StatefulWidget {
   /// Appbar配置

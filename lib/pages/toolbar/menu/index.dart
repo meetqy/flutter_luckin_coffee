@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-08 18:14:53
+ * @lastTime: 2019-08-09 09:44:20
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -22,35 +22,37 @@ class Menu extends StatefulWidget {
 
   Menu({Key key}) : super(key: key);
 
-  _MenuState createState() => _MenuState(appbar.preferredSize.height);
+  _MenuState createState() => _MenuState();
 }
 
 class _MenuState extends State<Menu> {
   ScrollController _controller;
   static double appbarHeight; // appbar高度
   static double listViewHeight; // 菜单ListView的高度
-
-  _MenuState(double appbarHeight) {
-    appbarHeight = appbarHeight + 1;
-  }
+  static double swiperOpacity = 1; // swiper透明度
 
   @override
   void initState() {
+    appbarHeight = widget.appbar.preferredSize.height - 1;
     _controller = ScrollController();
     _controller.addListener(_scrollListener);
 
     new Future.delayed(Duration.zero,() {
-      // print(screenHeight(context));
-      // listViewHeight = screenHeight(context) - appbarHeight;
-      // print(listViewHeight);
+      setState(() {
+        listViewHeight = screenHeight(context) - appbarHeight - 130;
+      });
     });
 
     super.initState();
   }
 
   _scrollListener() {
-    
-    print(_controller.position.pixels);
+    var calcOpacity = ((_controller.position.pixels - 130) / 100).abs();
+
+    setState(() {
+      swiperOpacity = calcOpacity >= 1 ? 1 : calcOpacity;
+    });
+
     // 到底部
     if (_controller.offset >= _controller.position.maxScrollExtent &&
         !_controller.position.outOfRange) {
@@ -69,12 +71,16 @@ class _MenuState extends State<Menu> {
     return SingleChildScrollView(
       controller: _controller,
       child: Column(children: <Widget>[
-        CustomSwiper([
-          'lib/assets/images/menu/swiper1.jpg',
-          'lib/assets/images/menu/swiper2.png',
-        ], height: 130,),
+        Opacity(
+          opacity: swiperOpacity,
+          child: CustomSwiper([
+            'lib/assets/images/menu/swiper1.jpg',
+            'lib/assets/images/menu/swiper2.png',
+          ], height: 130,),
+        ),
+        
         Container(
-          // height: listViewHeight,
+          height: listViewHeight,
           color: hex('#ff0000'),
         )
         

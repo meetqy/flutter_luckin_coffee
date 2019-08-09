@@ -56,5 +56,5 @@
 
 ## 近期正在开发的页面
 
-<img src="./readme/images/prototype.png" width="375"/> <img src="./readme/images/developing.png" width="375"/>
+<img src="./readme/images/prototype.png" width="375"/> ----- <img src="./readme/images/developing.png" width="375"/>
 

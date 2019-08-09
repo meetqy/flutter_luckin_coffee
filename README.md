@@ -58,5 +58,8 @@
 
 - 左边的是原图
 
-<img src="./readme/images/prototype.png" width="375"/>
-<img src="./readme/images/developing.png" width="375"/>
+<figure>
+ <img src="./readme/images/prototype.png" width="375"/>
+ <img src="./readme/images/developing.png" width="375"/>
+</figure>
+

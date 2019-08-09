@@ -1,3 +1,9 @@
+<!--
+ * @Author: meetqy
+ * @since: 2019-08-08 15:36:34
+ * @lastTime: 2019-08-09 17:47:55
+ * @LastEditors: meetqy
+ -->
 # flutter_luckin_coffee
 
 使用flutter仿luckin coffee。
@@ -46,3 +52,11 @@
 更多预览图请到[readme/images](./readme/images)下查看。
 
 <img src="./readme/images/1.PNG" width="375"/>
+
+
+## 近期正在开发的页面
+
+- 左边的是原图
+
+<img src="./readme/images/prototype.PNG" width="375"/>
+<img src="./readme/images/developing.PNG" width="375"/>

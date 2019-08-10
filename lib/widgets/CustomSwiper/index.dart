@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-08 16:16:47
- * @lastTime: 2019-08-08 16:32:15
+ * @lastTime: 2019-08-10 16:22:49
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class CustomSwiper extends StatelessWidget {
   /// @param {double} height - 容器高度
   /// ```
   CustomSwiper(this.images, {
-    this.index = 0,
+    this.index,
     this.height = 288
   });
 

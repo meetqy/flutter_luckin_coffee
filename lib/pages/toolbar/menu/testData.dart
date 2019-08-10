@@ -18,17 +18,17 @@ final goodsList = [
       {
         "id": 1001,
         "name": "榛果拿铁",
-        "imgsrc": 'lib/assets/images/menu/goods.png',
+        "imgsrc": 'lib/assets/images/menu/goods1.png',
         "desc": "Hazlnut Latte",
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
-        "recomment": {      // 推荐
-          "spec": spec["1"],
-          "temperature": temperature["1"],
-          "sugar": sugar["2"],
-        }
+        // "recomment": {      // 推荐
+        //   "spec": spec["1"],
+        //   "temperature": temperature["1"],
+        //   "sugar": sugar["2"],
+        // }
       },
       {
         "id": 1002,
@@ -39,11 +39,11 @@ final goodsList = [
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
-        "recomment": {      // 推荐
-          "spec": spec["1"],
-          "temperature": temperature["1"],
-          "sugar": sugar["2"],
-        }
+        // "recomment": {      // 推荐
+        //   "spec": spec["1"],
+        //   "temperature": temperature["1"],
+        //   "sugar": sugar["2"],
+        // }
       },
     ]
   },
@@ -53,7 +53,7 @@ final goodsList = [
       {
         "id": 2001,
         "name": "榛果拿铁-大师咖啡",
-        "imgsrc": 'lib/assets/images/menu/goods.png',
+        "imgsrc": 'lib/assets/images/menu/goods2.png',
         "desc": "Hazlnut Latte",
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
@@ -68,17 +68,17 @@ final goodsList = [
       {
         "id": 2002,
         "name": "桃桃冰-大师咖啡",
-        "imgsrc": 'lib/assets/images/menu/goods.png',
+        "imgsrc": 'lib/assets/images/menu/goods3.png',
         "desc": "Peach & Rose Exfreezo",
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
-        "recomment": {      // 推荐
-          "spec": spec["1"],
-          "temperature": temperature["1"],
-          "sugar": sugar["2"],
-        }
+        // "recomment": {      // 推荐
+        //   "spec": spec["1"],
+        //   "temperature": temperature["1"],
+        //   "sugar": sugar["2"],
+        // }
       },
     ]
   },
@@ -129,16 +129,16 @@ final goodsList = [
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
-        "recomment": {      // 推荐
-          "spec": spec["1"],
-          "temperature": temperature["1"],
-          "sugar": sugar["2"],
-        }
+        // "recomment": {      // 推荐
+        //   "spec": spec["1"],
+        //   "temperature": temperature["1"],
+        //   "sugar": sugar["2"],
+        // }
       },
       {
         "id": 4002,
         "name": "桃桃冰-瑞纳冰",
-        "imgsrc": 'lib/assets/images/menu/goods.png',
+        "imgsrc": 'lib/assets/images/menu/goods2.png',
         "desc": "Peach & Rose Exfreezo",
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
@@ -158,17 +158,17 @@ final goodsList = [
       {
         "id": 5001,
         "name": "榛果拿铁-经典饮品",
-        "imgsrc": 'lib/assets/images/menu/goods.png',
+        "imgsrc": 'lib/assets/images/menu/goods1.png',
         "desc": "Hazlnut Latte",
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
-        "recomment": {      // 推荐
-          "spec": spec["1"],
-          "temperature": temperature["1"],
-          "sugar": sugar["2"],
-        }
+        // "recomment": {      // 推荐
+        //   "spec": spec["1"],
+        //   "temperature": temperature["1"],
+        //   "sugar": sugar["2"],
+        // }
       },
       {
         "id": 5002,
@@ -179,11 +179,11 @@ final goodsList = [
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
-        "recomment": {      // 推荐
-          "spec": spec["1"],
-          "temperature": temperature["1"],
-          "sugar": sugar["2"],
-        }
+        // "recomment": {      // 推荐
+        //   "spec": spec["1"],
+        //   "temperature": temperature["1"],
+        //   "sugar": sugar["2"],
+        // }
       },
     ]
   },
@@ -193,7 +193,7 @@ final goodsList = [
       {
         "id": 6001,
         "name": "榛果拿铁-健康轻食",
-        "imgsrc": 'lib/assets/images/menu/goods.png',
+        "imgsrc": 'lib/assets/images/menu/goods3.png',
         "desc": "Hazlnut Latte",
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
@@ -228,7 +228,7 @@ final goodsList = [
       {
         "id": 7001,
         "name": "榛果拿铁-鲜榨果蔬汁",
-        "imgsrc": 'lib/assets/images/menu/goods.png',
+        "imgsrc": 'lib/assets/images/menu/goods1.png',
         "desc": "Hazlnut Latte",
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
@@ -244,16 +244,16 @@ final goodsList = [
         "id": 7002,
         "name": "桃桃冰-鲜榨果蔬汁",
         "desc": "Peach & Rose Exfreezo",
-        "imgsrc": 'lib/assets/images/menu/goods.png',
+        "imgsrc": 'lib/assets/images/menu/goods2.png',
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
-        "recomment": {      // 推荐
-          "spec": spec["1"],
-          "temperature": temperature["1"],
-          "sugar": sugar["2"],
-        }
+        // "recomment": {      // 推荐
+        //   "spec": spec["1"],
+        //   "temperature": temperature["1"],
+        //   "sugar": sugar["2"],
+        // }
       },
     ]
   },

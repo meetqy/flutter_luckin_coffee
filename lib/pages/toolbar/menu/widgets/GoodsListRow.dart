@@ -75,18 +75,21 @@ class GoodsListRow extends StatelessWidget {
                     ),
                     row(desc == null ? " " : desc),
                     row(recomment == null ? " " : recomment),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Text("¥$price", style: TextStyle(
-                            color: rgba(56, 56, 56, 1), 
-                            fontSize: 15, 
-                            fontWeight: FontWeight.bold
+                    Container(
+                      margin: EdgeInsets.only(top: 4),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text("¥ $price", style: TextStyle(
+                              color: rgba(56, 56, 56, 1), 
+                              fontSize: 15, 
+                              fontWeight: FontWeight.bold
+                            ),
                           ),
-                        ),
-                        icontubiao()
-                      ],
+                          icontubiao(color: rgba(136, 175, 213, 1))
+                        ],
+                      ),
                     )
                   ],
                 ),

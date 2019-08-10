@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-09 17:40:16
+ * @lastTime: 2019-08-10 16:23:13
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -14,6 +14,7 @@ import 'testData.dart';
 import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';
 
+/// TODO：待解决：滚动不流畅
 class Menu extends StatefulWidget {
   /// Appbar配置
   final AppBar appbar = AppBar(
@@ -39,18 +40,23 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  ScrollController _controller;
+  ScrollController _outController; // 外层ScrollController
+  ScrollController _goodsController; // 商品列表ScrollController
   static double appbarHeight = 0; // appbar高度
   static double listViewHeight = 0; // 菜单ListView的高度
   static double goodsViewWidth = 0; // 右侧商品宽度
   static double swiperOpacity = 1; // swiper透明度
-  static int currentActive = 0;
+  static int currentActive = 0; // 当前选中的菜单
+  static bool isInnerScroll = false; 
+  static double outMaxScrollExtent = 0;
 
   @override
   void initState() {
     appbarHeight = widget.appbar.preferredSize.height - 1;
-    _controller = ScrollController();
-    _controller.addListener(_scrollListener);
+    _outController = ScrollController();
+    _outController.addListener(_outScrollListener);
+    _goodsController = ScrollController();
+    _goodsController.addListener(_goodsScrollListener);
 
     new Future.delayed(Duration.zero,() {
       setState(() {
@@ -62,15 +68,38 @@ class _MenuState extends State<Menu> {
     super.initState();
   }
 
-  /// 监听滚动条
-  void _scrollListener() {
-    setSwiperOpacity();
+  void _outScrollListener() {
+    _setSwiperOpacity();
+    if(outMaxScrollExtent == 0){
+      outMaxScrollExtent =  _outController.position.maxScrollExtent;
+    } 
+
+    if(_outController.offset >= num.parse('$outMaxScrollExtent')) {
+      setState(() {
+        isInnerScroll = true;
+      });
+      _outController.jumpTo(outMaxScrollExtent);
+    } 
+  }
+
+  void _goodsScrollListener() {
+    // print({
+    //   "offset": _goodsController.offset,
+    //   "maxScrollExtent": _goodsController.position.maxScrollExtent,
+    //   "outOfRange": _goodsController.position.outOfRange
+    // });
+
+    if(_goodsController.offset <= 0) {
+      setState(() {
+        isInnerScroll = false;
+      });
+      _goodsController.jumpTo(0);
+    }
   }
 
   /// 设置swiper根据滚动条显示
-  /// TODO: swiper切换的时候下拉，会导致swiper切换不流畅，以及切换混乱
-  void setSwiperOpacity() {
-    var calcOpacity = ((_controller.position.pixels - 130) / 100).abs();
+  void _setSwiperOpacity() {
+    var calcOpacity = ((_outController.position.pixels - 130) / 100).abs();
 
     setState(() {
       swiperOpacity = calcOpacity >= 1 ? 1 : calcOpacity;
@@ -97,7 +126,6 @@ class _MenuState extends State<Menu> {
   }
 
   /// 创建商品列表
-  /// 
   List<Widget> createGoodsList(List arr) {
     List<Widget> rows = [];
 
@@ -110,7 +138,7 @@ class _MenuState extends State<Menu> {
             imgSrc: val["imgsrc"],
             title: val['name'],
             desc: val["desc"],
-            recomment: "默认：${recomment['spec']['name']}/${recomment['sugar']['name']}/${recomment['temperature']['name']}",
+            recomment: recomment == null ? null : "默认：${recomment['spec']['name']}/${recomment['sugar']['name']}/${recomment['temperature']['name']}",
             price: double.parse("${val["price"]}"),
           )
         );
@@ -119,11 +147,11 @@ class _MenuState extends State<Menu> {
 
     return rows;
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      controller: _controller,
+      controller: _outController,
       child: ConstrainedBox(
         constraints: BoxConstraints(
           minHeight: listViewHeight
@@ -131,11 +159,11 @@ class _MenuState extends State<Menu> {
 
         child: Column(children: <Widget>[
           Opacity(
-            opacity: swiperOpacity,
+            opacity: swiperOpacity,  
             child: CustomSwiper([
               'lib/assets/images/menu/swiper1.jpg',
               'lib/assets/images/menu/swiper2.png',
-            ], height: 130,),
+            ], height: 130),
           ),
           
           Container(
@@ -147,14 +175,21 @@ class _MenuState extends State<Menu> {
                 Container(
                   width: 90,
                   color: rgba(248, 248, 248, 1),
-                  child: ListView(children: createMenuList(menuList),),
+                  child: ListView(
+                    physics: ClampingScrollPhysics(),
+                    children: createMenuList(menuList),
+                  ),
                 ),
 
                 // 右侧商品列表
                 Container(
                   width: goodsViewWidth,
                   padding: EdgeInsets.symmetric(horizontal: 14),
-                  child: ListView(children: createGoodsList(goodsList)),
+                  child: ListView(
+                    controller: _goodsController,
+                    physics: isInnerScroll ? BouncingScrollPhysics() : NeverScrollableScrollPhysics(),
+                    children: createGoodsList(goodsList)
+                  ),
                 )
             ],),
           )

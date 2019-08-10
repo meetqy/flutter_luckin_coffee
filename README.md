@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-10 16:41:08
+ * @lastTime: 2019-08-10 16:47:41
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -49,7 +49,7 @@
 
 ## 预览图
 
-更多预览图请到[readme/images](./readme/images)下查看。
+更多预览图请到[readme/images](./readme/images/readme.md)下查看。
 
 <img src="./readme/images/home1.PNG" width="375"/> || <img src="./readme/images/menu1.PNG" width="375"/>
 

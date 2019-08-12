@@ -1,13 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-12 14:54:38
+ * @lastTime: 2019-08-12 17:21:23
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
+import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
 
 import 'testData.dart';
@@ -178,12 +179,25 @@ class _MenuState extends State<Menu> {
         ),
 
         child: Column(children: <Widget>[
-          Opacity(
-            opacity: swiperOpacity,  
-            child: CustomSwiper([
-              'lib/assets/images/menu/swiper1.jpg',
-              'lib/assets/images/menu/swiper2.png',
-            ], height: 130),
+          InkWell(
+            child: Opacity(
+              opacity: swiperOpacity,  
+              child: CustomSwiper([
+                'lib/assets/images/menu/swiper1.jpg',
+                'lib/assets/images/menu/swiper2.png',
+              ], height: 130),
+            ),
+            onTap: () {
+              FullScreenDialog(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.red,
+                  ),
+                  
+                )
+              ).show(context);
+            },
           ),
           
           Container(

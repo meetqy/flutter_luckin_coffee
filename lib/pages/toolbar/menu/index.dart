@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-12 10:31:07
+ * @lastTime: 2019-08-12 10:41:08
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -137,6 +137,7 @@ class _MenuState extends State<Menu> {
       var classifyDesc = menuList['${val['id']}'];
       List<Widget> goodsGroup = [];
       
+      /// 创建分类的简介  每一类商品的顶部有商品分类的标题和介绍
       goodsGroup.add(
         ClassifyDesc(
           classifyDesc['name'], 

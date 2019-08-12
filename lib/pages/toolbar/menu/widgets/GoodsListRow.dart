@@ -12,6 +12,17 @@ class GoodsListRow extends StatelessWidget {
   final bool border;
   final String activeDesc;
 
+  /// 创建商品
+  /// 
+  /// ```
+  /// @param {String} title - 商品名
+  /// @param {String} imgSrc - 预览图地址 （目前读取的是本地地址），没有兼容网络连接
+  /// @param {String} recomment - 商品默认推荐口味 规格 等
+  /// @param {String} desc - 商品描述
+  /// @param {double} price - 价格
+  /// @param {bool} border - 是否显示底部的border
+  /// @param {String} activeDesc - 活动描述
+  /// ```
   GoodsListRow({
     this.title = "",
     this.imgSrc = "",

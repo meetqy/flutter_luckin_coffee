@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-10 16:23:13
+ * @lastTime: 2019-08-12 10:31:07
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -11,6 +11,7 @@ import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
 
 import 'testData.dart';
+import 'widgets/ClassifyDesc.dart';
 import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';
 
@@ -46,7 +47,7 @@ class _MenuState extends State<Menu> {
   static double listViewHeight = 0; // 菜单ListView的高度
   static double goodsViewWidth = 0; // 右侧商品宽度
   static double swiperOpacity = 1; // swiper透明度
-  static int currentActive = 0; // 当前选中的菜单
+  static int currentActive = 1; // 当前选中的菜单
   static bool isInnerScroll = false; 
   static double outMaxScrollExtent = 0;
 
@@ -68,6 +69,7 @@ class _MenuState extends State<Menu> {
     super.initState();
   }
 
+  /// 监听外部滚动
   void _outScrollListener() {
     _setSwiperOpacity();
     if(outMaxScrollExtent == 0){
@@ -82,6 +84,7 @@ class _MenuState extends State<Menu> {
     } 
   }
 
+  /// 监听商品滚动
   void _goodsScrollListener() {
     // print({
     //   "offset": _goodsController.offset,
@@ -107,42 +110,58 @@ class _MenuState extends State<Menu> {
   }
 
   /// 创建菜单列表
-  List<Widget> createMenuList(List arr) {
+  List<Widget> createMenuList(Map menu) {
     List<Widget> rows = [];
-    arr.asMap().forEach((index, val) {
+    menu.forEach((key, val) {
       rows.add(MenuListRow(
         val["name"], 
-        isActive: index == currentActive,
-        id: index,
+        isActive: val['id'] == currentActive,
+        id: val['id'],
         onPress: (id) {
           setState(() {
             currentActive = id;
           });
         },
       ));
-    }); 
+    });
 
     return rows;
   }
 
   /// 创建商品列表
   List<Widget> createGoodsList(List arr) {
-    List<Widget> rows = [];
+    List<Widget> rows = []; // 包括分类的列表
 
     arr.asMap().forEach((index, val) {
       var goodsList = val["list"];
+      var classifyDesc = menuList['${val['id']}'];
+      List<Widget> goodsGroup = [];
+      
+      goodsGroup.add(
+        ClassifyDesc(
+          classifyDesc['name'], 
+          desc: classifyDesc['desc'] == null ? null : classifyDesc['desc'],
+        )
+      );
+
       goodsList.asMap().forEach((index, val) {
         var recomment = val["recomment"];
-        rows.add(
-         GoodsListRow(
+        goodsGroup.add(
+          GoodsListRow(
             imgSrc: val["imgsrc"],
             title: val['name'],
             desc: val["desc"],
             recomment: recomment == null ? null : "默认：${recomment['spec']['name']}/${recomment['sugar']['name']}/${recomment['temperature']['name']}",
             price: double.parse("${val["price"]}"),
+            border: !(index >= goodsList.length - 1),
+            activeDesc: val["active"],
           )
         );
       });
+    
+      rows.add(
+        Column(children: goodsGroup,)
+      );
     });
 
     return rows;
@@ -188,7 +207,8 @@ class _MenuState extends State<Menu> {
                   child: ListView(
                     controller: _goodsController,
                     physics: isInnerScroll ? BouncingScrollPhysics() : NeverScrollableScrollPhysics(),
-                    children: createGoodsList(goodsList)
+                    // children: createGoodsList(goodsList)
+                    children: createGoodsList(goodsList),
                   ),
                 )
             ],),

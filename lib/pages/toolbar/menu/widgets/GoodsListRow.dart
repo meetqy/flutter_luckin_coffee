@@ -9,13 +9,17 @@ class GoodsListRow extends StatelessWidget {
   final String desc;
   final String recomment;
   final double price;
+  final bool border;
+  final String activeDesc;
 
   GoodsListRow({
     this.title = "",
     this.imgSrc = "",
     this.recomment,
     this.desc,
-    this.price = 20
+    this.price = 20,
+    this.border = true,
+    this.activeDesc
   });
 
   /// 商品信息中的文本
@@ -43,6 +47,43 @@ class GoodsListRow extends StatelessWidget {
     );
   }
 
+  /// 商品图片
+  Widget goodsImg(String imgSrc) {
+    return ClipRRect(
+      borderRadius: new BorderRadius.circular(4.0),
+      child: Image.asset(
+        imgSrc, 
+        width: 70, 
+        height: 70, 
+        fit: BoxFit.cover,
+      )
+    );
+  }
+
+  ///活动信息
+  Widget activeMsg({String text}) {
+    return text == null ? Container() : Positioned(
+      right: 0,
+      bottom: 5,
+      child: Container(
+        height: 16,
+        padding: EdgeInsets.symmetric(horizontal: 4),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: new BorderRadius.circular(2.0),
+          color: rgba(255, 129, 2, 1)
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+            color: hex('#fff'),
+            fontSize: 8
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(children: <Widget>[
@@ -50,22 +91,23 @@ class GoodsListRow extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
-            border: ui.borderBottom(),
+            border: ui.borderBottom(show: border),
           ),
           child: Row(
             children: <Widget>[
-              ClipRRect(
-                borderRadius: new BorderRadius.circular(4.0),
-                child: Image.asset(
-                  imgSrc, 
-                  width: 70, 
-                  height: 70, 
-                  fit: BoxFit.cover,
-                ),
+              Container(
+                width: 80,
+                height: 70,
+                child: Stack(children: <Widget>[
+                  Positioned(child: goodsImg(imgSrc),),
+                  
+                  activeMsg(text: activeDesc)
+                ],),
               ),
+
               Expanded(
                 child: Container( 
-                margin: EdgeInsets.only(left: 10),
+                margin: EdgeInsets.only(left: 6),
                 child: Column(
                   children: <Widget>[
                     row(title, 

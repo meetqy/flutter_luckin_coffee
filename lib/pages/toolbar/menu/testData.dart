@@ -1,15 +1,15 @@
-final menuList = [
-  {
+final menuList = {
+  "1": {
     "id": 1,
     "name": "人气Top",
   },
-  {"id": 2,"name": "大师咖啡", "desc": "WBC（世界咖啡师大赛）冠军团队拼配"},
-  {"id": 3,"name": "零度拿铁"},
-  {"id": 4,"name": "瑞纳冰"},
-  {"id": 5,"name": "经典饮品"},
-  {"id": 6,"name": "健康轻食"},
-  {"id": 7,"name": "鲜榨果蔬汁"},
-];
+  "2": {"id": 2,"name": "大师咖啡", "desc": "WBC（世界咖啡师大赛）冠军团队拼配 \n2018 IIAC国际咖啡品鉴大赛金奖咖啡豆"},
+  "3": {"id": 3,"name": "零度拿铁"},
+  "4": {"id": 4,"name": "瑞纳冰"},
+  "5": {"id": 5,"name": "经典饮品"},
+  "6": {"id": 6,"name": "健康轻食"},
+  "7": {"id": 7,"name": "鲜榨果蔬汁"},
+};
 
 final goodsList = [
   {
@@ -24,6 +24,7 @@ final goodsList = [
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
+        "active": "买3赠1",
         // "recomment": {      // 推荐
         //   "spec": spec["1"],
         //   "temperature": temperature["1"],
@@ -39,6 +40,7 @@ final goodsList = [
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
+        "active": "买2赠1"
         // "recomment": {      // 推荐
         //   "spec": spec["1"],
         //   "temperature": temperature["1"],
@@ -59,6 +61,7 @@ final goodsList = [
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
+        "active": "满20减5",
         "recomment": {      // 推荐
           "spec": spec["1"],
           "temperature": temperature["1"],
@@ -94,6 +97,7 @@ final goodsList = [
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
+        "active": "满20减5",
         "recomment": {      // 推荐
           "spec": spec["1"],
           "temperature": temperature["1"],
@@ -128,6 +132,7 @@ final goodsList = [
         "price": 27,
         "spec": [spec["1"], spec["3"]],         // 规格
         "temperature": [temperature["1"], temperature["2"]],  // 温度
+        "active": "买3赠1",
         "sugar": [sugar["2"], sugar["3"]],        // 糖度
         // "recomment": {      // 推荐
         //   "spec": spec["1"],
@@ -203,6 +208,7 @@ final goodsList = [
           "spec": spec["1"],
           "temperature": temperature["1"],
           "sugar": sugar["2"],
+          "active": "买3赠1",
         }
       },
       {

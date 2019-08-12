@@ -272,14 +272,14 @@ final spec = {
   "3": {"id": 3, "name": "小"},
 };
 
-// 温度
+/// 温度
 final temperature = {
   "1": {"id": 1, "name": "常温"},
   "2": {"id": 2, "name": "冰"},
   "3": {"id": 3, "name": "热"},
 };
 
-// 糖度
+/// 糖度
 final sugar = {
   "1": {"id": 1, "name": "全糖"},
   "2": {"id": 2, "name": "无糖"},

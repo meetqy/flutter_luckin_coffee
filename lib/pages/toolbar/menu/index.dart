@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-12 10:41:08
+ * @lastTime: 2019-08-12 14:54:38
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -15,7 +15,7 @@ import 'widgets/ClassifyDesc.dart';
 import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';
 
-/// TODO：待解决：滚动不流畅
+/// TODO：待解决：有时候滚动不流畅
 class Menu extends StatefulWidget {
   /// Appbar配置
   final AppBar appbar = AppBar(
@@ -41,13 +41,13 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  ScrollController _outController; // 外层ScrollController
-  ScrollController _goodsController; // 商品列表ScrollController
-  static double appbarHeight = 0; // appbar高度
-  static double listViewHeight = 0; // 菜单ListView的高度
-  static double goodsViewWidth = 0; // 右侧商品宽度
-  static double swiperOpacity = 1; // swiper透明度
-  static int currentActive = 1; // 当前选中的菜单
+  ScrollController _outController;          // 外层ScrollController
+  ScrollController _goodsController;        // 商品列表ScrollController
+  static double appbarHeight = 0;           // appbar高度
+  static double listViewHeight = 0;         // 菜单ListView的高度
+  static double goodsViewWidth = 0;         // 右侧商品宽度
+  static double swiperOpacity = 1;          // swiper透明度
+  static int currentActive = 1;             // 当前选中的菜单
   static bool isInnerScroll = false; 
   static double outMaxScrollExtent = 0;
 
@@ -208,7 +208,6 @@ class _MenuState extends State<Menu> {
                   child: ListView(
                     controller: _goodsController,
                     physics: isInnerScroll ? BouncingScrollPhysics() : NeverScrollableScrollPhysics(),
-                    // children: createGoodsList(goodsList)
                     children: createGoodsList(goodsList),
                   ),
                 )

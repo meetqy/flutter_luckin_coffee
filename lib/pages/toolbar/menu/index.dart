@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-12 17:21:23
+ * @lastTime: 2019-08-12 17:57:30
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -36,6 +36,43 @@ class Menu extends StatefulWidget {
     ),
   );
 
+  /// 实例化dialog  dialog配置
+  final dialog = FullScreenDialog(
+    child: Container(
+      child: Column(children: <Widget>[
+        Stack(children: <Widget>[
+          Container(
+            height: 150,
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+              child: Image.asset('lib/assets/images/menu/dialog1.jpg', height: 150, fit: BoxFit.cover,),
+            ),
+          ),
+          
+          Positioned(
+            right: 15,
+            top: 15,
+            child: icontubiao3(color: hex('#fff')),
+          ),
+
+          Positioned(
+            left: 15,
+            bottom: 15,
+            child: Column(children: <Widget>[
+              Text('标准美式', 
+                style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold, color: hex('#fff')),
+              ),
+              Text('PingFang SC', 
+                style: TextStyle(fontSize: 14,color: hex('#fff')),
+              )
+            ],),
+          )
+        ],)
+        
+      ],)
+    )
+  );
+
   Menu({Key key}) : super(key: key);
 
   _MenuState createState() => _MenuState();
@@ -65,6 +102,7 @@ class _MenuState extends State<Menu> {
         goodsViewWidth = screenWidth(context) - 90;
         listViewHeight = screenHeight(context) - appbarHeight - 130;
       });
+      widget.dialog.show(context);
     });
 
     super.initState();
@@ -168,7 +206,7 @@ class _MenuState extends State<Menu> {
 
     return rows;
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -188,15 +226,7 @@ class _MenuState extends State<Menu> {
               ], height: 130),
             ),
             onTap: () {
-              FullScreenDialog(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Colors.red,
-                  ),
-                  
-                )
-              ).show(context);
+              widget.dialog.show(context);
             },
           ),
           

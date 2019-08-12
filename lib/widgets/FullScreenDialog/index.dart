@@ -25,12 +25,14 @@ class FullScreenDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: screenWidth(context),
-      height: screenHeight(context),
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 44),
+    return Material(
       color: rgba(0, 0, 0, 0.3),
-      child: child,
+      child: Container(
+        width: screenWidth(context),
+        height: screenHeight(context),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 44),
+        child: child,
+      ),
     );
   }
 }

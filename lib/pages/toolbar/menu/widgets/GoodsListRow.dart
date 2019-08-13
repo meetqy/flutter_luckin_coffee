@@ -11,6 +11,7 @@ class GoodsListRow extends StatelessWidget {
   final double price;
   final bool border;
   final String activeDesc;
+  final Function onAddPress;
 
   /// 创建商品
   /// 
@@ -22,6 +23,7 @@ class GoodsListRow extends StatelessWidget {
   /// @param {double} price - 价格
   /// @param {bool} border - 是否显示底部的border
   /// @param {String} activeDesc - 活动描述
+  /// @param {Function} onAddPress - 点击添加按钮
   /// ```
   GoodsListRow({
     this.title = "",
@@ -30,7 +32,8 @@ class GoodsListRow extends StatelessWidget {
     this.desc,
     this.price = 20,
     this.border = true,
-    this.activeDesc
+    this.activeDesc,
+    this.onAddPress,
   });
 
   /// 商品信息中的文本
@@ -140,7 +143,18 @@ class GoodsListRow extends StatelessWidget {
                               fontWeight: FontWeight.bold
                             ),
                           ),
-                          icontubiao(color: rgba(136, 175, 213, 1))
+                          InkWell(
+                            child: Container(
+                              width: 25,
+                              height: 25,
+                              child: icontubiao(color: rgba(136, 175, 213, 1)),
+                            ),
+                            onTap: (){
+                              if(onAddPress != null) {
+                                onAddPress(context);
+                              }
+                            } 
+                          )
                         ],
                       ),
                     )

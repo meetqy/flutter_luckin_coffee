@@ -1,5 +1,47 @@
 import 'package:flutter/material.dart';
 
+Icon iconshoucang({double size = 18.0, Color color}) => Icon(
+  IconData(0xe6d9, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon iconjaifill({double size = 18.0, Color color}) => Icon(
+  IconData(0xe6e0, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon iconjia({double size = 18.0, Color color}) => Icon(
+  IconData(0xe6e1, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon iconjianfill({double size = 18.0, Color color}) => Icon(
+  IconData(0xe712, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon iconjian({double size = 18.0, Color color}) => Icon(
+  IconData(0xe713, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon iconhebingxingzhuang({double size = 18.0, Color color}) => Icon(
+  IconData(0xe61c, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon iconsc({double size = 18.0, Color color}) => Icon(
+  IconData(0xe61b, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
 Icon iconorder({double size = 18.0, Color color}) => Icon(
   IconData(0xe600, fontFamily: 'iconfont'),
   size: size,
@@ -156,7 +198,7 @@ Icon icontupian16({double size = 18.0, Color color}) => Icon(
   color: color,
 );
 
-Icon icontubiao3({double size = 18.0, Color color}) => Icon(
+Icon icontupian17({double size = 18.0, Color color}) => Icon(
   IconData(0xe61a, fontFamily: 'iconfont'),
   size: size,
   color: color,

@@ -1,14 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-12 17:57:30
+ * @lastTime: 2019-08-13 17:03:36
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/commonUI.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/menu/dialogPage.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
 
 import 'testData.dart';
@@ -34,43 +34,6 @@ class Menu extends StatefulWidget {
       ),
       preferredSize: Size.fromHeight(1.0),
     ),
-  );
-
-  /// 实例化dialog  dialog配置
-  final dialog = FullScreenDialog(
-    child: Container(
-      child: Column(children: <Widget>[
-        Stack(children: <Widget>[
-          Container(
-            height: 150,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
-              child: Image.asset('lib/assets/images/menu/dialog1.jpg', height: 150, fit: BoxFit.cover,),
-            ),
-          ),
-          
-          Positioned(
-            right: 15,
-            top: 15,
-            child: icontubiao3(color: hex('#fff')),
-          ),
-
-          Positioned(
-            left: 15,
-            bottom: 15,
-            child: Column(children: <Widget>[
-              Text('标准美式', 
-                style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold, color: hex('#fff')),
-              ),
-              Text('PingFang SC', 
-                style: TextStyle(fontSize: 14,color: hex('#fff')),
-              )
-            ],),
-          )
-        ],)
-        
-      ],)
-    )
   );
 
   Menu({Key key}) : super(key: key);
@@ -102,7 +65,6 @@ class _MenuState extends State<Menu> {
         goodsViewWidth = screenWidth(context) - 90;
         listViewHeight = screenHeight(context) - appbarHeight - 130;
       });
-      widget.dialog.show(context);
     });
 
     super.initState();
@@ -188,6 +150,10 @@ class _MenuState extends State<Menu> {
         var recomment = val["recomment"];
         goodsGroup.add(
           GoodsListRow(
+            /// 点击添加按钮弹出dialog
+            onAddPress: (BuildContext context){
+              dialogPage.show(context);
+            },
             imgSrc: val["imgsrc"],
             title: val['name'],
             desc: val["desc"],
@@ -226,7 +192,7 @@ class _MenuState extends State<Menu> {
               ], height: 130),
             ),
             onTap: () {
-              widget.dialog.show(context);
+              
             },
           ),
           

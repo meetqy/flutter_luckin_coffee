@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/menu/commonUI.dart';
+import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 
 class MenuListRow extends StatelessWidget {
   final String title;

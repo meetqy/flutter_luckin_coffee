@@ -204,3 +204,9 @@ Icon icontupian17({double size = 18.0, Color color}) => Icon(
   color: color,
 );
 
+Icon icontupian18({double size = 18.0, Color color}) => Icon(
+  IconData(0xe61d, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+

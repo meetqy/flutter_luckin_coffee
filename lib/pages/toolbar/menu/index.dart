@@ -1,13 +1,13 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-13 17:03:36
+ * @lastTime: 2019-08-14 10:22:43
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/menu/commonUI.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/dialogPage.dart';
+import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
 
@@ -17,6 +17,7 @@ import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';
 
 /// TODO：待解决：有时候滚动不流畅
+/// TODO: 待解决：右边商品滑动，左侧菜单不跟随
 class Menu extends StatefulWidget {
   /// Appbar配置
   final AppBar appbar = AppBar(

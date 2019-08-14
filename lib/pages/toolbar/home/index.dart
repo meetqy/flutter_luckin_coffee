@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-08 16:30:28
+ * @lastTime: 2019-08-14 15:39:05
  * @LastEditors: meetqy
  */
 
@@ -15,15 +15,23 @@ import 'widgets/HomeRow.dart';
 
 
 class Home extends StatefulWidget {
-  /// Appbar配置
-  final AppBar appbar = null; 
+  static _HomeState _homeState;
 
-  Home({Key key}) : super(key: key);
+  Home() {
+    _homeState = _HomeState();
+  }
+
+  getAppBar() => _homeState.createAppBar();
 
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+
+  AppBar createAppBar() {
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

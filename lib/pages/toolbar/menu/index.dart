@@ -1,14 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-14 10:22:43
+ * @lastTime: 2019-08-14 15:37:16
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/menu/dialogPage.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
+import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
 
 import 'testData.dart';
@@ -19,25 +19,13 @@ import 'widgets/MenuListRow.dart';
 /// TODO：待解决：有时候滚动不流畅
 /// TODO: 待解决：右边商品滑动，左侧菜单不跟随
 class Menu extends StatefulWidget {
-  /// Appbar配置
-  final AppBar appbar = AppBar(
-    title: Text(
-      "选择咖啡和小食", 
-      style: TextStyle(color: rgba(56, 56, 56, 1), fontSize: 18),
-    ),
-    elevation: 0.0, // 去除底部阴影
-    backgroundColor: rgba(255, 255, 255, 1),
-    bottom: PreferredSize(
-      child: Container(
-        decoration: BoxDecoration(
-          border: ui.borderBottom()
-        ),
-      ),
-      preferredSize: Size.fromHeight(1.0),
-    ),
-  );
+  static _MenuState _menuState;
 
-  Menu({Key key}) : super(key: key);
+  getAppBar() => _menuState.createAppBar();
+
+  Menu(){
+    _menuState = _MenuState();
+  }
 
   _MenuState createState() => _MenuState();
 }
@@ -52,10 +40,33 @@ class _MenuState extends State<Menu> {
   static int currentActive = 1;             // 当前选中的菜单
   static bool isInnerScroll = false; 
   static double outMaxScrollExtent = 0;
+  static AppBar appBar;
+
+  AppBar createAppBar() {
+    if(appBar == null) {
+      appBar = AppBar(
+        title: Text(
+          "选择咖啡和小食", 
+          style: TextStyle(color: rgba(56, 56, 56, 1), fontSize: 18),
+        ),
+        elevation: 0.0, // 去除底部阴影
+        backgroundColor: rgba(255, 255, 255, 1),
+        bottom: PreferredSize(
+          child: Container(
+            decoration: BoxDecoration(
+              border: ui.borderBottom()
+            ),
+          ),
+          preferredSize: Size.fromHeight(1.0),
+        ),
+      );
+    }
+    return appBar;
+  }
 
   @override
   void initState() {
-    appbarHeight = widget.appbar.preferredSize.height - 1;
+    appbarHeight = widget.getAppBar().preferredSize.height - 1;
     _outController = ScrollController();
     _outController.addListener(_outScrollListener);
     _goodsController = ScrollController();

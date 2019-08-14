@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 
 class ShoppingCart extends StatefulWidget {
-  /// Appbar配置
-  final AppBar appbar = AppBar();
+  static _ShoppingCartState _shoppingCartState;
 
-  ShoppingCart({Key key}) : super(key: key);
+  getAppBar() => _shoppingCartState.createAppBar();
+
+  ShoppingCart() {
+    if(_shoppingCartState == null) {
+      _shoppingCartState = _ShoppingCartState();
+    }
+  }
 
   _ShoppingCartState createState() => _ShoppingCartState();
 }
 
 class _ShoppingCartState extends State<ShoppingCart> {
+
+  AppBar createAppBar() {
+    return AppBar();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-08-09 11:30:36
+ * @lastTime: 2019-08-14 16:05:46
  * @LastEditors: meetqy
  */
 
@@ -27,11 +27,11 @@ class Toolbar extends StatefulWidget {
 
   // 所有导航页面
   final Map<int, Map> pages = { 
-    0: _createPage(_home, appbar: _home.appbar),
-    1: _createPage(_menu, appbar: _menu.appbar),
-    2: _createPage(_order, appbar: _order.appbar),
-    3: _createPage(_shoppingCart, appbar: _shoppingCart.appbar),
-    4: _createPage(_mine, appbar: _mine.appbar)
+    0: _createPage(_home, appbar: _home.getAppBar()),
+    1: _createPage(_menu, appbar: _menu.getAppBar()),
+    2: _createPage(_order, appbar: _order.getAppBar()),
+    3: _createPage(_shoppingCart, appbar: _shoppingCart.getAppBar()),
+    4: _createPage(_mine, appbar: _mine.getAppBar())
   };
   
 

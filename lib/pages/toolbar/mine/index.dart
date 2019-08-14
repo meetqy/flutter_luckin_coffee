@@ -4,16 +4,23 @@ import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class Mine extends StatefulWidget {
-  /// Appbar配置
-  final AppBar appbar = null;
+  static _MineState _mineState;
+ 
+  getAppBar() => _mineState.createAppBar();
 
-  Mine({Key key}) : super(key: key);
+  Mine() {
+    _mineState = _MineState();
+  }
   
-
   _MineState createState() => _MineState();
 }
 
 class _MineState extends State<Mine> {
+
+  AppBar createAppBar() {
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,23 +1,24 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-14 15:37:16
+ * @lastTime: 2019-08-15 14:52:06
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
+import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
-import 'package:flutter_luckin_coffee/widgets/index.dart';
 
 import 'testData.dart';
 import 'widgets/ClassifyDesc.dart';
 import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';
 
-/// TODO：待解决：有时候滚动不流畅
+/// TODO: 待解决：有时候滚动不流畅
 /// TODO: 待解决：右边商品滑动，左侧菜单不跟随
+/// TODO: 滚动高度适配问题
 class Menu extends StatefulWidget {
   static _MenuState _menuState;
 
@@ -57,7 +58,7 @@ class _MenuState extends State<Menu> {
               border: ui.borderBottom()
             ),
           ),
-          preferredSize: Size.fromHeight(1.0),
+          preferredSize: Size.fromHeight(0),
         ),
       );
     }
@@ -191,7 +192,7 @@ class _MenuState extends State<Menu> {
       controller: _outController,
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          minHeight: listViewHeight
+          // maxHeight: MediaQuery.of(context).size.height-24-56-56
         ),
 
         child: Column(children: <Widget>[
@@ -208,8 +209,8 @@ class _MenuState extends State<Menu> {
             },
           ),
           
-          Container(
-            height: listViewHeight,
+          SizedBox(
+            height: screenHeight(context) - 56 - 56 - 24,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[

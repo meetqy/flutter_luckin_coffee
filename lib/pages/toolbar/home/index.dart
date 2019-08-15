@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-14 15:39:05
+ * @lastTime: 2019-08-15 15:01:35
  * @LastEditors: meetqy
  */
 
@@ -34,17 +34,20 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
       child: Column(children: <Widget>[
         // 头部banner
         Stack(children: <Widget>[
           // 轮播图
           Positioned(child: 
-            CustomSwiper([
-              'lib/assets/images/home/swiper1.jpg',
-              'lib/assets/images/home/swiper2.jpg',
-              'lib/assets/images/home/swiper3.jpg',
-            ]),
+            CustomSwiper(
+              [
+                'lib/assets/images/home/swiper1.jpg',
+                'lib/assets/images/home/swiper2.jpg',
+                'lib/assets/images/home/swiper3.jpg',
+              ],
+              height: screenHeight(context) > 800 ? 288 : 208,
+            ),
           ),
 
           // 扫描二维码

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-08-14 16:05:46
+ * @lastTime: 2019-08-15 15:01:24
  * @LastEditors: meetqy
  */
 
@@ -103,9 +103,9 @@ class _NavigationState extends State<Toolbar> {
 
     return Scaffold(
       appBar: page['appbar'],
-      body: Container( // 套一层Container便于集中控制
+      body: Container(
         color: hex('#fff'),
-        child: page['widget'],
+        child: page['widget']
       ),
       bottomNavigationBar: NavBottomBar(_index, (index) {
         setState(() {

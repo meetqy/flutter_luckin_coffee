@@ -22,9 +22,9 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
   static TabController _tabController;
 
   static List<Tab> tabs = [
-    Tab(icon: Icon(Icons.directions_car)),
-    Tab(icon: Icon(Icons.directions_transit)),
-    Tab(icon: Icon(Icons.directions_bike)),
+    Tab(child: Text('全部'),),
+    Tab(child: Text('未完成'),),
+    Tab(child: Text('已完成'),),
   ];
 
   @override
@@ -44,9 +44,12 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
       ),
       bottom: TabBar(
         tabs: tabs,
+        labelStyle: TextStyle(
+          color: rgba(80, 80, 80, 1),
+          fontSize: 15
+        ),        
         controller: _tabController,
       ),
-      elevation: 0.0, // 去除底部阴影
       backgroundColor: rgba(255, 255, 255, 1),
     );
   }

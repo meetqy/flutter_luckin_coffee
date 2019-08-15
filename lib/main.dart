@@ -1,3 +1,4 @@
+import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/routes/index.dart';
 
@@ -14,6 +15,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Luckin Coffee',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        appBarTheme: AppBarTheme(
+          actionsIconTheme: IconThemeData(
+            color: rgba(0, 0, 0, 0)
+          )
+        )
       ),
       routes: router.getRoutes(),
       initialRoute: '/',

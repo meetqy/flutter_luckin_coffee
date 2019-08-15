@@ -7,22 +7,29 @@ class Button extends StatelessWidget {
   final Function onPress;
   final Color bgColor;
   final Color color;
+  final Border border;
+  final double paddingVertical;
+  final double paddingHorizontal;
 
   Button(this.text, {
     this.icon,
     this.onPress,
     this.bgColor,
-    this.color
+    this.color,
+    this.border,
+    this.paddingVertical = 8,
+    this.paddingHorizontal = 10
   }) : assert(text != null);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 8,horizontal: 10),
+        padding: EdgeInsets.symmetric(vertical: paddingVertical,horizontal: paddingHorizontal),
         decoration: BoxDecoration(
           color: bgColor == null ? rgba(255, 129, 2, 1) : bgColor,
-          borderRadius: BorderRadius.all(Radius.circular(4))
+          borderRadius: BorderRadius.all(Radius.circular(4)),
+          border: border
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

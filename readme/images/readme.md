@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:35:08
- * @lastTime: 2019-08-15 16:53:37
+ * @lastTime: 2019-08-15 16:56:17
  * @LastEditors: meetqy
  -->
 ## 首页
@@ -15,7 +15,7 @@
 
 ## 我的
 
-<img src="./readme/images/menu1.PNG" width="375"/>
+<img src="./images/menu1.PNG" width="375"/>
 
 ## 订单
-<img src="./readme/images/order1.png" width="375"/>
+<img src="./images/order1.png" width="375"/>

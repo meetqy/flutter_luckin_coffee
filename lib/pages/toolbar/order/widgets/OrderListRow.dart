@@ -15,6 +15,11 @@ class OrderListRow extends StatelessWidget {
   /// 创建订单列表信息
   /// ```
   /// @param {int} orderStatus - 订单状态 1: 待付款 2: 已完成 3: 已取消
+  /// @param {String} address - 地址
+  /// @param {String} goodsName - 商品名字
+  /// @param {String} orderNum - 订单号
+  /// @param {String} time - 订单时间
+  /// @param {double} price - 价格
   /// ```
   OrderListRow(this.orderStatus, {
     this.address,

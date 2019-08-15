@@ -11,6 +11,18 @@ class Button extends StatelessWidget {
   final double paddingVertical;
   final double paddingHorizontal;
 
+  /// 公用button
+  /// 
+  /// ```
+  /// @param {Icon} icon - 左侧icon
+  /// @param {String} text - 按钮文字
+  /// @param {Function} onPress - 点击回调
+  /// @param {Color} bgColor - 背景颜色
+  /// @param {Color} color - 文字颜色
+  /// @param {Border} border - border
+  /// @param {double} paddingVertical - 上下间距
+  /// @param {double} paddingHorizontal - 左右间距
+  /// ```
   Button(this.text, {
     this.icon,
     this.onPress,

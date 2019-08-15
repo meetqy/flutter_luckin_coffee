@@ -52,4 +52,4 @@
 更多预览图请到[readme/images](./readme/images)下查看。
 
 <img src="./readme/images/home1.PNG" width="375"/> || ---- || <img src="./readme/images/menu1.PNG" width="375"/>
-<img src="./readme/images/menuDialog.PNG" width="375"/> || ---- || <img src="./readme/images/mine1.PNG" width="375"/>
+<img src="./readme/images/menuDialog.PNG" width="375"/> || ---- || <img src="./readme/images/mine1.PNG" width="375"/><img src="./readme/images/order1.png" width="375"/>

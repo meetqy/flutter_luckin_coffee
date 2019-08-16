@@ -58,20 +58,6 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
     );
   }
 
-
-  // TabBar(
-  //       tabs: tabs,
-  //       labelColor: rgba(136, 175, 213, 1),
-  //       labelStyle: TextStyle(
-  //         fontWeight: FontWeight.bold
-  //       ),
-  //       unselectedLabelStyle: TextStyle(
-  //         fontSize: 15
-  //       ),
-  //       unselectedLabelColor: rgba(80, 80, 80, 1),        
-  //       controller: _tabController,
-  //     )
-
   @override
   Widget build(BuildContext context) {
     return Container(

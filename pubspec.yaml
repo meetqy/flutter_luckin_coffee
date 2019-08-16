@@ -48,6 +48,7 @@ flutter:
     - lib/assets/images/home/
     - lib/assets/images/menu/
     - lib/assets/images/mine/
+    - lib/assets/images/order/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

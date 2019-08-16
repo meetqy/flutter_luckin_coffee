@@ -7,6 +7,7 @@ import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';
+import 'package:flutter_luckin_coffee/widgets/Stepper/index.dart';
 
 final dialogPage = FullScreenDialog(
   closeChild: CloseDialog(
@@ -193,22 +194,7 @@ final dialogPage = FullScreenDialog(
                 ),
               ),
               
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  iconjian(size: 28, color: rgba(136, 175, 213, 1)),
-                  Container(
-                    margin: EdgeInsets.only(left: 5, right: 5, top: 3),
-                    child: Text('1', 
-                      style: TextStyle(
-                        color: rgba(136, 175, 213, 1),
-                        fontSize: 14
-                      ),
-                    ),
-                  ),
-                  iconjaifill(size: 28, color: rgba(136, 175, 213, 1))
-                ],
-              )
+              CustomStepper()
             ],),
             Container(
               alignment: Alignment.centerLeft,
@@ -253,3 +239,4 @@ final dialogPage = FullScreenDialog(
     ],)
   )
 );
+

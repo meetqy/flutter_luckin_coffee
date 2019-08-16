@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-16 11:04:53
+ * @lastTime: 2019-08-16 15:03:43
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -32,6 +32,8 @@
 
 [v1.0.0 60个静态界面开发（不包括交互）](./readme/backlog/v1.0.0.md)
 
+##### -  注：v1.0.0只注重ui界面开发，难一点的动画||交互效果会单独提出来，下个迭代在开发
+
 ## 项目目录
 
 ``` tree
@@ -56,4 +58,4 @@
 更多预览图请到[readme/images](./readme/images)下查看。
 
 <img src="./readme/images/home1.PNG" width="375"/> || ---- || <img src="./readme/images/menu1.PNG" width="375"/>
-<img src="./readme/images/menuDialog.PNG" width="375"/> || ---- || <img src="./readme/images/mine1.PNG" width="375"/><img src="./readme/images/order1.png" width="375"/>
+<img src="./readme/images/menuDialog.PNG" width="375"/> || ---- || <img src="./readme/images/mine1.PNG" width="375"/><img src="./readme/images/order1.png" width="375"/> || <img src="./readme/images/shoppingcart1.PNG" width="375"/>

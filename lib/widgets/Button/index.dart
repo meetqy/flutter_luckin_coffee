@@ -10,6 +10,7 @@ class Button extends StatelessWidget {
   final Border border;
   final double paddingVertical;
   final double paddingHorizontal;
+  final double fontSize;
 
   /// 公用button
   /// 
@@ -21,7 +22,8 @@ class Button extends StatelessWidget {
   /// @param {Color} color - 文字颜色
   /// @param {Border} border - border
   /// @param {double} paddingVertical - 上下间距
-  /// @param {double} paddingHorizontal - 左右间距
+  /// @param {double} paddingHorizontal - 左右间距d
+  /// @param {double} fontSize - 字体大小
   /// ```
   Button(this.text, {
     this.icon,
@@ -30,13 +32,15 @@ class Button extends StatelessWidget {
     this.color,
     this.border,
     this.paddingVertical = 8,
-    this.paddingHorizontal = 10
+    this.paddingHorizontal = 10,
+    this.fontSize = 12
   }) : assert(text != null);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
+        margin: EdgeInsets.only(left: 5),
         padding: EdgeInsets.symmetric(vertical: paddingVertical,horizontal: paddingHorizontal),
         decoration: BoxDecoration(
           color: bgColor == null ? rgba(255, 129, 2, 1) : bgColor,
@@ -48,10 +52,10 @@ class Button extends StatelessWidget {
           children: <Widget>[
           Container(child: icon),
           Container(
-            margin: EdgeInsets.only(left: 5),
+            
             child: Text(text, style: TextStyle(
               color: color == null ? rgba(255, 255, 255, 1) : color,
-              fontSize: 12
+              fontSize: fontSize
             ),),
           )
         ],),

@@ -5,7 +5,7 @@ import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';
 
 class Router {
   static final _routes = {
-    '/': (BuildContext context) => Toolbar(routeName: '/shoppingcart'),
+    '/': (BuildContext context) => Toolbar(routeName: '/home'),
     '/dialog': (BuildContext context) => FullScreenDialog()
   };
   static final Router _singleton = Router._internal();

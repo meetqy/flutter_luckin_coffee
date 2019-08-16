@@ -1,12 +1,12 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-16 15:03:43
+ * @lastTime: 2019-08-16 15:49:37
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
 
-使用flutter仿luckin coffee。
+flutter实战demo，仿luckin coffee。
 
 ## 前言
 
@@ -51,7 +51,6 @@
 ├── readme                                      // README.md相关
 └── test                                        // 测试文件夹（后期可能会放在每个对应的page下面）
 ```
-
 
 ## 预览图
 

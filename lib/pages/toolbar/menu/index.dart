@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-15 14:52:06
+ * @lastTime: 2019-08-16 11:08:44
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -75,6 +75,8 @@ class _MenuState extends State<Menu> {
 
     new Future.delayed(Duration.zero,() {
       setState(() {
+        swiperOpacity = 1;
+        isInnerScroll = false;
         goodsViewWidth = screenWidth(context) - 90;
         listViewHeight = screenHeight(context) - appbarHeight - 130;
       });

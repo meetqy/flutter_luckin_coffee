@@ -28,45 +28,52 @@ class _MineState extends State<Mine> {
         color: rgba(248, 248, 248, 1),
         child: Column(children: <Widget>[
           // 头部  
-          Container(
-            alignment: Alignment.centerLeft,
-            height: 180,
-            color: rgba(100, 68, 60, 1),
-            padding: EdgeInsets.only(left: 20, right: 20,top: 44),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  alignment: Alignment.centerRight,
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: icontupian18(size: 24, color: rgba(255,255,255,.9))
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                  Row(children: <Widget>[
-                    ClipRRect(
-                      borderRadius: new BorderRadius.circular(27),
-                      child: Image.asset(
-                        'lib/assets/images/mine/mine1.png', 
-                        width: 55, 
-                        height: 55, 
-                        fit: BoxFit.cover,
+          InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, '/login_method');
+            },
+            child: Container(
+              alignment: Alignment.centerLeft,
+              height: 180,
+              color: rgba(100, 68, 60, 1),
+              padding: EdgeInsets.only(left: 20, right: 20,top: 44),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.centerRight,
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: icontupian18(size: 24, color: rgba(255,255,255,.9))
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                    Row(children: <Widget>[
+                      ClipRRect(
+                        borderRadius: new BorderRadius.circular(27),
+                        child: Image.asset(
+                          'lib/assets/images/mine/mine1.png', 
+                          width: 55, 
+                          height: 55, 
+                          fit: BoxFit.cover,
+                        )
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Text('立即登录', style: TextStyle(
+                          color: rgba(255, 255, 255, 1),
+                          fontSize: 18
+                        ),),
                       )
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10),
-                      child: Text('立即登录', style: TextStyle(
-                        color: rgba(255, 255, 255, 1),
-                        fontSize: 18
-                      ),),
-                    )
+                    ],),
+                    icontupian6(size: 14, color: rgba(255,255,255,.6))
                   ],),
-                  icontupian6(size: 14, color: rgba(255,255,255,.6))
-                ],),
-              ],
+                ],
+              ),
             ),
           ),
+
+
           Container(
             color: hex('#fff'),
             padding: EdgeInsets.symmetric(horizontal: 15),

@@ -4,6 +4,7 @@ import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/Recomme
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/ShoppingCartListRow.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
+import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
 
 class ShoppingCart extends StatefulWidget {
   static _ShoppingCartState _shoppingCartState;
@@ -96,9 +97,24 @@ class _ShoppingCartState extends State<ShoppingCart> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        new RecommendGoods(goodsImg: 'lib/assets/images/menu/goods1.png',),
-                        new RecommendGoods(goodsImg: 'lib/assets/images/menu/goods2.png',),
-                        new RecommendGoods(goodsImg: 'lib/assets/images/menu/goods3.png',),
+                        new RecommendGoods(
+                          goodsImg: 'lib/assets/images/menu/goods1.png',
+                          addOnPress: () {
+                            dialogPage.show(context);
+                          }
+                        ),
+                        new RecommendGoods(
+                          goodsImg: 'lib/assets/images/menu/goods2.png',
+                          addOnPress: () {
+                            dialogPage.show(context);
+                          }
+                        ),
+                        new RecommendGoods(
+                          goodsImg: 'lib/assets/images/menu/goods3.png',
+                          addOnPress: () {
+                            dialogPage.show(context);
+                          }
+                        ),
                       ],
                     ),
                   )

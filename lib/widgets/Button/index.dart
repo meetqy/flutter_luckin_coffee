@@ -11,6 +11,9 @@ class Button extends StatelessWidget {
   final double paddingVertical;
   final double paddingHorizontal;
   final double fontSize;
+  final double marginLeft;
+  final double width;
+  final double height;
 
   /// 公用button
   /// 
@@ -24,6 +27,9 @@ class Button extends StatelessWidget {
   /// @param {double} paddingVertical - 上下间距
   /// @param {double} paddingHorizontal - 左右间距d
   /// @param {double} fontSize - 字体大小
+  /// @param {double} marginLeft - 多个button之间的间距
+  /// @param {double} width - 宽度
+  /// @param {double} height - 高度
   /// ```
   Button(this.text, {
     this.icon,
@@ -33,14 +39,37 @@ class Button extends StatelessWidget {
     this.border,
     this.paddingVertical = 8,
     this.paddingHorizontal = 10,
-    this.fontSize = 12
+    this.fontSize = 12,
+    this.marginLeft = 5,
+    this.width,
+    this.height
   }) : assert(text != null);
+
+  
+  /// 大按钮 一个按钮占一行
+  /// 
+  /// 配置参考button，只不过多了些默认值的配置。
+  Button.bigButton(this.text, {
+    this.icon,
+    this.onPress,
+    this.bgColor,
+    this.color,
+    this.border,
+    this.paddingVertical = 0,
+    this.paddingHorizontal = 0,
+    this.fontSize = 16,
+    this.marginLeft = 0,
+    this.height = 44,
+    this.width = 300
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Container(
-        margin: EdgeInsets.only(left: 5),
+        width: width,
+        height: height,
+        margin: EdgeInsets.only(left: marginLeft),
         padding: EdgeInsets.symmetric(vertical: paddingVertical,horizontal: paddingHorizontal),
         decoration: BoxDecoration(
           color: bgColor == null ? rgba(255, 129, 2, 1) : bgColor,
@@ -49,6 +78,7 @@ class Button extends StatelessWidget {
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
           Container(child: icon),
           Container(

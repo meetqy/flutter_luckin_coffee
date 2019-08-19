@@ -2,6 +2,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/other.dart';
+import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class LoginMethod extends StatelessWidget {
   const LoginMethod({Key key}) : super(key: key);
@@ -31,28 +32,25 @@ class LoginMethod extends StatelessWidget {
             height: 94,
             child: Image.asset('lib/assets/images/logo1.png', fit: BoxFit.cover,),
           ),
+
           Container(
             margin: EdgeInsets.only(top: 116),
-            width: 300,
-            height: 44,
-            decoration: BoxDecoration(
-              color: rgba(73, 194, 101, 1),
-              borderRadius: BorderRadius.circular(4)
+            child: Button.bigButton(
+              "微信一键登录",
+              bgColor: rgba(73, 194, 101, 1),
+              color: hex('#fff'),
             ),
-            alignment: Alignment.center,
-            child: Text('微信一键登录', style: TextStyle(fontSize: 16, color: rgba(255, 255, 255, 1)),),
           ),
           Container(
             margin: EdgeInsets.only(top: 25),
-            width: 300,
-            height: 44,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4),
+            child: Button.bigButton(
+              "手机验证码登录",
+              color: rgba(136, 175, 213, 1),
+              bgColor: hex('#fff'),
               border: Border.all(width: 1,color: rgba(136, 175, 213, 1))
             ),
-            alignment: Alignment.center,
-            child: Text('手机验证码登录', style: TextStyle(fontSize: 16, color: rgba(136, 175, 213, 1)),),
           ),
+          
         ],),
       ),
     );

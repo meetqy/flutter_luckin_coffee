@@ -4,9 +4,11 @@ import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class RecommendGoods extends StatelessWidget {
   final String goodsImg;
+  final Function addOnPress;
   
   RecommendGoods({
-    this.goodsImg
+    this.goodsImg,
+    this.addOnPress
   });
 
   @override
@@ -56,9 +58,12 @@ class RecommendGoods extends StatelessWidget {
                       ),
                     ),
                   ],),
-                  Container(
-                    child: iconjaifill(color: rgba(148, 196, 236, 1), size: 24)
+                  InkWell(
+                    child: iconjaifill(color: rgba(148, 196, 236, 1), size: 24,),
+                    onTap: () => addOnPress == null ? (){} : addOnPress(),
                   )
+                  
+                  
               ],),
             )
           ],),

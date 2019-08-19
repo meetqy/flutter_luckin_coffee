@@ -82,7 +82,7 @@ class Button extends StatelessWidget {
           children: <Widget>[
           Container(child: icon),
           Container(
-            
+            margin: EdgeInsets.only(left: marginLeft),
             child: Text(text, style: TextStyle(
               color: color == null ? rgba(255, 255, 255, 1) : color,
               fontSize: fontSize

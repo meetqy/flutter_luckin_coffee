@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-16 15:49:37
+ * @lastTime: 2019-08-19 10:35:38
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -19,6 +19,15 @@ flutter实战demo，仿luckin coffee。
 > luckin coffee在网上能搜索到原型+设计图好像是开源的，为了方便。[luckin coffee原型+设计图](https://www.xiaopiu.com/user?uid=5d478fe8174ff47f357b8b00&tab=collectProject&libPop=project&libId=5c306b252d5cd56e70a1e640)
 
 ##### - 注： 正常下单请到luckin coffee官方客户端
+
+## version
+
+``` bash
+Flutter 1.7.8+hotfix.4 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 20e59316b8 (4 weeks ago) • 2019-07-18 20:04:33 -0700
+Engine • revision fee001c93f
+Tools • Dart 2.4.0
+```
 
 ## 安卓扫描二维码下载
 

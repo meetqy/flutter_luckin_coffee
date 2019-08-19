@@ -141,7 +141,8 @@ class MineRow extends StatelessWidget {
         children: <Widget>[
           Row(children: <Widget>[
             Container(
-              margin: EdgeInsets.only(right: 15),
+              width: 35,
+              alignment: Alignment.centerLeft,
               child: icon
             ),
             Text(text, style: TextStyle(

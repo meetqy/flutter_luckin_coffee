@@ -61,7 +61,7 @@ class Button extends StatelessWidget {
     this.marginLeft = 0,
     this.height = 44,
     this.width = 300
-  });
+  }) : assert(text != null);
 
   @override
   Widget build(BuildContext context) {

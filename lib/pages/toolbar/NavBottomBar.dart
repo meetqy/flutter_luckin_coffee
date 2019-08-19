@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:39:22
- * @lastTime: 2019-08-14 14:31:22
+ * @lastTime: 2019-08-19 16:49:54
  * @LastEditors: meetqy
  */
 
@@ -14,23 +14,12 @@ class NavBottomBar extends StatefulWidget {
   final ValueChanged onChange;
   final int initRoute;
 
-  static NavBottomBar _singleton;
-
-  /// 导航菜单 单例模式
+  /// 导航菜单
   /// ```
   /// @param {int} initRoute - 默认选中
   /// @param {ValueChanged} onChange - 导航菜单改变时的回调 返回当前导航的索引
   /// ```
-  /// return BottomNavigationBar 
-  factory NavBottomBar(int initRoute, ValueChanged onChange) {
-    if(_singleton == null) {
-      _singleton = NavBottomBar._internal(initRoute, onChange);
-    }
-
-    return _singleton;
-  }
-
-  NavBottomBar._internal(this.initRoute, this.onChange);
+  NavBottomBar(this.initRoute, this.onChange);
 
 
   _NavBottomBarState createState() => _NavBottomBarState();

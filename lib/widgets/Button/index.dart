@@ -89,7 +89,8 @@ class Button extends StatelessWidget {
             ),),
           )
         ],),
-      )
+      ),
+      onTap: () => onPress == null ? (){} : onPress(),
     );
   }
 }

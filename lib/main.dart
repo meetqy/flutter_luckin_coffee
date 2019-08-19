@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           actionsIconTheme: IconThemeData(
             color: rgba(0, 0, 0, 0)
           )
-        )
+        ),
       ),
       routes: router.getRoutes(),
       initialRoute: '/',

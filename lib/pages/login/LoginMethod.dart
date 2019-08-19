@@ -47,7 +47,10 @@ class LoginMethod extends StatelessWidget {
               "手机验证码登录",
               color: rgba(136, 175, 213, 1),
               bgColor: hex('#fff'),
-              border: Border.all(width: 1,color: rgba(136, 175, 213, 1))
+              border: Border.all(width: 1,color: rgba(136, 175, 213, 1)),
+              onPress: () {
+                Navigator.pushNamed(context, '/login_phone');
+              },
             ),
           ),
           

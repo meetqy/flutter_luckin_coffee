@@ -48,10 +48,11 @@ class RecommendGoods extends StatelessWidget {
                         fontWeight: FontWeight.bold
                       ),),
                     ),
-                    /// TODO: 删除线待实现
+
                     Container(
                       margin: EdgeInsets.only(left: 3),
                       child: Text('¥38', style: TextStyle(
+                          decoration: TextDecoration.lineThrough,
                           color: rgba(166, 166, 166, 1),
                           fontSize: 12
                         )

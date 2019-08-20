@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-19 10:35:38
+ * @lastTime: 2019-08-20 08:52:00
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -65,5 +65,4 @@ Tools • Dart 2.4.0
 
 更多预览图请到[readme/images](./readme/images)下查看。
 
-<img src="./readme/images/home1.PNG" width="375"/> || ---- || <img src="./readme/images/menu1.PNG" width="375"/>
-<img src="./readme/images/menuDialog.PNG" width="375"/> || ---- || <img src="./readme/images/mine1.PNG" width="375"/><img src="./readme/images/order1.png" width="375"/> || <img src="./readme/images/shoppingcart1.PNG" width="375"/>
+<img src="./readme/images/1.gif" width="375"/>

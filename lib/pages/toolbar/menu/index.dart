@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-16 11:08:44
+ * @lastTime: 2019-08-20 17:23:53
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -45,22 +45,7 @@ class _MenuState extends State<Menu> {
 
   AppBar createAppBar() {
     if(appBar == null) {
-      appBar = AppBar(
-        title: Text(
-          "选择咖啡和小食", 
-          style: TextStyle(color: rgba(56, 56, 56, 1), fontSize: 18),
-        ),
-        elevation: 0.0, // 去除底部阴影
-        backgroundColor: rgba(255, 255, 255, 1),
-        bottom: PreferredSize(
-          child: Container(
-            decoration: BoxDecoration(
-              border: ui.borderBottom()
-            ),
-          ),
-          preferredSize: Size.fromHeight(0),
-        ),
-      );
+      appBar = customAppbar(title: '选择咖啡和小食');
     }
     return appBar;
   }

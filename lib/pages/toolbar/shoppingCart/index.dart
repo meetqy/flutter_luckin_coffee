@@ -24,22 +24,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
   AppBar createAppBar() {
     /// 配置appbar
-    return AppBar(
-      title: Text(
-        "购物车", 
-        style: TextStyle(color: rgba(56, 56, 56, 1), fontSize: 18,fontWeight: FontWeight.bold),
-      ),
-      backgroundColor: rgba(255, 255, 255, 1),
-      elevation: 0,
-      bottom: PreferredSize(
-        child: Container(
-          decoration: BoxDecoration(
-            border: ui.borderBottom()
-          ),
-        ),
-        preferredSize: Size.fromHeight(0),
-      ),
-    );
+    return customAppbar(title: '购物车');
   }
 
   @override

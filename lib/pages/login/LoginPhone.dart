@@ -23,7 +23,7 @@ class _LoginPhoneState extends State<LoginPhone> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: customAppbar(context),
+      appBar: customAppbar(context: context, borderBottom: false),
       body: Container(
         width: screenWidth(context),
         color: hex('#fff'),

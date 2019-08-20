@@ -10,7 +10,7 @@ class LoginMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppbar(context),
+      appBar: customAppbar(context: context, borderBottom: false),
 
       body: Container(
         width: screenWidth(context),

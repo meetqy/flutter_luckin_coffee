@@ -15,7 +15,7 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: hex('#fff'),
-      appBar: customAppbar(context, title: "评价", elevation: 1),
+      appBar: customAppbar(context: context, title: "评价",),
       body: SafeArea(
         child: Container(
           color: rgba(248, 248, 248, 1),

@@ -38,6 +38,7 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
 
     /// 配置appbar
     return AppBar(
+      centerTitle: true,
       title: Text(
         "订单列表", 
         style: TextStyle(color: rgba(56, 56, 56, 1), fontSize: 18,fontWeight: FontWeight.bold),

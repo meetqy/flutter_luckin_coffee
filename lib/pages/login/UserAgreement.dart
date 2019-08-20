@@ -10,7 +10,7 @@ class UserAgreement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppbar(context,title: "用户协议"),
+      appBar: customAppbar(context: context,title: "用户协议"),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(

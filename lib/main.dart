@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: router.getRoutes(),
-      initialRoute: '/order_evaluation',
+      initialRoute: '/',
       onGenerateRoute: handleRoute
     );
   }

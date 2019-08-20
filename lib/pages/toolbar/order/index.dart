@@ -44,7 +44,7 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
         style: TextStyle(color: rgba(56, 56, 56, 1), fontSize: 18,fontWeight: FontWeight.bold),
       ),
       bottom: TabBar(
-        tabs: tabs,
+        tabs: tabs,        
         labelColor: rgba(136, 175, 213, 1),
         labelStyle: TextStyle(
           fontWeight: FontWeight.bold

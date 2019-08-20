@@ -20,6 +20,12 @@ class MyApp extends StatelessWidget {
           ),
           elevation: 0,
         ),
+        
+        // button去除点击后的背景，注意：对appbar中的的button无效
+        buttonTheme: ButtonThemeData(
+          splashColor: rgba(0, 0, 0, 0),
+          highlightColor: rgba(0, 0, 0, 0),
+        ),
       ),
       routes: router.getRoutes(),
       initialRoute: '/',

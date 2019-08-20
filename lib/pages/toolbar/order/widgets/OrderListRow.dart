@@ -44,7 +44,7 @@ class OrderListRow extends StatelessWidget {
   }
 
   /// 按钮状态
-  List<Widget> buttonStatus() {
+  List<Widget> buttonStatus(BuildContext context) {
     List<Widget>button = [];
 
     var btn1 = Container(
@@ -77,6 +77,7 @@ class OrderListRow extends StatelessWidget {
         border: Border.all(width: 1, color: rgba(144, 192, 239, 1)),
         paddingVertical: 4,
         paddingHorizontal: 5,
+        onPress: ()=> Navigator.pushNamed(context, '/order_evaluation'),
       ),
     );
 
@@ -155,7 +156,7 @@ class OrderListRow extends StatelessWidget {
                 fontSize: 14,
                 fontWeight: FontWeight.bold
               ),),
-              Row(children: buttonStatus())
+              Row(children: buttonStatus(context))
           ],),
         ),
 

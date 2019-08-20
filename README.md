@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-20 10:04:37
+ * @lastTime: 2019-08-20 15:51:04
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -49,7 +49,7 @@ Tools • Dart 2.4.0
 
 ## backlog
 
-[v1.0.0 静态界面开发（不包括动画交互）](./readme/backlog/v1.0.0.md)
+[v1.0.0 静态界面开发（不包括动画交互，不包括赠送好友优惠券模块）](./readme/backlog/v1.0.0.md)
 
 ## 安卓扫描二维码下载
 

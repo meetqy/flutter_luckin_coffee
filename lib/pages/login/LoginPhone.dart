@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
+import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/other.dart';
 import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
@@ -22,18 +23,7 @@ class _LoginPhoneState extends State<LoginPhone> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: hex('#fff'),
-        elevation: 0,
-        leading: InkWell(
-          child: icontupian8(color: rgba(44, 44, 44, 1), size: 16),
-          onTap: (){
-            Navigator.pop(context);
-          },
-        )
-        
-        
-      ),
+      appBar: customAppbar(context),
       body: Container(
         width: screenWidth(context),
         color: hex('#fff'),

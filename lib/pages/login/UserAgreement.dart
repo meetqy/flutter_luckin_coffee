@@ -1,5 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/utils/other.dart';
 
@@ -9,17 +10,7 @@ class UserAgreement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        leading: InkWell(
-          child: icontupian8(color: rgba(44, 44, 44, 1)),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text('用户协议', style: TextStyle(color: rgba(56, 56, 56, 1)),),
-        backgroundColor: hex('#fff'),
-      ),
+      appBar: customAppbar(context,title: "用户协议"),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(

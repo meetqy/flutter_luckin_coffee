@@ -14,15 +14,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Luckin Coffee',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         appBarTheme: AppBarTheme(
           actionsIconTheme: IconThemeData(
-            color: rgba(0, 0, 0, 0)
-          )
+            color: rgba(0, 0, 0, 0),
+          ),
+          elevation: 0,
         ),
       ),
       routes: router.getRoutes(),
-      initialRoute: '/',
+      initialRoute: '/order_evaluation',
       onGenerateRoute: handleRoute
     );
   }

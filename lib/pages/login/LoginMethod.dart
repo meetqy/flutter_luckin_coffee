@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
+import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/other.dart';
 import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
@@ -10,18 +10,8 @@ class LoginMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: hex('#fff'),
-        elevation: 0,
-        leading: InkWell(
-          child: icontupian8(color: rgba(44, 44, 44, 1), size: 16),
-          onTap: (){
-            Navigator.pop(context);
-          },
-        )
-        
-        
-      ),
+      appBar: customAppbar(context),
+
       body: Container(
         width: screenWidth(context),
         color: hex('#fff'),

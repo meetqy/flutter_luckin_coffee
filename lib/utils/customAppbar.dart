@@ -8,7 +8,7 @@ import 'package:flutter_luckin_coffee/utils/Icon.dart';
 /// @param {String} title - 标题
 /// ```
 AppBar customAppbar(BuildContext context, {
-  String title,
+  String title = '',
   double elevation = 0,
 }) {
   return AppBar(

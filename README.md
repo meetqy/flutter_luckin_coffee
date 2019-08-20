@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-20 10:01:01
+ * @lastTime: 2019-08-20 10:04:37
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -47,6 +47,10 @@ Tools • Dart 2.4.0
 
 - code review
 
+## backlog
+
+[v1.0.0 静态界面开发（不包括动画交互）](./readme/backlog/v1.0.0.md)
+
 ## 安卓扫描二维码下载
 
 ![](./Android.png)
@@ -54,12 +58,6 @@ Tools • Dart 2.4.0
 ## 开发规范
 
 [flutter_luckin_coffee开发规范](./readme/开发规范.md)
-
-## backlog
-
-[v1.0.0 60个静态界面开发（不包括交互）](./readme/backlog/v1.0.0.md)
-
-##### -  注：v1.0.0只注重ui界面开发，难一点的动画||交互效果会单独提出来，下个迭代在开发
 
 ## 项目目录
 

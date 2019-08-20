@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-20 08:52:00
+ * @lastTime: 2019-08-20 10:01:01
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -28,6 +28,24 @@ Framework • revision 20e59316b8 (4 weeks ago) • 2019-07-18 20:04:33 -0700
 Engine • revision fee001c93f
 Tools • Dart 2.4.0
 ```
+
+## 版本计划
+
+### - v1.0版本侧重于页面实现
+
+- 完成所有页面的开发（不包括动画交互）
+- 完成动画交互
+- 优化代码
+
+### - v2.0版本侧重于前后端交互（后端用api工厂）
+
+- 接入api工厂
+- 准备app所需要的数据
+- 完成联调
+
+### - v3.0版本侧重优化总结
+
+- code review
 
 ## 安卓扫描二维码下载
 

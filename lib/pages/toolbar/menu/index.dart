@@ -6,7 +6,6 @@
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';

@@ -43,17 +43,26 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
         "订单列表", 
         style: TextStyle(color: rgba(56, 56, 56, 1), fontSize: 18,fontWeight: FontWeight.bold),
       ),
-      bottom: TabBar(
-        tabs: tabs,        
-        labelColor: rgba(136, 175, 213, 1),
-        labelStyle: TextStyle(
-          fontWeight: FontWeight.bold
+      bottom: PreferredSize(
+        preferredSize: Size.fromHeight(44),
+        child: Theme(
+          data: ThemeData(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent
+          ),
+          child: TabBar(
+            tabs: tabs,        
+            labelColor: rgba(136, 175, 213, 1),
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold
+            ),
+            unselectedLabelStyle: TextStyle(
+              fontSize: 15
+            ),
+            unselectedLabelColor: rgba(80, 80, 80, 1),        
+            controller: _tabController,
+          ),
         ),
-        unselectedLabelStyle: TextStyle(
-          fontSize: 15
-        ),
-        unselectedLabelColor: rgba(80, 80, 80, 1),        
-        controller: _tabController,
       ),
       backgroundColor: rgba(255, 255, 255, 1),
     );

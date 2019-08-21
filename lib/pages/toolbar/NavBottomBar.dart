@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:39:22
- * @lastTime: 2019-08-19 16:49:54
+ * @lastTime: 2019-08-21 09:07:14
  * @LastEditors: meetqy
  */
 
@@ -42,41 +42,47 @@ class _NavBottomBarState extends State<NavBottomBar> {
   @override
   Widget build(BuildContext context) {
     _initIndex();
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      currentIndex: _currentIndex,
-      items: [
-        BottomNavigationBarItem(
-          icon: iconlogoNotText(),
-          title: Text('首页'),
-        ),
-        BottomNavigationBarItem(
-          icon: iconcaidan(),
-          title: Text('菜单'),
-        ),
-        BottomNavigationBarItem(
-          icon: iconorder(),
-          title: Text('订单'),
-        ),
-        BottomNavigationBarItem(
-          icon: icongouwuche(),
-          title: Text('购物车'),
-        ),
-        BottomNavigationBarItem(
-          icon: iconmine(),
-          title: Text('我的'),
-        ),  
-      ],
-      unselectedFontSize: 10, // 未选中字体大小
-      selectedFontSize: 10, // 选中字体大小
-      selectedItemColor: rgba(43, 76, 126, 1), // 选中字体颜色
-      onTap: (index) {
-        widget.onChange(index);
+    return Theme(
+      data: ThemeData(
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent
+      ),
+      child: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _currentIndex,
+        items: [
+          BottomNavigationBarItem(
+            icon: iconlogoNotText(),
+            title: Text('首页'),
+          ),
+          BottomNavigationBarItem(
+            icon: iconcaidan(),
+            title: Text('菜单'),
+          ),
+          BottomNavigationBarItem(
+            icon: iconorder(),
+            title: Text('订单'),
+          ),
+          BottomNavigationBarItem(
+            icon: icongouwuche(),
+            title: Text('购物车'),
+          ),
+          BottomNavigationBarItem(
+            icon: iconmine(),
+            title: Text('我的'),
+          ),  
+        ],
+        unselectedFontSize: 10, // 未选中字体大小
+        selectedFontSize: 10, // 选中字体大小
+        selectedItemColor: rgba(43, 76, 126, 1), // 选中字体颜色
+        onTap: (index) {
+          widget.onChange(index);
 
-        setState(() {
-          _currentIndex = index;
-        });
-      },
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+      ),
     );
   }
 }

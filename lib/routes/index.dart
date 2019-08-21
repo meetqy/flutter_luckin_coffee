@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/pages/login/LoginMethod.dart';
 import 'package:flutter_luckin_coffee/pages/login/LoginPhone.dart';
 import 'package:flutter_luckin_coffee/pages/login/UserAgreement.dart';
+import 'package:flutter_luckin_coffee/pages/order/OrderConfirm.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderEvaluation.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';
@@ -15,6 +16,7 @@ class Router {
     '/login_phone': (BuildContext context) => LoginPhone(),
     '/user_agreement': (BuildContext context) => UserAgreement(),
     '/order_evaluation': (BuildContext context) => OrderEvaluation(),
+    '/order_confirm': (BuildContext context) => OrderConfirm(),
   };
   static final Router _singleton = Router._internal();
 

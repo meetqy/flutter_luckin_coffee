@@ -1,13 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-15 15:01:35
+ * @lastTime: 2019-08-21 10:28:36
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
+import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
 
 import 'widgets/HomeIcon.dart';
@@ -68,39 +69,7 @@ class _HomeState extends State<Home> {
           child: Column(children: <Widget>[
             HomeRow('火车南站', '距您52m', 
               titleBold: false,
-              right: Container(
-                padding: EdgeInsets.all(3),
-                width: 90,
-                height: 36,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1,color: rgba(136, 175, 213, 1)),
-                  borderRadius: BorderRadius.circular(18)
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(
-                      width: 44,
-                      height: 30,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: rgba(136, 175, 213, 1),
-                        borderRadius: BorderRadius.circular(15)
-                      ),
-                      child: Text('自提', style: TextStyle(color: rgba(255, 255, 255, 1),fontSize: 12),)
-                    ),
-                    Container(
-                      height: 30,
-                      margin: EdgeInsets.only(right: 9),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15)
-                      ),
-                      child: Text('外送', style: TextStyle(color: rgba(136, 175, 213, 1),fontSize: 12),)
-                    )
-                  ],
-                )
-              ),
+              right: new TakeOutBtn()
             ),
             HomeRow('现在下单', 'ORDER NOW', 
               right: HomeIcon(

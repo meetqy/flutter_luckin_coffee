@@ -21,7 +21,7 @@ class HomeRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => onPress != null ? (){} : onPress(),
+      onTap: () => onPress == null ? (){} : onPress(),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15),
         height: 70,

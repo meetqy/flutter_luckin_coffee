@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:39:22
- * @lastTime: 2019-08-22 15:41:48
+ * @lastTime: 2019-08-22 15:59:06
  * @LastEditors: meetqy
  */
 
@@ -21,19 +21,14 @@ class NavBottomBar extends StatefulWidget {
   /// ```
   NavBottomBar(this.initRoute, this.onChange);
 
-
   _NavBottomBarState createState() => _NavBottomBarState();
 }
 
 class _NavBottomBarState extends State<NavBottomBar> {
   static int _currentIndex = 0;  // 当前导航的索引
-  static bool flag = true;  // 判断是否需要初始化导航
 
   // 初始化导航
-  // flag = true 代表第一次加载导航需要初始化导航
   _initIndex() {
-    if(!flag) return ;
-    flag = false;
     setState(() {
       _currentIndex = widget.initRoute;
     });

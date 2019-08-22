@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-22 17:11:27
+ * @lastTime: 2019-08-22 17:13:40
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -19,6 +19,10 @@ flutter实战demo，仿luckin coffee。
 > luckin coffee在网上能搜索到原型+设计图好像是开源的，为了方便。[luckin coffee原型+设计图](https://www.xiaopiu.com/user?uid=5d478fe8174ff47f357b8b00&tab=collectProject&libPop=project&libId=5c306b252d5cd56e70a1e640)
 
 ##### - 注： 正常下单请到luckin coffee官方客户端
+
+## 安卓扫描二维码下载
+
+![](./Android.png)
 
 ## version
 
@@ -71,10 +75,6 @@ Tools • Dart 2.4.0
 ## backlog
 
 [v1.0.0 静态界面开发（不包括动画交互，不包括赠送好友优惠券模块）](./readme/backlog/v1.0.0.md)
-
-## 安卓扫描二维码下载
-
-![](./Android.png)
 
 ## 开发规范
 

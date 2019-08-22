@@ -1,13 +1,12 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-22 16:49:28
+ * @lastTime: 2019-08-22 16:51:46
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';

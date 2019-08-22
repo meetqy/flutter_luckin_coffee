@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-20 15:51:04
+ * @lastTime: 2019-08-22 09:11:47
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -14,7 +14,7 @@ flutter实战demo，仿luckin coffee。
 
 > 了解到了flutter这个框架，并且和rn和uniapp的实现跨平台的思路完全不一样。做了一些demo之后，感觉挺有意思的，所以想做一个完整的项目，体验学习一下。
 
-- 为什么用luckin coffee？不知道这算不算侵权
+- 为什么用luckin coffee？
 
 > luckin coffee在网上能搜索到原型+设计图好像是开源的，为了方便。[luckin coffee原型+设计图](https://www.xiaopiu.com/user?uid=5d478fe8174ff47f357b8b00&tab=collectProject&libPop=project&libId=5c306b252d5cd56e70a1e640)
 

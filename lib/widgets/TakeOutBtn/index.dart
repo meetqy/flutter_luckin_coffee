@@ -1,8 +1,9 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
-/// 自提或则外送按钮
+
 class TakeOutBtn extends StatelessWidget {
+  /// 自提或则外送按钮
   const TakeOutBtn({
     Key key,
   }) : super(key: key);

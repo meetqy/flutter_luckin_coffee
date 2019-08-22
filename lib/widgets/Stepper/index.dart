@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class CustomStepper extends StatelessWidget {
+  /// 步进器  
+  /// 大概样子：- 1 +
   const CustomStepper({
     Key key,
   }) : super(key: key);

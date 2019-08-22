@@ -80,14 +80,14 @@ class Button extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          Container(child: icon),
-          Container(
-            margin: EdgeInsets.only(left: marginLeft),
-            child: Text(text, style: TextStyle(
-              color: color == null ? rgba(255, 255, 255, 1) : color,
-              fontSize: fontSize
-            ),),
-          )
+            Container(child: icon),
+            Container(
+              margin: EdgeInsets.only(left: marginLeft),
+              child: Text(text, style: TextStyle(
+                color: color == null ? rgba(255, 255, 255, 1) : color,
+                fontSize: fontSize
+              ),),
+            )
         ],),
       ),
       onTap: () => onPress == null ? (){} : onPress(),

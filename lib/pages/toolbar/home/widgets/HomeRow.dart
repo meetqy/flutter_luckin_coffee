@@ -7,18 +7,22 @@ class HomeRow extends StatelessWidget {
   final Widget right;
   final bool titleBold;
   final bool bottomBorder;
+  final Function onPress;
 
 
   /// Home公用行
   HomeRow(this.title, this.desc, {
     this.right,
     this.titleBold = true,
-    this.bottomBorder = true
+    this.bottomBorder = true,
+    this.onPress
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return InkWell(
+      onTap: () => onPress != null ? (){} : onPress(),
+      child: Container(
         padding: EdgeInsets.symmetric(vertical: 15),
         height: 70,
         decoration: BoxDecoration(
@@ -54,7 +58,8 @@ class HomeRow extends StatelessWidget {
             // 右边内容
             Container(child: right,)
         ],),
-      );
+      ),
+    );
   }
 }
 

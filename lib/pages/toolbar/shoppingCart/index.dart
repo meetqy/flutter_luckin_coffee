@@ -161,6 +161,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
                     fontWeight: FontWeight.bold
                   ),),
                 ),
+
+                onTap: () => Navigator.pushNamed(context, '/order_confirm'),
               )
             ],),
           ),

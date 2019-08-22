@@ -66,6 +66,7 @@ class OrderListRow extends StatelessWidget {
         border: Border.all(width: 1, color: rgba(255, 129, 2, 1)),
         paddingVertical: 4,
         paddingHorizontal: 5,
+        onPress: () => Navigator.pushNamed(context, '/order_confirm'),
       ),
     );
 

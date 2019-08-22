@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-21 10:28:36
+ * @lastTime: 2019-08-22 15:24:53
  * @LastEditors: meetqy
  */
 
@@ -76,6 +76,7 @@ class _HomeState extends State<Home> {
                 icontupian3(size: 20, color: rgba(104, 68, 60, 1)),
                 margin: EdgeInsets.only(left: 2),
               ),
+              onPress: () => {}
             ),
             HomeRow('咖啡钱包', 'COFFRR WALLET',
               right: HomeIcon(

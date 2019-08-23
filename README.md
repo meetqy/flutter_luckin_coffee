@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-22 17:13:40
+ * @lastTime: 2019-08-23 11:44:23
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -102,4 +102,5 @@ Tools • Dart 2.4.0
 
 更多预览图请到[readme/images](./readme/images)下查看。
 
-<img src="./readme/images/1.gif" width="375"/>
+<!-- <img src="./readme/images/1.gif" width="375"/> -->
+<video src='./readme/images/4.mp4' width='375'>

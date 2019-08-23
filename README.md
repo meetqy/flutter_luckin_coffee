@@ -102,5 +102,4 @@ Tools • Dart 2.4.0
 
 更多预览图请到[readme/images](./readme/images)下查看。
 
-<!-- <img src="./readme/images/1.gif" width="375"/> -->
-[![Watch the video](./readme/images/4.mp4)
+<img src="./readme/images/1.gif" width="375"/>

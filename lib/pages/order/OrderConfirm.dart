@@ -19,9 +19,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
         title: '确认订单',
         context: context
       ),
-      /// TODO: 待解决
-      /// 曲面屏兼容问题，固定在最底部，
-      /// 使用SafeArea底部会空出来
+      /// TODO: 待解决：曲面屏兼容问题，固定在最底部，使用SafeArea底部会空出来
       body: SafeArea(
         child: Stack(
           children: <Widget>[
@@ -139,32 +137,37 @@ class _OrderConfirmState extends State<OrderConfirm> {
                         ),
 
                         // 使用优惠
-                        Container(
-                          padding: EdgeInsets.symmetric(vertical: 14),
-                          decoration: BoxDecoration(
-                            border: ui.borderBottom()
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(children: <Widget>[
-                                Text('使用优惠券', style: TextStyle(
-                                  color: rgba(136, 175, 213, 1),
-                                  fontSize: 14
-                                ),),
-                              ],),
-                              Row(children: <Widget>[
-                                Text('1个可用', style: TextStyle(
-                                  fontSize: 14,
-                                  color: rgba(255, 141, 26, 1)
-                                ),),
-                                Container(
-                                  margin: EdgeInsets.only(left: 5),
-                                  child: icontupian6(color: rgba(228, 228, 228, 1), size: 16)
-                                )
-                              ],)
-                          ],),
-                        ), 
+                        InkWell(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 14),
+                            decoration: BoxDecoration(
+                              border: ui.borderBottom()
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Row(children: <Widget>[
+                                  Text('使用优惠券', style: TextStyle(
+                                    color: rgba(136, 175, 213, 1),
+                                    fontSize: 14
+                                  ),),
+                                ],),
+                                Row(children: <Widget>[
+                                  Text('1个可用', style: TextStyle(
+                                    fontSize: 14,
+                                    color: rgba(255, 141, 26, 1)
+                                  ),),
+                                  Container(
+                                    margin: EdgeInsets.only(left: 5),
+                                    child: icontupian6(color: rgba(228, 228, 228, 1), size: 16)
+                                  )
+                                ],)
+                            ],),
+                          ), 
+                          onTap: () {
+                            Navigator.pushNamed(context, '/coupon');
+                          },
+                        ),
 
                         // 支付方式
                         Container(

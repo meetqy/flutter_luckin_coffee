@@ -86,7 +86,10 @@ class _MineState extends State<Mine> {
                     color: rgba(220, 220, 220, 1), size: 20
                   ),
                 )),
-              MineRow('优惠券', icon: icontupian7(color: rgba(220, 220, 220, 1), size: 20),),
+              MineRow('优惠券', 
+                icon: icontupian7(color: rgba(220, 220, 220, 1), size: 20),
+                onPress: () => Navigator.pushNamed(context, '/coupon'),
+              ),
               MineRow('兑换优惠', icon: icontupian15(color: rgba(220, 220, 220, 1), size: 20),),
               MineRow('发票管理', 
                 icon: icontupian9(color: rgba(220, 220, 220, 1), size: 20),
@@ -122,38 +125,43 @@ class MineRow extends StatelessWidget {
   final Widget icon;
   final String text;
   final bool borderBottom;
+  final Function onPress;
 
   MineRow(this.text, {
     this.icon,
-    this.borderBottom = true
+    this.borderBottom = true,
+    this.onPress
   }) : assert(icon != null);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 51,
-      decoration: BoxDecoration(
-        border: ui.borderBottom(show: borderBottom),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Row(children: <Widget>[
-            Container(
-              width: 35,
-              alignment: Alignment.centerLeft,
-              child: icon
-            ),
-            Text(text, style: TextStyle(
-              color: rgba(56, 56, 56, 1),
-              fontSize: 14
-            ),)
-          ],),
+    return InkWell(
+      child: Container(
+        height: 51,
+        decoration: BoxDecoration(
+          border: ui.borderBottom(show: borderBottom),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Row(children: <Widget>[
+              Container(
+                width: 35,
+                alignment: Alignment.centerLeft,
+                child: icon
+              ),
+              Text(text, style: TextStyle(
+                color: rgba(56, 56, 56, 1),
+                fontSize: 14
+              ),)
+            ],),
 
-          icontupian6(color: rgba(228, 228, 228, 1), size: 14)
-        
-      ],),
+            icontupian6(color: rgba(228, 228, 228, 1), size: 14)
+          
+        ],),
+      ),
+      onTap: () => onPress == null ? (){} : onPress(),
     );
   }
 }

@@ -228,3 +228,9 @@ Icon icontupian21({double size = 18.0, Color color}) => Icon(
   color: color,
 );
 
+Icon icontubiao3({double size = 18.0, Color color}) => Icon(
+  IconData(0xe621, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+

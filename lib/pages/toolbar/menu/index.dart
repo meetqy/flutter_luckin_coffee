@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-20 17:23:53
+ * @lastTime: 2019-08-23 11:21:25
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -15,9 +15,6 @@ import 'widgets/ClassifyDesc.dart';
 import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';
 
-/// TODO: 待解决：有时候滚动不流畅
-/// TODO: 待解决：右边商品滑动，左侧菜单不跟随
-/// TODO: 滚动高度适配问题
 class Menu extends StatefulWidget {
   static _MenuState _menuState;
 
@@ -31,82 +28,24 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  ScrollController _outController;          // 外层ScrollController
-  ScrollController _goodsController;        // 商品列表ScrollController
-  static double appbarHeight = 0;           // appbar高度
-  static double listViewHeight = 0;         // 菜单ListView的高度
-  static double goodsViewWidth = 0;         // 右侧商品宽度
-  static double swiperOpacity = 1;          // swiper透明度
   static int currentActive = 1;             // 当前选中的菜单
-  static bool isInnerScroll = false; 
-  static double outMaxScrollExtent = 0;
-  static AppBar appBar;
+  static double _nestedScrollOffet = 0;
+
+  final ScrollController _nestedScrollController = new ScrollController();
 
   AppBar createAppBar() {
-    if(appBar == null) {
-      appBar = customAppbar(title: '选择咖啡和小食');
-    }
-    return appBar;
+    return null;
   }
 
   @override
   void initState() {
-    appbarHeight = widget.getAppBar().preferredSize.height - 1;
-    _outController = ScrollController();
-    _outController.addListener(_outScrollListener);
-    _goodsController = ScrollController();
-    _goodsController.addListener(_goodsScrollListener);
-
-    new Future.delayed(Duration.zero,() {
+    _nestedScrollController.addListener(() {
       setState(() {
-        swiperOpacity = 1;
-        isInnerScroll = false;
-        goodsViewWidth = screenWidth(context) - 90;
-        listViewHeight = screenHeight(context) - appbarHeight - 130;
+        _nestedScrollOffet = _nestedScrollController.offset;
       });
     });
 
     super.initState();
-  }
-
-  /// 监听外部滚动
-  void _outScrollListener() {
-    _setSwiperOpacity();
-    if(outMaxScrollExtent == 0){
-      outMaxScrollExtent =  _outController.position.maxScrollExtent;
-    } 
-
-    if(_outController.offset >= num.parse('$outMaxScrollExtent')) {
-      setState(() {
-        isInnerScroll = true;
-      });
-      _outController.jumpTo(outMaxScrollExtent);
-    } 
-  }
-
-  /// 监听商品滚动
-  void _goodsScrollListener() {
-    // print({
-    //   "offset": _goodsController.offset,
-    //   "maxScrollExtent": _goodsController.position.maxScrollExtent,
-    //   "outOfRange": _goodsController.position.outOfRange
-    // });
-
-    if(_goodsController.offset <= 0) {
-      setState(() {
-        isInnerScroll = false;
-      });
-      _goodsController.jumpTo(0);
-    }
-  }
-
-  /// 设置swiper根据滚动条显示
-  void _setSwiperOpacity() {
-    var calcOpacity = ((_outController.position.pixels - 130) / 100).abs();
-
-    setState(() {
-      swiperOpacity = calcOpacity >= 1 ? 1 : calcOpacity;
-    });
   }
 
   /// 创建菜单列表
@@ -174,59 +113,74 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      controller: _outController,
-      child: ConstrainedBox(
-        constraints: BoxConstraints(
-          // maxHeight: MediaQuery.of(context).size.height-24-56-56
-        ),
-
-        child: Column(children: <Widget>[
-          InkWell(
-            child: Opacity(
-              opacity: swiperOpacity,  
-              child: CustomSwiper([
-                'lib/assets/images/menu/swiper1.jpg',
-                'lib/assets/images/menu/swiper2.png',
-              ], height: 130),
-            ),
-            onTap: () {
-              
-            },
-          ),
-          
-          SizedBox(
-            height: screenHeight(context) - 56 - 56 - 24,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                // 左侧菜单列表
-                Container(
-                  width: 90,
-                  color: rgba(248, 248, 248, 1),
-                  child: ListView(
-                    physics: ClampingScrollPhysics(),
-                    children: createMenuList(menuList),
+    return SafeArea(
+      child: NestedScrollView(
+        controller: _nestedScrollController,
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget> [
+            SliverAppBar(
+              expandedHeight: 186,
+              pinned: true,
+              floating: false,
+              elevation: 0,
+              bottom: PreferredSize(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: ui.borderBottom()
                   ),
                 ),
-
-                // 右侧商品列表
-                Container(
-                  width: goodsViewWidth,
-                  padding: EdgeInsets.symmetric(horizontal: 14),
-                  child: ListView(
-                    controller: _goodsController,
-                    physics: isInnerScroll ? BouncingScrollPhysics() : NeverScrollableScrollPhysics(),
-                    children: createGoodsList(goodsList),
+                preferredSize: Size.fromHeight(0),
+              ),
+              title: Text('选择咖啡和小食', style: TextStyle(
+                color: rgba(56, 56, 56, 1),
+                fontSize: 16,
+                fontWeight: FontWeight.bold
+              ),),
+              backgroundColor: Colors.white,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Container(
+                  margin: EdgeInsets.only(top: 56),
+                  child: InkWell(
+                    child: Opacity(
+                      opacity: 1,  
+                      child: CustomSwiper([
+                          'lib/assets/images/menu/swiper1.jpg',
+                          'lib/assets/images/menu/swiper2.png',
+                        ], height: 130),
+                    ),
+                    onTap: () {
+                      
+                    },
                   ),
-                )
-            ],),
-          )
-        ],),
-      )
+                ),
+              )
+            )
+          ];
+        },
+        body: Container(
+          padding: EdgeInsets.only(top: _nestedScrollOffet >= 130 ? (_nestedScrollOffet - 130) : 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              // 左侧菜单列表
+              Container(
+                width: 90,
+                color: rgba(248, 248, 248, 1),
+                child: Column(children: createMenuList(menuList),),
+              ),
+
+              // 右侧商品列表
+              Container(
+                width: screenWidth(context) - 90,
+                padding: EdgeInsets.symmetric(horizontal: 14),
+                child: ListView(
+                  physics: _nestedScrollOffet >= 130 ? BouncingScrollPhysics() : ClampingScrollPhysics(),
+                  children: createGoodsList(goodsList),
+                ),
+              )
+          ],),
+        ),
+      ),
     );
   }
 }
-
-
-

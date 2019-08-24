@@ -234,3 +234,27 @@ Icon icontubiao3({double size = 18.0, Color color}) => Icon(
   color: color,
 );
 
+Icon icontubiao4({double size = 18.0, Color color}) => Icon(
+  IconData(0xe622, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontubiao5({double size = 18.0, Color color}) => Icon(
+  IconData(0xe623, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontubiao6({double size = 18.0, Color color}) => Icon(
+  IconData(0xe624, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
+Icon icontupian22({double size = 18.0, Color color}) => Icon(
+  IconData(0xe625, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+

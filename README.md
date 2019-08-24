@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-23 17:21:43
+ * @lastTime: 2019-08-24 13:31:26
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -65,10 +65,11 @@ Tools • Dart 2.4.0
 - [x] 确认订单
 - [x] 我的
 - [x] 使用优惠券
-- [ ] 备注特殊要求
+- [x] 备注特殊要求
 - [ ] 选择区号
-- [ ] 门店自取
-- [ ] 门店详情
+- [x] 门店自取
+- [x] 门店详情
+- [ ] 订单详情
 - [ ] 取餐码
 
 ## backlog

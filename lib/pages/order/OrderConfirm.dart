@@ -203,15 +203,18 @@ class _OrderConfirmState extends State<OrderConfirm> {
                     margin: EdgeInsets.only(top: 10),
                     padding: EdgeInsets.symmetric(horizontal: 15),
                     color: hex('#fff'),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                      Text('备注特殊要求', style: TextStyle(
-                        fontSize: 14,
-                        color: rgba(56, 56, 56, 1)
-                      ),),
-                      icontupian6(color: rgba(228, 228, 228, 1), size: 16)
-                    ],),
+                    child: InkWell(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                        Text('备注特殊要求', style: TextStyle(
+                          fontSize: 14,
+                          color: rgba(56, 56, 56, 1)
+                        ),),
+                        icontupian6(color: rgba(228, 228, 228, 1), size: 16)
+                      ],),
+                      onTap: () => Navigator.pushNamed(context, '/order_remark'),
+                    ),
                   ),
 
                   // 协议
@@ -383,25 +386,30 @@ class _OrderConfirmState extends State<OrderConfirm> {
               ),),
             ],
           ),
-          Container(
-            margin: EdgeInsets.only(top: 8),
-            child: Row(
-              children: <Widget>[
-                Text('青年汇店(No.1795)', style: TextStyle(
-                  color: rgba(56, 56, 56, 1),
-                  fontSize: 15,
-                ),),
-              ],
-            ),
-          ),
-          Row(
-            children: <Widget>[
-              Text('朝阳区朝阳北路青年汇102号楼一层123室', style: TextStyle(
-                color: rgba(56, 56, 56, 1),
-                fontSize: 12,
-              ),),
-            ],
-          ),
+          InkWell(
+            onTap: () => Navigator.pushNamed(context, '/self_store'),
+            child: Column(children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(top: 8),
+                child: Row(
+                  children: <Widget>[
+                    Text('青年汇店(No.1795)', style: TextStyle(
+                      color: rgba(56, 56, 56, 1),
+                      fontSize: 15,
+                    ),),
+                  ],
+                ),
+              ),
+              Row(
+                children: <Widget>[
+                  Text('朝阳区朝阳北路青年汇102号楼一层123室', style: TextStyle(
+                    color: rgba(56, 56, 56, 1),
+                    fontSize: 12,
+                  ),),
+                ],
+              ),
+            ],),
+          )
         ],
       ),
     );

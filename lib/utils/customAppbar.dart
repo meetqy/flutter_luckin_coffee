@@ -14,6 +14,7 @@ AppBar customAppbar({
   BuildContext context,
   String title = '',
   bool borderBottom = true,
+  List actions
 }) {
   return AppBar(
     centerTitle: true,
@@ -36,5 +37,6 @@ AppBar customAppbar({
       ),
       preferredSize: Size.fromHeight(0),
     ),
+    actions: actions,
   );
 }

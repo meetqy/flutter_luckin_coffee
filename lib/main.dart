@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: router.getRoutes(),
-      initialRoute: '/store_detail',
+      initialRoute: '/order_detail',
       onGenerateRoute: handleRoute
     );
   }

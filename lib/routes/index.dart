@@ -4,6 +4,7 @@ import 'package:flutter_luckin_coffee/pages/login/LoginMethod.dart';
 import 'package:flutter_luckin_coffee/pages/login/LoginPhone.dart';
 import 'package:flutter_luckin_coffee/pages/login/UserAgreement.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderConfirm.dart';
+import 'package:flutter_luckin_coffee/pages/order/OrderDetail.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderEvaluation.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderRemark.dart';
 import 'package:flutter_luckin_coffee/pages/selfstore/index.dart';
@@ -20,6 +21,7 @@ class Router {
     '/order_evaluation': (BuildContext context) => OrderEvaluation(),
     '/order_confirm': (BuildContext context) => OrderConfirm(),
     '/order_remark': (BuildContext context) => OrderRemark(),
+    '/order_detail': (BuildContext context) => OrderDetail(),
     '/coupon': (BuildContext context) => Coupon(),
     '/self_store': (BuildContext context) => SelfStore(),
     '/store_detail': (BuildContext context) => StoreDetail(),

@@ -14,6 +14,7 @@ class Button extends StatelessWidget {
   final double marginLeft;
   final double width;
   final double height;
+  final FontWeight fontWeight;
 
   /// 公用button
   /// 
@@ -42,7 +43,8 @@ class Button extends StatelessWidget {
     this.fontSize = 12,
     this.marginLeft = 5,
     this.width,
-    this.height
+    this.height,
+    this.fontWeight
   }) : assert(text != null);
 
   
@@ -60,7 +62,8 @@ class Button extends StatelessWidget {
     this.fontSize = 16,
     this.marginLeft = 0,
     this.height = 44,
-    this.width = 300
+    this.width = 300,
+    this.fontWeight
   }) : assert(text != null);
 
   @override
@@ -85,7 +88,8 @@ class Button extends StatelessWidget {
               margin: EdgeInsets.only(left: marginLeft),
               child: Text(text, style: TextStyle(
                 color: color == null ? rgba(255, 255, 255, 1) : color,
-                fontSize: fontSize
+                fontSize: fontSize,
+                fontWeight: fontWeight == null ? FontWeight.normal : fontWeight
               ),),
             )
         ],),

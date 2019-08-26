@@ -312,6 +312,11 @@ class _OrderConfirmState extends State<OrderConfirm> {
                           fontWeight: FontWeight.bold
                         ),),
                       ),
+                      onTap: () => Navigator.pushNamed(context, '/order_detail', 
+                        arguments: {
+                          "status": 1                 
+                        }
+                      ),
                     )
                   ],
                 ),

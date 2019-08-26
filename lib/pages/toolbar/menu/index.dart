@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-23 11:21:25
+ * @lastTime: 2019-08-26 15:04:51
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -15,6 +15,7 @@ import 'widgets/ClassifyDesc.dart';
 import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';
 
+/// TODO: 待完成：点击左侧菜单，右侧商品列表跳转
 class Menu extends StatefulWidget {
   static _MenuState _menuState;
 

@@ -5,14 +5,29 @@ import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class OrderDetail extends StatefulWidget {
+  final Map args;
 
-  OrderDetail();
+  OrderDetail({
+    this.args
+  });
 
   _OrderDetailState createState() => _OrderDetailState();
 }
 
 class _OrderDetailState extends State<OrderDetail> {
-  /// 下单成功
+  static Map args;
+
+  @override
+  void initState() { 
+    super.initState();
+
+    setState(() {
+      args = widget.args;
+    });
+  }
+
+  /// 下单成功 
+  /// status 1
   buySuccess() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 30),
@@ -103,6 +118,7 @@ class _OrderDetailState extends State<OrderDetail> {
   }
 
   /// 待付款
+  /// status 2
   waitPayment() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 30),
@@ -172,9 +188,20 @@ class _OrderDetailState extends State<OrderDetail> {
     );
   }
 
+  /// 返回对应的page
+  returnPage() {
+    if(args['status'] == 1) {
+      return buySuccess();
+    } else if(args['status'] == 2) {
+      return waitPayment();
+    }
+    
+    return Container();
+  }
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: customAppbar(
         title: '订单详情',
@@ -196,7 +223,7 @@ class _OrderDetailState extends State<OrderDetail> {
           child: Column(
             children: <Widget>[
               // module1
-              waitPayment(),
+              returnPage(),
 
               // module2
               Container(

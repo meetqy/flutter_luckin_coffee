@@ -10,6 +10,7 @@ class OrderListRow extends StatelessWidget {
   final String orderNum;
   final String time;
   final double price;
+  final Function onPress;
 
 
   /// 创建订单列表信息
@@ -26,7 +27,8 @@ class OrderListRow extends StatelessWidget {
     this.goodsName,
     this.orderNum,
     this.time,
-    this.price
+    this.price,
+    this.onPress
   });
 
 
@@ -99,70 +101,73 @@ class OrderListRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 12),
-      height: 160,
-      color: hex('#fff'),
-      child: Column(children: <Widget>[
-        Container(
-          padding: EdgeInsets.only(bottom: 10),
-          decoration: BoxDecoration(
-            border: ui.borderBottom()
+    return InkWell(
+      onTap: () => onPress == null ? (){} : onPress(),
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 12),
+        height: 160,
+        color: hex('#fff'),
+        child: Column(children: <Widget>[
+          Container(
+            padding: EdgeInsets.only(bottom: 10),
+            decoration: BoxDecoration(
+              border: ui.borderBottom()
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text('外卖订单：$orderNum', style: TextStyle(
+                  color: rgba(166, 166, 166, 1),
+                  fontSize: 13
+                ),),
+                textStatus()
+            ],),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text('外卖订单：$orderNum', style: TextStyle(
-                color: rgba(166, 166, 166, 1),
-                fontSize: 13
-              ),),
-              textStatus()
-          ],),
-        ),
 
-        Container(
-          margin: EdgeInsets.only(top: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text('$address...', style: TextStyle(
-                color: rgba(56, 56, 56, 1),
-                fontSize: 15,
-                fontWeight: FontWeight.bold
-              ),),
-              Text('$time', style: TextStyle(
-                fontSize: 12,
-                color: rgba(166, 166, 166, 1)
-              ),)
-          ],),
-        ),
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text('$address...', style: TextStyle(
+                  color: rgba(56, 56, 56, 1),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold
+                ),),
+                Text('$time', style: TextStyle(
+                  fontSize: 12,
+                  color: rgba(166, 166, 166, 1)
+                ),)
+            ],),
+          ),
 
-        Row(children: <Widget>[
-          Text('$goodsName等   共1件商品', style: TextStyle(
-            color: rgba(80, 80, 80, 1),
-            fontSize: 13,
-          ),),
+          Row(children: <Widget>[
+            Text('$goodsName等   共1件商品', style: TextStyle(
+              color: rgba(80, 80, 80, 1),
+              fontSize: 13,
+            ),),
+          ],),
+
+
+          Container(
+            margin: EdgeInsets.only(top: 25),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text('¥$price', style: TextStyle(
+                  color: rgba(56, 56, 56, 1),
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold
+                ),),
+                Row(children: buttonStatus(context))
+            ],),
+          ),
+
+
         ],),
-
-
-        Container(
-          margin: EdgeInsets.only(top: 25),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text('¥$price', style: TextStyle(
-                color: rgba(56, 56, 56, 1),
-                fontSize: 14,
-                fontWeight: FontWeight.bold
-              ),),
-              Row(children: buttonStatus(context))
-          ],),
-        ),
-
-
-      ],),
+      ),
     );
   }
 }

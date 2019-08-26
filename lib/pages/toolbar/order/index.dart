@@ -2,7 +2,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/order/widgets/OrderListRow.dart';
 
-/// TODO: 待完成：点击左侧菜单，右侧商品列表跳转
+
 
 
 class Order extends StatefulWidget {
@@ -83,6 +83,12 @@ class _OrderState extends State<Order> with TickerProviderStateMixin{
                 goodsName: '榛果拿铁',
                 price: 20,
                 time: '2019-01-08 08:05',
+                onPress: () => Navigator.pushNamed(context, 
+                  '/order_detail',
+                  arguments: {
+                    "status": 2
+                  } 
+                )
               ),
               OrderListRow(2, 
                 orderNum: '23847563928174',

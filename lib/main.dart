@@ -27,15 +27,10 @@ class MyApp extends StatelessWidget {
           highlightColor: rgba(0, 0, 0, 0),
         ),
       ),
-      routes: router.getRoutes(),
-      initialRoute: '/dining_code',
-      onGenerateRoute: handleRoute
+      initialRoute: '/order_confirm',
+      onGenerateRoute: router.getRoutes,
+
     );
   }
-}
-
-
-Route<dynamic> handleRoute(RouteSettings settings) {
-  print(settings);
-  return null;
+  
 }

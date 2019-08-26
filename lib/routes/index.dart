@@ -15,28 +15,42 @@ import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 class Router {
   static final _routes = {    
-    '/': (BuildContext context) => Toolbar(routeName: '/home'),
-    '/login_method': (BuildContext context) => LoginMethod(),
-    '/login_phone': (BuildContext context) => LoginPhone(),
-    '/user_agreement': (BuildContext context) => UserAgreement(),
-    '/order_evaluation': (BuildContext context) => OrderEvaluation(),
-    '/order_confirm': (BuildContext context) => OrderConfirm(),
-    '/order_remark': (BuildContext context) => OrderRemark(),
-    '/order_detail': (BuildContext context) => OrderDetail(),
-    '/coupon': (BuildContext context) => Coupon(),
-    '/self_store': (BuildContext context) => SelfStore(),
-    '/store_detail': (BuildContext context) => StoreDetail(),
-    '/dining_code': (BuildContext context) => DiningCode(),
+    '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/home'),
+    '/login_method': (BuildContext context, { Object args }) => LoginMethod(),
+    '/login_phone': (BuildContext context, { Object args }) => LoginPhone(),
+    '/user_agreement': (BuildContext context, { Object args }) => UserAgreement(),
+    '/order_evaluation': (BuildContext context, { Object args }) => OrderEvaluation(),
+    '/order_confirm': (BuildContext context, { Object args }) => OrderConfirm(),
+    '/order_remark': (BuildContext context, { Object args }) => OrderRemark(),
+    '/order_detail': (BuildContext context, { Object args }) => OrderDetail(args: args,),
+    '/coupon': (BuildContext context, { Object args }) => Coupon(),
+    '/self_store': (BuildContext context, { Object args }) => SelfStore(),
+    '/store_detail': (BuildContext context, { Object args }) => StoreDetail(),
+    '/dining_code': (BuildContext context, { Object args }) => DiningCode(),
   };
-  static final Router _singleton = Router._internal();
+
+  static Router _singleton;
 
   Router._internal();
 
   factory Router() {
+    if(_singleton == null) {
+      _singleton = Router._internal();
+    }
+
     return _singleton;
   }
 
-  getRoutes() {
-    return _routes;
+  Route getRoutes(RouteSettings settings) {
+    final Function builder = Router._routes[settings.name];
+
+    if(builder == null) {
+      return null;
+    } else {
+      return MaterialPageRoute(
+        settings: settings, 
+        builder: (BuildContext context) => builder(context, args: settings.arguments)
+      );
+    }
   }
 }

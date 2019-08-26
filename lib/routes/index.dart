@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
+import 'package:flutter_luckin_coffee/pages/diningcode/DiningCode.dart';
 import 'package:flutter_luckin_coffee/pages/login/LoginMethod.dart';
 import 'package:flutter_luckin_coffee/pages/login/LoginPhone.dart';
 import 'package:flutter_luckin_coffee/pages/login/UserAgreement.dart';
@@ -25,6 +26,7 @@ class Router {
     '/coupon': (BuildContext context) => Coupon(),
     '/self_store': (BuildContext context) => SelfStore(),
     '/store_detail': (BuildContext context) => StoreDetail(),
+    '/dining_code': (BuildContext context) => DiningCode(),
   };
   static final Router _singleton = Router._internal();
 

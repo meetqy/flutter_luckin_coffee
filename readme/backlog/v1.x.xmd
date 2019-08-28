@@ -31,5 +31,5 @@
 
 ## 暂时不能解决的问题： 
 
-* 菜单页面，NestedScrollView里面使用ListView，对ListView增加controller会导致NestedScrollView失效。
-* 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。
+- 菜单页面，NestedScrollView里面使用ListView，对ListView增加controller会导致NestedScrollView失效。
+- 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。

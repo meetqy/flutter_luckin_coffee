@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-28 14:52:44
+ * @lastTime: 2019-08-28 15:15:09
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -82,7 +82,7 @@ Tools • Dart 2.4.0
 
 ## backlog
 
-[v1.0.0 静态界面开发（不包括动画交互，不包括赠送好友优惠券模块）](./readme/backlog/v1.0.0.md)
+[v1.x.x](./readme/backlog/v1.0.0.md)
 
 ## 开发规范
 

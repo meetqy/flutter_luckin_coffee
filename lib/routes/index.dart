@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/pages/choosephonecode/index.dart';
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
 import 'package:flutter_luckin_coffee/pages/diningcode/DiningCode.dart';
 import 'package:flutter_luckin_coffee/pages/login/LoginMethod.dart';
@@ -15,7 +16,7 @@ import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 class Router {
   static final _routes = {    
-    '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/home'),
+    '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/menu'),
     '/login_method': (BuildContext context, { Object args }) => LoginMethod(),
     '/login_phone': (BuildContext context, { Object args }) => LoginPhone(),
     '/user_agreement': (BuildContext context, { Object args }) => UserAgreement(),
@@ -27,6 +28,7 @@ class Router {
     '/self_store': (BuildContext context, { Object args }) => SelfStore(),
     '/store_detail': (BuildContext context, { Object args }) => StoreDetail(),
     '/dining_code': (BuildContext context, { Object args }) => DiningCode(),
+    '/choose_phone_code': (BuildContext context, { Object args }) => ChoosePhoneCode(),
   };
 
   static Router _singleton;

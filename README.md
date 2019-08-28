@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-26 17:42:41
+ * @lastTime: 2019-08-28 14:52:44
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -53,7 +53,7 @@ Tools • Dart 2.4.0
 
 - code review
 
-## 当前版本进度
+## 当前版本进度 - 完成所有页面的开发（不包括动画交互）
 
 - [x] 首页
 - [x] 登录
@@ -74,6 +74,11 @@ Tools • Dart 2.4.0
 - [x] 订单详情（下单成功）
 - [x] 订单详情（待付款）
 - [x] 取餐码
+
+暂时不能解决的问题： 
+
+* 菜单页面，NestedScrollView里面使用ListView，对ListView增加controller会导致NestedScrollView失效。
+* 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。
 
 ## backlog
 

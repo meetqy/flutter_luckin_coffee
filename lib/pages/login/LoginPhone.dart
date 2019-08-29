@@ -139,7 +139,7 @@ class _LoginPhoneState extends State<LoginPhone> {
               children: <Widget>[
                 Text('点击确定，即表示以阅读并同意', style: TextStyle(
                   fontSize: 12,
-                  color: rgba(128, 128, 128, 1)
+                  color: rgba(153, 153, 153, 1)
                 ),),
                 InkWell(
                   child: Text('《注册会员服务条款》', style: TextStyle(

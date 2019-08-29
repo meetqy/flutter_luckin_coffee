@@ -22,12 +22,12 @@ class MyApp extends StatelessWidget {
         ),
         
         // button去除点击后的背景，注意：对appbar中的的button无效
-        buttonTheme: ButtonThemeData(
-          splashColor: rgba(0, 0, 0, 0),
-          highlightColor: rgba(0, 0, 0, 0),
-        ),
+        // buttonTheme: ButtonThemeData(
+        //   splashColor: rgba(0, 0, 0, 0),
+        //   highlightColor: rgba(0, 0, 0, 0),
+        // ),
       ),
-      initialRoute: '/',
+      initialRoute: '/test_button',
       onGenerateRoute: router.getRoutes,
 
     );

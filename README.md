@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-28 15:45:56
+ * @lastTime: 2019-08-29 16:34:26
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -64,6 +64,7 @@ Tools • Dart 2.4.0
 
 > 以上是上个版本遗留的问题 ----------------------------
 
+- [ ] 通用颜色整理
 - [ ] 单选按钮交互动画实现及封装
 - [ ] 步进器的实现及封装
 - [ ] 常用文字 & 颜色 & 大小封装
@@ -101,7 +102,7 @@ Tools • Dart 2.4.0
 │   ├── utils                                   // 公用方法
 │   └── widgets                                 // 公用widge
 ├── readme                                      // README.md相关
-└── test                                        // 测试文件夹（后期可能会放在每个对应的page下面）
+└── test                                        // 测试文件夹
 ```
 
 ## 预览图

@@ -11,6 +11,7 @@ import 'package:flutter_luckin_coffee/pages/order/OrderEvaluation.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderRemark.dart';
 import 'package:flutter_luckin_coffee/pages/selfstore/index.dart';
 import 'package:flutter_luckin_coffee/pages/storedetail/index.dart';
+import 'package:flutter_luckin_coffee/pages/test/button.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 
@@ -29,6 +30,7 @@ class Router {
     '/store_detail': (BuildContext context, { Object args }) => StoreDetail(),
     '/dining_code': (BuildContext context, { Object args }) => DiningCode(),
     '/choose_phone_code': (BuildContext context, { Object args }) => ChoosePhoneCode(),
+    '/test_button': (BuildContext context, { Object args }) => TestButton(),
   };
 
   static Router _singleton;

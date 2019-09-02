@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-08-30 09:12:35
+ * @lastTime: 2019-09-02 16:10:09
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -69,7 +69,8 @@ Tools • Dart 2.4.0
 - [ ] 步进器的实现及封装
 - [ ] 常用文字 & 颜色 & 大小封装
 - [ ] 项目page目录的结构优化
-- [ ] 通用按钮的封装
+- [x] 通用按钮的封装
+- [x] 对封装的按钮写一个demo并编写文档
 - [ ] 关注 & 取消关注封装
 - [ ] 页面关联
 - [ ] 路由传参优化
@@ -82,6 +83,10 @@ Tools • Dart 2.4.0
 ## backlog
 
 [v1.x.x](./readme/backlog/v1.x.x.md)
+
+## 项目中所封装的组件
+
+- [Button](./lib/pages/test/button/readme.md)
 
 ## 开发规范
 

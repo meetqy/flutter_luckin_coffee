@@ -1,14 +1,14 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-02 15:39:16
+ * @lastTime: 2019-09-02 16:01:18
  * @LastEditors: meetqy
  -->
 # Button按钮
 
 对项目中使用的button按钮进行的一个封装。主要有3类普通按钮（normal）,icon按钮（icon），加载按钮（loading）。
 
-![](./button.PNG)
+<img src="./button.PNG" width="375"/>
 
 ## normal
 

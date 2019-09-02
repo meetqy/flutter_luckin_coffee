@@ -1,14 +1,14 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-02 16:18:27
+ * @lastTime: 2019-09-02 17:11:07
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
 
 flutter实战demo，仿luckin coffee。
 
-![flutter_luckin_coffee_logo](./readme/images/githead.png)
+![flutter_luckin_coffee_logo](./readme/images/githead1.png)
 
 ## 前言
 

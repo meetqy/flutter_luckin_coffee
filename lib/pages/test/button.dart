@@ -1,5 +1,6 @@
+import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/pages/test/button/Button.dart';
+import 'package:flutter_luckin_coffee/pages/test/button/index.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class TestButton extends StatefulWidget {
@@ -21,7 +22,22 @@ class _TestButtonState extends State<TestButton> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Button.normal(
-                  child: Text('1232'),
+                  width: 84,
+                  height: 32,
+                  bgColor: rgba(140, 172, 212, .3),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      iconsc(size: 14, color: rgba(140, 172, 212, 1)),
+                      Container(
+                        margin: EdgeInsets.only(left: 5),
+                        child: Text('加入收藏', style: TextStyle(
+                          color: rgba(136, 175, 213, 1),
+                          fontSize: 12
+                        ),),
+                      )
+                    ],
+                  ),
                   onPressed: (){}
                 )
               ],
@@ -31,9 +47,11 @@ class _TestButtonState extends State<TestButton> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Button.loading(
-                    width: 120,
+                  Button.icon(
+                    width: null,
                     type: 'warning',
+                    textChild: Text('加载中...', style: TextStyle(fontSize: 12),),
+                    icon: iconsc(size: 14, color: rgba(140, 172, 212, 1)),
                     onPressed: () {
                       
                     },

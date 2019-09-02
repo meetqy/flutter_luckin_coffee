@@ -36,13 +36,7 @@ class CustomButton {
     this.onPressed,
     Widget child
   }) {
-    var buttonColor = _getType();
-
-    _setColor(
-      color: color ?? buttonColor['color'],
-      bgColor: bgColor ?? buttonColor['bgColor'],
-      borderColor: borderColor ?? buttonColor['borderColor'],
-    );
+    _setColor();
 
     widget = _initNormal(child);
   }
@@ -52,9 +46,11 @@ class CustomButton {
       height: height,
       width: width,
       padding: EdgeInsets.all(0),
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(4),
-        border: plain ? Border.all(width: 1, color: _borderColor) : null
+        border: plain ? Border.all(width: 1, color: _borderColor) : null,
+        color: bgColor
       ),
       child: FlatButton(
         padding: EdgeInsets.all(0),
@@ -62,7 +58,56 @@ class CustomButton {
         textColor: _color,
         splashColor: onPressed == null ? Colors.transparent : null,
         highlightColor: onPressed == null ? Colors.transparent : null,
-        color: _bgColor,
+        disabledColor: _bgColor,
+        onPressed: onPressed == null ? (){} : onPressed,
+      ),
+    );
+  }
+
+  CustomButton.icon({
+    this.width,
+    this.height,
+    this.type,
+    this.color,
+    this.bgColor,
+    this.borderColor,
+    this.plain,
+    this.onPressed,
+    Widget textChild,
+    Widget icon,
+  }) {
+
+    _setColor();
+
+    widget = _initIcon(textChild, icon);
+  }
+
+  /// 初始化icon的按钮
+  _initIcon(Widget textChild, Widget icon) {
+    return Container(
+      height: height,
+      width: width,
+      padding: EdgeInsets.all(0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4),
+        border: plain ? Border.all(width: 1, color: _borderColor) : null,
+        color: _bgColor
+      ),
+      child: FlatButton(
+        padding: EdgeInsets.all(0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(child: icon,),
+            Container(
+              margin: EdgeInsets.only(left: 5),
+              child: textChild,
+            )
+          ],
+        ),
+        textColor: _color,
+        splashColor: onPressed == null ? Colors.transparent : null,
+        highlightColor: onPressed == null ? Colors.transparent : null,
         disabledColor: _bgColor,
         onPressed: onPressed == null ? (){} : onPressed,
       ),
@@ -79,50 +124,21 @@ class CustomButton {
     this.plain,
     this.onPressed,
     Widget textChild,
-    Widget loadingChild 
-  }) {
-    var buttonColor = _getType();
+    Widget loadingChild,
+    Color loadingColor
+  }) {   
+    _setColor();
 
-    _setColor(
-      color: color ?? buttonColor['color'],
-      bgColor: bgColor ?? buttonColor['bgColor'],
-      borderColor: borderColor ?? buttonColor['borderColor'],
-    );
-
-    widget = _initLoading(textChild, loadingChild);
-  }
-
-  /// 初始化带loading的按钮
-  _initLoading(Widget textChild, Widget loadingChild) {
-    return Container(
-      height: height,
-      width: width,
-      padding: EdgeInsets.all(0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4),
-        border: plain ? Border.all(width: 1, color: _borderColor) : null
-      ),
-      child: FlatButton(
-        padding: EdgeInsets.all(0),
-        child: Row(
-          children: <Widget>[
-            loadingChild == null ? Transform.scale(
-              scale: 0.7,
-              child: CircularProgressIndicator(
-                backgroundColor: _color,
-              ),
-            ) : loadingChild,
-            Container(child: textChild,)
-          ],
-        ),
-        textColor: _color,
-        splashColor: onPressed == null ? Colors.transparent : null,
-        highlightColor: onPressed == null ? Colors.transparent : null,
-        color: _bgColor,
-        disabledColor: _bgColor,
-        onPressed: onPressed == null ? (){} : onPressed,
+    var defaultLoading = Transform.scale(
+      scale: 0.7,
+      child: CircularProgressIndicator(
+        strokeWidth: 2,
+        backgroundColor: Colors.transparent,
+        valueColor: AlwaysStoppedAnimation(loadingColor),
       ),
     );
+
+    widget = _initIcon(textChild, defaultLoading);
   }
 
 
@@ -138,75 +154,28 @@ class CustomButton {
 
   /// 设置color
   /// disabled状态  color透明度设置为0.5
-  _setColor({
-    Color color,
-    Color bgColor,
-    Color borderColor,
-  }){
+  _setColor(){
+    var buttonColor = _getType();
+
+    // color  传入的
+    // buttonColor['xxx'] 默认的
+    // $color 最终结果
+    var $color = color ?? buttonColor['color'];
+    var $bgColor = bgColor ?? buttonColor['bgColor'];
+    var $borderColor =  borderColor ?? buttonColor['borderColor'];
+
+
     // 通过plain属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色
     if(plain) { 
-      _borderColor = bgColor.withOpacity(onPressed == null ? 0.5: 1.0);;
-      _color = _borderColor;
+      _borderColor = _color = $bgColor.withOpacity(onPressed == null ? 0.5: 1.0);
       _bgColor = hex('#fff');
     } else {
-      _color = color.withOpacity(onPressed == null ? 0.5: 1.0);
-      _bgColor = bgColor.withOpacity(onPressed == null ? 0.5: 1.0);
-      _borderColor = borderColor.withOpacity(onPressed == null ? 0.5: 1.0);
+      _color = $color.withOpacity(onPressed == null ? 0.5: 1.0);
+      _bgColor = $bgColor.withOpacity(onPressed == null ? 0.5: 1.0);
+      _borderColor = $borderColor.withOpacity(onPressed == null ? 0.5: 1.0);
     }
   }
 }
 
 
-/// 暴露button 相当于工厂函数
-class Button {
-  static Widget normal({
-    double width = 300,
-    double height = 44,
-    String type = 'default',
-    Color color,
-    Color bgColor,
-    Color borderColor,
-    bool plain = false,
-    VoidCallback onPressed,
-    Widget child
-  }) {
-    return CustomButton.normal(
-      width: width,
-      height: height,
-      type: type,
-      color: color,
-      bgColor: bgColor,
-      borderColor: borderColor,
-      plain: plain,
-      onPressed: onPressed,
-      child: child
-    ).widget;
-  }
 
-  static Widget loading({
-    double width = 300,
-    double height = 44,
-    String type = 'default',
-    Color color,
-    Color bgColor,
-    Color borderColor,
-    bool plain = false,
-    VoidCallback onPressed,
-    Widget textChild,
-    Widget loadingChild
-  }) {
-    return CustomButton.loading(
-      width: width,
-      height: height,
-      type: type,
-      color: color,
-      bgColor: bgColor,
-      borderColor: borderColor,
-      plain: plain,
-      onPressed: onPressed,
-      textChild: textChild,
-      loadingChild: loadingChild
-    ).widget;
-  }
-
-}

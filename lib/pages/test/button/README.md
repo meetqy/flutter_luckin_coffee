@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-02 16:01:18
+ * @lastTime: 2019-09-02 16:18:16
  * @LastEditors: meetqy
  -->
 # Button按钮
@@ -88,9 +88,3 @@ Button.loading(
 @param {EdgeInsetsGeometry} padding 内边距
 @param {BorderRadius} borderRadius  圆角
 ```
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-02 16:10:09
+ * @lastTime: 2019-09-02 16:18:27
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -86,7 +86,7 @@ Tools • Dart 2.4.0
 
 ## 项目中所封装的组件
 
-- [Button](./lib/pages/test/button/readme.md)
+- [Button](./lib/pages/test/button)
 
 ## 开发规范
 

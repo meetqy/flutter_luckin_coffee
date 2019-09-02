@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-08-22 16:51:46
+ * @lastTime: 2019-09-02 15:57:57
  * @LastEditors: meetqy
  */
 
@@ -92,12 +92,13 @@ class _HomeState extends State<Home> {
                 margin: EdgeInsets.only(left: 2),
               ),
             ),
-            HomeRow('企业账户', 'ENTERPRISE ACCOUNT',
+            HomeRow('组件列表', 'ENTERPRISE ACCOUNT',
               bottomBorder: false,
               right: HomeIcon(
                 icontupian2(size: 20, color: rgba(104, 68, 60, 1)),
                 margin: EdgeInsets.only(left: 1, bottom: 3),
               ),
+              onPress: () {Navigator.pushNamed(context, '/explame_widgets_list');},
             ),
             Container(
               child: Image.asset('lib/assets/images/home/bottom_bar.png'),

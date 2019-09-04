@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+// 组件列表
+import 'package:flutter_luckin_coffee/components/ExplameWidgetsList.dart';
+import 'package:flutter_luckin_coffee/components/button/example.dart';
+
+// luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/choosephonecode/index.dart';
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
 import 'package:flutter_luckin_coffee/pages/diningcode/DiningCode.dart';
@@ -11,14 +16,12 @@ import 'package:flutter_luckin_coffee/pages/order/OrderEvaluation.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderRemark.dart';
 import 'package:flutter_luckin_coffee/pages/selfstore/index.dart';
 import 'package:flutter_luckin_coffee/pages/storedetail/index.dart';
-import 'package:flutter_luckin_coffee/pages/test/ExplameWidgetsList.dart';
-import 'package:flutter_luckin_coffee/pages/test/button/example.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 
 class Router {
   static final _routes = {    
-    '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/menu'),
+    '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/home'),
     '/login_method': (BuildContext context, { Object args }) => LoginMethod(),
     '/login_phone': (BuildContext context, { Object args }) => LoginPhone(),
     '/user_agreement': (BuildContext context, { Object args }) => UserAgreement(),

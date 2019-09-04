@@ -1,7 +1,8 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/pages/test/button/index.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
+
+import 'index.dart';
 
 class ExampleButton extends StatefulWidget {
   ExampleButton({Key key}) : super(key: key);

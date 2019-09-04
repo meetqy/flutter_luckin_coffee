@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/pages/test/button/Button.dart';
+
+import 'Button.dart';
 
 /// 暴露button 相当于工厂函数
 class Button {

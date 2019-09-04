@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-02 17:11:07
+ * @lastTime: 2019-09-04 14:28:00
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -86,7 +86,7 @@ Tools • Dart 2.4.0
 
 ## 项目中所封装的组件
 
-- [Button](./lib/pages/test/button)
+- [Button](./lib/components/button)
 
 ## 开发规范
 
@@ -98,6 +98,7 @@ Tools • Dart 2.4.0
 .
 ├── lib                                         // 项目源代码
 │   ├── assets                                  // 静态资源文件
+|   ├── components                              // 首页组件列表，包括所组件
 │   ├── constants                               // 全局常量
 │   ├── createIconfont.dart                     // 通过iconfont自动生成Icon
 │   ├── main.dart                               // 入口文件
@@ -107,9 +108,7 @@ Tools • Dart 2.4.0
 │   ├── utils                                   // 公用方法
 │   └── widgets                                 // 公用widge
 ├── readme                                      // README.md相关
-└── test                                        // 测试文件夹
 ```
-
 ## 预览图
 
 更多预览图请到[readme/images](./readme/images)下查看。

@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-04 14:28:00
+ * @lastTime: 2019-09-05 13:23:34
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -87,6 +87,8 @@ Tools • Dart 2.4.0
 ## 项目中所封装的组件
 
 - [Button](./lib/components/button)
+- [CustomStepper](./lib/components/stepper)
+
 
 ## 开发规范
 

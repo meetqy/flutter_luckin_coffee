@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // 组件列表
 import 'package:flutter_luckin_coffee/components/ExplameWidgetsList.dart';
 import 'package:flutter_luckin_coffee/components/button/example.dart';
+import 'package:flutter_luckin_coffee/components/stepper/example.dart';
 
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/choosephonecode/index.dart';
@@ -36,6 +37,7 @@ class Router {
     '/choose_phone_code': (BuildContext context, { Object args }) => ChoosePhoneCode(),
     '/explame_button': (BuildContext context, { Object args }) => ExampleButton(),
     '/explame_widgets_list': (BuildContext context, { Object args }) => ExplameWidgetsList(),
+    '/example_stepper': (BuildContext context, { Object args }) => ExplameStepper(),
   };
 
   static Router _singleton;

@@ -1,3 +1,9 @@
+/*
+ * @Author: meetqy
+ * @since: 2019-08-30 14:34:02
+ * @lastTime: 2019-09-04 15:16:44
+ * @LastEditors: meetqy
+ */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
@@ -118,6 +124,7 @@ class CustomButton {
   _initIcon(Widget textChild, Widget icon) {
     Widget iconChild = Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Container(child: icon,),
         Container(

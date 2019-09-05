@@ -1,3 +1,9 @@
+/*
+ * @Author: meetqy
+ * @since: 2019-09-02 13:34:28
+ * @lastTime: 2019-09-04 14:37:05
+ * @LastEditors: meetqy
+ */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';

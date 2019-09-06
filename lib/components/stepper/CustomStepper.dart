@@ -36,7 +36,7 @@ class _CustomStepperState extends State<CustomStepper> {
 
   _CustomStepperState(this.min, this.value){
     if(value is int) {
-      number = value ?? min;
+      number = value < min ? min : value;
     } else {
       number = min;
     }

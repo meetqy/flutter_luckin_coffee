@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/example_stepper',
+      initialRoute: '/example_dialog',
       onGenerateRoute: router.getRoutes,
 
     );

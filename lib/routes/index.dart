@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // 组件列表
 import 'package:flutter_luckin_coffee/components/ExplameWidgetsList.dart';
 import 'package:flutter_luckin_coffee/components/button/example.dart';
+import 'package:flutter_luckin_coffee/components/dialog/example.dart';
 import 'package:flutter_luckin_coffee/components/stepper/example.dart';
 
 // luckin coffee 页面
@@ -38,6 +39,7 @@ class Router {
     '/explame_button': (BuildContext context, { Object args }) => ExampleButton(),
     '/explame_widgets_list': (BuildContext context, { Object args }) => ExplameWidgetsList(),
     '/example_stepper': (BuildContext context, { Object args }) => ExplameStepper(),
+    '/example_dialog': (BuildContext context, { Object args }) => ExampleDialog(),
   };
 
   static Router _singleton;

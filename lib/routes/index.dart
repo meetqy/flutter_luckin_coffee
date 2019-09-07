@@ -23,11 +23,13 @@ import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 class Router {
   static final _routes = {    
+    // toolbar系列
     '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/home'),
     '/menu': (BuildContext context, { Object args }) => Toolbar(routeName: '/menu'),
     '/order': (BuildContext context, { Object args }) => Toolbar(routeName: '/order'),
     '/shopping_cart': (BuildContext context, { Object args }) => Toolbar(routeName: '/shopping_cart'),
     '/mine': (BuildContext context, { Object args }) => Toolbar(routeName: '/mine'),
+    // 正常page
     '/login_method': (BuildContext context, { Object args }) => LoginMethod(),
     '/login_phone': (BuildContext context, { Object args }) => LoginPhone(),
     '/user_agreement': (BuildContext context, { Object args }) => UserAgreement(),

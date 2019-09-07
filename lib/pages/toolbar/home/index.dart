@@ -1,12 +1,13 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-02 15:57:57
+ * @lastTime: 2019-09-07 10:19:46
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
@@ -98,7 +99,9 @@ class _HomeState extends State<Home> {
                 icontupian2(size: 20, color: rgba(104, 68, 60, 1)),
                 margin: EdgeInsets.only(left: 1, bottom: 3),
               ),
-              onPress: () {Navigator.pushNamed(context, '/explame_widgets_list');},
+              onPress: () {
+                G.pushNamed('/explame_widgets_list');
+              },
             ),
             Container(
               child: Image.asset('lib/assets/images/home/bottom_bar.png'),

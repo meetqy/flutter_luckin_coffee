@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-06 10:28:06
+ * @lastTime: 2019-09-07 11:17:40
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -59,7 +59,7 @@ Tools • Dart 2.4.0
 
 - [ ] 菜单页面，NestedScrollView里面使用ListView，对ListView增加controller会导致NestedScrollView失效。
 - [ ] 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。
-- [ ] 非bottomNavigationBar页面如何跳转到bottomNavigationBar页面。
+- [x] 非bottomNavigationBar页面如何跳转到bottomNavigationBar页面。
 - [ ] 曲面屏兼容问题，固定在最底部的widget，使用SafeArea底部会空出来（eg：确认订单页面）。
 
 > 以上是上个版本遗留的问题 ----------------------------
@@ -70,12 +70,11 @@ Tools • Dart 2.4.0
 - [ ] 常用文字 & 颜色 & 大小封装
 - [ ] 项目page目录的结构优化
 - [x] 通用按钮的封装
-- [x] 对封装的按钮写一个demo并编写文档
+- [x] dialog封装
 - [ ] 关注 & 取消关注封装
 - [ ] 页面关联
 - [ ] 路由传参优化
 - [ ] 路由守卫的实现
-- [ ] 上拉加载，下拉刷新的实现
 - [ ] 上拉加载，下拉刷新的封装以及优化
 - [ ] 常用行的封装 & 优化
 - [ ] 将封装好的组件，接入对应页面
@@ -88,6 +87,7 @@ Tools • Dart 2.4.0
 
 - [Button](./lib/components/button)
 - [CustomStepper](./lib/components/stepper)
+- [CustomDialog](./lib/components/dialog)
 
 
 ## 开发规范

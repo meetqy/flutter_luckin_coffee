@@ -1,5 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/routes/index.dart';
 
 final router = Router();
@@ -9,9 +10,12 @@ void main(){
 }
 
 class MyApp extends StatelessWidget {
+  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: G.navigatorKey,
       title: 'Flutter Luckin Coffee',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/example_dialog',
+      initialRoute: '/',
       onGenerateRoute: router.getRoutes,
 
     );

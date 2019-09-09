@@ -16,7 +16,12 @@ class G {
   }
 
   // 跳转页面使用 G.pushNamed
-  static pushNamed(routeName, {Object arguments}){
+  static pushNamed(String routeName, {Object arguments}){
+    // 如果跳转到toolbar页面 删除之前的所有page
+    if(toobarRouteNameList.indexOf(routeName) > -1) {
+      return getCurrentState().pushNamedAndRemoveUntil(routeName, (Route<dynamic> route) => false);
+    }
+
     getCurrentState().pushNamed(routeName, arguments: arguments);
   }
 }

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-07 14:18:01
+ * @lastTime: 2019-09-09 15:32:03
  * @LastEditors: meetqy
  */
 
@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
                 margin: EdgeInsets.only(left: 1, bottom: 3),
               ),
               onPress: () {
-                G.pushNamed('/explame_widgets_list', arguments: {'msg': 'home to list'});
+                G.pushNamed('/example_widgets_list', arguments: {'msg': 'home to list'});
               },
             ),
             Container(

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-02 15:41:55
- * @lastTime: 2019-09-09 15:12:18
+ * @lastTime: 2019-09-09 15:32:41
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -39,7 +39,7 @@ class ExampleWidgetsList extends StatelessWidget {
                     icontupian6(color: rgba(228, 228, 228, 1), size: 14)
                   ],
                 ),
-                onPress: () => Navigator.pushNamed(context, '/explame_button'),
+                onPress: () => Navigator.pushNamed(context, '/example_button'),
               ),
 
               returnRow(context,

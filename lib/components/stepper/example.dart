@@ -4,13 +4,13 @@ import 'package:flutter_luckin_coffee/utils/index.dart';
 
 import 'CustomStepper.dart';
 
-class ExplameStepper extends StatefulWidget {
-  ExplameStepper({Key key}) : super(key: key);
+class ExampleStepper extends StatefulWidget {
+  ExampleStepper({Key key}) : super(key: key);
 
-  _ExplameStepperState createState() => _ExplameStepperState();
+  _ExampleStepperState createState() => _ExampleStepperState();
 }
 
-class _ExplameStepperState extends State<ExplameStepper> {
+class _ExampleStepperState extends State<ExampleStepper> {
 
   @override
   Widget build(BuildContext context) {

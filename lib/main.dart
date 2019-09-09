@@ -10,8 +10,6 @@ void main(){
 }
 
 class MyApp extends StatelessWidget {
-  
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,9 +29,8 @@ class MyApp extends StatelessWidget {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/',
+      initialRoute: '/example_widgets_list',
       onGenerateRoute: router.getRoutes,
-
     );
   }
   

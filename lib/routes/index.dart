@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // 组件列表
-import 'package:flutter_luckin_coffee/components/ExplameWidgetsList.dart';
+import 'package:flutter_luckin_coffee/components/ExampleWidgetsList.dart';
 import 'package:flutter_luckin_coffee/components/button/example.dart';
 import 'package:flutter_luckin_coffee/components/dialog/example.dart';
 import 'package:flutter_luckin_coffee/components/stepper/example.dart';
@@ -23,13 +23,15 @@ import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 class Router {
   static final _routes = {    
-    // toolbar系列
-    '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/home'),
-    '/menu': (BuildContext context, { Object args }) => Toolbar(routeName: '/menu'),
-    '/order': (BuildContext context, { Object args }) => Toolbar(routeName: '/order'),
-    '/shopping_cart': (BuildContext context, { Object args }) => Toolbar(routeName: '/shopping_cart'),
-    '/mine': (BuildContext context, { Object args }) => Toolbar(routeName: '/mine'),
-    // 正常page
+    // 从非toolbar页面（子页面）跳转到toolbar页面（主页）实现：
+    // pushName到对应的路由，因为Toolbar是单例模式，所以只会创建一个
+    // pushName之后
+    '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/',),
+    '/mine': (BuildContext context, { Object args }) => Toolbar(routeName: '/mine',),
+    '/order': (BuildContext context, { Object args }) => Toolbar(routeName: '/order',),
+    '/shopping_cart': (BuildContext context, { Object args }) => Toolbar(routeName: '/shopping_cart',),
+    '/menu': (BuildContext context, { Object args }) => Toolbar(routeName: '/menu',),
+    
     '/login_method': (BuildContext context, { Object args }) => LoginMethod(),
     '/login_phone': (BuildContext context, { Object args }) => LoginPhone(),
     '/user_agreement': (BuildContext context, { Object args }) => UserAgreement(),
@@ -42,9 +44,9 @@ class Router {
     '/store_detail': (BuildContext context, { Object args }) => StoreDetail(),
     '/dining_code': (BuildContext context, { Object args }) => DiningCode(),
     '/choose_phone_code': (BuildContext context, { Object args }) => ChoosePhoneCode(),
-    '/explame_button': (BuildContext context, { Object args }) => ExampleButton(),
-    '/explame_widgets_list': (BuildContext context, { Object args }) => ExplameWidgetsList(),
-    '/example_stepper': (BuildContext context, { Object args }) => ExplameStepper(),
+    '/example_button': (BuildContext context, { Object args }) => ExampleButton(),
+    '/example_widgets_list': (BuildContext context, { Object args }) => ExampleWidgetsList(args: args),
+    '/example_stepper': (BuildContext context, { Object args }) => ExampleStepper(),
     '/example_dialog': (BuildContext context, { Object args }) => ExampleDialog(),
   };
 
@@ -60,8 +62,11 @@ class Router {
     return _singleton;
   }
 
+  // 监听非toolbar页面
   Route getRoutes(RouteSettings settings) {
     final Function builder = Router._routes[settings.name];
+
+    print(settings);
 
     if(builder == null) {
       return null;

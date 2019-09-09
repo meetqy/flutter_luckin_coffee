@@ -17,7 +17,6 @@ class G {
 
   // 跳转页面使用 G.pushNamed
   static pushNamed(routeName, {Object arguments}){
-    print(arguments);
     getCurrentState().pushNamed(routeName, arguments: arguments);
   }
 }

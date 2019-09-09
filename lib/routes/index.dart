@@ -25,7 +25,7 @@ class Router {
   static final _routes = {    
     // 从非toolbar页面（子页面）跳转到toolbar页面（主页）实现：
     // pushName到对应的路由，因为Toolbar是单例模式，所以只会创建一个
-    // pushName之后
+    // pushName之后在 Toolbar中的 initState中去设置对应routeName的index
     '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/',),
     '/mine': (BuildContext context, { Object args }) => Toolbar(routeName: '/mine',),
     '/order': (BuildContext context, { Object args }) => Toolbar(routeName: '/order',),

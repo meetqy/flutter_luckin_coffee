@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-07 11:17:40
+ * @lastTime: 2019-09-09 16:30:31
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -111,8 +111,6 @@ Tools • Dart 2.4.0
 │   └── widgets                                 // 公用widge
 ├── readme                                      // README.md相关
 ```
-## 预览图
-
-更多预览图请到[readme/images](./readme/images)下查看。
+## 随便看看吧
 
 <img src="./readme/images/1.gif" width="375"/>

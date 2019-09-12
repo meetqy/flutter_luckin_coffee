@@ -77,9 +77,7 @@ class _HomeState extends State<Home> {
                 icontupian3(size: 20, color: rgba(104, 68, 60, 1)),
                 margin: EdgeInsets.only(left: 2),
               ),
-              onPress: () {
-                
-              }
+              onPress: () => G.pushNamed('/menu')
             ),
             HomeRow('咖啡钱包', 'COFFRR WALLET',
               right: HomeIcon(

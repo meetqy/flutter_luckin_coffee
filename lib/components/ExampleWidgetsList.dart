@@ -1,12 +1,11 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-02 15:41:55
- * @lastTime: 2019-09-09 15:32:41
+ * @lastTime: 2019-09-12 09:19:20
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 
@@ -62,17 +61,6 @@ class ExampleWidgetsList extends StatelessWidget {
                   ],
                 ),
                 onPress: () => Navigator.pushNamed(context, '/example_dialog'),
-              ),
-
-              returnRow(context,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('返回我的页面'),
-                    icontupian6(color: rgba(228, 228, 228, 1), size: 14)
-                  ],
-                ),
-                onPress: () => G.pushNamed('/mine', arguments: {"a": 'test args'}),
               ),
             ],
           ),

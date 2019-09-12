@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-08-28 13:29:58
+ * @lastTime: 2019-09-12 11:44:17
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -42,6 +42,7 @@ class _MenuState extends State<Menu> {
   @override
   void initState() {
     _nestedScrollController.addListener(() {
+      print(13);
       setState(() {
         _nestedScrollOffet = _nestedScrollController.offset;
       });
@@ -175,10 +176,16 @@ class _MenuState extends State<Menu> {
               Container(
                 width: screenWidth(context) - 90,
                 padding: EdgeInsets.symmetric(horizontal: 14),
-                child: ListView(
+                child: NotificationListener(
+                  child: ListView(
                     physics: _nestedScrollOffet >= 130 ? BouncingScrollPhysics() : ClampingScrollPhysics(),
                     children: createGoodsList(goodsList),
                   ),
+                  onNotification: (ScrollNotification scrollInfo) {
+                    print(scrollInfo);
+                    return true;
+                  },
+                ),
               )
           ],),
         ),

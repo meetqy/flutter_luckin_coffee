@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-12 11:49:15
+ * @lastTime: 2019-09-12 15:26:08
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -41,7 +41,6 @@ class _MenuState extends State<Menu> {
   @override
   void initState() {
     _nestedScrollController.addListener(() {
-      print(13);
       setState(() {
         _nestedScrollOffet = _nestedScrollController.offset;
       });
@@ -183,8 +182,8 @@ class _MenuState extends State<Menu> {
                     children: createGoodsList(goodsList),
                   ),
                   onNotification: (ScrollNotification scrollInfo) {
-                    print(scrollInfo);
-                    return true;
+                    // print(scrollInfo);
+                    return null;
                   },
                 ),
               )

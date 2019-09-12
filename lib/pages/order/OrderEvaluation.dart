@@ -1,5 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
@@ -11,13 +12,14 @@ class OrderEvaluation extends StatefulWidget {
 }
 
 class _OrderEvaluationState extends State<OrderEvaluation> {
+  double bottom = G.screenPadding().bottom; // 获取屏幕的底部距离
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: hex('#fff'),
       appBar: customAppbar(context: context, title: "评价",),
-      body: SafeArea(
-        child: Container(
+      body: Container(
           color: rgba(248, 248, 248, 1),
           child: Stack(children: <Widget>[
             Container(
@@ -90,9 +92,9 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
             Positioned(
               left: 0,
               bottom: 0,
-              child: Container(
+              child: Container(                
                 width: screenWidth(context),
-                height: 60,
+                padding: EdgeInsets.only(bottom: bottom, top: bottom/2),
                 color: hex('#fff'),
                 alignment: Alignment.center,
                 child: Button.bigButton('提交', bgColor: rgba(144, 192, 239, 1),color: rgba(255, 255, 255, 1),),
@@ -100,7 +102,6 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
             )
           ],),
         ),
-      ),
     );
   }
 }

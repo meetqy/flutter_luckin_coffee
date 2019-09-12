@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-12 11:44:17
+ * @lastTime: 2019-09-12 11:49:15
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -16,7 +16,6 @@ import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';
 
 /// TODO: 待解决：点击左侧菜单，右侧商品列表跳转
-/// TODO: 在NestedScrollView中的滚动组件不能进行滚动的监听，没有找到解决方法
 class Menu extends StatefulWidget {
   static _MenuState _menuState;
 
@@ -176,6 +175,8 @@ class _MenuState extends State<Menu> {
               Container(
                 width: screenWidth(context) - 90,
                 padding: EdgeInsets.symmetric(horizontal: 14),
+                // 使用listview中的scrollcontronal导致外层的NestedScrollView效果失效，
+                // 使用NotificationListener完美解决
                 child: NotificationListener(
                   child: ListView(
                     physics: _nestedScrollOffet >= 130 ? BouncingScrollPhysics() : ClampingScrollPhysics(),

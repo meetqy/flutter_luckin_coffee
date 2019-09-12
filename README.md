@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-12 16:34:25
+ * @lastTime: 2019-09-12 16:38:06
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -60,7 +60,7 @@ Tools • Dart 2.4.0
 - [x] 菜单页面，NestedScrollView里面使用ListView，对ListView增加controller会导致NestedScrollView失效。
 - [ ] 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。
 - [x] 非bottomNavigationBar页面如何跳转到bottomNavigationBar页面。
-- [x]] 曲面屏兼容问题，固定在最底部的widget，使用SafeArea底部会空出来（eg：确认订单页面）。
+- [x] 曲面屏兼容问题，固定在最底部的widget，使用SafeArea底部会空出来（eg：确认订单页面）。
 
 > 以上是上个版本遗留的问题 ----------------------------
 

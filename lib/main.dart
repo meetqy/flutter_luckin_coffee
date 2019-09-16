@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/order_evaluation',
+      initialRoute: '/order',
       onGenerateRoute: router.getRoutes,
     );
   }

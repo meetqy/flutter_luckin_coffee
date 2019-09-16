@@ -1,8 +1,8 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
 import 'package:flutter_luckin_coffee/pages/order/widgets/GoodsMsgRow.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class OrderDetail extends StatefulWidget {
   final Map args;
@@ -89,26 +89,27 @@ class _OrderDetailState extends State<OrderDetail> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Button.bigButton('取消订单',
-                    width: 105,
-                    height: 32,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    bgColor: Colors.transparent,
-                    color: rgba(56, 56, 56, 1),
-                    border: Border.all(color: rgba(217, 217, 217, 1)),
+                Button.normal(
+                  child: Text('取消订单', style: TextStyle(fontSize: 14),),
+                  width: 105,
+                  height: 32,
+                  plain: true,
+                  color: rgba(56, 56, 56, 1),
+                  borderColor: rgba(217, 217, 217, 1),
+                  onPressed: () => {}
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 10),
-                  child: Button.bigButton('取餐码',
-                      width: 105,
-                      height: 32,
-                      fontSize: 14,
-                      bgColor: Colors.transparent,
-                      color: rgba(136, 175, 213, 1),
-                      border: Border.all(color: rgba(136, 175, 213, 1)),
+                  child: Button.normal(
+                    child: Text('取餐码'),
+                    width: 105,
+                    height: 32,
+                    plain: true,
+                    color: rgba(136, 175, 213, 1),
+                    borderColor: rgba(136, 175, 213, 1),
+                    onPressed: () => {}
                   ),
-                ),
+                )
               ],
             ),
           )
@@ -160,26 +161,26 @@ class _OrderDetailState extends State<OrderDetail> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Button.bigButton('取消订单',
-                    width: 105,
-                    height: 32,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    bgColor: Colors.transparent,
-                    color: rgba(56, 56, 56, 1),
-                    border: Border.all(color: rgba(217, 217, 217, 1)),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 10),
-                  child: Button.bigButton('去支付',
-                      width: 105,
-                      height: 32,
-                      fontSize: 14,
-                      bgColor: Colors.transparent,
-                      color: rgba(255, 129, 2, 1),
-                      border: Border.all(color: rgba(255, 129, 2, 1)),
-                  ),
-                ),
+                // Button.bigButton('取消订单',
+                //     width: 105,
+                //     height: 32,
+                //     fontSize: 14,
+                //     fontWeight: FontWeight.bold,
+                //     bgColor: Colors.transparent,
+                //     color: rgba(56, 56, 56, 1),
+                //     border: Border.all(color: rgba(217, 217, 217, 1)),
+                // ),
+                // Container(
+                //   margin: EdgeInsets.only(left: 10),
+                //   child: Button.bigButton('去支付',
+                //       width: 105,
+                //       height: 32,
+                //       fontSize: 14,
+                //       bgColor: Colors.transparent,
+                //       color: rgba(255, 129, 2, 1),
+                //       border: Border.all(color: rgba(255, 129, 2, 1)),
+                //   ),
+                // ),
               ],
             ),
           )

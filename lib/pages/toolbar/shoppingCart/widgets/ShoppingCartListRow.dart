@@ -1,9 +1,9 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/stepper/CustomStepper.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
-import 'package:flutter_luckin_coffee/widgets/Stepper/index.dart';
 
 class ShoppingCartListRow extends StatelessWidget {
   final bool border;

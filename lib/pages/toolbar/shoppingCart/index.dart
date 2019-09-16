@@ -1,5 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/RecommendGoods.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/ShoppingCartListRow.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
@@ -108,7 +110,6 @@ class _ShoppingCartState extends State<ShoppingCart> {
           ),
         ),
         
-
         Positioned(
           bottom: 0,
           left: 0,
@@ -147,22 +148,14 @@ class _ShoppingCartState extends State<ShoppingCart> {
               ),
 
               // right button
-              InkWell(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: rgba(144, 192, 239, 1),
-                  ),
-                  alignment: Alignment.center,
-                  width: 120,
-                  height: 60,
-                  child: Text('去结算', style: TextStyle(
-                    fontSize: 16,
-                    color: rgba(255, 255, 255, 1),
-                    fontWeight: FontWeight.bold
-                  ),),
-                ),
-
-                onTap: () => Navigator.pushNamed(context, '/order_confirm'),
+              Button.normal(
+                child: Text('去结算'),
+                color: hex('#fff'),
+                bgColor: rgba(144, 192, 239, 1),
+                width: 120,
+                height: 60,
+                borderRadius: BorderRadius.zero,
+                onPressed: () => G.pushNamed('/order_confirm')
               )
             ],),
           ),

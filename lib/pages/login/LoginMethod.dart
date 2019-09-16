@@ -1,8 +1,9 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/other.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class LoginMethod extends StatelessWidget {
   const LoginMethod({Key key}) : super(key: key);
@@ -25,22 +26,24 @@ class LoginMethod extends StatelessWidget {
 
           Container(
             margin: EdgeInsets.only(top: 116),
-            child: Button.bigButton(
-              "微信一键登录",
-              bgColor: rgba(73, 194, 101, 1),
+            child: Button.normal(
+              width: 300,
+              child: Text('微信一键登录'),
               color: hex('#fff'),
+              bgColor: rgba(73, 194, 101, 1),
+              onPressed: () => {}
             ),
           ),
           Container(
             margin: EdgeInsets.only(top: 25),
-            child: Button.bigButton(
-              "手机验证码登录",
+            child: Button.normal(
+              width: 300,
+              child: Text('手机验证码登录'),
               color: rgba(136, 175, 213, 1),
               bgColor: hex('#fff'),
-              border: Border.all(width: 1,color: rgba(136, 175, 213, 1)),
-              onPress: () {
-                Navigator.pushNamed(context, '/login_phone');
-              },
+              borderColor: rgba(136, 175, 213, 1),
+              plain: true,
+              onPressed: () => G.pushNamed('/login_phone')
             ),
           ),
           

@@ -1,10 +1,10 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/pages/order/widgets/GoodsMsgRow.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 
 class OrderConfirm extends StatefulWidget {
@@ -117,12 +117,14 @@ class _OrderConfirmState extends State<OrderConfirm> {
                               ),),
                               Container(
                                 margin: EdgeInsets.only(left: 10),
-                                child: Button(
-                                  '充赠优惠', 
-                                  fontSize: 8,
-                                  paddingHorizontal: 4,
-                                  paddingVertical: 4,
-                                  marginLeft: 0,
+                                child: Button.normal(
+                                  child: Text('充值优惠', style: TextStyle(fontSize: 8),),
+                                  height: 16,
+                                  width: 40,
+                                  bgColor: rgba(255, 141, 26, 1),
+                                  color: hex('#fff'),
+                                  borderRadius: BorderRadius.circular(2),
+                                  onPressed: () => {}
                                 ),
                               )  
                             ],),
@@ -300,23 +302,16 @@ class _OrderConfirmState extends State<OrderConfirm> {
                       ),),
                     )
                   ],),
-                  InkWell(
-                    child: Container(
-                      alignment: Alignment.center,
-                      width: 120,
-                      height: 60,
-                      color: rgba(144, 192, 239, 1),
-                      child: Text('去支付', style: TextStyle(
-                        color: rgba(255, 255, 255, 1),
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold
-                      ),),
-                    ),
-                    onTap: () => Navigator.pushNamed(context, '/order_detail', 
-                      arguments: {
-                        "status": 1                 
-                      }
-                    ),
+                  Button.normal(
+                    child: Text('去支付'),
+                    bgColor: rgba(144, 192, 239, 1),
+                    width: 120,
+                    height: 60,
+                    color: rgba(255, 255, 255, 1),
+                    borderRadius: BorderRadius.zero,
+                    onPressed: () => G.pushNamed('/order_detail', arguments: {
+                      "status": 1
+                    })
                   )
                 ],
               ),

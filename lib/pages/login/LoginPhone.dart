@@ -1,11 +1,12 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/other.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class LoginPhone extends StatefulWidget {
   LoginPhone({Key key}) : super(key: key);
@@ -105,30 +106,22 @@ class _LoginPhoneState extends State<LoginPhone> {
                   ),
                 ),
               ),
-              InkWell(
-                child: Text('获取验证码',style: TextStyle(
-                  color: phoneNum['verify'] && phoneNum['value']!=null ? rgba(85, 122, 157, 1) : rgba(166, 166, 166, 1),
-                  fontSize: 14
-                ),),
-                onTap: (){
-                  // 获取验证码
-                  if(phoneNum['verify'] && phoneNum['value']!=null) {
-                    
-                  }
-                },
+              Button.normal(
+                child: Text('获取验证码'),
+                color: phoneNum['verify'] && phoneNum['value']!=null ? rgba(85, 122, 157, 1) : rgba(166, 166, 166, 1),
+                onPressed: () => {}
               )
             ],),
           ),
 
           Container(
             margin: EdgeInsets.only(top: 20),
-            child: Button.bigButton(
-              "确定",
-              bgColor: rgba(136, 175, 213, 0.6),
+            child: Button.normal(
+              width: 300,
+              child: Text('确定'),
+              bgColor: rgba(136, 175, 213, 1),
               color: hex('#fff'),
-              onPress: () {
-                Navigator.pushNamed(context, '/');
-              },
+              onPressed: () => G.pushNamed('/')
             ),
           ),
 

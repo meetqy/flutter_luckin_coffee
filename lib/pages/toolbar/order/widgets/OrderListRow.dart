@@ -1,7 +1,8 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
 
 class OrderListRow extends StatelessWidget {
   final int orderStatus;  
@@ -35,13 +36,17 @@ class OrderListRow extends StatelessWidget {
   /// 文字状态
   Widget textStatus() {
     var text = '';
-    if(orderStatus == 1) text = "待付款";
+    var color = rgba(166, 166, 166, 1);
+    if(orderStatus == 1) {
+      color = rgba(136, 175, 213, 1);
+      text = "待付款";
+    }
     else if(orderStatus == 2) text = "已完成";
     else if(orderStatus == 3) text = "已取消";
 
     return Text(text, style: TextStyle(
-      fontSize: 13,
-      color: rgba(136, 175, 213, 1)
+      fontSize: 12,
+      color: color
     ));
   }
 
@@ -51,36 +56,40 @@ class OrderListRow extends StatelessWidget {
 
     var btn1 = Container(
       margin: EdgeInsets.only(left: 10),
-      child: Button('再来一单',
-        bgColor: rgba(255, 255, 255, 1),
+      child: Button.normal(
+        child: Text('再来一单', style: TextStyle(fontSize: 12),),
         color: rgba(56, 56, 56, 1),
-        border: Border.all(width: 1, color: rgba(242, 242, 242, 1)),
-        paddingVertical: 4,
-        paddingHorizontal: 5,
+        plain: true,
+        height: 28,
+        width: 74,
+        borderColor: rgba(242, 242, 242, 1),
+        onPressed: () => {}
       ),
     );
 
     var btn2 = Container(
       margin: EdgeInsets.only(left: 10),
-      child: Button('去支付',
-        bgColor: rgba(255, 255, 255, 1),
+      child: Button.normal(
+        child: Text('去支付', style: TextStyle(fontSize: 12),),
         color: rgba(255, 129, 2, 1),
-        border: Border.all(width: 1, color: rgba(255, 129, 2, 1)),
-        paddingVertical: 4,
-        paddingHorizontal: 5,
-        onPress: () => Navigator.pushNamed(context, '/order_confirm'),
+        borderColor: rgba(255, 129, 2, 1),
+        plain: true,
+        height: 28,
+        width: 74,
+        onPressed: () => {}
       ),
     );
 
     var btn3 = Container(
       margin: EdgeInsets.only(left: 10),
-      child: Button('去评价',
-        bgColor: rgba(255, 255, 255, 1),
+      child: Button.normal(
+        child: Text('去评价', style: TextStyle(fontSize: 12),),
         color: rgba(144, 192, 239, 1),
-        border: Border.all(width: 1, color: rgba(144, 192, 239, 1)),
-        paddingVertical: 4,
-        paddingHorizontal: 5,
-        onPress: ()=> Navigator.pushNamed(context, '/order_evaluation'),
+        plain: true,
+        height: 28,
+        width: 74,
+        borderColor: rgba(144, 192, 239, 1),
+        onPressed: () => G.pushNamed('/order_evaluation')
       ),
     );
 
@@ -119,7 +128,7 @@ class OrderListRow extends StatelessWidget {
               children: <Widget>[
                 Text('外卖订单：$orderNum', style: TextStyle(
                   color: rgba(166, 166, 166, 1),
-                  fontSize: 13
+                  fontSize: 12
                 ),),
                 textStatus()
             ],),
@@ -145,7 +154,7 @@ class OrderListRow extends StatelessWidget {
           Row(children: <Widget>[
             Text('$goodsName等   共1件商品', style: TextStyle(
               color: rgba(80, 80, 80, 1),
-              fontSize: 13,
+              fontSize: 12,
             ),),
           ],),
 

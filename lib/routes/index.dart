@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // 组件列表
 import 'package:flutter_luckin_coffee/components/ExampleWidgetsList.dart';
+import 'package:flutter_luckin_coffee/components/arow/example.dart';
 import 'package:flutter_luckin_coffee/components/button/example.dart';
 import 'package:flutter_luckin_coffee/components/dialog/example.dart';
 import 'package:flutter_luckin_coffee/components/stepper/example.dart';
@@ -48,6 +49,7 @@ class Router {
     '/example_widgets_list': (BuildContext context, { Object args }) => ExampleWidgetsList(args: args),
     '/example_stepper': (BuildContext context, { Object args }) => ExampleStepper(),
     '/example_dialog': (BuildContext context, { Object args }) => ExampleDialog(),
+    '/example_arow': (BuildContext context, { Object args }) => ExampleARow(),
   };
 
   static Router _singleton;

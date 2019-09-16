@@ -29,9 +29,8 @@ class MyApp extends StatelessWidget {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/order',
+      initialRoute: '/example_arow',
       onGenerateRoute: router.getRoutes,
     );
   }
-  
 }

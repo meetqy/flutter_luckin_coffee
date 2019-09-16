@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-16 16:37:31
+ * @lastTime: 2019-09-16 16:53:15
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -26,7 +26,7 @@ flutter实战demo，仿luckin coffee。
 
 ![](./Android.png)
 
-## version
+## flutter版本信息
 
 ``` bash
 Flutter 1.7.8+hotfix.4 • channel stable • https://github.com/flutter/flutter.git

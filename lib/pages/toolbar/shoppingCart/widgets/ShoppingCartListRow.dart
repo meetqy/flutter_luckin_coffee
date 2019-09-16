@@ -1,9 +1,9 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
 import 'package:flutter_luckin_coffee/components/stepper/CustomStepper.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class ShoppingCartListRow extends StatelessWidget {
   final bool border;
@@ -52,10 +52,17 @@ class ShoppingCartListRow extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 15
                         ),),
-                        Button('充2赠1', 
-                          fontSize: 8,
-                          paddingHorizontal: 6,
-                          paddingVertical: 4,
+                        Container(
+                          margin: EdgeInsets.only(left: 5),
+                          child: Button.normal(
+                            child: Text('充2赠1', style: TextStyle(fontSize: 8),),
+                            bgColor: rgba(255, 129, 2, 1),
+                            color: hex("#fff"),
+                            height: 16,
+                            width: 34,
+                            borderRadius: BorderRadius.circular(2),
+                            onPressed: () => {}
+                          ),
                         )
                       ],),
 

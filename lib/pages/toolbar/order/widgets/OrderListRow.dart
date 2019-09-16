@@ -76,7 +76,7 @@ class OrderListRow extends StatelessWidget {
         plain: true,
         height: 28,
         width: 74,
-        onPressed: () => {}
+        onPressed: () => G.pushNamed('/order_confirm')
       ),
     );
 

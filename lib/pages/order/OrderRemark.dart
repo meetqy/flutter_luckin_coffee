@@ -1,9 +1,10 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/RadiusBtn.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class OrderRemark extends StatefulWidget {
   OrderRemark({Key key}) : super(key: key);
@@ -20,56 +21,60 @@ class _OrderRemarkState extends State<OrderRemark> {
         context: context
       ),
 
-      body: Container(
-        color: hex('#fff'),
-        child: Column(
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Column(children: <Widget>[
-                RemarkRow('纸巾'),
-                RemarkRow('奶包'),
-                RemarkRow('糖包', borderBottom: false),
-              ],)
-            ),
+      body: SingleChildScrollView(
+        child: Container(
+          color: hex('#fff'),
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Column(children: <Widget>[
+                  RemarkRow('纸巾'),
+                  RemarkRow('奶包'),
+                  RemarkRow('糖包', borderBottom: false),
+                ],)
+              ),
 
-            // 输入框
-            Container(
-              margin: EdgeInsets.only(top: 10, bottom: 20),
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Row(children: <Widget>[
-                Expanded(child: 
-                  TextField(
-                    maxLines: 5,
-                    keyboardType: TextInputType.multiline,
-                    decoration: InputDecoration(
-                      filled: true,
-                      focusColor: rgba(248, 248, 248, 1),
-                      counterText: '',
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(4.0),
+              // 输入框
+              Container(
+                margin: EdgeInsets.only(top: 10, bottom: 20),
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Row(children: <Widget>[
+                  Expanded(child: 
+                    TextField(
+                      maxLines: 5,
+                      keyboardType: TextInputType.multiline,
+                      decoration: InputDecoration(
+                        filled: true,
+                        focusColor: rgba(248, 248, 248, 1),
+                        counterText: '',
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(4.0),
+                          ),
                         ),
+                        contentPadding: EdgeInsets.all(10),
+                        hintText: '请输入评价内容（可不填）',
+                        hintStyle: TextStyle(fontSize: 14,color: rgba(166, 166, 166, 1)),
+                        fillColor: rgba(248, 248, 248, 1)
                       ),
-                      contentPadding: EdgeInsets.all(10),
-                      hintText: '请输入评价内容（可不填）',
-                      hintStyle: TextStyle(fontSize: 14,color: rgba(166, 166, 166, 1)),
-                      fillColor: rgba(248, 248, 248, 1)
-                    ),
-                  )
-                ,)
-              ],),
-            ),
+                    )
+                  ,)
+                ],),
+              ),
 
-            Container(
-              child: Button.bigButton(
-                '确认', 
-                bgColor: rgba(144, 192, 239, 1),
-                onPress: () => Navigator.pushNamed(context, '/order_confirm'),
+              Container(
+                child: Button.normal(
+                  width: 300,
+                  child: Text('确认'),
+                  color: hex('#fff'),
+                  bgColor: rgba(144, 192, 239, 1),
+                  onPressed: () => G.pushNamed('/order_confirm')
+                ),
               )
-            )
-          ],
+            ],
+          ),
         ),
       )
     );

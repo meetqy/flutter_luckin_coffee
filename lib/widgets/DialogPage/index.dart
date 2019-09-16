@@ -1,12 +1,12 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
 import 'package:flutter_luckin_coffee/components/stepper/CustomStepper.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/DacaiSay.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/RadiusBtn.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/SelectRow.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';
 
 final dialogPage = FullScreenDialog(
@@ -222,18 +222,30 @@ final dialogPage = FullScreenDialog(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Button('充2赠1', icon: icontupian17(size: 14, color: hex('#fff')),),
-            Button(
-              '收藏口味', 
+            Button.icon(
+              icon: icontupian17(size: 14,),
+              textChild: Text('充2赠1', style: TextStyle(fontSize: 12),),
+              color: hex('#fff'),
+              bgColor: rgba(255, 129, 2, 1),
+              height: 32,
+              onPressed: () => {}
+            ),
+            Button.icon(
+              height: 32,
+              icon: iconsc(size: 14,),
+              textChild: Text('收藏口味', style: TextStyle(fontSize: 12),),
               color: rgba(136, 175, 213, 1),
-              icon: iconsc(size: 14, color: rgba(140, 172, 212, 1)),
               bgColor: rgba(136, 175, 213, 0.3),
+              onPressed: () => {}
             ),
-            Button(
-              '加入购物车', 
-              icon: icongouwuche(size: 14, color: hex('#fff')),
+            Button.icon(
+              height: 32,
+              icon: icongouwuche(size: 14,),
               bgColor: rgba(136, 175, 213, 1),
-            ),
+              color: hex('#fff'),
+              textChild: Text('加入购物车', style: TextStyle(fontSize: 12),),
+              onPressed: () => {}
+            )
           ],
         ),
       )

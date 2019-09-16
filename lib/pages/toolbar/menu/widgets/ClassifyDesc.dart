@@ -25,7 +25,7 @@ class ClassifyDesc extends StatelessWidget {
     return Container(child: 
       Row(children: <Widget>[
         Text(name, style: TextStyle(
-          fontSize: 13, 
+          fontSize: 12, 
           color: rgba(56, 56, 56, 1),
           fontWeight: FontWeight.bold
         ),),
@@ -44,7 +44,7 @@ class ClassifyDesc extends StatelessWidget {
     return Column(children: <Widget>[
       Row(children: <Widget>[
         Expanded(child: Text(name, style: TextStyle(
-          fontSize: 13, 
+          fontSize: 12, 
           color: rgba(56, 56, 56, 1),
           fontWeight: FontWeight.bold
         ),),)

@@ -23,7 +23,6 @@ class _OrderConfirmState extends State<OrderConfirm> {
         title: '确认订单',
         context: context
       ),
-      /// TODO: 待解决：曲面屏兼容问题，固定在最底部，使用SafeArea底部会空出来
       body: Stack(
         children: <Widget>[
           SingleChildScrollView(

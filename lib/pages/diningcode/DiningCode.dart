@@ -1,7 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class DiningCode extends StatefulWidget {
   DiningCode();
@@ -64,15 +63,15 @@ class _DiningCodeState extends State<DiningCode> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Button.bigButton(
-                      '分享餐码给好友',
-                      bgColor: Colors.transparent,
-                      color: rgba(144, 192, 239, 1),
-                      border: Border.all(color: rgba(144, 192, 239, 1)),
-                      height: 30,
-                      fontSize: 14,
-                      width: 150,
-                    )
+                    // Button.bigButton(
+                    //   '分享餐码给好友',
+                    //   bgColor: Colors.transparent,
+                    //   color: rgba(144, 192, 239, 1),
+                    //   border: Border.all(color: rgba(144, 192, 239, 1)),
+                    //   height: 30,
+                    //   fontSize: 14,
+                    //   width: 150,
+                    // )
                   ],
                 ),
               )

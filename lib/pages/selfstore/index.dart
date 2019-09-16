@@ -23,7 +23,7 @@ class _SelfStoreState extends State<SelfStore> {
               children: <Widget>[
                 Text('北京', style: TextStyle(
                   color: rgba(56, 56, 56, 1),
-                  fontSize: 13
+                  fontSize: 12
                 ),),
                 Icon(
                   IconData(0xe622, fontFamily: 'iconfont'),

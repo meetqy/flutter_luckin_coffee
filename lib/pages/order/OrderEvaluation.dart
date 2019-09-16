@@ -1,9 +1,9 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/button/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_luckin_coffee/widgets/Button/index.dart';
 
 class OrderEvaluation extends StatefulWidget {
   OrderEvaluation({Key key}) : super(key: key);
@@ -97,7 +97,13 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
                 padding: EdgeInsets.only(bottom: bottom, top: bottom/2),
                 color: hex('#fff'),
                 alignment: Alignment.center,
-                child: Button.bigButton('提交', bgColor: rgba(144, 192, 239, 1),color: rgba(255, 255, 255, 1),),
+                child: Button.normal(
+                  width: 300,
+                  child: Text('提交'),
+                  bgColor: rgba(144, 192, 239, 1),
+                  color: hex('#fff'),
+                  onPressed: () => {}
+                ),
               ),
             )
           ],),

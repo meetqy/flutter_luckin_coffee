@@ -59,12 +59,12 @@ class _StoreDetailState extends State<StoreDetail> {
                         width: 65,
                         child: Text('营业时间：', style: TextStyle(
                           color: rgba(128, 128, 128, 1),
-                          fontSize: 13
+                          fontSize: 12
                         ),),
                       ),
                       Text('周一至周五 07:00-20:00', style: TextStyle(
                         color: rgba(128, 128, 128, 1),
-                        fontSize: 13
+                        fontSize: 12
                       ),)
                     ],
                   ),
@@ -78,7 +78,7 @@ class _StoreDetailState extends State<StoreDetail> {
                       ),
                       Text('周六 08:00-18:00', style: TextStyle(
                         color: rgba(128, 128, 128, 1),
-                        fontSize: 13
+                        fontSize: 12
                       ),)
                     ],
                   ),
@@ -92,7 +92,7 @@ class _StoreDetailState extends State<StoreDetail> {
                       ),
                       Text('周日 08:00-18:00', style: TextStyle(
                         color: rgba(128, 128, 128, 1),
-                        fontSize: 13
+                        fontSize: 12
                       ),)
                     ],
                   ),
@@ -107,13 +107,13 @@ class _StoreDetailState extends State<StoreDetail> {
                         width: 65,
                         child: Text('门店地址：', style: TextStyle(
                           color: rgba(128, 128, 128, 1),
-                          fontSize: 13
+                          fontSize: 12
                         ),),
                       ),
                       Expanded(
                         child: Text('奥术大师大撒大所大萨', style: TextStyle(
                           color: rgba(128, 128, 128, 1),
-                          fontSize: 13
+                          fontSize: 12
                         ),),
                       )
                     ],

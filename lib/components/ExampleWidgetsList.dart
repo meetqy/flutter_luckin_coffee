@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-02 15:41:55
- * @lastTime: 2019-09-12 09:19:20
+ * @lastTime: 2019-09-17 10:12:02
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -61,6 +61,17 @@ class ExampleWidgetsList extends StatelessWidget {
                   ],
                 ),
                 onPress: () => Navigator.pushNamed(context, '/example_dialog'),
+              ),
+
+              returnRow(context,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('ARow 行'),
+                    icontupian6(color: rgba(228, 228, 228, 1), size: 14)
+                  ],
+                ),
+                onPress: () => Navigator.pushNamed(context, '/example_arow'),
               ),
             ],
           ),

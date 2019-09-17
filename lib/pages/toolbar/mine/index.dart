@@ -78,7 +78,7 @@ class _MineState extends State<Mine> {
             color: hex('#fff'),
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Column(children: <Widget>[
-              MineRow('个人资料', icon: icontupian5(color: rgba(220, 220, 220, 1), size: 14),),
+              MineRow('个人资料', icon: icontupian5(color: rgba(220, 220, 220, 1), size: 16),),
               MineRow('咖啡钱包', 
                 icon: Container(
                   padding: EdgeInsets.only(bottom: 5),

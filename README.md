@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-16 16:53:15
+ * @lastTime: 2019-09-17 10:13:44
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -85,9 +85,10 @@ Tools • Dart 2.4.0
 
 ## 项目中所封装的组件
 
-- [Button](./lib/components/button)
-- [CustomStepper](./lib/components/stepper)
-- [CustomDialog](./lib/components/dialog)
+- [Button 按钮](./lib/components/button)
+- [CustomStepper 步进器](./lib/components/stepper)
+- [CustomDialog 弹出框](./lib/components/dialog)
+- [ARow 行](./lib/components/arow)
 
 
 ## 开发规范

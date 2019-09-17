@@ -1,12 +1,13 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-09 15:32:03
+ * @lastTime: 2019-09-17 10:59:50
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
@@ -68,39 +69,67 @@ class _HomeState extends State<Home> {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(children: <Widget>[
-            HomeRow('火车南站', '距您52m', 
-              titleBold: false,
-              right: new TakeOutBtn()
-            ),
-            HomeRow('现在下单', 'ORDER NOW', 
-              right: HomeIcon(
-                icontupian3(size: 20, color: rgba(104, 68, 60, 1)),
-                margin: EdgeInsets.only(left: 2),
+            ARow(
+              height: 70,
+              padding: EdgeInsets.all(0),
+              leftChild: leftChild(
+                title: '火车南站',
+                desc: '距您53m',
+                titleBlod: false
               ),
-              onPress: () => G.pushNamed('/menu')
+              rightChild: TakeOutBtn(),
             ),
-            HomeRow('咖啡钱包', 'COFFRR WALLET',
-              right: HomeIcon(
-                icontupian(size: 20, color: rgba(104, 68, 60, 1)),
-                margin: EdgeInsets.only(left: 2),
+
+            ARow(
+              height: 70,
+              padding: EdgeInsets.all(0),
+              leftChild: leftChild(
+                title: '现在下单',
+                desc: 'ORDER NOW'
+              ),
+              rightChild: rightChild(
+                icon: icontupian3(color: rgba(99, 71, 58, 1), size: 20),
+              ),
+              onPressed: () => G.pushNamed('/menu')
+            ),  
+            
+            ARow(
+              height: 70,
+              padding: EdgeInsets.all(0),
+              leftChild: leftChild(
+                title: '咖啡钱包',
+                desc: 'COFFRR WALLET'
+              ),
+              rightChild: rightChild(
+                icon: icontupian(size: 20, color: rgba(104, 68, 60, 1)),
               ),
             ),
-            HomeRow('送Ta咖啡', 'SEND COFFEE',
-              right: HomeIcon(
-                icontupian1(size: 20, color: rgba(104, 68, 60, 1)),
-                margin: EdgeInsets.only(left: 2),
+
+            ARow(
+              height: 70,
+              padding: EdgeInsets.all(0),
+              leftChild: leftChild(
+                title: '送Ta咖啡',
+                desc: 'SEND COFFEE'
+              ),
+              rightChild: rightChild(
+                icon: icontupian1(size: 20, color: rgba(104, 68, 60, 1)),
               ),
             ),
-            HomeRow('组件列表', 'ENTERPRISE ACCOUNT',
-              bottomBorder: false,
-              right: HomeIcon(
-                icontupian2(size: 20, color: rgba(104, 68, 60, 1)),
-                margin: EdgeInsets.only(left: 1, bottom: 3),
+
+            ARow(
+              height: 70,
+              padding: EdgeInsets.all(0),
+              leftChild: leftChild(
+                title: '组件列表',
+                desc: 'CONPONENTS LIST'
               ),
-              onPress: () {
-                G.pushNamed('/example_widgets_list', arguments: {'msg': 'home to list'});
-              },
+              rightChild: rightChild(
+                icon: iconorder(size: 20, color: rgba(104, 68, 60, 1)),
+              ),
+              onPressed: () => G.pushNamed('/example_widgets_list', arguments: {'msg': 'home to list'})
             ),
+            
             Container(
               child: Image.asset('lib/assets/images/home/bottom_bar.png'),
             )
@@ -110,6 +139,46 @@ class _HomeState extends State<Home> {
         
         
       ],),
+    );
+  }
+
+  Container rightChild({
+    Icon icon,
+    Function onPressed
+  }) {
+    return Container(
+      width: 40,
+      height: 40,
+      decoration: BoxDecoration(
+        border: Border.all(color: rgba(99, 71, 58, 1)),
+        borderRadius: BorderRadius.circular(20)
+      ),
+      child: Container(
+        padding: EdgeInsets.only(left: 2),
+        child: icon,
+      ),
+    );
+  }
+
+  Column leftChild({String title, String desc, bool titleBlod = true}) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Row(children: <Widget>[
+          Text(title, style: TextStyle(
+            color: rgba(56, 56, 56, 1),
+            fontSize: 16,
+            fontWeight: titleBlod ? FontWeight.bold : FontWeight.normal
+          ),)
+        ],),
+        Row(children: <Widget>[
+          Text(desc, style: TextStyle(
+            color: rgba(128, 128, 128, 1),
+            fontSize: 12
+          ),)
+        ],)
+      ],
     );
   }
 }

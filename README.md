@@ -1,10 +1,12 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-17 10:13:44
+ * @lastTime: 2019-09-17 13:23:29
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
+
+A complete flutter simulation luckin coffee demo, using the API factory as the background.
 
 flutter实战demo，仿luckin coffee。
 

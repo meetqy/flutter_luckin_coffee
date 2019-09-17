@@ -7,6 +7,7 @@ class ARow extends StatelessWidget {
   final Widget centerChild;
   final Widget rightChild;
   final EdgeInsets padding;
+  final EdgeInsets margin;
   final Border border;
   final Color color;
   final Function onPressed;
@@ -19,6 +20,7 @@ class ARow extends StatelessWidget {
   /// @param {Widget} centerChild 中间内容
   /// @param {Widget} rightChild 右侧内容
   /// @param {EdgeInsets} padding 内边距
+  /// @param {EdgeInsets} margin 外边距
   /// @param {Border} border 
   /// @param {Color} color 
   /// @param {Function} onPressed 点击回调
@@ -32,7 +34,8 @@ class ARow extends StatelessWidget {
     this.rightChild,
     this.border,
     this.color,
-    this.onPressed
+    this.onPressed,
+    this.margin
   }) : super(key: key);
 
   @override
@@ -45,6 +48,7 @@ class ARow extends StatelessWidget {
           border: border == null ? Border(bottom: BorderSide(width: 1, color: rgba(242, 242, 242, 1))) : border
         ),
         padding: padding == null ? EdgeInsets.symmetric(horizontal: 15) : padding,
+        margin: margin == null ? EdgeInsets.all(0) : margin,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,

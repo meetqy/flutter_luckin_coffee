@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-17 11:00:32
+ * @lastTime: 2019-09-17 13:58:14
  * @LastEditors: meetqy
  -->
 # Button按钮
@@ -27,6 +27,7 @@ ARow(
 @param {Widget} rightChild 右侧内容
 @param {EdgeInsets} padding 内边距
 @param {Function} onPressed 点击回调
+@param {EdgeInsets} margin 外边距
 @param {Border} border 
 @param {Color} color 
 ```

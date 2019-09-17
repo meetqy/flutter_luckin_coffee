@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-17 10:59:50
+ * @lastTime: 2019-09-17 11:07:19
  * @LastEditors: meetqy
  */
 
@@ -12,9 +12,6 @@ import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
-
-import 'widgets/HomeIcon.dart';
-import 'widgets/HomeRow.dart';
 
 
 class Home extends StatefulWidget {
@@ -57,11 +54,10 @@ class _HomeState extends State<Home> {
           Positioned(
             top: 50,
             right: 10,
-            child: HomeIcon(
-              icontupian4(size: 20, color: hex('#fff')),
+            child: rightChild(
+              icon: icontupian4(size: 20, color: hex('#fff')),
               bgColor: rgba(0, 0, 0, .3),
-              border: false,
-              margin: EdgeInsets.only(right: 3),
+              showBorder: false
             )
           ,)
         ],),
@@ -143,14 +139,16 @@ class _HomeState extends State<Home> {
   }
 
   Container rightChild({
-    Icon icon,
-    Function onPressed
+    Widget icon,
+    Color bgColor,
+    bool showBorder = true
   }) {
     return Container(
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        border: Border.all(color: rgba(99, 71, 58, 1)),
+        color: bgColor,
+        border: Border.all(color: showBorder ? rgba(99, 71, 58, 1) : Colors.transparent) ,
         borderRadius: BorderRadius.circular(20)
       ),
       child: Container(
@@ -182,5 +180,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-

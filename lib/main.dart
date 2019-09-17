@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/example_arow',
+      initialRoute: '/example_dialog',
       onGenerateRoute: router.getRoutes,
     );
   }

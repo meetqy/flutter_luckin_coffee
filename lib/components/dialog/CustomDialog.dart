@@ -34,7 +34,8 @@ class CustomDialog {
     _content = _initContent();
     _bottom = _initBottom(
       confirmButtonPress: confirmButtonPress,
-      confirmButtonText: confirmButtonText == null ? Text('确认') : confirmButtonText
+      confirmButtonText: confirmButtonText == null ? Text('确认') : confirmButtonText,
+      confirmBorderRadius: BorderRadius.only(bottomLeft: Radius.circular(4), bottomRight: Radius.circular(4))
     );
 
 
@@ -60,14 +61,16 @@ class CustomDialog {
     Function cancelButtonPress,
     Text cancelButtonText,
   }) {
-     _title = _initTitle();
+    _title = _initTitle();
     _content = _initContent();
 
-     _bottom = _initBottom(
+    _bottom = _initBottom(
       confirmButtonPress: confirmButtonPress,
       confirmButtonText: confirmButtonText == null ? Text('确认') : confirmButtonText,
       cancelButtonText: cancelButtonText == null ? Text('取消') : cancelButtonText,
-      cancelButtonPress: cancelButtonPress
+      cancelButtonPress: cancelButtonPress,
+      cancelBorderRadius: BorderRadius.only(bottomLeft: Radius.circular(4)),
+      confirmBorderRadius: BorderRadius.only(bottomRight: Radius.circular(4))
     );
 
     _initDialog();
@@ -110,6 +113,8 @@ class CustomDialog {
     Text cancelButtonText,
     Function confirmButtonPress,
     Function cancelButtonPress,
+    BorderRadius cancelBorderRadius,
+    BorderRadius confirmBorderRadius,
   }) {
     return Row(
       children: <Widget>[
@@ -118,12 +123,12 @@ class CustomDialog {
           child: cancelButtonText == null ? null : Expanded(child: 
             Container(
               decoration: BoxDecoration(
-                border: Border(right: BorderSide(color: rgba(242, 242, 242,1)))
+                border: Border(right: BorderSide(color: rgba(242, 242, 242,1))),
               ),
               child: Button.normal(
                 child: cancelButtonText,
                 color: ProjectColor.blackDarker,
-                borderRadius: BorderRadius.circular(0),
+                borderRadius: cancelBorderRadius,
                 onPressed: (){
                   if(cancelButtonPress == null) {
                     Navigator.pop(context);
@@ -140,7 +145,7 @@ class CustomDialog {
           child: confirmButtonText == null ? null : Expanded(
             child: Button.normal(
               child: confirmButtonText,
-              borderRadius: BorderRadius.circular(0),
+              borderRadius: confirmBorderRadius,
               color: ProjectColor.blueLight,
               onPressed: (){
                 if(confirmButtonPress == null) {

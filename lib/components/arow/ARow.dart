@@ -9,6 +9,7 @@ class ARow extends StatelessWidget {
   final EdgeInsets padding;
   final Border border;
   final Color color;
+  final Function onPressed;
 
   /// ARow 行
   /// 
@@ -20,6 +21,7 @@ class ARow extends StatelessWidget {
   /// @param {EdgeInsets} padding 内边距
   /// @param {Border} border 
   /// @param {Color} color 
+  /// @param {Function} onPressed 点击回调
   /// ```
   ARow({
     Key key,
@@ -29,34 +31,38 @@ class ARow extends StatelessWidget {
     this.centerChild,
     this.rightChild,
     this.border,
-    this.color
+    this.color,
+    this.onPressed
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      decoration: BoxDecoration(
-        color: color == null ? hex('#fff') : color,
-        border: border == null ? Border(bottom: BorderSide(width: 1, color: rgba(242, 242, 242, 1))) : border
-      ),
-      padding: padding == null ? EdgeInsets.symmetric(horizontal: 15) : padding,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          // left
-          leftChild == null ? Container() : leftChild,
+    return InkWell(
+      child: Container(
+        height: height,
+        decoration: BoxDecoration(
+          color: color == null ? hex('#fff') : color,
+          border: border == null ? Border(bottom: BorderSide(width: 1, color: rgba(242, 242, 242, 1))) : border
+        ),
+        padding: padding == null ? EdgeInsets.symmetric(horizontal: 15) : padding,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            // left
+            leftChild == null ? Container() : leftChild,
 
-          // center
-          Expanded(
-            child: centerChild == null ? Container() : centerChild
-          ),
-          
-          // right
-          rightChild == null ? Container() : rightChild
-        ],
+            // center
+            Expanded(
+              child: centerChild == null ? Container() : centerChild
+            ),
+            
+            // right
+            rightChild == null ? Container() : rightChild
+          ],
+        ),
       ),
+      onTap: () => onPressed == null ? (){} : onPressed(),
     );
   }
 }

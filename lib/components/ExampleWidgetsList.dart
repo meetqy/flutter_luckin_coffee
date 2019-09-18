@@ -1,11 +1,12 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-02 15:41:55
- * @lastTime: 2019-09-18 10:46:53
+ * @lastTime: 2019-09-18 11:01:50
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 
@@ -38,18 +39,18 @@ class ExampleWidgetsList extends StatelessWidget {
                     icontupian6(color: rgba(228, 228, 228, 1), size: 14)
                   ],
                 ),
-                onPress: () => Navigator.pushNamed(context, '/example_abutton'),
+                onPress: () => G.pushNamed('/example_abutton'),
               ),
 
               returnRow(context,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text('CustomStepper 步进器'),
+                    Text('AStepper 步进器'),
                     icontupian6(color: rgba(228, 228, 228, 1), size: 14)
                   ],
                 ),
-                onPress: () => Navigator.pushNamed(context, '/example_stepper'),
+                onPress: () => G.pushNamed('/example_astepper'),
               ),
 
               returnRow(context,
@@ -60,7 +61,7 @@ class ExampleWidgetsList extends StatelessWidget {
                     icontupian6(color: rgba(228, 228, 228, 1), size: 14)
                   ],
                 ),
-                onPress: () => Navigator.pushNamed(context, '/example_adialog'),
+                onPress: () => G.pushNamed('/example_adialog'),
               ),
 
               returnRow(context,
@@ -71,7 +72,7 @@ class ExampleWidgetsList extends StatelessWidget {
                     icontupian6(color: rgba(228, 228, 228, 1), size: 14)
                   ],
                 ),
-                onPress: () => Navigator.pushNamed(context, '/example_arow'),
+                onPress: () => G.pushNamed('/example_arow'),
               ),
             ],
           ),

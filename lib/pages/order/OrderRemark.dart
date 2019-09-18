@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/RadiusBtn.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
@@ -65,7 +65,7 @@ class _OrderRemarkState extends State<OrderRemark> {
               ),
 
               Container(
-                child: Button.normal(
+                child: AButton.normal(
                   width: 300,
                   child: Text('确认'),
                   color: hex('#fff'),

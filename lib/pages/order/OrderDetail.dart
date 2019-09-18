@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/pages/order/widgets/GoodsMsgRow.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
@@ -89,7 +89,7 @@ class _OrderDetailState extends State<OrderDetail> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Button.normal(
+                AButton.normal(
                   child: Text('取消订单', style: TextStyle(fontSize: 14),),
                   width: 105,
                   height: 32,
@@ -100,7 +100,7 @@ class _OrderDetailState extends State<OrderDetail> {
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 10),
-                  child: Button.normal(
+                  child: AButton.normal(
                     child: Text('取餐码'),
                     width: 105,
                     height: 32,
@@ -161,7 +161,7 @@ class _OrderDetailState extends State<OrderDetail> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                // Button.bigButton('取消订单',
+                // AButton.bigButton('取消订单',
                 //     width: 105,
                 //     height: 32,
                 //     fontSize: 14,
@@ -172,7 +172,7 @@ class _OrderDetailState extends State<OrderDetail> {
                 // ),
                 // Container(
                 //   margin: EdgeInsets.only(left: 10),
-                //   child: Button.bigButton('去支付',
+                //   child: AButton.bigButton('去支付',
                 //       width: 105,
                 //       height: 32,
                 //       fontSize: 14,

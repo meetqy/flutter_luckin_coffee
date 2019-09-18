@@ -1,8 +1,8 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
 
 class OrderListRow extends StatelessWidget {
   final int orderStatus;  
@@ -56,7 +56,7 @@ class OrderListRow extends StatelessWidget {
 
     var btn1 = Container(
       margin: EdgeInsets.only(left: 10),
-      child: Button.normal(
+      child: AButton.normal(
         child: Text('再来一单', style: TextStyle(fontSize: 12),),
         color: rgba(56, 56, 56, 1),
         plain: true,
@@ -69,7 +69,7 @@ class OrderListRow extends StatelessWidget {
 
     var btn2 = Container(
       margin: EdgeInsets.only(left: 10),
-      child: Button.normal(
+      child: AButton.normal(
         child: Text('去支付', style: TextStyle(fontSize: 12),),
         color: rgba(255, 129, 2, 1),
         borderColor: rgba(255, 129, 2, 1),
@@ -82,7 +82,7 @@ class OrderListRow extends StatelessWidget {
 
     var btn3 = Container(
       margin: EdgeInsets.only(left: 10),
-      child: Button.normal(
+      child: AButton.normal(
         child: Text('去评价', style: TextStyle(fontSize: 12),),
         color: rgba(144, 192, 239, 1),
         plain: true,

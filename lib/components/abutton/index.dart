@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'Button.dart';
 
 /// 暴露button 相当于工厂函数
-class Button {
+class AButton {
   /// 按钮
   /// 
   /// ```

@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
@@ -97,7 +97,7 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
                 padding: EdgeInsets.only(bottom: bottom, top: bottom/2),
                 color: hex('#fff'),
                 alignment: Alignment.center,
-                child: Button.normal(
+                child: AButton.normal(
                   width: 300,
                   child: Text('提交'),
                   bgColor: rgba(144, 192, 239, 1),

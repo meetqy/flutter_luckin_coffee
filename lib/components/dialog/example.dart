@@ -1,11 +1,11 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-06 10:40:40
- * @lastTime: 2019-09-06 17:09:20
+ * @lastTime: 2019-09-18 10:37:28
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/components/dialog/CustomDialog.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 
@@ -38,7 +38,7 @@ class _ExampleDialogState extends State<ExampleDialog> {
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.only(right: 15),
-                        child: Button.normal(
+                        child: AButton.normal(
                           child: Text('提示弹窗'),
                           type: 'primary',
                           onPressed: (){
@@ -50,7 +50,7 @@ class _ExampleDialogState extends State<ExampleDialog> {
                         ),
                       ),
 
-                      Button.normal(
+                      AButton.normal(
                         padding: EdgeInsets.symmetric(horizontal: 15),
                         child: Text('提示弹窗(无标题)'),
                         type: 'primary',
@@ -67,7 +67,7 @@ class _ExampleDialogState extends State<ExampleDialog> {
                   padding: EdgeInsets.only(bottom: 15),
                   child: Row(
                     children: <Widget>[
-                      Button.normal(
+                      AButton.normal(
                         child: Text('确认弹窗'),
                         type: 'primary',
                         onPressed: (){

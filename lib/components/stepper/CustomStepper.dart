@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/ok/ProjectColor.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
@@ -47,7 +47,7 @@ class _CustomStepperState extends State<CustomStepper> {
     return Container(
       child: Row(
         children: <Widget>[
-          Button.icon(
+          AButton.icon(
             width: 28,
             height: 28,
             bgColor: Colors.transparent,
@@ -73,7 +73,7 @@ class _CustomStepperState extends State<CustomStepper> {
               )
             ),
           ),
-          Button.icon(
+          AButton.icon(
             width: 28,
             height: 28,
             bgColor: Colors.transparent,

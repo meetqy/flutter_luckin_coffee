@@ -1,7 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
@@ -106,7 +106,7 @@ class _LoginPhoneState extends State<LoginPhone> {
                   ),
                 ),
               ),
-              Button.normal(
+              AButton.normal(
                 child: Text('获取验证码'),
                 color: phoneNum['verify'] && phoneNum['value']!=null ? rgba(85, 122, 157, 1) : rgba(166, 166, 166, 1),
                 onPressed: () => {}
@@ -116,7 +116,7 @@ class _LoginPhoneState extends State<LoginPhone> {
 
           Container(
             margin: EdgeInsets.only(top: 20),
-            child: Button.normal(
+            child: AButton.normal(
               width: 300,
               child: Text('确定'),
               bgColor: rgba(136, 175, 213, 1),

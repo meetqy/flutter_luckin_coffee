@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/other.dart';
@@ -26,7 +26,7 @@ class LoginMethod extends StatelessWidget {
 
           Container(
             margin: EdgeInsets.only(top: 116),
-            child: Button.normal(
+            child: AButton.normal(
               width: 300,
               child: Text('微信一键登录'),
               color: hex('#fff'),
@@ -36,7 +36,7 @@ class LoginMethod extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(top: 25),
-            child: Button.normal(
+            child: AButton.normal(
               width: 300,
               child: Text('手机验证码登录'),
               color: rgba(136, 175, 213, 1),

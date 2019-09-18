@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/pages/order/widgets/GoodsMsgRow.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
@@ -116,7 +116,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                               ),),
                               Container(
                                 margin: EdgeInsets.only(left: 10),
-                                child: Button.normal(
+                                child: AButton.normal(
                                   child: Text('充值优惠', style: TextStyle(fontSize: 8),),
                                   height: 16,
                                   width: 40,
@@ -301,7 +301,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                       ),),
                     )
                   ],),
-                  Button.normal(
+                  AButton.normal(
                     child: Text('去支付'),
                     bgColor: rgba(144, 192, 239, 1),
                     width: 120,

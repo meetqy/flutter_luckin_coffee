@@ -1,21 +1,21 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-02 16:18:16
+ * @lastTime: 2019-09-18 10:41:48
  * @LastEditors: meetqy
  -->
-# Button按钮
+# AButton按钮
 
 对项目中使用的button按钮进行的一个封装。主要有3类普通按钮（normal）,icon按钮（icon），加载按钮（loading）。
 
-<img src="./button.PNG" width="375"/>
+<img src="./abutton.PNG" width="375"/>
 
 ## normal
 
 - 使用
 
 ``` dart
-Button.normal(
+AButton.normal(
   child: Text('默认按钮'),onPressed: (){}
 )
 ```
@@ -41,7 +41,7 @@ Button.normal(
 - 使用
 
 ``` dart
-Button.icon(
+AButton.icon(
   width: 44,icon: xxx,type: 'primary',onPressed: (){}
 )
 ```
@@ -68,7 +68,7 @@ Button.icon(
 - 使用
 
 ``` dart
-Button.loading(
+AButton.loading(
   width: 44,type: 'primary',onPressed: (){},
 )
 ```

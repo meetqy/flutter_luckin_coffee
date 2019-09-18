@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/stepper/CustomStepper.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
@@ -54,7 +54,7 @@ class ShoppingCartListRow extends StatelessWidget {
                         ),),
                         Container(
                           margin: EdgeInsets.only(left: 5),
-                          child: Button.normal(
+                          child: AButton.normal(
                             child: Text('充2赠1', style: TextStyle(fontSize: 8),),
                             bgColor: rgba(255, 129, 2, 1),
                             color: hex("#fff"),

@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/stepper/CustomStepper.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/DacaiSay.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/RadiusBtn.dart';
@@ -222,7 +222,7 @@ final dialogPage = FullScreenDialog(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Button.icon(
+            AButton.icon(
               icon: icontupian17(size: 14,),
               textChild: Text('充2赠1', style: TextStyle(fontSize: 12),),
               color: hex('#fff'),
@@ -230,7 +230,7 @@ final dialogPage = FullScreenDialog(
               height: 32,
               onPressed: () => {}
             ),
-            Button.icon(
+            AButton.icon(
               height: 32,
               icon: iconsc(size: 14,),
               textChild: Text('收藏口味', style: TextStyle(fontSize: 12),),
@@ -238,7 +238,7 @@ final dialogPage = FullScreenDialog(
               bgColor: rgba(136, 175, 213, 0.3),
               onPressed: () => {}
             ),
-            Button.icon(
+            AButton.icon(
               height: 32,
               icon: icongouwuche(size: 14,),
               bgColor: rgba(136, 175, 213, 1),

@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/global.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/RecommendGoods.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/ShoppingCartListRow.dart';
@@ -148,7 +148,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
               ),
 
               // right button
-              Button.normal(
+              AButton.normal(
                 child: Text('去结算'),
                 color: hex('#fff'),
                 bgColor: rgba(144, 192, 239, 1),

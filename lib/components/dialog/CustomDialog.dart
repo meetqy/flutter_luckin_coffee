@@ -1,7 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_luckin_coffee/components/button/index.dart';
+import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/ok/ProjectColor.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 
@@ -125,7 +125,7 @@ class CustomDialog {
               decoration: BoxDecoration(
                 border: Border(right: BorderSide(color: rgba(242, 242, 242,1))),
               ),
-              child: Button.normal(
+              child: AButton.normal(
                 child: cancelButtonText,
                 color: ProjectColor.blackDarker,
                 borderRadius: cancelBorderRadius,
@@ -143,7 +143,7 @@ class CustomDialog {
         // 确认按钮
         Container(
           child: confirmButtonText == null ? null : Expanded(
-            child: Button.normal(
+            child: AButton.normal(
               child: confirmButtonText,
               borderRadius: confirmBorderRadius,
               color: ProjectColor.blueLight,

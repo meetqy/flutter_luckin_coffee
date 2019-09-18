@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-02 13:34:28
- * @lastTime: 2019-09-04 14:37:05
+ * @lastTime: 2019-09-18 10:36:20
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -10,18 +10,18 @@ import 'package:flutter_luckin_coffee/utils/index.dart';
 
 import 'index.dart';
 
-class ExampleButton extends StatefulWidget {
-  ExampleButton({Key key}) : super(key: key);
+class ExampleAButton extends StatefulWidget {
+  ExampleAButton({Key key}) : super(key: key);
 
-  _ExampleButtonState createState() => _ExampleButtonState();
+  _ExampleAButtonState createState() => _ExampleAButtonState();
 }
 
-class _ExampleButtonState extends State<ExampleButton> {
+class _ExampleAButtonState extends State<ExampleAButton> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppbar(
-        title: 'Button组件',
+        title: 'AButton组件',
         context: context,
       ),
       body: SafeArea(
@@ -34,9 +34,9 @@ class _ExampleButtonState extends State<ExampleButton> {
                 margin: EdgeInsets.symmetric(vertical: 10),
                 child: Row(
                   children: <Widget>[
-                    space(Button.normal(child: Text('默认按钮'),onPressed: (){})),
-                    space(Button.normal(child: Text('主要按钮'),type: 'primary',onPressed: (){})),
-                    space(Button.normal(child: Text('信息按钮'),type: 'info',onPressed: (){}))
+                    space(AButton.normal(child: Text('默认按钮'),onPressed: (){})),
+                    space(AButton.normal(child: Text('主要按钮'),type: 'primary',onPressed: (){})),
+                    space(AButton.normal(child: Text('信息按钮'),type: 'info',onPressed: (){}))
                   ],
                 ),
               ),
@@ -45,8 +45,8 @@ class _ExampleButtonState extends State<ExampleButton> {
                 margin: EdgeInsets.symmetric(vertical: 10),
                 child: Row(
                   children: <Widget>[
-                    space(Button.normal(child: Text('危险按钮'),type: 'danger',onPressed: (){})),
-                    space(Button.normal(child: Text('警告按钮'),type: 'warning',onPressed: (){}))
+                    space(AButton.normal(child: Text('危险按钮'),type: 'danger',onPressed: (){})),
+                    space(AButton.normal(child: Text('警告按钮'),type: 'warning',onPressed: (){}))
                   ],
                 ),
               ),            
@@ -57,8 +57,8 @@ class _ExampleButtonState extends State<ExampleButton> {
                 margin: EdgeInsets.symmetric(vertical: 10),
                 child: Row(
                   children: <Widget>[
-                    space(Button.normal(child: Text('主要按钮'),type: 'primary')),
-                    space(Button.normal(child: Text('警告按钮'),type: 'warning'))
+                    space(AButton.normal(child: Text('主要按钮'),type: 'primary')),
+                    space(AButton.normal(child: Text('警告按钮'),type: 'warning'))
                   ],
                 ),
               ),
@@ -68,9 +68,9 @@ class _ExampleButtonState extends State<ExampleButton> {
               Container(
                 margin: EdgeInsets.symmetric(vertical: 10),
                 child: Row(children: <Widget>[
-                  space(Button.normal(
+                  space(AButton.normal(
                     child: Text('主要按钮'),type: 'primary',plain: true,onPressed: (){})),
-                  space(Button.normal(
+                  space(AButton.normal(
                     child: Text('警告按钮'),type: 'warning',plain: true,onPressed: (){}))
                 ],),
               ),
@@ -80,13 +80,13 @@ class _ExampleButtonState extends State<ExampleButton> {
                 margin: EdgeInsets.symmetric(vertical: 10),
                 child: Row(
                   children: <Widget>[
-                    space(Button.icon(
+                    space(AButton.icon(
                       width: 44,icon: icongouwuche(),type: 'primary',onPressed: (){}
                     )),
-                    space(Button.icon(
+                    space(AButton.icon(
                       width: 44,icon: icongouwuche(),type: 'primary',plain: true,onPressed: (){}
                     )),
-                    space(Button.icon(
+                    space(AButton.icon(
                       textChild: Text('按钮'),
                       icon: icongouwuche(),type: 'primary',plain: true,onPressed: (){}
                     ))
@@ -99,22 +99,22 @@ class _ExampleButtonState extends State<ExampleButton> {
                 margin: EdgeInsets.symmetric(vertical: 10),
                 child: Row(
                   children: <Widget>[
-                    space(Button.icon(
+                    space(AButton.icon(
                       borderRadius: BorderRadius.circular(40),
                       width: 44,icon: icongouwuche(),type: 'primary',onPressed: (){}
                     )),
-                    space(Button.icon(
+                    space(AButton.icon(
                       plain: true,
                       borderRadius: BorderRadius.circular(40),
                       width: 44,icon: icongouwuche(),type: 'primary',onPressed: (){}
                     )),
-                    space(Button.normal(
+                    space(AButton.normal(
                       width: 80,height: 30,bgColor: rgba(204, 192, 180, 1),
                       type: 'primary',onPressed: (){},
                       borderRadius: BorderRadius.circular(44),
                       child: Text('冰')
                     ),),
-                    space(Button.normal(
+                    space(AButton.normal(
                       width: 80,height: 30,plain: true,
                       borderColor: rgba(204, 192, 180, 1),
                       onPressed: (){},
@@ -130,10 +130,10 @@ class _ExampleButtonState extends State<ExampleButton> {
                 margin: EdgeInsets.symmetric(vertical: 10),
                 child: Row(
                   children: <Widget>[
-                    space(Button.loading(
+                    space(AButton.loading(
                       width: 44,type: 'primary',onPressed: (){},
                     ),),
-                    space(Button.loading(
+                    space(AButton.loading(
                       width: 44,type: 'primary',plain: true,onPressed: (){}
                     ),)
                   ],
@@ -146,7 +146,7 @@ class _ExampleButtonState extends State<ExampleButton> {
               Container(
                 margin: EdgeInsets.symmetric(vertical: 10),
                 child: Row(children: <Widget>[
-                  space(Button.icon(
+                  space(AButton.icon(
                     width: 82,height: 32, bgColor: rgba(136, 175, 213, 0.3),
                     textChild: Text('收藏口味', style: TextStyle(
                       color: rgba(136, 175, 213, 1),
@@ -154,7 +154,7 @@ class _ExampleButtonState extends State<ExampleButton> {
                     ),),
                     icon: icongouwuche(size: 12, color: rgba(136, 175, 213, 1)),type: 'primary',onPressed: (){}
                   )),
-                  space(Button.icon(
+                  space(AButton.icon(
                     width: 82,height: 32,bgColor: rgba(255, 129, 2, 1),
                     textChild: Text('冲2赠1', style: TextStyle(
                       color: rgba(255, 255, 255, 1),
@@ -162,7 +162,7 @@ class _ExampleButtonState extends State<ExampleButton> {
                     ),),
                     icon: icongouwuche(size: 12, color: rgba(255, 255, 255, 1)),type: 'primary',onPressed: (){}
                   )),
-                  space(Button.icon(
+                  space(AButton.icon(
                     width: 82,height: 32,borderColor: Colors.green,bgColor: rgba(255, 129, 2, .1),plain: true,
                     textChild: Text('冲2赠1', style: TextStyle(
                       color: Colors.blue,

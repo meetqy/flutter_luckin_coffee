@@ -4,7 +4,7 @@ import 'package:flutter_luckin_coffee/components/ExampleWidgetsList.dart';
 import 'package:flutter_luckin_coffee/components/arow/example.dart';
 import 'package:flutter_luckin_coffee/components/abutton/example.dart';
 import 'package:flutter_luckin_coffee/components/adialog/example.dart';
-import 'package:flutter_luckin_coffee/components/stepper/example.dart';
+import 'package:flutter_luckin_coffee/components/astepper/example.dart';
 
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/choosephonecode/index.dart';
@@ -47,7 +47,7 @@ class Router {
     '/choose_phone_code': (BuildContext context, { Object args }) => ChoosePhoneCode(),
     '/example_abutton': (BuildContext context, { Object args }) => ExampleAButton(),
     '/example_widgets_list': (BuildContext context, { Object args }) => ExampleWidgetsList(args: args),
-    '/example_stepper': (BuildContext context, { Object args }) => ExampleStepper(),
+    '/example_astepper': (BuildContext context, { Object args }) => ExampleAStepper(),
     '/example_adialog': (BuildContext context, { Object args }) => ExampleADialog(),
     '/example_arow': (BuildContext context, { Object args }) => ExampleARow(),
   };

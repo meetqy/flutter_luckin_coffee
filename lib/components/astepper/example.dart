@@ -2,15 +2,15 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
-import 'CustomStepper.dart';
+import 'AStepper.dart';
 
-class ExampleStepper extends StatefulWidget {
-  ExampleStepper({Key key}) : super(key: key);
+class ExampleAStepper extends StatefulWidget {
+  ExampleAStepper({Key key}) : super(key: key);
 
   _ExampleStepperState createState() => _ExampleStepperState();
 }
 
-class _ExampleStepperState extends State<ExampleStepper> {
+class _ExampleStepperState extends State<ExampleAStepper> {
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _ExampleStepperState extends State<ExampleStepper> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                   Text('基础用法'),
-                  CustomStepper(value: 1,)
+                  AStepper(value: 1,)
                 ],),
               ),
               returnRow(
@@ -38,7 +38,7 @@ class _ExampleStepperState extends State<ExampleStepper> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                   Text('限制范围2-5'),
-                  CustomStepper(value: 1,min: 2,max: 5,)
+                  AStepper(value: 1,min: 2,max: 5,)
                 ],),
               ),
             ],
@@ -50,11 +50,11 @@ class _ExampleStepperState extends State<ExampleStepper> {
 
   Container returnRow({Widget child}) {
     return Container(
-              decoration: BoxDecoration(
-                border: ui.borderBottom(),
-              ),
-              padding: EdgeInsets.symmetric(vertical: 15),
-              child:child
-            );
+      decoration: BoxDecoration(
+        border: ui.borderBottom(),
+      ),
+      padding: EdgeInsets.symmetric(vertical: 15),
+      child:child
+    );
   }
 }

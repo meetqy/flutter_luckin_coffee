@@ -4,7 +4,7 @@ import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/ok/ProjectColor.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
-class CustomStepper extends StatefulWidget {
+class AStepper extends StatefulWidget {
   final num min;
   final num max;
   final Function onChange;
@@ -18,7 +18,7 @@ class CustomStepper extends StatefulWidget {
   /// @param {num} value - value
   /// @param {Function} onChange - 值改变的回调 返回一个num
   /// ```
-  CustomStepper({
+  AStepper({
     Key key,
     this.min = 0,
     this.max = 99,
@@ -29,7 +29,7 @@ class CustomStepper extends StatefulWidget {
   _CustomStepperState createState() => _CustomStepperState(min, value);
 }
 
-class _CustomStepperState extends State<CustomStepper> {
+class _CustomStepperState extends State<AStepper> {
   final num min;
   final num value;
   num number;

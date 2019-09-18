@@ -1,21 +1,21 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-05 13:21:20
+ * @lastTime: 2019-09-18 10:53:17
  * @LastEditors: meetqy
  -->
-# Button按钮
+# AStepper按钮
 
 对项目中使用的Stepper按钮进行的一个封装。
 
-<img src="./stepper.PNG" width="375"/>
+<img src="./astepper.PNG" width="375"/>
 
 ## normal
 
 - 使用
 
 ``` dart
-CustomStepper()
+AStepper()
 ```
 
 - 参数

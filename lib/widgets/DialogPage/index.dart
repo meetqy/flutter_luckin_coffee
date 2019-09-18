@@ -1,7 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
-import 'package:flutter_luckin_coffee/components/stepper/CustomStepper.dart';
+import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/DacaiSay.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/RadiusBtn.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/SelectRow.dart';
@@ -195,7 +195,7 @@ final dialogPage = FullScreenDialog(
                 ),
               ),
               
-              CustomStepper()
+              AStepper()
             ],),
             Container(
               alignment: Alignment.centerLeft,

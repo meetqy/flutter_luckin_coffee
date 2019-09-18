@@ -1,10 +1,10 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-06 17:15:50
+ * @lastTime: 2019-09-18 10:53:41
  * @LastEditors: meetqy
  -->
-# Button按钮
+# ADialog按钮
 
 对项目中使用的Stepper按钮进行的一个封装。
 

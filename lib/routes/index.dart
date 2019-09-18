@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/ExampleWidgetsList.dart';
 import 'package:flutter_luckin_coffee/components/arow/example.dart';
 import 'package:flutter_luckin_coffee/components/abutton/example.dart';
-import 'package:flutter_luckin_coffee/components/dialog/example.dart';
+import 'package:flutter_luckin_coffee/components/adialog/example.dart';
 import 'package:flutter_luckin_coffee/components/stepper/example.dart';
 
 // luckin coffee 页面
@@ -45,10 +45,10 @@ class Router {
     '/store_detail': (BuildContext context, { Object args }) => StoreDetail(),
     '/dining_code': (BuildContext context, { Object args }) => DiningCode(),
     '/choose_phone_code': (BuildContext context, { Object args }) => ChoosePhoneCode(),
-    '/example_button': (BuildContext context, { Object args }) => ExampleAButton(),
+    '/example_abutton': (BuildContext context, { Object args }) => ExampleAButton(),
     '/example_widgets_list': (BuildContext context, { Object args }) => ExampleWidgetsList(args: args),
     '/example_stepper': (BuildContext context, { Object args }) => ExampleStepper(),
-    '/example_dialog': (BuildContext context, { Object args }) => ExampleDialog(),
+    '/example_adialog': (BuildContext context, { Object args }) => ExampleADialog(),
     '/example_arow': (BuildContext context, { Object args }) => ExampleARow(),
   };
 

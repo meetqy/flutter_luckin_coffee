@@ -5,7 +5,7 @@ import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/ok/ProjectColor.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 
-class CustomDialog {
+class ADialog {
   final BuildContext context;
   final String title;
   final String content;
@@ -24,7 +24,7 @@ class CustomDialog {
   /// @param {Function} confirmButtonPress - 点击确认回调
   /// @param {Text} confirmButtonText - 确认的文字
   /// ```
-  CustomDialog.alert(this.context, {
+  ADialog.alert(this.context, {
     this.title,
     @required this.content,
     Function confirmButtonPress,
@@ -53,7 +53,7 @@ class CustomDialog {
   /// @param {Function} cancelButtonPress - 点击取消回调
   /// @param {Text} cancelButtonText - 取消的文字
   /// ```
-  CustomDialog.confirm(this.context, {
+  ADialog.confirm(this.context, {
     this.title,
     @required this.content,
     Function confirmButtonPress,

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-02 15:41:55
- * @lastTime: 2019-09-17 10:12:02
+ * @lastTime: 2019-09-18 10:46:53
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -34,11 +34,11 @@ class ExampleWidgetsList extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text('Button'),
+                    Text('AButton'),
                     icontupian6(color: rgba(228, 228, 228, 1), size: 14)
                   ],
                 ),
-                onPress: () => Navigator.pushNamed(context, '/example_button'),
+                onPress: () => Navigator.pushNamed(context, '/example_abutton'),
               ),
 
               returnRow(context,
@@ -56,11 +56,11 @@ class ExampleWidgetsList extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text('CustomDialog 弹出框'),
+                    Text('ADialog 弹出框'),
                     icontupian6(color: rgba(228, 228, 228, 1), size: 14)
                   ],
                 ),
-                onPress: () => Navigator.pushNamed(context, '/example_dialog'),
+                onPress: () => Navigator.pushNamed(context, '/example_adialog'),
               ),
 
               returnRow(context,

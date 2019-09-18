@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-18 10:42:05
+ * @lastTime: 2019-09-18 10:48:11
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -89,7 +89,7 @@ Tools • Dart 2.4.0
 
 - [AButton 按钮](./lib/components/button)
 - [CustomStepper 步进器](./lib/components/stepper)
-- [CustomDialog 弹出框](./lib/components/dialog)
+- [ADialog 弹出框](./lib/components/dialog)
 - [ARow 行](./lib/components/arow)
 
 

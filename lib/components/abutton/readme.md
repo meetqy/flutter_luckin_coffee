@@ -1,12 +1,12 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-18 10:41:48
+ * @lastTime: 2019-09-18 10:58:44
  * @LastEditors: meetqy
  -->
 # AButton按钮
 
-对项目中使用的button按钮进行的一个封装。主要有3类普通按钮（normal）,icon按钮（icon），加载按钮（loading）。
+对项目中使用的button按钮进行的封装。主要有3类普通按钮（normal）,icon按钮（icon），加载按钮（loading）。
 
 <img src="./abutton.PNG" width="375"/>
 

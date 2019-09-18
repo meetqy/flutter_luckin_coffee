@@ -6,7 +6,7 @@
  -->
 # AStepper按钮
 
-对项目中使用的Stepper按钮进行的一个封装。
+对项目中使用的Stepper进行的封装。
 
 <img src="./astepper.PNG" width="375"/>
 

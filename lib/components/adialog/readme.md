@@ -1,12 +1,12 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-18 10:53:41
+ * @lastTime: 2019-09-18 10:57:39
  * @LastEditors: meetqy
  -->
 # ADialog按钮
 
-对项目中使用的Stepper按钮进行的一个封装。
+对项目中使用的dialog进行的封装。
 
 <img src="./adialog.PNG" width="375"/>
 

@@ -41,6 +41,8 @@ class ARow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      highlightColor: onPressed == null ? Colors.transparent : null,
+      splashColor: onPressed == null ? Colors.transparent : null,
       child: Container(
         height: height,
         decoration: BoxDecoration(

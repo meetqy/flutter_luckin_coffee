@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // 组件列表
 import 'package:flutter_luckin_coffee/components/ExampleWidgetsList.dart';
+import 'package:flutter_luckin_coffee/components/acheckbox/example.dart';
 import 'package:flutter_luckin_coffee/components/arow/example.dart';
 import 'package:flutter_luckin_coffee/components/abutton/example.dart';
 import 'package:flutter_luckin_coffee/components/adialog/example.dart';
@@ -50,6 +51,7 @@ class Router {
     '/example_astepper': (BuildContext context, { Object args }) => ExampleAStepper(),
     '/example_adialog': (BuildContext context, { Object args }) => ExampleADialog(),
     '/example_arow': (BuildContext context, { Object args }) => ExampleARow(),
+    '/example_acheckbox': (BuildContext context, { Object args }) => ExampleACheckBox(),
   };
 
   static Router _singleton;

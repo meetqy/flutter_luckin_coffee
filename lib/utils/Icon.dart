@@ -6,6 +6,12 @@ Icon iconshoucang({double size = 18.0, Color color}) => Icon(
   color: color,
 );
 
+Icon iconqueren({double size = 18.0, Color color}) => Icon(
+  IconData(0xe8d8, fontFamily: 'iconfont'),
+  size: size,
+  color: color,
+);
+
 Icon iconjaifill({double size = 18.0, Color color}) => Icon(
   IconData(0xe6e0, fontFamily: 'iconfont'),
   size: size,
@@ -110,12 +116,6 @@ Icon icontupian4({double size = 18.0, Color color}) => Icon(
 
 Icon icontubiao({double size = 18.0, Color color}) => Icon(
   IconData(0xe601, fontFamily: 'iconfont'),
-  size: size,
-  color: color,
-);
-
-Icon icontubiao1({double size = 18.0, Color color}) => Icon(
-  IconData(0xe60c, fontFamily: 'iconfont'),
   size: size,
   color: color,
 );

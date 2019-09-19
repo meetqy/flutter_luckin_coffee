@@ -29,7 +29,7 @@ class ShoppingCartListRow extends StatelessWidget {
           Container(
             width: 54,
             child: Row(children: <Widget>[
-              icontubiao1(color: rgba(136, 175, 213, 1), size: 24),
+              iconqueren(color: rgba(136, 175, 213, 1), size: 24),
             ],),
           ),
           

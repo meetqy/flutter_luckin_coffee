@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-20 15:37:23
+ * @lastTime: 2019-09-20 16:19:50
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -20,7 +20,7 @@ flutter实战demo，仿luckin coffee。
 
 - 为什么用luckin coffee？
 
-> luckin coffee在网上能搜索到原型+设计图好像是开源的，为了方便。[luckin coffee原型+设计图](https://www.xiaopiu.com/user?uid=5d478fe8174ff47f357b8b00&tab=collectProject&libPop=project&libId=5c306b252d5cd56e70a1e640)
+> luckin coffee在网上能搜索到原型+设计图好像是开源的，为了方便。[luckin coffee原型+设计图](https://www.xiaopiu.com/square?page=2&libPop=project&libId=5c306b252d5cd56e70a1e640)
 
 ##### - 注： 正常下单请到luckin coffee官方客户端
 

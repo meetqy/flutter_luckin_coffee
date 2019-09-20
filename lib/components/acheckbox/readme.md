@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-09-02 15:23:17
- * @lastTime: 2019-09-20 14:06:35
+ * @lastTime: 2019-09-20 14:09:11
  * @LastEditors: meetqy
  -->
 # ACheckBox复选框
@@ -63,7 +63,7 @@ ACheckBox(
 - 参数 
 
   
-注：其他参数和checkbox一样
+> 注：其他参数和checkbox一样
 ``` dart
 @param {Widget} title - 文本
 @param {String} titlePosition - 文本位置  left || right

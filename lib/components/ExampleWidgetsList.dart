@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-02 15:41:55
- * @lastTime: 2019-09-18 11:01:50
+ * @lastTime: 2019-09-20 13:49:03
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -73,6 +73,17 @@ class ExampleWidgetsList extends StatelessWidget {
                   ],
                 ),
                 onPress: () => G.pushNamed('/example_arow'),
+              ),
+
+              returnRow(context,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('ACheckBox 复选框'),
+                    icontupian6(color: rgba(228, 228, 228, 1), size: 14)
+                  ],
+                ),
+                onPress: () => G.pushNamed('/example_acheckbox'),
               ),
             ],
           ),

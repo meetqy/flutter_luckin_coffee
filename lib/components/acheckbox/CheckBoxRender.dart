@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class CheckBoxRender extends StatefulWidget {
-  static double _kEdgeSize;
-  static Radius _kEdgeRadius;
-  static double _kStrokeWidth;
-
   CheckBoxRender({
     Key key,
     @required this.value,
@@ -14,23 +10,21 @@ class CheckBoxRender extends StatefulWidget {
     this.activeColor,
     this.checkColor,
     this.materialTapTargetSize,
-    double width = 18.0,
-    double strokeWidth = 2.0,
-    Radius radius
+    this.width = 18.0,
+    this.strokeWidth = 2.0,
+    this.radius
   }) : assert(tristate != null),
        assert(tristate || value != null),
-       super(key: key) 
-  {
-    _kEdgeSize = width;
-    _kEdgeRadius = radius == null ? Radius.circular(2) : radius; 
-    _kStrokeWidth = strokeWidth;
-  }
+       super(key: key);
   final bool value;
   final ValueChanged<bool> onChanged;
   final Color activeColor;
 
   final Color checkColor;
 
+  final double width;
+  final Radius radius;
+  final double strokeWidth;
 
   final bool tristate;
 
@@ -64,6 +58,9 @@ class _CheckboxState extends State<CheckBoxRender> with TickerProviderStateMixin
       onChanged: widget.onChanged,
       additionalConstraints: additionalConstraints,
       vsync: this,
+      kEdgeRadius: widget.radius == null ? Radius.circular(2) : widget.radius,
+      kStrokeWidth: widget.strokeWidth,
+      kEdgeSize: widget.width
     );
   }
 }
@@ -79,6 +76,9 @@ class _CheckboxRenderObjectWidget extends LeafRenderObjectWidget {
     @required this.onChanged,
     @required this.vsync,
     @required this.additionalConstraints,
+    @required this.kEdgeSize,
+    @required this.kEdgeRadius,
+    @required this.kStrokeWidth,
   }) : assert(tristate != null),
        assert(tristate || value != null),
        assert(activeColor != null),
@@ -94,6 +94,9 @@ class _CheckboxRenderObjectWidget extends LeafRenderObjectWidget {
   final ValueChanged<bool> onChanged;
   final TickerProvider vsync;
   final BoxConstraints additionalConstraints;
+  final double kEdgeSize;
+  final Radius kEdgeRadius;
+  final double kStrokeWidth;
 
   @override
   _RenderCheckbox createRenderObject(BuildContext context) => _RenderCheckbox(
@@ -105,6 +108,9 @@ class _CheckboxRenderObjectWidget extends LeafRenderObjectWidget {
     onChanged: onChanged,
     vsync: vsync,
     additionalConstraints: additionalConstraints,
+    kEdgeSize: kEdgeSize,
+    kStrokeWidth: kStrokeWidth,
+    kEdgeRadius: kEdgeRadius
   );
 
   @override
@@ -131,6 +137,9 @@ class _RenderCheckbox extends RenderToggleable {
     BoxConstraints additionalConstraints,
     ValueChanged<bool> onChanged,
     @required TickerProvider vsync,
+    @required this.kEdgeSize,
+    @required this.kEdgeRadius,
+    @required this.kStrokeWidth
   }) : _oldValue = value,
        super(
          value: value,
@@ -141,6 +150,10 @@ class _RenderCheckbox extends RenderToggleable {
          additionalConstraints: additionalConstraints,
          vsync: vsync,
        );
+
+  final double kEdgeSize;   
+  final Radius kEdgeRadius;   
+  final double kStrokeWidth;   
 
   bool _oldValue;
   Color checkColor;
@@ -159,15 +172,11 @@ class _RenderCheckbox extends RenderToggleable {
     config.isChecked = value == true;
   }
 
-  // The square outer bounds of the checkbox at t, with the specified origin.
-  // At t == 0.0, the outer rect's size is _kEdgeSize (CheckBoxRender.width)
-  // At t == 0.5, .. is _kEdgeSize - _kStrokeWidth
-  // At t == 1.0, .. is _kEdgeSize
   RRect _outerRectAt(Offset origin, double t) {
     final double inset = 1.0 - (t - 0.5).abs() * 2.0;
-    final double size = CheckBoxRender._kEdgeSize - inset * CheckBoxRender._kStrokeWidth;
+    final double size = kEdgeSize - inset * kStrokeWidth;
     final Rect rect = Rect.fromLTWH(origin.dx + inset, origin.dy + inset, size, size);
-    return RRect.fromRectAndRadius(rect, CheckBoxRender._kEdgeRadius);
+    return RRect.fromRectAndRadius(rect, kEdgeRadius);
   }
 
   // The checkbox's border color if value == false, or its fill color when
@@ -184,14 +193,14 @@ class _RenderCheckbox extends RenderToggleable {
     paint
       ..color = checkColor
       ..style = PaintingStyle.stroke
-      ..strokeWidth = CheckBoxRender._kStrokeWidth;
+      ..strokeWidth = kStrokeWidth;
   }
 
   void _drawBorder(Canvas canvas, RRect outer, double t, Paint paint) {
     assert(t >= 0.0 && t <= 0.5);
     final double size = outer.width;
     // As t goes from 0.0 to 1.0, gradually fill the outer RRect.
-    final RRect inner = outer.deflate(math.min(size / 2.0, CheckBoxRender._kStrokeWidth + size * t));
+    final RRect inner = outer.deflate(math.min(size / 2.0, kStrokeWidth + size * t));
     canvas.drawDRRect(outer, inner, paint);
   }
 
@@ -200,9 +209,9 @@ class _RenderCheckbox extends RenderToggleable {
     // As t goes from 0.0 to 1.0, animate the two check mark strokes from the
     // short side to the long side.
     final Path path = Path();
-    final Offset start = Offset(CheckBoxRender._kEdgeSize * 0.15, CheckBoxRender._kEdgeSize * 0.45);
-    final Offset mid = Offset(CheckBoxRender._kEdgeSize * 0.4, CheckBoxRender._kEdgeSize * 0.7);
-    final Offset end = Offset(CheckBoxRender._kEdgeSize * 0.85, CheckBoxRender._kEdgeSize * 0.25);
+    final Offset start = Offset(kEdgeSize * 0.15, kEdgeSize * 0.45);
+    final Offset mid = Offset(kEdgeSize * 0.4, kEdgeSize * 0.7);
+    final Offset end = Offset(kEdgeSize * 0.85, kEdgeSize * 0.25);
     if (t < 0.5) {
       final double strokeT = t * 2.0;
       final Offset drawMid = Offset.lerp(start, mid, strokeT);
@@ -222,9 +231,9 @@ class _RenderCheckbox extends RenderToggleable {
     assert(t >= 0.0 && t <= 1.0);
     // As t goes from 0.0 to 1.0, animate the horizontal line from the
     // mid point outwards.
-    final Offset start = Offset(CheckBoxRender._kEdgeSize * 0.2, CheckBoxRender._kEdgeSize * 0.5);
-    final Offset mid = Offset(CheckBoxRender._kEdgeSize * 0.5, CheckBoxRender._kEdgeSize * 0.5);
-    final Offset end = Offset(CheckBoxRender._kEdgeSize * 0.8, CheckBoxRender._kEdgeSize * 0.5);
+    final Offset start = Offset(kEdgeSize * 0.2, kEdgeSize * 0.5);
+    final Offset mid = Offset(kEdgeSize * 0.5, kEdgeSize * 0.5);
+    final Offset end = Offset(kEdgeSize * 0.8, kEdgeSize * 0.5);
     final Offset drawStart = Offset.lerp(start, mid, 1.0 - t);
     final Offset drawEnd = Offset.lerp(mid, end, t);
     canvas.drawLine(origin + drawStart, origin + drawEnd, paint);
@@ -235,7 +244,7 @@ class _RenderCheckbox extends RenderToggleable {
     final Canvas canvas = context.canvas;
     paintRadialReaction(canvas, offset, size.center(Offset.zero));
 
-    final Offset origin = offset + (size / 2.0 - Size.square(CheckBoxRender._kEdgeSize) / 2.0);
+    final Offset origin = offset + (size / 2.0 - Size.square(kEdgeSize) / 2.0);
     final AnimationStatus status = position.status;
     final double tNormalized = status == AnimationStatus.forward || status == AnimationStatus.completed
       ? position.value

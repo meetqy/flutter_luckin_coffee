@@ -13,6 +13,9 @@ class ExampleACheckBox extends StatefulWidget {
 class _ExampleACheckBoxState extends State<ExampleACheckBox> {
   static bool checkbox1 = false;
   static bool checkbox2 = false;
+  static bool checkbox3 = false;
+  static bool checkbox4 = false;
+  static List checkbox5 = [false, false, false];
 
   onChange(bool value) {
     setState(() {
@@ -24,7 +27,8 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppbar(
-        title: 'ACheckBox'
+        title: 'ACheckBox',
+        context: context
       ),
       body: Container(
         child: Column(
@@ -38,7 +42,7 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
             ),
 
             ARow(
-              centerChild: ACheckBox(
+              leftChild: ACheckBox(
                 width: 20,
                 value: checkbox1,
                 title: Container(
@@ -51,6 +55,23 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
                   });
                 },
               ),
+              centerChild: Container(
+                margin: EdgeInsets.only(left: 50),
+                child: ACheckBox(
+                  width: 20,
+                  radius: Radius.circular(20),
+                  value: checkbox2,
+                  title: Container(
+                    margin: EdgeInsets.only(left: 10),
+                    child: Text('圆形复选框'),
+                  ),
+                  onChanged: (bool value) {
+                    setState(() {
+                      checkbox2 = value;
+                    });
+                  },
+                ),
+              ),
               color: Colors.transparent,
               border: Border.all(color: Colors.transparent),
             ),
@@ -58,30 +79,105 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
             ARow(
               color: Colors.transparent,
               border: Border.all(color: Colors.transparent),
-              leftChild: Text('圆形复选框', style: TextStyle(
+              leftChild: Text('自定义颜色', style: TextStyle(
                 color: rgba(69, 90, 100, 0.6)
               ),),
             ),
 
             ARow(
-              centerChild: ACheckBox(
+              leftChild: ACheckBox(
                 width: 20,
-                radius: Radius.circular(20),
-                value: checkbox2,
+                value: checkbox3,
+                activeColor: rgba(7, 193, 96, 1),
                 title: Container(
                   margin: EdgeInsets.only(left: 10),
                   child: Text('复选框'),
                 ),
                 onChanged: (bool value) {
                   setState(() {
-                    checkbox2 = value;
+                    checkbox3 = value;
                   });
                 },
+              ),
+              centerChild: Container(
+                margin: EdgeInsets.only(left: 50),
+                child: ACheckBox(
+                  width: 20,
+                  radius: Radius.circular(20),
+                  value: checkbox4,
+                  activeColor: rgba(7, 193, 96, 1),
+                  title: Container(
+                    margin: EdgeInsets.only(left: 10),
+                    child: Text('复选框'),
+                  ),
+                  onChanged: (bool value) {
+                    setState(() {
+                      checkbox4 = value;
+                    });
+                  },
+                ),
               ),
               color: Colors.transparent,
               border: Border.all(color: Colors.transparent),
             ),
 
+            ARow(
+              color: Colors.transparent,
+              border: Border.all(color: Colors.transparent),
+              leftChild: Text('复选框组', style: TextStyle(
+                color: rgba(69, 90, 100, 0.6)
+              ),),
+            ),
+
+            Column(
+              children: <Widget>[
+                ARow(
+                  centerChild: ACheckBox(
+                    width: 20,
+                    value: checkbox5[0],
+                    title: Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: Text('复选框1'),
+                    ),
+                    onChanged: (bool value) {
+                      setState(() {
+                        checkbox5[0] = value;
+                      });
+                    },
+                  ),
+                ),
+                ARow(
+                  centerChild: ACheckBox(
+                    width: 20,
+                    value: checkbox5[1],
+                    title: Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: Text('复选框2'),
+                    ),
+                    onChanged: (bool value) {
+                      setState(() {
+                        checkbox5[1] = value;
+                      });
+                    },
+                  ),
+                ),
+                ARow(
+                  centerChild: ACheckBox(
+                    width: 20,
+                    value: checkbox5[2],
+                    title: Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: Text('复选框3'),
+                    ),
+                    onChanged: (bool value) {
+                      setState(() {
+                        checkbox5[2] = value;
+                      });
+                    },
+                  ),
+                )
+              ],
+            )
             
           ],
         ),

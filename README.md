@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-18 10:56:33
+ * @lastTime: 2019-09-20 14:07:52
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -92,6 +92,7 @@ Tools • Dart 2.4.0
 - [AStepper 步进器](./lib/components/astepper)
 - [ADialog 弹出框](./lib/components/adialog)
 - [ARow 行](./lib/components/arow)
+- [ACheckBox 复选框](./lib/components/acheckbox)
 
 
 ## 开发规范

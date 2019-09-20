@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-20 14:59:49
+ * @lastTime: 2019-09-20 15:14:23
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -118,4 +118,4 @@ Tools • Dart 2.4.0
 ```
 ## 随便看看吧
 
-<img src="./readme/images/1.gif" width="375"/>&emsp;&emsp;&emsp;&emsp;<img src="./readme/images/2.gif" width="375"/>
+<img src="./readme/images/1.gif" width="375" height="816"/>&emsp;&emsp;&emsp;&emsp;<img src="./readme/images/2.gif" width="375" height="816"/>

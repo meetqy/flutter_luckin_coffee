@@ -15,6 +15,8 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
   static bool checkbox2 = false;
   static bool checkbox3 = false;
   static bool checkbox4 = false;
+  static bool checkbox6 = false;
+  static bool checkbox7 = false;
   static List checkbox5 = [false, false, false];
 
   onChange(bool value) {
@@ -33,10 +35,47 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
       body: Container(
         child: Column(
           children: <Widget>[
+
             ARow(
               color: Colors.transparent,
               border: Border.all(color: Colors.transparent),
               leftChild: Text('基础用法', style: TextStyle(
+                color: rgba(69, 90, 100, 0.6)
+              ),),
+            ),
+
+            ARow(
+              leftChild: ACheckBox(
+                width: 20,
+                value: checkbox6,
+                onChanged: (bool value) {
+                  setState(() {
+                    checkbox6 = value;
+                  });
+                },
+              ),
+              centerChild: Container(
+                margin: EdgeInsets.only(left: 50),
+                child: ACheckBox(
+                  width: 20,
+                  radius: Radius.circular(20),
+                  value: checkbox7,
+                  onChanged: (bool value) {
+                    setState(() {
+                      checkbox7 = value;
+                    });
+                  },
+                ),
+              ),
+              color: Colors.transparent,
+              border: Border.all(color: Colors.transparent),
+            ),
+
+
+            ARow(
+              color: Colors.transparent,
+              border: Border.all(color: Colors.transparent),
+              leftChild: Text('带文本的复选框', style: TextStyle(
                 color: rgba(69, 90, 100, 0.6)
               ),),
             ),

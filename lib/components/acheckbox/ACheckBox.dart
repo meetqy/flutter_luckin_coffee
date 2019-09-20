@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/acheckbox/CheckBoxRender.dart';
 
 class ACheckBox extends StatelessWidget {
+  /// 
+  /// 注：其他参数和checkbox一样
+  /// ```
+  /// @param {Widget} title - 文本
+  /// @param {String} titlePosition - 文本位置  left || right
+  /// @param {double} width - 复选框大小
+  /// @param {double} strokeWidth - 边框宽度
+  /// @param {Raduis} radius - 圆角
+  /// @param {MainAxisAlignment} mainAxisAlignment
+  /// ```
   const ACheckBox({
     Key key,
     this.title,

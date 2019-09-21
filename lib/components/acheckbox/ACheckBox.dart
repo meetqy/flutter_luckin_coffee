@@ -41,7 +41,6 @@ class ACheckBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(radius);
     final Widget control = CheckBoxRender(
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       width: width,
@@ -54,23 +53,34 @@ class ACheckBox extends StatelessWidget {
       onChanged: (bool value) => onChanged != null ? onChanged(value) : null,
     );
 
-    return InkWell(
-      splashColor: Colors.transparent,
-      highlightColor: Colors.transparent,
-      child: Container(
-        child: Row(
-          mainAxisAlignment: mainAxisAlignment == null ? MainAxisAlignment.start : mainAxisAlignment,
-          children: _renderContent(control),
+    return Container(
+      child: InkWell(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        child: Container(
+          child: Row(
+            mainAxisAlignment: mainAxisAlignment == null ? MainAxisAlignment.start : mainAxisAlignment,
+            children: _renderContent(control),
+          ),
         ),
+        onTap: () => onChanged != null ? onChanged(!value) : null,
       ),
-      onTap: () => onChanged != null ? onChanged(!value) : null,
     );
   }
 
   List<Widget> _renderContent(Widget control) {
+
+    /// 为什么title部分要使用Column包一层？
+    /// 当title时文本的时候，外部的Container高度会变成text的高度，不能让外部的Container高度继承父级
+
     if(titlePosition == 'left') {
       return [
-        Container(child: title,),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            title == null ? Container() : title
+          ],
+        ),
         Container(
           width: width,
           height: width,
@@ -84,7 +94,12 @@ class ACheckBox extends StatelessWidget {
           height: width,
           child: control
         ),
-        Container(child: title,),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            title == null ? Container() : title
+          ],
+        ),
       ];
     }
   }

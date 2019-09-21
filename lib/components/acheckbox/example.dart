@@ -17,7 +17,11 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
   static bool checkbox4 = false;
   static bool checkbox6 = false;
   static bool checkbox7 = false;
-  static List checkbox5 = [false, false, false];
+  static Map<String, bool> checkbox5 = {
+    'a': false,
+    'b': true,
+    'c': false
+  };
 
   onChange(bool value) {
     setState(() {
@@ -173,14 +177,14 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
                 ARow(
                   centerChild: ACheckBox(
                     width: 20,
-                    value: checkbox5[0],
+                    value: checkbox5["a"],
                     title: Container(
                       margin: EdgeInsets.only(left: 10),
                       child: Text('复选框1'),
                     ),
                     onChanged: (bool value) {
                       setState(() {
-                        checkbox5[0] = value;
+                        checkbox5['a'] = value;
                       });
                     },
                   ),
@@ -188,14 +192,14 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
                 ARow(
                   centerChild: ACheckBox(
                     width: 20,
-                    value: checkbox5[1],
+                    value: checkbox5['b'],
                     title: Container(
                       margin: EdgeInsets.only(left: 10),
                       child: Text('复选框2'),
                     ),
                     onChanged: (bool value) {
                       setState(() {
-                        checkbox5[1] = value;
+                        checkbox5['b'] = value;
                       });
                     },
                   ),
@@ -203,14 +207,14 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
                 ARow(
                   centerChild: ACheckBox(
                     width: 20,
-                    value: checkbox5[2],
+                    value: checkbox5['c'],
                     title: Container(
                       margin: EdgeInsets.only(left: 10),
                       child: Text('复选框3'),
                     ),
                     onChanged: (bool value) {
                       setState(() {
-                        checkbox5[2] = value;
+                        checkbox5['c'] = value;
                       });
                     },
                   ),

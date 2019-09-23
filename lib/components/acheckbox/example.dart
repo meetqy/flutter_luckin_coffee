@@ -23,6 +23,14 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
     'c': false
   };
 
+  static Map<String, bool> checkbox8 = {
+    'a': false,
+    'b': false,
+    'c': false
+  };
+
+  static List<String> checkbox8Value = [];
+
   onChange(bool value) {
     setState(() {
       checkbox2 = value;
@@ -173,55 +181,61 @@ class _ExampleACheckBoxState extends State<ExampleACheckBox> {
             ),
 
             Column(
-              children: <Widget>[
-                ARow(
+              children: checkbox5.keys.map((String key) {
+                return ARow(
                   centerChild: ACheckBox(
                     width: 20,
-                    value: checkbox5["a"],
+                    value: checkbox5[key],
                     title: Container(
                       margin: EdgeInsets.only(left: 10),
-                      child: Text('复选框1'),
+                      child: Text('复选框$key'),
                     ),
                     onChanged: (bool value) {
                       setState(() {
-                        checkbox5['a'] = value;
+                        checkbox5[key] = value;
                       });
                     },
                   ),
-                ),
-                ARow(
+                );
+              }).toList(),
+            ),
+
+            ARow(
+              color: Colors.transparent,
+              border: Border.all(color: Colors.transparent),
+              leftChild: Text('最多选择2项', style: TextStyle(
+                color: rgba(69, 90, 100, 0.6)
+              ),),
+            ),
+
+            Column(
+              children: checkbox8.keys.map((String key) {
+                return ARow(
                   centerChild: ACheckBox(
                     width: 20,
-                    value: checkbox5['b'],
+                    value: checkbox8[key],
                     title: Container(
                       margin: EdgeInsets.only(left: 10),
-                      child: Text('复选框2'),
+                      child: Text('复选框$key'),
                     ),
                     onChanged: (bool value) {
+                      
                       setState(() {
-                        checkbox5['b'] = value;
+                        if(value) {
+                          if(checkbox8Value.length < 2) {
+                            checkbox8Value.add(key);
+                            checkbox8[key] = value;
+                          }
+                        } else {
+                          checkbox8Value.remove(key);
+                          checkbox8[key] = value;
+                        }
                       });
                     },
                   ),
-                ),
-                ARow(
-                  centerChild: ACheckBox(
-                    width: 20,
-                    value: checkbox5['c'],
-                    title: Container(
-                      margin: EdgeInsets.only(left: 10),
-                      child: Text('复选框3'),
-                    ),
-                    onChanged: (bool value) {
-                      setState(() {
-                        checkbox5['c'] = value;
-                      });
-                    },
-                  ),
-                )
-              ],
-            )
-            
+                );
+              }).toList(),
+            ),
           ],
         ),
       ),

@@ -1,11 +1,12 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-24 15:35:56
+ * @lastTime: 2019-09-24 15:50:34
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/CustomColors.dart';
+import 'package:flutter_luckin_coffee/utils/CustomFontSize.dart';
 
 
 /// global
@@ -13,6 +14,12 @@ class G {
   static GlobalKey<NavigatorState> navigatorKey=GlobalKey();
   /// toolbar routeName
   static List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
+
+  /// 项目常用颜色
+  static CustomColors colors = CustomColors();
+
+  /// 项目常用字体大小
+  static CustomFontSize fontSize = CustomFontSize();
 
   /// 获取当前的state
   static NavigatorState getCurrentState() {
@@ -58,7 +65,7 @@ class G {
   static Border borderBottom({Color color, bool show = true}){
     return Border(
       bottom: BorderSide(
-        color: (color == null || !show)  ? (show ? CustomColors.whiteLighter : Colors.transparent) : color,
+        color: (color == null || !show)  ? (show ? colors.whiteLighter : Colors.transparent) : color,
         width: 1
       )
     );

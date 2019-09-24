@@ -2,7 +2,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
-import 'package:flutter_luckin_coffee/ok/ProjectColor.dart';
+import 'package:flutter_luckin_coffee/utils/CustomColors.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 
 class ADialog {
@@ -82,7 +82,7 @@ class ADialog {
       alignment: Alignment.center,
       padding: EdgeInsets.only(top: 12),        
       child: title == null ? null : Text(title, style: TextStyle(
-        color: ProjectColor.blackDarker,
+        color: CustomColors.blackDarker,
         fontSize: 16,
         fontWeight: FontWeight.bold
       )),
@@ -95,7 +95,7 @@ class ADialog {
       padding: EdgeInsets.symmetric(vertical: 12,horizontal: 15),
       child: Text(content,
         style: TextStyle(
-          color: ProjectColor.grayLight,
+          color: CustomColors.grayLight,
           fontSize: 14,
         ),
         textAlign: TextAlign.center,
@@ -127,7 +127,7 @@ class ADialog {
               ),
               child: AButton.normal(
                 child: cancelButtonText,
-                color: ProjectColor.blackDarker,
+                color: CustomColors.blackDarker,
                 borderRadius: cancelBorderRadius,
                 onPressed: (){
                   if(cancelButtonPress == null) {
@@ -146,7 +146,7 @@ class ADialog {
             child: AButton.normal(
               child: confirmButtonText,
               borderRadius: confirmBorderRadius,
-              color: ProjectColor.blueLight,
+              color: CustomColors.blueLight,
               onPressed: (){
                 if(confirmButtonPress == null) {
                   Navigator.pop(context);

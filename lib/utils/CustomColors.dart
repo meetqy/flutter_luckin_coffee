@@ -2,7 +2,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
 /// 所有颜色值
-class ProjectColor {
+class CustomColors {
   
   static Color violet = rgba(53, 60, 177, 1);
 

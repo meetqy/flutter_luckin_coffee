@@ -5,7 +5,6 @@ import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/DacaiSay.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/RadiusBtn.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/SelectRow.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';

@@ -2,7 +2,6 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 
 class OrderListRow extends StatelessWidget {
   final int orderStatus;  
@@ -121,7 +120,7 @@ class OrderListRow extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
-              border: ui.borderBottom()
+              border: G.borderBottom()
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

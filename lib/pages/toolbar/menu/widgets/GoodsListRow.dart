@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class GoodsListRow extends StatelessWidget {
@@ -105,7 +105,7 @@ class GoodsListRow extends StatelessWidget {
         Container(
           padding: EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
-            border: ui.borderBottom(show: border),
+            border: G.borderBottom(show: border),
           ),
           child: Row(
             children: <Widget>[

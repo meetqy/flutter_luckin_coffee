@@ -1,6 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class ExampleARow extends StatefulWidget {
@@ -36,7 +37,7 @@ class _ExampleARowState extends State<ExampleARow> {
 
           Container(
             child: ARow(
-              border: ui.borderBottom(show: false),
+              border: G.borderBottom(show: false),
               leftChild: Container(
                 width: 30,
                 child: Container(
@@ -88,7 +89,7 @@ class _ExampleARowState extends State<ExampleARow> {
 
                 ARow(
                   height: 70,
-                  border: ui.borderBottom(show: false),
+                  border: G.borderBottom(show: false),
                   leftChild: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,

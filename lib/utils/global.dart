@@ -1,10 +1,11 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-24 14:52:40
+ * @lastTime: 2019-09-24 15:35:56
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/utils/CustomColors.dart';
 
 
 /// global
@@ -47,5 +48,19 @@ class G {
   /// 获取屏幕高度
   static double screenHeight() {  
     return MediaQuery.of(getCurrentContext()).size.height;
+  }
+
+  /// 底部border
+  /// ```
+  /// @param {Color} color
+  /// @param {bool} show  是否显示底部border
+  /// ```
+  static Border borderBottom({Color color, bool show = true}){
+    return Border(
+      bottom: BorderSide(
+        color: (color == null || !show)  ? (show ? CustomColors.whiteLighter : Colors.transparent) : color,
+        width: 1
+      )
+    );
   }
 }

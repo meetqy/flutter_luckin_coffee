@@ -1,7 +1,8 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
+
+import 'global.dart';
 
 /// 通用appbar
 /// 
@@ -32,7 +33,7 @@ AppBar customAppbar({
     bottom: PreferredSize(
       child: Container(
         decoration: BoxDecoration(
-          border: ui.borderBottom(show: borderBottom)
+          border: G.borderBottom(show: borderBottom)
         ),
       ),
       preferredSize: Size.fromHeight(0),

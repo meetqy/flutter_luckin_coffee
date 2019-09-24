@@ -41,7 +41,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 12),
                         decoration: BoxDecoration(
-                          border: ui.borderBottom()
+                          border: G.borderBottom()
                         ),
                         child: Column(
                           children: <Widget>[
@@ -104,7 +104,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                       Container(
                         padding: EdgeInsets.symmetric(vertical: 14),
                         decoration: BoxDecoration(
-                          border: ui.borderBottom()
+                          border: G.borderBottom()
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -145,7 +145,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 14),
                           decoration: BoxDecoration(
-                            border: ui.borderBottom()
+                            border: G.borderBottom()
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -323,7 +323,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
   Container contentAddress() {
     return Container(
       decoration: BoxDecoration(
-        border: ui.borderBottom()
+        border: G.borderBottom()
       ),
       padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
       child: Column(

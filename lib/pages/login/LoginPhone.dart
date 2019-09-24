@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 
 class LoginPhone extends StatefulWidget {
@@ -40,7 +39,7 @@ class _LoginPhoneState extends State<LoginPhone> {
             margin: EdgeInsets.only(top: 57),
             height: 58,
             decoration: BoxDecoration(
-              border: ui.borderBottom()
+              border: G.borderBottom()
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,7 +88,7 @@ class _LoginPhoneState extends State<LoginPhone> {
 
           Container(
             decoration: BoxDecoration(
-              border: ui.borderBottom()
+              border: G.borderBottom()
             ),
             child: Row(children: <Widget>[
               Flexible(

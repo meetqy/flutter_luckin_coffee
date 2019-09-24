@@ -1,5 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 import 'AStepper.dart';
@@ -51,7 +52,7 @@ class _ExampleStepperState extends State<ExampleAStepper> {
   Container returnRow({Widget child}) {
     return Container(
       decoration: BoxDecoration(
-        border: ui.borderBottom(),
+        border: G.borderBottom(),
       ),
       padding: EdgeInsets.symmetric(vertical: 15),
       child:child

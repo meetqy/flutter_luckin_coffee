@@ -97,7 +97,7 @@ class ExampleWidgetsList extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
-          border: ui.borderBottom(),
+          border: G.borderBottom(),
         ),
         child: child,
       ),

@@ -6,6 +6,7 @@ import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/DacaiSay.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/RadiusBtn.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/SelectRow.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';
 
@@ -110,7 +111,7 @@ final dialogPage = FullScreenDialog(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
                 child: Container(
                   decoration: BoxDecoration(
-                    border: ui.borderBottom()
+                    border: G.borderBottom()
                   ),
                 ),
               ),

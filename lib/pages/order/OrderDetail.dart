@@ -2,6 +2,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/pages/order/widgets/GoodsMsgRow.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class OrderDetail extends StatefulWidget {
@@ -236,7 +237,7 @@ class _OrderDetailState extends State<OrderDetail> {
                     Container(
                       padding: EdgeInsets.only(bottom: 12),
                       decoration: BoxDecoration(
-                        border: ui.borderBottom()
+                        border: G.borderBottom()
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -283,7 +284,7 @@ class _OrderDetailState extends State<OrderDetail> {
 
                     Container(
                       decoration: BoxDecoration(
-                        border: ui.borderBottom()
+                        border: G.borderBottom()
                       ),
                       padding: EdgeInsets.symmetric(vertical: 15),
                       child: Row(

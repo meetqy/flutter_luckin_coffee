@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 /// 所有颜色值
 class CustomColors {
-  
   static Color violet = rgba(53, 60, 177, 1);
 
   static Color blueDark= rgba(136, 175, 213, 1);
@@ -18,6 +17,7 @@ class CustomColors {
 
   static Color white = rgba(255, 255, 255, 1);
   static Color whiteLight = rgba(248, 248, 248, 1);
+  static Color whiteLighter = rgba(242, 242, 242, 1); 
 
   static Color orange = rgba(255, 129, 2, 1);
 

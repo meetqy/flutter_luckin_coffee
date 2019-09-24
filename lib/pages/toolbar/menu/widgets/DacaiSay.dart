@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class DacaiSay extends StatelessWidget {
   final String avatar;
@@ -37,7 +37,7 @@ class DacaiSay extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.only(bottom: 8),
         decoration: BoxDecoration(
-          border: ui.borderBottom()
+          border: G.borderBottom()
         ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,

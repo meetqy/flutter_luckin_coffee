@@ -1,6 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class ChoosePhoneCode extends StatefulWidget {
@@ -32,7 +33,7 @@ class _ChoosePhoneCodeState extends State<ChoosePhoneCode> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
               decoration: BoxDecoration(
-                border: ui.borderBottom()
+                border: G.borderBottom()
               ),
               child: Text('$val'),
             ),

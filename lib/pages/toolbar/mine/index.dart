@@ -2,7 +2,6 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class Mine extends StatefulWidget {
@@ -47,7 +46,7 @@ class _MineState extends State<Mine> {
                 ARow(
                   height: 55,
                   color: Colors.transparent,
-                  border: ui.borderBottom(show: false),
+                  border: G.borderBottom(show: false),
                   padding: EdgeInsets.all(0),
                   leftChild: ClipRRect(
                     borderRadius: new BorderRadius.circular(27),
@@ -144,7 +143,7 @@ class _MineState extends State<Mine> {
                 ),
                 centerChild: Text('发票管理'),
                 rightChild: icontupian6(color: rgba(228, 228, 228, 1), size: 14),
-                border: ui.borderBottom(show: false),
+                border: G.borderBottom(show: false),
               ),
             ],),
           ),
@@ -162,7 +161,7 @@ class _MineState extends State<Mine> {
             ),
             centerChild: Text('帮助反馈'),
             rightChild: icontupian6(color: rgba(228, 228, 228, 1), size: 14),
-            border: ui.borderBottom(show: false),
+            border: G.borderBottom(show: false),
           ),
 
           Container(

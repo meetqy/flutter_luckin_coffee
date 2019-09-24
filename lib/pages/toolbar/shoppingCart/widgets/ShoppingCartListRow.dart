@@ -2,7 +2,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class ShoppingCartListRow extends StatelessWidget {
@@ -38,7 +38,7 @@ class ShoppingCartListRow extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(vertical: 15),
               decoration: BoxDecoration(
-                border: ui.borderBottom(show: border)
+                border: G.borderBottom(show: border)
               ),
               child: Row(children: <Widget>[
                 Expanded(

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/utils/CustomColors.dart';
-import 'package:flutter_luckin_coffee/utils/commonUI.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class ADialog {
   final BuildContext context;
@@ -101,7 +101,7 @@ class ADialog {
         textAlign: TextAlign.center,
       ),
       decoration: BoxDecoration(
-        border: ui.borderBottom(),
+        border: G.borderBottom(),
       ),
     );
   }

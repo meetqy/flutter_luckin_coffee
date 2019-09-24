@@ -1,6 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class SelfStore extends StatefulWidget {
@@ -72,7 +73,7 @@ class AddressRow extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 12),
         decoration: BoxDecoration(
-          border: ui.borderBottom(show: borderBottom)
+          border: G.borderBottom(show: borderBottom)
         ),
         child: Column(children: <Widget>[
           Row(

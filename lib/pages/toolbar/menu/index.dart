@@ -7,7 +7,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
 
@@ -128,7 +127,7 @@ class _MenuState extends State<Menu> {
               bottom: PreferredSize(
                 child: Container(
                   decoration: BoxDecoration(
-                    border: ui.borderBottom()
+                    border: G.borderBottom()
                   ),
                 ),
                 preferredSize: Size.fromHeight(0),

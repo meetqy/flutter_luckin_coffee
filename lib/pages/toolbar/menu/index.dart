@@ -1,11 +1,12 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-12 15:26:08
+ * @lastTime: 2019-09-24 14:52:05
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
@@ -172,7 +173,7 @@ class _MenuState extends State<Menu> {
 
               // 右侧商品列表
               Container(
-                width: screenWidth(context) - 90,
+                width: G.screenWidth() - 90,
                 padding: EdgeInsets.symmetric(horizontal: 14),
                 // 使用listview中的scrollcontronal导致外层的NestedScrollView效果失效，
                 // 使用NotificationListener完美解决

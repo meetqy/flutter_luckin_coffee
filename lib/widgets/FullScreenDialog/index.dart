@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/index.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 
 class FullScreenDialog extends StatelessWidget {
   final Widget child;
@@ -36,8 +36,8 @@ class FullScreenDialog extends StatelessWidget {
     return Material(
       color: rgba(0, 0, 0, 0.3),
       child: Container(
-        width: screenWidth(context),
-        height: screenHeight(context),
+        width: G.screenWidth(),
+        height: G.screenHeight(),
         padding: EdgeInsets.symmetric(vertical: 44),
         child: Center(
           child: Stack(children: <Widget>[

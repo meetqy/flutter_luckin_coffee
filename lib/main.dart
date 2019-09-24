@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/global.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/routes/index.dart';
 
 final router = Router();

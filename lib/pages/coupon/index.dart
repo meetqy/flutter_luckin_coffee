@@ -1,7 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
-import 'package:flutter_luckin_coffee/global.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 
 import 'widgets/CouponRow.dart';
@@ -48,7 +48,7 @@ class _CouponState extends State<Coupon> {
               color: hex('#fff'),
               alignment: Alignment.center,
               padding: EdgeInsets.only(bottom: bottom, top: bottom/2),
-              width: screenWidth(context),
+              width: G.screenWidth(),
               child: AButton.normal(
                 width: 300,
                 child: Text('保存'),

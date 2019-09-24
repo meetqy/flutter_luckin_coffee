@@ -1,7 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
-import 'package:flutter_luckin_coffee/global.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/pages/order/widgets/GoodsMsgRow.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
@@ -281,7 +281,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
             left: 0,
             child: Container(
               padding: EdgeInsets.only(left: 15, bottom: bottom),
-              width: screenWidth(context),
+              width: G.screenWidth(),
               color: hex('#fff'),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

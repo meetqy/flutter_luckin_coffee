@@ -8,7 +8,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
-import 'package:flutter_luckin_coffee/global.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
                 'lib/assets/images/home/swiper2.jpg',
                 'lib/assets/images/home/swiper3.jpg',
               ],
-              height: screenHeight(context) > 800 ? 288 : 208,
+              height: G.screenHeight() > 800 ? 288 : 208,
             ),
           ),
 

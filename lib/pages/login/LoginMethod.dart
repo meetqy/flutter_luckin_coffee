@@ -1,9 +1,8 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
-import 'package:flutter_luckin_coffee/global.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
-import 'package:flutter_luckin_coffee/utils/other.dart';
 
 class LoginMethod extends StatelessWidget {
   const LoginMethod({Key key}) : super(key: key);
@@ -14,7 +13,7 @@ class LoginMethod extends StatelessWidget {
       appBar: customAppbar(context: context, borderBottom: false),
 
       body: Container(
-        width: screenWidth(context),
+        width: G.screenWidth(),
         color: hex('#fff'),
         child: Column(children: <Widget>[
           Container(

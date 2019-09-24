@@ -2,11 +2,10 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
-import 'package:flutter_luckin_coffee/global.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/commonUI.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
-import 'package:flutter_luckin_coffee/utils/other.dart';
 
 class LoginPhone extends StatefulWidget {
   LoginPhone({Key key}) : super(key: key);
@@ -26,7 +25,7 @@ class _LoginPhoneState extends State<LoginPhone> {
       resizeToAvoidBottomInset: false,
       appBar: customAppbar(context: context, borderBottom: false),
       body: Container(
-        width: screenWidth(context),
+        width: G.screenWidth(),
         color: hex('#fff'),
         padding: EdgeInsets.symmetric(horizontal: 35),
         child: Column(children: <Widget>[

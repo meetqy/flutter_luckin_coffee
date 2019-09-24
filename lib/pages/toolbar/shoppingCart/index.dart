@@ -1,7 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
-import 'package:flutter_luckin_coffee/global.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/RecommendGoods.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/ShoppingCartListRow.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
@@ -118,7 +118,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
               border: Border(top: BorderSide(width: 1,color: rgba(242,242,242,1))),
               color: hex('#fff'),
             ),
-            width: screenWidth(context),
+            width: G.screenWidth(),
             height: 60,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,8 +1,8 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/global/global.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
-import 'package:flutter_luckin_coffee/utils/other.dart';
 
 class UserAgreement extends StatelessWidget {
   const UserAgreement({Key key}) : super(key: key);
@@ -15,7 +15,7 @@ class UserAgreement extends StatelessWidget {
         child: SafeArea(
           child: Container(
           padding: EdgeInsets.symmetric(vertical: 10),
-          width: screenWidth(context),
+          width: G.screenWidth(),
           child: Column(children: <Widget>[
             Text('''尊敬的客户，在您下载luckin coffee程序( 下称“APP")
 使用我们的服务前，请仔细阅读本用户协议。

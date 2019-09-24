@@ -1,10 +1,16 @@
+/*
+ * @Author: meetqy
+ * @since: 2019-09-24 14:23:27
+ * @lastTime: 2019-09-24 14:52:40
+ * @LastEditors: meetqy
+ */
 import 'package:flutter/material.dart';
 
 
 /// global
 class G {
   static GlobalKey<NavigatorState> navigatorKey=GlobalKey();
-  // toolbar routeName
+  /// toolbar routeName
   static List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
 
   /// 获取当前的state
@@ -31,5 +37,15 @@ class G {
   /// 用于兼容全面屏，刘海屏
   static EdgeInsets screenPadding() {
     return MediaQuery.of(getCurrentContext()).padding;
+  }
+
+  /// 获取屏幕宽度
+  static double screenWidth() {
+    return MediaQuery.of(getCurrentContext()).size.width;
+  }
+
+  /// 获取屏幕高度
+  static double screenHeight() {  
+    return MediaQuery.of(getCurrentContext()).size.height;
   }
 }

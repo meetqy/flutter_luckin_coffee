@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-24 15:50:34
+ * @lastTime: 2019-09-24 15:54:22
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
@@ -22,14 +22,20 @@ class G {
   static CustomFontSize fontSize = CustomFontSize();
 
   /// 获取当前的state
-  static NavigatorState getCurrentState() {
-    return navigatorKey.currentState;
-  }
+  static NavigatorState getCurrentState() => navigatorKey.currentState;
 
   /// 获取当前的context
-  static BuildContext getCurrentContext() {
-    return navigatorKey.currentContext;
-  }
+  static BuildContext getCurrentContext() => navigatorKey.currentContext;
+
+  /// 获取屏幕上下边距
+  /// 用于兼容全面屏，刘海屏
+  static EdgeInsets screenPadding() => MediaQuery.of(getCurrentContext()).padding;
+
+  /// 获取屏幕宽度
+  static double screenWidth() => MediaQuery.of(getCurrentContext()).size.width;
+
+  /// 获取屏幕高度
+  static double screenHeight() => MediaQuery.of(getCurrentContext()).size.height;
 
   /// 跳转页面使用 G.pushNamed
   static pushNamed(String routeName, {Object arguments}){
@@ -39,22 +45,6 @@ class G {
     }
 
     getCurrentState().pushNamed(routeName, arguments: arguments);
-  }
-
-  /// 获取屏幕上下边距
-  /// 用于兼容全面屏，刘海屏
-  static EdgeInsets screenPadding() {
-    return MediaQuery.of(getCurrentContext()).padding;
-  }
-
-  /// 获取屏幕宽度
-  static double screenWidth() {
-    return MediaQuery.of(getCurrentContext()).size.width;
-  }
-
-  /// 获取屏幕高度
-  static double screenHeight() {  
-    return MediaQuery.of(getCurrentContext()).size.height;
   }
 
   /// 底部border

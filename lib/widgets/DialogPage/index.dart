@@ -10,6 +10,25 @@ import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/utils/index.dart';
 import 'package:flutter_luckin_coffee/widgets/FullScreenDialog/index.dart';
 
+Widget circelIcon({Icon icon, Function onPress, Color bgColor}) {
+  return InkWell(
+    child: Container(
+      padding: EdgeInsets.all(5),
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: bgColor == null ? rgba(0, 0, 0, 0.3) : bgColor,
+        borderRadius: BorderRadius.all(Radius.circular(20))
+      ),
+      child: icon
+    ),
+    onTap: () {
+      if(onPress!=null) {
+        onPress();
+      }
+    },
+  );
+}
+
 final dialogPage = FullScreenDialog(
   closeChild: CloseDialog(
     right: 10,
@@ -42,7 +61,7 @@ final dialogPage = FullScreenDialog(
         Positioned(
           left: 10,
           top: 10,
-          child: ui.circelIcon(
+          child: circelIcon(
             icon: iconsc(color: hex('#fff'), size: 16),
           )
         ),

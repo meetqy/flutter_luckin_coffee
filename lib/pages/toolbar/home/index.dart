@@ -1,19 +1,17 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-25 17:25:41
+ * @lastTime: 2019-09-25 17:26:13
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
-import 'package:flutter_luckin_coffee/provider/CounterModel.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
-import 'package:provider/provider.dart';
 
 
 class Home extends StatefulWidget {

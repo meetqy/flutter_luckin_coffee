@@ -1,17 +1,19 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-25 16:01:13
+ * @lastTime: 2019-09-25 17:25:41
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
+import 'package:flutter_luckin_coffee/provider/CounterModel.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
+import 'package:provider/provider.dart';
 
 
 class Home extends StatefulWidget {
@@ -34,6 +36,12 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final _counter = G.dds();
+
+    print({
+      "_counter": _counter.value,
+    });
+
     return SingleChildScrollView(
       child: Column(children: <Widget>[
         // 头部banner
@@ -93,12 +101,15 @@ class _HomeState extends State<Home> {
               height: 70,
               padding: EdgeInsets.all(0),
               leftChild: leftChild(
-                title: '咖啡钱包',
+                title: '咖啡钱包${_counter.value}',
                 desc: 'COFFRR WALLET'
               ),
               rightChild: rightChild(
                 icon: icontupian(size: 20, color: rgba(104, 68, 60, 1)),
               ),
+              onPressed: () {
+                _counter.add();
+              },
             ),
 
             ARow(
@@ -132,8 +143,6 @@ class _HomeState extends State<Home> {
           ],),
         ),
 
-        
-        
       ],),
     );
   }

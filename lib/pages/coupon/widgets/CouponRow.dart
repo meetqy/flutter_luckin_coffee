@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/index.dart';
+import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 class CouponRow extends StatelessWidget {
   const CouponRow({

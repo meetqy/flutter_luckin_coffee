@@ -4,7 +4,6 @@ import 'package:flutter_luckin_coffee/components/AButton/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/RadiusBtn.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
-import 'package:flutter_luckin_coffee/utils/index.dart';
 
 class OrderRemark extends StatefulWidget {
   OrderRemark({Key key}) : super(key: key);

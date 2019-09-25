@@ -6,6 +6,7 @@ import 'package:flutter_luckin_coffee/components/arow/example.dart';
 import 'package:flutter_luckin_coffee/components/abutton/example.dart';
 import 'package:flutter_luckin_coffee/components/adialog/example.dart';
 import 'package:flutter_luckin_coffee/components/astepper/example.dart';
+import 'package:flutter_luckin_coffee/components/pulltorefresh/example.dart';
 
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/choosephonecode/index.dart';
@@ -46,12 +47,15 @@ class Router {
     '/store_detail': (BuildContext context, { Object args }) => StoreDetail(),
     '/dining_code': (BuildContext context, { Object args }) => DiningCode(),
     '/choose_phone_code': (BuildContext context, { Object args }) => ChoosePhoneCode(),
+
+    // 组件列表
     '/example_abutton': (BuildContext context, { Object args }) => ExampleAButton(),
     '/example_widgets_list': (BuildContext context, { Object args }) => ExampleWidgetsList(args: args),
     '/example_astepper': (BuildContext context, { Object args }) => ExampleAStepper(),
     '/example_adialog': (BuildContext context, { Object args }) => ExampleADialog(),
     '/example_arow': (BuildContext context, { Object args }) => ExampleARow(),
     '/example_acheckbox': (BuildContext context, { Object args }) => ExampleACheckBox(),
+    '/example_pull_to_refresh': (BuildContext context, { Object args }) => ExamplePullToRefresh(),
   };
 
   static Router _singleton;

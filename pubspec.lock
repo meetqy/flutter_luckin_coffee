@@ -263,6 +263,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.4.2"
+  pull_to_refresh:
+    dependency: "direct main"
+    description:
+      name: pull_to_refresh
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.5.6"
   quiver:
     dependency: transitive
     description:
@@ -424,4 +431,4 @@ packages:
     version: "2.2.0"
 sdks:
   dart: ">=2.2.2 <3.0.0"
-  flutter: ">=0.1.4 <3.0.0"
+  flutter: ">=0.1.4 <2.0.0"

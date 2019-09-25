@@ -1,12 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-24 15:54:22
+ * @lastTime: 2019-09-25 15:04:12
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/CustomColors.dart';
 import 'package:flutter_luckin_coffee/utils/CustomFontSize.dart';
+import 'package:flutter_luckin_coffee/utils/PullToRefreshStyle.dart';
+
 
 
 /// global
@@ -20,6 +22,9 @@ class G {
 
   /// 项目常用字体大小
   static CustomFontSize fontSize = CustomFontSize();
+
+  /// 下拉刷新样式
+  static PullToRefreshStyle pullToRefreshStyle = PullToRefreshStyle();
 
   /// 获取当前的state
   static NavigatorState getCurrentState() => navigatorKey.currentState;

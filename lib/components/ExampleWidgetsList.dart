@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-02 15:41:55
- * @lastTime: 2019-09-20 13:49:03
+ * @lastTime: 2019-09-25 15:11:33
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -84,6 +84,17 @@ class ExampleWidgetsList extends StatelessWidget {
                   ],
                 ),
                 onPress: () => G.pushNamed('/example_acheckbox'),
+              ),
+
+              returnRow(context,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('pulltorefresh 下拉刷新'),
+                    icontupian6(color: rgba(228, 228, 228, 1), size: 14)
+                  ],
+                ),
+                onPress: () => G.pushNamed('/example_pull_to_refresh'),
               ),
             ],
           ),

@@ -10,7 +10,7 @@ A complete flutter simulation luckin coffee demo, using the API factory as the b
 
 flutter实战demo，仿luckin coffee。
 
-![flutter_luckin_coffee_logo](./readme/images/githead1.png)
+![alt text](./readme/images/githead1.png)
 
 ## 前言
 

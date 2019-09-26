@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-26 14:54:20
+ * @lastTime: 2019-09-26 15:10:40
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -37,7 +37,7 @@ Engine • revision fee001c93f
 Tools • Dart 2.4.0
 ```
 
-## 版本计划 · 当前版本 v1.0.0
+## 版本计划 · 当前版本 v2.0.0
 
 ### - v1.0版本侧重于页面实现
 
@@ -55,32 +55,29 @@ Tools • Dart 2.4.0
 
 - [ ] code review
 
-## 当前版本进度 - 动画交互 & 代码优化
+## 当前版本进度 - 数据准备&联调
 
-解决v1.0.0所遗留的一些问题；实现大部分动画、按钮、输入框、表单等交互效果以及代码优化。
+v1.0版本所遗留的问题
 
-- [x] 菜单页面，NestedScrollView里面使用ListView，对ListView增加controller会导致NestedScrollView失效。
 - [ ] 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。
-- [x] 非bottomNavigationBar页面如何跳转到bottomNavigationBar页面。
-- [x] 曲面屏兼容问题，固定在最底部的widget，使用SafeArea底部会空出来（eg：确认订单页面）。
+- [ ] 待实现：菜单界面，点击左侧菜单，右侧商品列表跳转
+- [ ] 待解决：从非toolbar页面跳转到toolbar页面的入场动画不一致
 
 > 以上是上个版本遗留的问题 ----------------------------
 
-- [x] 路由管理
-- [x] 复选框交互动画实现及封装
-- [x] 步进器的实现及封装
-- [x] 封装好的步进器接入页面
-- [x] 常用字体大小 & 颜色封装
-- [x] 通用按钮的封装
-- [x] 封装好的按钮，接入页面
-- [x] dialog封装
-- [x] 页面关联
-- [x] 调研下拉刷新插件&实现demo
-- [x] 常用行的封装 & 优化
+- [ ] provider调研
+- [ ] 接入provider
+- [ ] 网络请求调研
+- [ ] 在api工厂，准备app需要的数据
+- [ ] 菜单联调
+- [ ] 商品详情联调
+- [ ] 订单联调
+- [ ] 购物车联调
 
 ## backlog
 
 [v1.x.x](./readme/backlog/v1.x.x.md)
+[v2.x.x](./readme/backlog/v2.x.x.md)
 
 ## 项目中所封装的组件
 

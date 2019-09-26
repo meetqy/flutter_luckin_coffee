@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-26 15:10:40
+ * @lastTime: 2019-09-26 15:13:55
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -76,8 +76,8 @@ v1.0版本所遗留的问题
 
 ## backlog
 
-[v1.x.x](./readme/backlog/v1.x.x.md)
-[v2.x.x](./readme/backlog/v2.x.x.md)
+- [v1.x.x](./readme/backlog/v1.x.x.md)
+- [v2.x.x](./readme/backlog/v2.x.x.md)
 
 ## 项目中所封装的组件
 

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-26 10:53:20
+ * @lastTime: 2019-09-26 14:46:43
  * @LastEditors: meetqy
  */
 
@@ -15,7 +15,11 @@ import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
 import 'package:provider/provider.dart';
 
-
+class Args {
+  static num a = 1;
+  static num b = 2;
+  static List c = [1,2,3,4];
+}
 class Home extends StatefulWidget {
   static _HomeState _homeState;
 
@@ -89,7 +93,7 @@ class _HomeState extends State<Home> {
               rightChild: rightChild(
                 icon: icontupian3(color: rgba(99, 71, 58, 1), size: 20),
               ),
-              onPressed: () => G.pushNamed('/menu')
+              onPressed: () => G.pushNamed('/menu', arguments: {'msg': 'home to menu'})
             ),  
 
             Consumer<CounterModel>(

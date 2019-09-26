@@ -1,12 +1,11 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-26 11:54:27
+ * @lastTime: 2019-09-26 14:51:07
  * @LastEditors: meetqy
  */
+import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/CustomColors.dart';
-import 'package:flutter_luckin_coffee/utils/CustomFontSize.dart';
 import 'package:flutter_luckin_coffee/utils/PullToRefreshStyle.dart';
 
 export './Icon.dart';
@@ -18,12 +17,6 @@ class G {
   static GlobalKey<NavigatorState> navigatorKey=GlobalKey();
   /// toolbar routeName
   static List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
-
-  /// 项目常用颜色
-  static CustomColors colors = CustomColors();
-
-  /// 项目常用字体大小
-  static CustomFontSize fontSize = CustomFontSize();
 
   /// 下拉刷新样式
   static PullToRefreshStyle pullToRefreshStyle = PullToRefreshStyle();
@@ -62,7 +55,7 @@ class G {
   static Border borderBottom({Color color, bool show = true}){
     return Border(
       bottom: BorderSide(
-        color: (color == null || !show)  ? (show ? colors.whiteLighter : Colors.transparent) : color,
+        color: (color == null || !show)  ? (show ? rgba(242, 242, 242, 1) : Colors.transparent) : color,
         width: 1
       )
     );

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-09-09 15:11:57
+ * @lastTime: 2019-09-26 14:05:05
  * @LastEditors: meetqy
  */
 
@@ -104,7 +104,6 @@ class _NavigationState extends State<Toolbar> {
   @override
   Widget build(BuildContext context) {  
     Map page = widget.pages[currentIndex];
-    
     return Scaffold(
       appBar: page['appbar'],
       body: Container(

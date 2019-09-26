@@ -81,7 +81,7 @@ class ADialog {
       alignment: Alignment.center,
       padding: EdgeInsets.only(top: 12),        
       child: title == null ? null : Text(title, style: TextStyle(
-        color: G.colors.blackDarker,
+        color: rgba(56, 56, 56, 1),
         fontSize: 16,
         fontWeight: FontWeight.bold
       )),
@@ -94,7 +94,7 @@ class ADialog {
       padding: EdgeInsets.symmetric(vertical: 12,horizontal: 15),
       child: Text(content,
         style: TextStyle(
-          color: G.colors.grayLight,
+          color: rgba(153, 153, 153, 1),
           fontSize: 14,
         ),
         textAlign: TextAlign.center,
@@ -126,7 +126,7 @@ class ADialog {
               ),
               child: AButton.normal(
                 child: cancelButtonText,
-                color: G.colors.blackDarker,
+                color: rgba(56, 56, 56, 1),
                 borderRadius: cancelBorderRadius,
                 onPressed: (){
                   if(cancelButtonPress == null) {
@@ -145,7 +145,7 @@ class ADialog {
             child: AButton.normal(
               child: confirmButtonText,
               borderRadius: confirmBorderRadius,
-              color: G.colors.blueLight,
+              color: rgba(144, 192, 239, 1),
               onPressed: (){
                 if(confirmButtonPress == null) {
                   Navigator.pop(context);

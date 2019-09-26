@@ -1,3 +1,4 @@
+import 'package:color_dart/color_dart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -32,7 +33,7 @@ class PullToRefreshStyle {
         Widget body;
         if(mode == LoadStatus.noMore) {
           body = Text('--- 到底了 ---', style: TextStyle(
-            color: G.colors.green
+            color: rgba(73, 194, 101, 1)
           ),);
         } else {
           body = CupertinoActivityIndicator();

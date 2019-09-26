@@ -26,14 +26,15 @@ import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
 
 class Router {
   static final _routes = {    
+    /// TODO: 从非toolbar页面跳转到toolbar页面的入场动画不一致
     // 从非toolbar页面（子页面）跳转到toolbar页面（主页）实现：
     // pushName到对应的路由，因为Toolbar是单例模式，所以只会创建一个
-    // pushName之后在 Toolbar中的 initState中去设置对应routeName的index
-    '/': (BuildContext context, { Object args }) => Toolbar(routeName: '/',),
-    '/mine': (BuildContext context, { Object args }) => Toolbar(routeName: '/mine',),
-    '/order': (BuildContext context, { Object args }) => Toolbar(routeName: '/order',),
-    '/shopping_cart': (BuildContext context, { Object args }) => Toolbar(routeName: '/shopping_cart',),
-    '/menu': (BuildContext context, { Object args }) => Toolbar(routeName: '/menu',),
+    // pushName之后，在ToolBar，initState中获取当前的路由，实现切换页面
+    '/': (BuildContext context, { Object args }) => Toolbar(),
+    '/mine': (BuildContext context, { Object args }) => Toolbar(),
+    '/order': (BuildContext context, { Object args }) => Toolbar(),
+    '/shopping_cart': (BuildContext context, { Object args }) => Toolbar(),
+    '/menu': (BuildContext context, { Object args }) => Toolbar(arguments: args,),
     
     '/login_method': (BuildContext context, { Object args }) => LoginMethod(),
     '/login_phone': (BuildContext context, { Object args }) => LoginPhone(),
@@ -70,9 +71,10 @@ class Router {
     return _singleton;
   }
 
-  // 监听非toolbar页面
+  // 监听route
   Route getRoutes(RouteSettings settings) {
-    final Function builder = Router._routes[settings.name];
+    String routeName = settings.name;
+    final Function builder = Router._routes[routeName];
 
     print(settings);
 

@@ -1,3 +1,4 @@
+import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
@@ -51,7 +52,7 @@ class _CustomStepperState extends State<AStepper> {
             width: 28,
             height: 28,
             bgColor: Colors.transparent,
-            icon: iconjianfill(size: 28, color: G.colors.blueLight.withOpacity(number == widget.min ? 0.3 : 1)),
+            icon: iconjianfill(size: 28, color: rgba(144, 192, 239, 1).withOpacity(number == widget.min ? 0.3 : 1)),
             onPressed: (){
               if(number > widget.min) {
                 setState(() {
@@ -77,7 +78,7 @@ class _CustomStepperState extends State<AStepper> {
             width: 28,
             height: 28,
             bgColor: Colors.transparent,
-            icon: iconjaifill(size: 28,color: G.colors.blueLight.withOpacity(number == widget.max ? 0.3 : 1)),
+            icon: iconjaifill(size: 28,color: rgba(144, 192, 239, 1).withOpacity(number == widget.max ? 0.3 : 1)),
             onPressed: (){
               if(number < widget.max) {
                 setState(() {

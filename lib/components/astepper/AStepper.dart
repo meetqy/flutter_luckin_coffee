@@ -52,7 +52,7 @@ class _CustomStepperState extends State<AStepper> {
             width: 28,
             height: 28,
             bgColor: Colors.transparent,
-            icon: iconjianfill(size: 28, color: rgba(144, 192, 239, 1).withOpacity(number == widget.min ? 0.3 : 1)),
+            icon: iconjianfill(size: 28, color: rgba(144, 192, 239, number == widget.min ? 0.3 : 1)),
             onPressed: (){
               if(number > widget.min) {
                 setState(() {
@@ -78,7 +78,7 @@ class _CustomStepperState extends State<AStepper> {
             width: 28,
             height: 28,
             bgColor: Colors.transparent,
-            icon: iconjaifill(size: 28,color: rgba(144, 192, 239, 1).withOpacity(number == widget.max ? 0.3 : 1)),
+            icon: iconjaifill(size: 28,color: rgba(144, 192, 239, number == widget.max ? 0.3 : 1)),
             onPressed: (){
               if(number < widget.max) {
                 setState(() {

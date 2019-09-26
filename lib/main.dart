@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/provider/CounterModel.dart';
@@ -5,9 +7,16 @@ import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/routes/index.dart';
 import 'package:provider/provider.dart';
 
+import 'data/data.dart';
+import 'data/mockdata.dart';
+
 final router = Router();
 
 void main(){
+
+  Data data1 = Data.fromJson(json.decode(JsonString.mockdata));
+  print(data1.title);
+  
   runApp(
     MultiProvider(
       providers: [

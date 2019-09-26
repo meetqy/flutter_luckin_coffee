@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-26 09:34:51
+ * @lastTime: 2019-09-26 11:54:27
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
@@ -46,11 +46,11 @@ class G {
 
   /// 跳转页面使用 G.pushNamed
   static pushNamed(String routeName, {Object arguments}){
-    // 如果跳转到toolbar页面 删除之前的所有page
+    // 如果跳转到toolbar页面  不能返回
     if(toobarRouteNameList.indexOf(routeName) > -1) {
-      return getCurrentState().pushNamedAndRemoveUntil(routeName, (Route<dynamic> route) => false);
-    }
-
+      return getCurrentState().pushReplacementNamed(routeName, arguments: arguments,);
+    } 
+    
     getCurrentState().pushNamed(routeName, arguments: arguments);
   }
 

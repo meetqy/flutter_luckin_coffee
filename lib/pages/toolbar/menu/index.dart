@@ -1,9 +1,10 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-24 14:52:05
+ * @lastTime: 2019-09-26 17:06:49
  * @LastEditors: meetqy
  */
+
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -45,8 +46,14 @@ class _MenuState extends State<Menu> {
         _nestedScrollOffet = _nestedScrollController.offset;
       });
     });
+    getGoodsList();
 
     super.initState();
+  }
+
+  getGoodsList() async {
+    var data = await G.dio.get('/shop/goods/list');
+    
   }
 
   /// 创建菜单列表

@@ -1,12 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-26 14:51:07
+ * @lastTime: 2019-09-26 16:49:21
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/PullToRefreshStyle.dart';
+import 'package:flutter_luckin_coffee/utils/initDio.dart';
 
 export './Icon.dart';
 export './customAppbar.dart';
@@ -17,6 +19,9 @@ class G {
   static GlobalKey<NavigatorState> navigatorKey=GlobalKey();
   /// toolbar routeName
   static List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
+
+  /// 初始化dio
+  static Dio dio = initDio();
 
   /// 下拉刷新样式
   static PullToRefreshStyle pullToRefreshStyle = PullToRefreshStyle();

@@ -1,15 +1,13 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-25 16:04:09
+ * @lastTime: 2019-09-26 09:34:51
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/provider/CounterModel.dart';
 import 'package:flutter_luckin_coffee/utils/CustomColors.dart';
 import 'package:flutter_luckin_coffee/utils/CustomFontSize.dart';
 import 'package:flutter_luckin_coffee/utils/PullToRefreshStyle.dart';
-import 'package:provider/provider.dart';
 
 export './Icon.dart';
 export './customAppbar.dart';
@@ -35,8 +33,6 @@ class G {
 
   /// 获取当前的context
   static BuildContext getCurrentContext() => navigatorKey.currentContext;
-
-  static dds() => Provider.of<CounterModel>(getCurrentContext());
 
   /// 获取屏幕上下边距
   /// 用于兼容全面屏，刘海屏

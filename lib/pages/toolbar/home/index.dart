@@ -1,17 +1,19 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-25 17:26:13
+ * @lastTime: 2019-09-26 10:53:20
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
+import 'package:flutter_luckin_coffee/provider/CounterModel.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
 import 'package:flutter_luckin_coffee/widgets/index.dart';
+import 'package:provider/provider.dart';
 
 
 class Home extends StatefulWidget {
@@ -34,11 +36,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final _counter = G.dds();
-
-    print({
-      "_counter": _counter.value,
-    });
 
     return SingleChildScrollView(
       child: Column(children: <Widget>[
@@ -94,19 +91,23 @@ class _HomeState extends State<Home> {
               ),
               onPressed: () => G.pushNamed('/menu')
             ),  
-            
-            ARow(
-              height: 70,
-              padding: EdgeInsets.all(0),
-              leftChild: leftChild(
-                title: '咖啡钱包${_counter.value}',
-                desc: 'COFFRR WALLET'
-              ),
-              rightChild: rightChild(
-                icon: icontupian(size: 20, color: rgba(104, 68, 60, 1)),
-              ),
-              onPressed: () {
-                _counter.add();
+
+            Consumer<CounterModel>(
+              builder: (BuildContext context, CounterModel _counter, Widget child) {
+                return ARow(
+                  height: 70,
+                  padding: EdgeInsets.all(0),
+                  leftChild: leftChild(
+                    title: '咖啡钱包${_counter.value}',
+                    desc: 'COFFRR WALLET'
+                  ),
+                  rightChild: rightChild(
+                    icon: icontupian(size: 20, color: rgba(104, 68, 60, 1)),
+                  ),
+                  onPressed: () {
+                    _counter.add();
+                  },
+                );
               },
             ),
 

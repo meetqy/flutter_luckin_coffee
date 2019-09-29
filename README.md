@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-29 11:19:34
+ * @lastTime: 2019-09-29 17:45:47
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -67,9 +67,10 @@ v1.0版本所遗留的问题
 
 - [ ] provider调研
 - [ ] 接入provider
-- [ ] 网络请求调研
+- [x] 网络请求调研
 - [ ] 在api工厂，准备app需要的数据
-- [ ] 菜单联调
+- [x] 菜单联调
+- [ ] 请求等待返回数据增加loading
 - [ ] 商品详情联调
 - [ ] 订单联调
 - [ ] 购物车联调

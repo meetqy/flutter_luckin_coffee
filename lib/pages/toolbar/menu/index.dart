@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-29 16:47:35
+ * @lastTime: 2019-09-29 17:43:20
  * @LastEditors: meetqy
  */
 
@@ -43,6 +43,11 @@ class _MenuState extends State<Menu> {
   
   final List actives = ['满50减20', '充2赠1', '买2送1'];
 
+  /// 把商品列表，和分类的部分设置为变量。
+  /// 解决：滚动页面，重复渲染
+  List<Widget> goodsListWidgets = []; 
+  List<Widget> categoryWidgets = [];
+
   AppBar createAppBar() {
     return null;
   }
@@ -55,12 +60,11 @@ class _MenuState extends State<Menu> {
       });
     });
 
-    _init();
+     _init();
 
     super.initState();
   }
 
-  /// 获取商品列表
   _init() async {
     Iterable<Future> requestList = [
       G.dio.get('/shop/goods/list'), 
@@ -69,44 +73,25 @@ class _MenuState extends State<Menu> {
 
     List result =  await Future.wait(requestList);
 
-    GoodsList goodsList = GoodsList.fromJson(result[0]) ;
+    GoodsList goodsList = GoodsList.fromJson(result[0]);
+    int goodsListLen = goodsList.data.length;
     GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
 
-    
-    Map<String, dynamic> categoryCombineGoodsTemp = {
-      /// category.id: {
-      ///   category: GoodsCategoryDatum
-      ///   goodsList: [GoodsListDatum]
-      /// }
-    };
+    List<Widget> goodsListWidgetsTemp = [];
+    List<Widget> categoryWidgetsTemp = [];
+    Random rand = Random(); // 随机数
 
     goodsCategory.data.forEach((GoodsCategoryDatum category) {
-      List<GoodsListDatum> nowGoodsList = [];
-      goodsList.data.forEach((GoodsListDatum goods) {
-        if(category.id == goods.categoryId) {
-          nowGoodsList.add(goods);
-        }
-      });
+      // 商品列表 每类商品 标题  eg: 人气top
+      goodsListWidgetsTemp.add(
+        ClassifyDesc(
+          category.name,
+          desc: null
+        )
+      );
 
-      categoryCombineGoodsTemp['${category.id}'] = {
-        "category": category,
-        "goodsList": nowGoodsList
-      };
-    });
-
-    setState(() {
-      categoryCombineGoods = categoryCombineGoodsTemp;
-      nowCategoryId = goodsCategory.data[0].id;
-    });
-  }
-
-  /// 创建菜单列表
-  List<Widget> createMenuList() {
-    List<Widget> rows = [];
-
-    categoryCombineGoods.forEach((key, val) {
-      GoodsCategoryDatum category = val['category'];
-      rows.add(MenuListRow(
+      // 分类
+      categoryWidgetsTemp.add(MenuListRow(
         category.name, 
         isActive: category.id == nowCategoryId,
         id: category.id,
@@ -116,57 +101,38 @@ class _MenuState extends State<Menu> {
           });
         },
       ));
-    });
 
-    return rows;
-  }
 
-  /// 创建商品列表
-  List<Widget> createGoodsList(List arr) {
-    List<Widget> rows = []; // 包括分类的列表
-
-    Random rand = Random();
-
-    categoryCombineGoods.forEach((key, val) {
-      GoodsCategoryDatum category = val['category'];
-      List<GoodsListDatum> goodsList = val['goodsList'];
-      int goodsListLen = goodsList.length;
-      List<Widget> goodsGroup = [];
-      /// 创建分类的简介  每一类商品的顶部有商品分类的标题和介绍
-
-      goodsGroup.add(
-        ClassifyDesc(
-          category.name,
-          desc: null
-        )
-      );
-
-      goodsList.asMap().forEach((int index, GoodsListDatum goods) {
-        
-        goodsGroup.add(
-          GoodsListRow(
-            /// 点击添加按钮弹出dialog
-            onAddPress: (BuildContext context){
-              dialogPage.show(context);
-            },
-            imgSrc: goods.pic,
-            title: goods.name,
-            desc: goods.characteristic,
-            recomment: "",
-            price: goods.originalPrice,
-            border: !(index >= goodsListLen - 1),
-            activeDesc: actives[rand.nextInt(3)],
-          )
-        );
+      goodsList.data.asMap().forEach((int index, GoodsListDatum goods) {
+        if(category.id == goods.categoryId) {
+          // 商品列表 商品
+          goodsListWidgetsTemp.add(
+            GoodsListRow(
+              // 点击添加按钮弹出dialog
+              onAddPress: (BuildContext context){
+                dialogPage.show(context);
+              },
+              imgSrc: goods.pic,
+              title: goods.name,
+              desc: goods.characteristic,
+              recomment: "",
+              price: goods.originalPrice,
+              border: !(index >= goodsListLen - 1),
+              activeDesc: actives[rand.nextInt(3)],
+            )
+          );
+        }
       });
-
-      rows.add(
-        Column(children: goodsGroup,)
-      );
     });
 
-    return rows;
+    setState(() {
+      goodsListWidgets = goodsListWidgetsTemp;
+      categoryWidgets = categoryWidgetsTemp;
+      nowCategoryId = goodsCategory.data[0].id;
+    });
+    
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -223,7 +189,7 @@ class _MenuState extends State<Menu> {
               Container(
                 width: 90,
                 color: rgba(248, 248, 248, 1),
-                child: Column(children: createMenuList(),),
+                child: Column(children: categoryWidgets,),
               ),
 
               // 右侧商品列表
@@ -235,7 +201,7 @@ class _MenuState extends State<Menu> {
                 child: NotificationListener(
                   child: ListView(
                     physics: _nestedScrollOffet >= 130 ? BouncingScrollPhysics() : ClampingScrollPhysics(),
-                    children: createGoodsList(goodsList),
+                    children: goodsListWidgets,
                   ),
                   onNotification: (ScrollNotification scrollInfo) {
                     // print(scrollInfo);

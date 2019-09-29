@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-09-26 15:13:55
+ * @lastTime: 2019-09-29 11:19:34
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -90,7 +90,7 @@ v1.0版本所遗留的问题
 
 ## 开发规范
 
-[flutter_luckin_coffee开发规范](./readme/开发规范.md)
+[flutter-go的开发规范](https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
 ## 项目目录
 

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 
 Dio initDio() {
@@ -22,8 +20,7 @@ Dio initDio() {
       },
       onResponse:(Response response) async {
         // 在返回响应数据之前做一些预处理
-        // final Map parsed = json.decode(response.data);
-        return response.data; 
+        return response; 
       },
       onError: (DioError e) async {
         // 当请求失败时做一些预处理

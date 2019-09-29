@@ -65,7 +65,7 @@ class GoodsListRow extends StatelessWidget {
   Widget goodsImg(String imgSrc) {
     return ClipRRect(
       borderRadius: new BorderRadius.circular(4.0),
-      child: Image.asset(
+      child: Image.network(
         imgSrc, 
         width: 70, 
         height: 70, 

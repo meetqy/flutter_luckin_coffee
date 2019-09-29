@@ -147,7 +147,7 @@ class GoodsListRow extends StatelessWidget {
                             child: Container(
                               width: 25,
                               height: 25,
-                              child: icontubiao(color: rgba(136, 175, 213, 1)),
+                              child: icontubiao(color: rgba(136, 175, 213, 1), size: 25),
                             ),
                             onTap: (){
                               if(onAddPress != null) {

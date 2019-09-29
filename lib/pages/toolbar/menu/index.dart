@@ -1,15 +1,13 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-29 15:45:50
+ * @lastTime: 2019-09-29 16:30:36
  * @LastEditors: meetqy
  */
 
-import 'dart:convert';
+import 'dart:math';
 
 import 'package:color_dart/color_dart.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goodscategory/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goodslist/data.dart';
@@ -43,6 +41,8 @@ class _MenuState extends State<Menu> {
   final ScrollController _nestedScrollController = new ScrollController();
 
   Map<String, dynamic> categoryCombineGoods = {};
+  
+  final List actives = ['满50减20', '充2赠1', '买2送1'];
 
   AppBar createAppBar() {
     return null;
@@ -126,6 +126,8 @@ class _MenuState extends State<Menu> {
   List<Widget> createGoodsList(List arr) {
     List<Widget> rows = []; // 包括分类的列表
 
+    Random rand = Random();
+
     categoryCombineGoods.forEach((key, val) {
       GoodsCategoryDatum category = val['category'];
       List<GoodsListDatum> goodsList = val['goodsList'];
@@ -141,6 +143,7 @@ class _MenuState extends State<Menu> {
       );
 
       goodsList.asMap().forEach((int index, GoodsListDatum goods) {
+        
         goodsGroup.add(
           GoodsListRow(
             /// 点击添加按钮弹出dialog
@@ -151,9 +154,9 @@ class _MenuState extends State<Menu> {
             title: goods.name,
             desc: goods.characteristic,
             recomment: "",
-            price: goods.minPrice,
+            price: goods.originalPrice,
             border: !(index >= goodsListLen - 1),
-            activeDesc: val["active"],
+            activeDesc: actives[rand.nextInt(3)],
           )
         );
       });
@@ -162,43 +165,6 @@ class _MenuState extends State<Menu> {
         Column(children: goodsGroup,)
       );
     });
-
-    // arr.asMap().forEach((index, val) {
-    //   var goodsList = val["list"];
-    //   var classifyDesc = menuList['${val['id']}'];
-    //   List<Widget> goodsGroup = [];
-      
-    //   /// 创建分类的简介  每一类商品的顶部有商品分类的标题和介绍
-    //   goodsGroup.add(
-    //     ClassifyDesc(
-    //       classifyDesc['name'], 
-    //       desc: classifyDesc['desc'] == null ? null : classifyDesc['desc'],
-    //     )
-    //   );
-
-    //   goodsList.asMap().forEach((index, val) {
-    //     var recomment = val["recomment"];
-        // goodsGroup.add(
-        //   GoodsListRow(
-        //     /// 点击添加按钮弹出dialog
-        //     onAddPress: (BuildContext context){
-        //       dialogPage.show(context);
-        //     },
-        //     imgSrc: val["imgsrc"],
-        //     title: val['name'],
-        //     desc: val["desc"],
-        //     recomment: recomment == null ? null : "默认：${recomment['spec']['name']}/${recomment['sugar']['name']}/${recomment['temperature']['name']}",
-        //     price: double.parse("${val["price"]}"),
-        //     border: !(index >= goodsList.length - 1),
-        //     activeDesc: val["active"],
-        //   )
-        // );
-    //   });
-    
-    //   rows.add(
-    //     Column(children: goodsGroup,)
-    //   );
-    // });
 
     return rows;
   }

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-29 16:30:36
+ * @lastTime: 2019-09-29 16:47:35
  * @LastEditors: meetqy
  */
 
@@ -11,7 +11,6 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goodscategory/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goodslist/data.dart';
-import 'package:flutter_luckin_coffee/utils/Request.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
@@ -64,8 +63,8 @@ class _MenuState extends State<Menu> {
   /// 获取商品列表
   _init() async {
     Iterable<Future> requestList = [
-      Request.get('/shop/goods/list'), 
-      Request.get('/shop/goods/category/all')
+      G.dio.get('/shop/goods/list'), 
+      G.dio.get('/shop/goods/category/all')
     ];
 
     List result =  await Future.wait(requestList);

@@ -1,0 +1,67 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "dateAdd": "2019-08-14 17:50:13",
+      "dateUpdate": "2019-08-14 17:50:24",
+      "id": 45824,
+      "isUse": true,
+      "level": 1,
+      "name": "人气Top",
+      "paixu": 0,
+      "pid": 0,
+      "userId": 18046
+    },
+    {
+      "dateAdd": "2019-08-14 17:50:36",
+      "id": 45825,
+      "isUse": true,
+      "level": 1,
+      "name": "大师咖啡",
+      "paixu": 0,
+      "pid": 0,
+      "userId": 18046
+    },
+    {
+      "dateAdd": "2019-08-14 17:51:06",
+      "id": 45827,
+      "isUse": true,
+      "level": 1,
+      "name": "瑞纳冰",
+      "paixu": 0,
+      "pid": 0,
+      "userId": 18046
+    },
+    {
+      "dateAdd": "2019-08-14 17:51:18",
+      "id": 45828,
+      "isUse": true,
+      "level": 1,
+      "name": "经典饮品",
+      "paixu": 0,
+      "pid": 0,
+      "userId": 18046
+    },
+    {
+      "dateAdd": "2019-08-14 17:51:40",
+      "id": 45829,
+      "isUse": true,
+      "level": 1,
+      "name": "健康轻食",
+      "paixu": 0,
+      "pid": 0,
+      "userId": 18046
+    },
+    {
+      "dateAdd": "2019-08-14 17:51:53",
+      "id": 45830,
+      "isUse": true,
+      "level": 1,
+      "name": "鲜榨果蔬汁",
+      "paixu": 0,
+      "pid": 0,
+      "userId": 18046
+    }
+  ],
+  "msg": "success"
+}

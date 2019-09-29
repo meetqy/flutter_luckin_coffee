@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-29 17:43:20
+ * @lastTime: 2019-09-29 17:44:37
  * @LastEditors: meetqy
  */
 
@@ -15,7 +15,6 @@ import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
 
-import 'testData.dart';
 import 'widgets/ClassifyDesc.dart';
 import 'widgets/GoodsListRow.dart';
 import 'widgets/MenuListRow.dart';

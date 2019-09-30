@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-29 17:44:37
+ * @lastTime: 2019-09-30 15:05:50
  * @LastEditors: meetqy
  */
 
@@ -59,12 +59,15 @@ class _MenuState extends State<Menu> {
       });
     });
 
-     _init();
+    Future.delayed(Duration.zero, () {
+      _init(context);
+    });
 
     super.initState();
   }
 
-  _init() async {
+  _init(BuildContext context) async {
+    G.loading.show(context);
     Iterable<Future> requestList = [
       G.dio.get('/shop/goods/list'), 
       G.dio.get('/shop/goods/category/all')
@@ -130,6 +133,7 @@ class _MenuState extends State<Menu> {
       nowCategoryId = goodsCategory.data[0].id;
     });
     
+    G.loading.hide(context);
   }
 
 
@@ -171,7 +175,7 @@ class _MenuState extends State<Menu> {
                         ], height: 130),
                     ),
                     onTap: () {
-                      
+                      G.loading.show(context);
                     },
                   ),
                 ),

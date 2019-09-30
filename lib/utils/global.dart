@@ -1,13 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-29 16:48:20
+ * @lastTime: 2019-09-30 10:59:54
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/PullToRefreshStyle.dart';
 import 'package:flutter_luckin_coffee/utils/Request.dart';
+import 'package:flutter_luckin_coffee/utils/loading.dart';
 
 export './Icon.dart';
 export './customAppbar.dart';
@@ -21,6 +22,8 @@ class G {
 
   /// 初始化Request
   static Request dio = Request();
+
+  static Loading loading = Loading();
 
   /// 下拉刷新样式
   static PullToRefreshStyle pullToRefreshStyle = PullToRefreshStyle();

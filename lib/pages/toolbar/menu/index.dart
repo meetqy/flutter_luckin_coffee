@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-09-30 15:05:50
+ * @lastTime: 2019-10-08 10:53:09
  * @LastEditors: meetqy
  */
 
@@ -11,6 +11,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goodscategory/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goodslist/data.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/menu/category.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
@@ -45,7 +46,7 @@ class _MenuState extends State<Menu> {
   /// 把商品列表，和分类的部分设置为变量。
   /// 解决：滚动页面，重复渲染
   List<Widget> goodsListWidgets = []; 
-  List<Widget> categoryWidgets = [];
+  List<GoodsCategoryDatum> category = [];
 
   AppBar createAppBar() {
     return null;
@@ -80,7 +81,6 @@ class _MenuState extends State<Menu> {
     GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
 
     List<Widget> goodsListWidgetsTemp = [];
-    List<Widget> categoryWidgetsTemp = [];
     Random rand = Random(); // 随机数
 
     goodsCategory.data.forEach((GoodsCategoryDatum category) {
@@ -91,19 +91,6 @@ class _MenuState extends State<Menu> {
           desc: null
         )
       );
-
-      // 分类
-      categoryWidgetsTemp.add(MenuListRow(
-        category.name, 
-        isActive: category.id == nowCategoryId,
-        id: category.id,
-        onPress: (id) {
-          setState(() {
-            nowCategoryId = id;
-          });
-        },
-      ));
-
 
       goodsList.data.asMap().forEach((int index, GoodsListDatum goods) {
         if(category.id == goods.categoryId) {
@@ -128,9 +115,9 @@ class _MenuState extends State<Menu> {
     });
 
     setState(() {
-      goodsListWidgets = goodsListWidgetsTemp;
-      categoryWidgets = categoryWidgetsTemp;
       nowCategoryId = goodsCategory.data[0].id;
+      goodsListWidgets = goodsListWidgetsTemp;
+      category = goodsCategory.data;
     });
     
     G.loading.hide(context);
@@ -175,7 +162,7 @@ class _MenuState extends State<Menu> {
                         ], height: 130),
                     ),
                     onTap: () {
-                      G.loading.show(context);
+
                     },
                   ),
                 ),
@@ -192,7 +179,17 @@ class _MenuState extends State<Menu> {
               Container(
                 width: 90,
                 color: rgba(248, 248, 248, 1),
-                child: Column(children: categoryWidgets,),
+                child: Category(
+                  data: category,
+                  id: nowCategoryId,
+                  getCayegoryId: (id) {
+                    if(nowCategoryId != id) {
+                      setState(() {
+                        nowCategoryId = id;
+                      });
+                    }
+                  },
+                ),
               ),
 
               // 右侧商品列表

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-10-08 10:53:09
+ * @lastTime: 2019-10-08 11:05:21
  * @LastEditors: meetqy
  */
 
@@ -18,7 +18,6 @@ import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
 
 import 'widgets/ClassifyDesc.dart';
 import 'widgets/GoodsListRow.dart';
-import 'widgets/MenuListRow.dart';
 
 /// TODO: 待解决：点击左侧菜单，右侧商品列表跳转
 class Menu extends StatefulWidget {
@@ -119,6 +118,7 @@ class _MenuState extends State<Menu> {
       goodsListWidgets = goodsListWidgetsTemp;
       category = goodsCategory.data;
     });
+
     
     G.loading.hide(context);
   }

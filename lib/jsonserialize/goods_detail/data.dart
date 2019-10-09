@@ -15,7 +15,8 @@ class GoodsDetail {
   });
 
   //反序列化
-  factory GoodsDetail.fromJson(Map<String, dynamic> json) => _$GoodsDetailFromJson(json);
+  factory GoodsDetail.fromJson(Map<String, dynamic> json) =>
+      _$GoodsDetailFromJson(json);
   //序列化
   Map<String, dynamic> toJson() => _$GoodsDetailToJson(this);
 }
@@ -27,6 +28,7 @@ class GoodsDetailData {
   List<GoodsDetailPic> pics;
   String content;
   GoodsDetailBasicInfo basicInfo;
+  List<GoodsDetailProperty> properties;
 
   GoodsDetailData({
     this.extJson,
@@ -34,10 +36,12 @@ class GoodsDetailData {
     this.pics,
     this.content,
     this.basicInfo,
+    this.properties
   });
 
   //反序列化
-  factory GoodsDetailData.fromJson(Map<String, dynamic> json) => _$GoodsDetailDataFromJson(json);
+  factory GoodsDetailData.fromJson(Map<String, dynamic> json) =>
+      _$GoodsDetailDataFromJson(json);
   //序列化
   Map<String, dynamic> toJson() => _$GoodsDetailDataToJson(this);
 }
@@ -46,7 +50,7 @@ class GoodsDetailData {
 class GoodsDetailBasicInfo {
   int categoryId;
   String characteristic;
-  int commission;
+  double commission;
   int commissionType;
   String dateAdd;
   String dateUpdate;
@@ -54,11 +58,11 @@ class GoodsDetailBasicInfo {
   int gotScoreType;
   int id;
   bool kanjia;
-  int kanjiaPrice;
+  double kanjiaPrice;
   bool limitation;
   int logisticsId;
   bool miaosha;
-  int minPrice;
+  double minPrice;
   int minScore;
   String name;
   int numberFav;
@@ -69,7 +73,7 @@ class GoodsDetailBasicInfo {
   int paixu;
   String pic;
   bool pingtuan;
-  int pingtuanPrice;
+  double pingtuanPrice;
   int recommendStatus;
   String recommendStatusStr;
   int shopId;
@@ -79,7 +83,7 @@ class GoodsDetailBasicInfo {
   int userId;
   int vetStatus;
   int views;
-  int weight;
+  double weight;
 
   GoodsDetailBasicInfo({
     this.categoryId,
@@ -121,7 +125,8 @@ class GoodsDetailBasicInfo {
   });
 
   //反序列化
-  factory GoodsDetailBasicInfo.fromJson(Map<String, dynamic> json) => _$GoodsDetailBasicInfoFromJson(json);
+  factory GoodsDetailBasicInfo.fromJson(Map<String, dynamic> json) =>
+      _$GoodsDetailBasicInfoFromJson(json);
   //序列化
   Map<String, dynamic> toJson() => _$GoodsDetailBasicInfoToJson(this);
 }
@@ -147,7 +152,8 @@ class GoodsDetailCategory {
   });
 
   //反序列化
-  factory GoodsDetailCategory.fromJson(Map<String, dynamic> json) => _$GoodsDetailCategoryFromJson(json);
+  factory GoodsDetailCategory.fromJson(Map<String, dynamic> json) =>
+      _$GoodsDetailCategoryFromJson(json);
   //序列化
   Map<String, dynamic> toJson() => _$GoodsDetailCategoryToJson(this);
 }
@@ -156,8 +162,9 @@ class GoodsDetailCategory {
 class GoodsDetailExtJson {
   GoodsDetailExtJson();
 
-   //反序列化
-  factory GoodsDetailExtJson.fromJson(Map<String, dynamic> json) => _$GoodsDetailExtJsonFromJson(json);
+  //反序列化
+  factory GoodsDetailExtJson.fromJson(Map<String, dynamic> json) =>
+      _$GoodsDetailExtJsonFromJson(json);
   //序列化
   Map<String, dynamic> toJson() => _$GoodsDetailExtJsonToJson(this);
 }
@@ -177,7 +184,35 @@ class GoodsDetailPic {
   });
 
   //反序列化
-  factory GoodsDetailPic.fromJson(Map<String, dynamic> json) => _$GoodsDetailPicFromJson(json);
+  factory GoodsDetailPic.fromJson(Map<String, dynamic> json) =>
+      _$GoodsDetailPicFromJson(json);
   //序列化
   Map<String, dynamic> toJson() => _$GoodsDetailPicToJson(this);
+}
+
+@JsonSerializable()
+class GoodsDetailProperty {
+  List<GoodsDetailProperty> childsCurGoods;
+  String dateAdd;
+  int id;
+  String name;
+  int paixu;
+  int userId;
+  int propertyId;
+
+  GoodsDetailProperty({
+      this.childsCurGoods,
+      this.dateAdd,
+      this.id,
+      this.name,
+      this.paixu,
+      this.userId,
+      this.propertyId,
+  });
+
+  //反序列化
+  factory GoodsDetailProperty.fromJson(Map<String, dynamic> json) =>
+      _$GoodsDetailPropertyFromJson(json);
+  //序列化
+  Map<String, dynamic> toJson() => _$GoodsDetailPropertyToJson(this);
 }

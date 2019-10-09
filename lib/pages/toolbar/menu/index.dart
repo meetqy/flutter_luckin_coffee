@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-10-08 11:05:21
+ * @lastTime: 2019-10-09 15:12:51
  * @LastEditors: meetqy
  */
 
@@ -9,15 +9,16 @@ import 'dart:math';
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goodscategory/data.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goodslist/data.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/category.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
-import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
 
+import 'goods_detail.dart';
 import 'widgets/ClassifyDesc.dart';
-import 'widgets/GoodsListRow.dart';
+import 'goods_list_row.dart';
 
 /// TODO: 待解决：点击左侧菜单，右侧商品列表跳转
 class Menu extends StatefulWidget {
@@ -69,8 +70,8 @@ class _MenuState extends State<Menu> {
   _init(BuildContext context) async {
     G.loading.show(context);
     Iterable<Future> requestList = [
-      G.dio.get('/shop/goods/list'), 
-      G.dio.get('/shop/goods/category/all')
+      G.dio.get('/shop/goods/list'),  // 获取商品列表
+      G.dio.get('/shop/goods/category/all') // 获取分类列表
     ];
 
     List result =  await Future.wait(requestList);
@@ -97,14 +98,27 @@ class _MenuState extends State<Menu> {
           goodsListWidgetsTemp.add(
             GoodsListRow(
               // 点击添加按钮弹出dialog
-              onAddPress: (BuildContext context){
-                dialogPage.show(context);
+              onPress: (BuildContext context, int id) async {
+                Map result = await G.dio.get('/shop/goods/detail', queryParameters: {
+                  "id": id
+                });
+
+                GoodsDetailData goodsDetailData = GoodsDetailData.fromJson(result['data']);
+
+                /// 弹出商品详情
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (BuildContext context) {
+                    GoodsDetailDialog dialog = GoodsDetailDialog(
+                      data: goodsDetailData,
+                      context: context
+                    );
+                    return dialog.init();                        
+                  }
+                );
               },
-              imgSrc: goods.pic,
-              title: goods.name,
-              desc: goods.characteristic,
-              recomment: "",
-              price: goods.originalPrice,
+              data: goods,
               border: !(index >= goodsListLen - 1),
               activeDesc: actives[rand.nextInt(3)],
             )

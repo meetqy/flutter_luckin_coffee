@@ -1,6 +1,6 @@
 import 'package:color_dart/HexColor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goodscategory/data.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class Category extends StatelessWidget {

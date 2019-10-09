@@ -1,39 +1,28 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class GoodsListRow extends StatelessWidget {
-  final String imgSrc;
-  final String title;
-  final String desc;
-  final String recomment;
-  final double price;
   final bool border;
   final String activeDesc;
-  final Function onAddPress;
+  final Function onPress;
+  final GoodsListDatum data;
 
   /// 创建商品
   /// 
   /// ```
-  /// @param {String} title - 商品名
-  /// @param {String} imgSrc - 预览图地址 （目前读取的是本地地址），没有兼容网络连接
-  /// @param {String} recomment - 商品默认推荐口味 规格 等
-  /// @param {String} desc - 商品描述
-  /// @param {double} price - 价格
   /// @param {bool} border - 是否显示底部的border
   /// @param {String} activeDesc - 活动描述
-  /// @param {Function} onAddPress - 点击添加按钮
+  /// @param {Function} onPress - 点击添加按钮
+  /// @param {GoodsListDatum} data
   /// ```
   GoodsListRow({
-    this.title = "",
-    this.imgSrc = "",
-    this.recomment,
-    this.desc,
-    this.price = 20,
     this.border = true,
     this.activeDesc,
-    this.onAddPress,
+    this.onPress,
+    this.data
   });
 
   /// 商品信息中的文本
@@ -113,7 +102,7 @@ class GoodsListRow extends StatelessWidget {
                 width: 80,
                 height: 70,
                 child: Stack(children: <Widget>[
-                  Positioned(child: goodsImg(imgSrc),),
+                  Positioned(child: goodsImg(data.pic),),
                   
                   activeMsg(text: activeDesc)
                 ],),
@@ -124,20 +113,20 @@ class GoodsListRow extends StatelessWidget {
                 margin: EdgeInsets.only(left: 6),
                 child: Column(
                   children: <Widget>[
-                    row(title, 
+                    row(data.name, 
                       color: rgba(56, 56, 56, 1),
                       fontSize: 15,
                       fontWeight: FontWeight.bold
                     ),
-                    row(desc == null ? " " : desc),
-                    row(recomment == null ? " " : recomment),
+                    row(data.characteristic.isEmpty ? '' : data.characteristic),
+                    row(""),
                     Container(
                       margin: EdgeInsets.only(top: 4),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Text("¥ $price", style: TextStyle(
+                          Text("¥ ${data.originalPrice}", style: TextStyle(
                               color: rgba(56, 56, 56, 1), 
                               fontSize: 15, 
                               fontWeight: FontWeight.bold
@@ -150,8 +139,8 @@ class GoodsListRow extends StatelessWidget {
                               child: icontubiao(color: rgba(136, 175, 213, 1), size: 25),
                             ),
                             onTap: (){
-                              if(onAddPress != null) {
-                                onAddPress(context);
+                              if(onPress != null) {
+                                onPress(context, data.id);
                               }
                             } 
                           )

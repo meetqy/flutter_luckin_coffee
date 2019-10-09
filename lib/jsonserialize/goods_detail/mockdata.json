@@ -23,7 +23,7 @@
     "basicInfo": {
       "categoryId": 45829,
       "characteristic": "Nice tuna SandWich",
-      "commission": 0,
+      "commission": 0.0,
       "commissionType": 0,
       "dateAdd": "2019-08-21 17:38:57",
       "dateUpdate": "2019-09-29 17:53:15",
@@ -31,11 +31,11 @@
       "gotScoreType": 0,
       "id": 171745,
       "kanjia": false,
-      "kanjiaPrice": 0,
+      "kanjiaPrice": 0.0,
       "limitation": false,
       "logisticsId": 0,
       "miaosha": false,
-      "minPrice": 0,
+      "minPrice": 0.0,
       "minScore": 0,
       "name": "金枪鱼三明治",
       "numberFav": 0,
@@ -46,7 +46,7 @@
       "paixu": 0,
       "pic": "https://dcdn.it120.cc/2019/09/29/d9837376-a348-4450-9c16-895446cb93e6.jpg",
       "pingtuan": false,
-      "pingtuanPrice": 0,
+      "pingtuanPrice": 0.0,
       "recommendStatus": 0,
       "recommendStatusStr": "普通",
       "shopId": 0,
@@ -56,8 +56,35 @@
       "userId": 18046,
       "vetStatus": 1,
       "views": 0,
-      "weight": 0
-    }
+      "weight": 0.0
+    },
+    "properties": [
+      {
+        "childsCurGoods": [
+          {
+            "dateAdd": "2019-08-21 16:53:44",
+            "id": 69277,
+            "name": "冰",
+            "paixu": 0,
+            "propertyId": 15459,
+            "userId": 18046
+          },
+          {
+            "dateAdd": "2019-08-21 16:53:48",
+            "id": 69278,
+            "name": "热",
+            "paixu": 0,
+            "propertyId": 15459,
+            "userId": 18046
+          }
+        ],
+        "dateAdd": "2019-08-21 16:52:44",
+        "id": 15459,
+        "name": "温度",
+        "paixu": 0,
+        "userId": 18046
+      }
+    ]
   },
   "msg": "success"
 }

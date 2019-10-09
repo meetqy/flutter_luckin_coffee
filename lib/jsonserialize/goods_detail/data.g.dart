@@ -41,7 +41,12 @@ GoodsDetailData _$GoodsDetailDataFromJson(Map<String, dynamic> json) {
       basicInfo: json['basicInfo'] == null
           ? null
           : GoodsDetailBasicInfo.fromJson(
-              json['basicInfo'] as Map<String, dynamic>));
+              json['basicInfo'] as Map<String, dynamic>))
+    ..properties = (json['properties'] as List)
+        ?.map((e) => e == null
+            ? null
+            : GoodsDetailProperty.fromJson(e as Map<String, dynamic>))
+        ?.toList();
 }
 
 Map<String, dynamic> _$GoodsDetailDataToJson(GoodsDetailData instance) =>
@@ -50,14 +55,15 @@ Map<String, dynamic> _$GoodsDetailDataToJson(GoodsDetailData instance) =>
       'category': instance.category,
       'pics': instance.pics,
       'content': instance.content,
-      'basicInfo': instance.basicInfo
+      'basicInfo': instance.basicInfo,
+      'properties': instance.properties
     };
 
 GoodsDetailBasicInfo _$GoodsDetailBasicInfoFromJson(Map<String, dynamic> json) {
   return GoodsDetailBasicInfo(
       categoryId: json['categoryId'] as int,
       characteristic: json['characteristic'] as String,
-      commission: json['commission'] as int,
+      commission: (json['commission'] as num)?.toDouble(),
       commissionType: json['commissionType'] as int,
       dateAdd: json['dateAdd'] as String,
       dateUpdate: json['dateUpdate'] as String,
@@ -65,11 +71,11 @@ GoodsDetailBasicInfo _$GoodsDetailBasicInfoFromJson(Map<String, dynamic> json) {
       gotScoreType: json['gotScoreType'] as int,
       id: json['id'] as int,
       kanjia: json['kanjia'] as bool,
-      kanjiaPrice: json['kanjiaPrice'] as int,
+      kanjiaPrice: (json['kanjiaPrice'] as num)?.toDouble(),
       limitation: json['limitation'] as bool,
       logisticsId: json['logisticsId'] as int,
       miaosha: json['miaosha'] as bool,
-      minPrice: json['minPrice'] as int,
+      minPrice: (json['minPrice'] as num)?.toDouble(),
       minScore: json['minScore'] as int,
       name: json['name'] as String,
       numberFav: json['numberFav'] as int,
@@ -80,7 +86,7 @@ GoodsDetailBasicInfo _$GoodsDetailBasicInfoFromJson(Map<String, dynamic> json) {
       paixu: json['paixu'] as int,
       pic: json['pic'] as String,
       pingtuan: json['pingtuan'] as bool,
-      pingtuanPrice: json['pingtuanPrice'] as int,
+      pingtuanPrice: (json['pingtuanPrice'] as num)?.toDouble(),
       recommendStatus: json['recommendStatus'] as int,
       recommendStatusStr: json['recommendStatusStr'] as String,
       shopId: json['shopId'] as int,
@@ -90,7 +96,7 @@ GoodsDetailBasicInfo _$GoodsDetailBasicInfoFromJson(Map<String, dynamic> json) {
       userId: json['userId'] as int,
       vetStatus: json['vetStatus'] as int,
       views: json['views'] as int,
-      weight: json['weight'] as int);
+      weight: (json['weight'] as num)?.toDouble());
 }
 
 Map<String, dynamic> _$GoodsDetailBasicInfoToJson(
@@ -178,4 +184,31 @@ Map<String, dynamic> _$GoodsDetailPicToJson(GoodsDetailPic instance) =>
       'id': instance.id,
       'pic': instance.pic,
       'userId': instance.userId
+    };
+
+GoodsDetailProperty _$GoodsDetailPropertyFromJson(Map<String, dynamic> json) {
+  return GoodsDetailProperty(
+      childsCurGoods: (json['childsCurGoods'] as List)
+          ?.map((e) => e == null
+              ? null
+              : GoodsDetailProperty.fromJson(e as Map<String, dynamic>))
+          ?.toList(),
+      dateAdd: json['dateAdd'] as String,
+      id: json['id'] as int,
+      name: json['name'] as String,
+      paixu: json['paixu'] as int,
+      userId: json['userId'] as int,
+      propertyId: json['propertyId'] as int);
+}
+
+Map<String, dynamic> _$GoodsDetailPropertyToJson(
+        GoodsDetailProperty instance) =>
+    <String, dynamic>{
+      'childsCurGoods': instance.childsCurGoods,
+      'dateAdd': instance.dateAdd,
+      'id': instance.id,
+      'name': instance.name,
+      'paixu': instance.paixu,
+      'userId': instance.userId,
+      'propertyId': instance.propertyId
     };

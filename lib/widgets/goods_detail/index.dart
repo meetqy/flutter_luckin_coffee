@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/select_row.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/widgets/DialogPage/index.dart';
+import 'package:flutter_luckin_coffee/widgets/goods_detail/select_row.dart';
 
 class GoodsDetailDialog {
   final GoodsDetailData data;
@@ -97,13 +96,13 @@ class GoodsDetailDialog {
   /// 选项
   _initOption() {
     print(properties);
-    // properties.forEach((val) {
+    // properties.forEach((item) {
+    //   SelectRow(),
     // });
     return Column(
       children: <Widget>[
         Container(child: 
           Column(children: <Widget>[
-            SelectRow("糖度",),
             SelectRow("糖度",),
             SelectRow("糖度",),
             SelectRow("糖度",),
@@ -226,6 +225,25 @@ class GoodsDetailDialog {
     );
   }
 
+  Widget _circelIcon({Icon icon, Function onPress, Color bgColor}) {
+    return InkWell(
+      child: Container(
+        padding: EdgeInsets.all(5),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: bgColor == null ? rgba(0, 0, 0, 0.3) : bgColor,
+          borderRadius: BorderRadius.all(Radius.circular(20))
+        ),
+        child: icon
+      ),
+      onTap: () {
+        if(onPress!=null) {
+          onPress();
+        }
+      },
+    );
+  }
+
   /// 头部
   Widget _initHeader() {
     return Stack(children: <Widget>[
@@ -262,7 +280,7 @@ class GoodsDetailDialog {
       Positioned(
         left: 10,
         top: 10,
-        child: circelIcon(
+        child: _circelIcon(
           icon: iconsc(color: hex('#fff'), size: 16),
         )
       ),

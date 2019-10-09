@@ -15,8 +15,8 @@ import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/category.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
+import 'package:flutter_luckin_coffee/widgets/goods_detail/index.dart';
 
-import 'goods_detail.dart';
 import 'widgets/ClassifyDesc.dart';
 import 'goods_list_row.dart';
 

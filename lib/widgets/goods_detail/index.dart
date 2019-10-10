@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
@@ -6,25 +8,90 @@ import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/goods_detail/select_row.dart';
 
-class GoodsDetailDialog {
-  final GoodsDetailData data;
-  final BuildContext context;
-
-  GoodsDetailBasicInfo basicInfo;
-  List<GoodsDetailProperty> properties;
+class GoodsDetailDialog extends StatefulWidget {
+  final int id;
 
   GoodsDetailDialog({
-    this.data,
-    this.context
-  });
+    Key key,
+    this.id
+  }) : super(key: key);
 
-  init() {
-    basicInfo = data.basicInfo;
-    properties = data.properties;
-    return _initDialog();
+  _GoodsDetailDialogState createState() => _GoodsDetailDialogState();
+}
+
+class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
+  Map defaultValue = {
+    "spec": {
+      // typeId: childId,
+      // typeId: childId,
+    },
+    "specName": "",
+    "price": 0,
+    "num": 1,
+  };
+
+  GoodsDetailData data;
+
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(Duration.zero, () async{
+      Map result = await G.dio.get('/shop/goods/detail', queryParameters: {
+        "id": widget.id
+      });
+
+      GoodsDetailData goodsDetailData = GoodsDetailData.fromJson(result['data']);
+
+      // 格式化默认规格
+      Map<String, dynamic> specDecode = json.decode(goodsDetailData.extJson.defaultSpec.replaceAll('\'', "\""));
+      Map<String, int> spec = {};
+      specDecode.forEach((key, value) {
+        spec['$key'] = int.parse(value.toString());
+      });
+
+
+      Map resultPrice = await _getGoodsPrice(spec, data: goodsDetailData);
+
+      if(resultPrice['status']) {
+        setState(() {
+          data = goodsDetailData;
+          defaultValue['spec'] = spec;
+        });
+      }
+    });
   }
 
-  _initDialog() {
+  /// 获取当前规定价格
+  Future<Map> _getGoodsPrice(Map<String, int> spec, {
+    @required GoodsDetailData data
+  }) async {
+    Map<String, dynamic> resultJson = {};
+
+    if(defaultValue['spec'].toString() == spec.toString()) return {
+      "status": false,
+      "data": null
+    };
+
+    G.loading.show(context);
+    try {
+      Map result = await G.dio.post('/shop/goods/price', queryParameters: {
+        "goodsId": data.basicInfo.id,
+        "propertyChildIds": spec.toString().replaceAll(RegExp('\\s|{|}'), '')
+      });
+      resultJson['status'] = true;
+      resultJson['data'] = result;
+    } catch(e) {
+      resultJson['status'] = false;
+      resultJson['data'] = e;
+    }
+
+    G.loading.hide(context);
+    return resultJson;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return AnimatedPadding(
       padding: EdgeInsets.zero,
       duration: const Duration(milliseconds: 100),
@@ -50,8 +117,18 @@ class GoodsDetailDialog {
       ),
     );
   }
-
+  
   _initContent() {
+    if(data == null) {
+      return Container(
+        width: 335,
+        height: 580,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: hex('#fff'),
+        ),
+      );
+    }
     return Container(
       width: 335,
       height: 580,
@@ -95,23 +172,36 @@ class GoodsDetailDialog {
 
   /// 选项
   _initOption() {
-    print(properties);
-    // properties.forEach((item) {
-    //   SelectRow(),
-    // });
+    List<Widget> widgets = [];
+    data.properties.forEach((GoodsDetailProperty item) {
+      widgets.add(
+        SelectRow(
+          id: defaultValue['spec']['${item.id}'],
+          data: item,
+          onChange: (Map type) async{
+            Map<String, int> spec = Map.from(defaultValue['spec']);
+
+            spec['${type['typeId']}'] = type['childId'];
+
+            Map result = await _getGoodsPrice(spec, data: data);
+            if(result['status']) {
+              setState(() {
+                defaultValue['spec'] = spec;
+              });
+            }
+          },
+        )
+      );
+    });
     return Column(
       children: <Widget>[
         Container(child: 
-          Column(children: <Widget>[
-            SelectRow("糖度",),
-            SelectRow("糖度",),
-            SelectRow("糖度",),
-            SelectRow("糖度",),
-          ],),
+          Column(children: widgets,),
         ),
       ],
     );
   }
+
 
   /// 商品描述
   Widget _initGoodsDesc() {
@@ -225,6 +315,7 @@ class GoodsDetailDialog {
     );
   }
 
+  /// 收藏
   Widget _circelIcon({Icon icon, Function onPress, Color bgColor}) {
     return InkWell(
       child: Container(
@@ -290,10 +381,10 @@ class GoodsDetailDialog {
         left: 15,
         bottom: 15,
         child: Column(children: <Widget>[
-          Text(basicInfo.name, 
+          Text(data.basicInfo.name, 
             style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold, color: hex('#fff')),
           ),
-          Text(basicInfo.characteristic, 
+          Text(data.basicInfo.characteristic, 
             style: TextStyle(fontSize: 14,color: hex('#fff')),
           )
         ],),
@@ -301,3 +392,5 @@ class GoodsDetailDialog {
     ],);
   }
 }
+
+  

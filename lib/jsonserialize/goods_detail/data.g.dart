@@ -41,12 +41,12 @@ GoodsDetailData _$GoodsDetailDataFromJson(Map<String, dynamic> json) {
       basicInfo: json['basicInfo'] == null
           ? null
           : GoodsDetailBasicInfo.fromJson(
-              json['basicInfo'] as Map<String, dynamic>))
-    ..properties = (json['properties'] as List)
-        ?.map((e) => e == null
-            ? null
-            : GoodsDetailProperty.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+              json['basicInfo'] as Map<String, dynamic>),
+      properties: (json['properties'] as List)
+          ?.map((e) => e == null
+              ? null
+              : GoodsDetailProperty.fromJson(e as Map<String, dynamic>))
+          ?.toList());
 }
 
 Map<String, dynamic> _$GoodsDetailDataToJson(GoodsDetailData instance) =>
@@ -164,11 +164,11 @@ Map<String, dynamic> _$GoodsDetailCategoryToJson(
     };
 
 GoodsDetailExtJson _$GoodsDetailExtJsonFromJson(Map<String, dynamic> json) {
-  return GoodsDetailExtJson();
+  return GoodsDetailExtJson(defaultSpec: json['defaultSpec'] as String);
 }
 
 Map<String, dynamic> _$GoodsDetailExtJsonToJson(GoodsDetailExtJson instance) =>
-    <String, dynamic>{};
+    <String, dynamic>{'defaultSpec': instance.defaultSpec};
 
 GoodsDetailPic _$GoodsDetailPicFromJson(Map<String, dynamic> json) {
   return GoodsDetailPic(

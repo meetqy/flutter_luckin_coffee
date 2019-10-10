@@ -1,33 +1,59 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
 
 class SelectRow extends StatelessWidget {
-  final String leftText;
-  final List<Widget> rightContainer;
+  final GoodsDetailProperty data;
+  final Function onChange;
+  final int id;
 
-  SelectRow(this.leftText, {
-    this.rightContainer
+  SelectRow({
+    @required this.data,
+    @required this.onChange,
+    @required this.id,
   });
 
   Container _createRadio({
-    bool isActive = false,
-    String text = ''
+    GoodsDetailProperty item
   }) {
+    bool isActive = id == item.id;
     return Container(
+      key: Key('${item.id}'),
       margin: EdgeInsets.only(right: 10),
       child: AButton.normal(
         width: 80,
         height: 30,
         borderRadius: BorderRadius.circular(15),
-        child: Text('$text', style: TextStyle(fontSize: 12),),
+        child: Text('${item.name}', style: TextStyle(fontSize: 12),),
         plain: !isActive,
         color: isActive ? hex('#fff') : rgba(204, 192, 180, 1),
         bgColor: isActive ? rgba(204, 192, 180, 1) : hex('#fff'),
         borderColor: isActive ? Colors.transparent : rgba(204, 192, 180, 1),
-        onPressed: () => {}
+        onPressed: () {
+          Map<String, dynamic> type = {
+            "typeId": data.id,
+            "childId": item.id,
+            "typeName": data.name,
+            "childName": item.name
+          };
+
+          onChange(type);
+        }
       ),
     );
+  }
+
+  /// 初始化选项
+  List<Widget> _initOptions() {
+    List<Widget> widgets = [];
+    data.childsCurGoods.forEach((GoodsDetailProperty item) {
+      widgets.add(_createRadio(
+        item: item
+      ));
+    });
+
+    return widgets;
   }
 
   @override
@@ -45,46 +71,12 @@ class SelectRow extends StatelessWidget {
                   width: 65,
                   alignment: Alignment.center,
                   height: 30,
-                  child: Text(leftText, style: TextStyle(color: rgba(56, 56, 56, 1)),),
+                  child: Text('${data.name}', style: TextStyle(color: rgba(56, 56, 56, 1)),),
                 ),
                 Expanded(
                   child: Container(
                     child: Wrap(
-                      children: <Widget>[
-                        _createRadio(
-                          isActive: true,
-                          text: '全塘 (推荐)'
-                        ),
-                        _createRadio(text: '半塘'),
-                        _createRadio(text: '不加糖'),
-                      ],
-                    )
-                  )
-                )
-            ],),
-          ),
-          Container(
-            margin: EdgeInsets.only(bottom: 10),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  width: 65,
-                  alignment: Alignment.center,
-                  height: 30,
-                  child: Text(leftText, style: TextStyle(color: rgba(56, 56, 56, 1)),),
-                ),
-                Expanded(
-                  child: Container(
-                    child: Wrap(
-                      children: <Widget>[
-                        _createRadio(
-                          isActive: true,
-                          text: '全塘 (推荐)'
-                        ),
-                        _createRadio(text: '半塘'),
-                        _createRadio(text: '不加糖'),
-                      ],
+                      children: _initOptions(),
                     )
                   )
                 )

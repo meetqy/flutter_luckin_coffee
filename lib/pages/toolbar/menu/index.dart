@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-10-09 15:12:51
+ * @lastTime: 2019-10-10 14:58:41
  * @LastEditors: meetqy
  */
 
@@ -98,23 +98,15 @@ class _MenuState extends State<Menu> {
           goodsListWidgetsTemp.add(
             GoodsListRow(
               // 点击添加按钮弹出dialog
-              onPress: (BuildContext context, int id) async {
-                Map result = await G.dio.get('/shop/goods/detail', queryParameters: {
-                  "id": id
-                });
-
-                GoodsDetailData goodsDetailData = GoodsDetailData.fromJson(result['data']);
-
+              onPress: (BuildContext context, int id) {
                 /// 弹出商品详情
                 showDialog(
                   context: context,
                   barrierDismissible: false,
                   builder: (BuildContext context) {
-                    GoodsDetailDialog dialog = GoodsDetailDialog(
-                      data: goodsDetailData,
-                      context: context
-                    );
-                    return dialog.init();                        
+                    return GoodsDetailDialog(
+                      id: id,
+                    );                  
                   }
                 );
               },

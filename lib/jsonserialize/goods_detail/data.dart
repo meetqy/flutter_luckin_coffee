@@ -30,14 +30,13 @@ class GoodsDetailData {
   GoodsDetailBasicInfo basicInfo;
   List<GoodsDetailProperty> properties;
 
-  GoodsDetailData({
-    this.extJson,
-    this.category,
-    this.pics,
-    this.content,
-    this.basicInfo,
-    this.properties
-  });
+  GoodsDetailData(
+      {this.extJson,
+      this.category,
+      this.pics,
+      this.content,
+      this.basicInfo,
+      this.properties});
 
   //反序列化
   factory GoodsDetailData.fromJson(Map<String, dynamic> json) =>
@@ -160,7 +159,11 @@ class GoodsDetailCategory {
 
 @JsonSerializable()
 class GoodsDetailExtJson {
-  GoodsDetailExtJson();
+  String defaultSpec;
+
+  GoodsDetailExtJson({
+    this.defaultSpec,
+  });
 
   //反序列化
   factory GoodsDetailExtJson.fromJson(Map<String, dynamic> json) =>
@@ -201,13 +204,13 @@ class GoodsDetailProperty {
   int propertyId;
 
   GoodsDetailProperty({
-      this.childsCurGoods,
-      this.dateAdd,
-      this.id,
-      this.name,
-      this.paixu,
-      this.userId,
-      this.propertyId,
+    this.childsCurGoods,
+    this.dateAdd,
+    this.id,
+    this.name,
+    this.paixu,
+    this.userId,
+    this.propertyId,
   });
 
   //反序列化

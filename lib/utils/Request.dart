@@ -27,6 +27,26 @@ class Request {
     return res.data;
   }
 
+  post(String path, {
+    Map<String, dynamic> queryParameters,
+    Options options,
+    CancelToken cancelToken,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    Response res = await _dio.post(
+      path, 
+      queryParameters: queryParameters,
+      options: Options(
+        method: "POST"
+      ), 
+      cancelToken: cancelToken,
+      onReceiveProgress: onReceiveProgress
+    );
+
+    
+    return res.data;
+  }
+
   Dio _initDio() {
     BaseOptions _baseOptions = BaseOptions(
       baseUrl: "https://api.it120.cc/b956ecefe528bcc1fd922fd4458913d9",   

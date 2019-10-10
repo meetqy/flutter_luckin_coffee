@@ -1,0 +1,16 @@
+{
+  "code": 0,
+  "data": {
+    "goodsId": 171644,
+    "id": 1441644,
+    "originalPrice": 28.0,
+    "pingtuanPrice": 0.0,
+    "price": 28.0,
+    "propertyChildIds": "15457:69271,15459:69278,15460:69289,",
+    "propertyChildNames": "规格:大,温度:热,糖度:无糖,",
+    "score": 0,
+    "stores": 0,
+    "userId": 18046
+  },
+  "msg": "success"
+}

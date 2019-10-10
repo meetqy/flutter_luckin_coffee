@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/goods_price/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/goods_detail/select_row.dart';
 
@@ -54,9 +55,14 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
       Map resultPrice = await _getGoodsPrice(spec, data: goodsDetailData);
 
       if(resultPrice['status']) {
+        GoodsPrice goodsPrice = GoodsPrice.fromJson(resultPrice['data']);
+        GoodsPriceData goodsPriceData = goodsPrice.data;
+
         setState(() {
           data = goodsDetailData;
           defaultValue['spec'] = spec;
+          defaultValue['price'] = goodsPriceData.price;
+          defaultValue['specName'] = goodsPriceData.propertyChildNames;
         });
       }
     });
@@ -74,10 +80,13 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
     };
 
     G.loading.show(context);
+
+    String propertyChildIds = spec.toString().replaceAll(RegExp('\\s|{|}'), '');
+    // print(propertyChildIds);
     try {
       Map result = await G.dio.post('/shop/goods/price', queryParameters: {
         "goodsId": data.basicInfo.id,
-        "propertyChildIds": spec.toString().replaceAll(RegExp('\\s|{|}'), '')
+        "propertyChildIds": propertyChildIds
       });
       resultJson['status'] = true;
       resultJson['data'] = result;
@@ -127,6 +136,11 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           borderRadius: BorderRadius.circular(8),
           color: hex('#fff'),
         ),
+        child: Stack(
+          children: <Widget>[
+            _initClose()
+          ],
+        )
       );
     }
     return Container(
@@ -185,8 +199,13 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
 
             Map result = await _getGoodsPrice(spec, data: data);
             if(result['status']) {
+              GoodsPrice goodsPrice = GoodsPrice.fromJson(result['data']);
+              GoodsPriceData goodsPriceData = goodsPrice.data;
+
               setState(() {
                 defaultValue['spec'] = spec;
+                defaultValue['price'] = goodsPriceData.price;
+                defaultValue['specName'] = goodsPriceData.propertyChildNames;
               });
             }
           },
@@ -205,6 +224,8 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
 
   /// 商品描述
   Widget _initGoodsDesc() {
+    String desc = data.content.replaceAll(RegExp("<.*?p>"), "").replaceAll(RegExp('\\\\n'), '\n');
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       child: Column(
@@ -220,7 +241,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             Expanded(child: 
               Container(
                 margin: EdgeInsets.only(top: 8),
-                child: Text('浓缩咖啡与牛奶批次融合，加入祥龙巧克力风味。（建议到店引用，脑油融化钱口味更佳）\n主要原菜鸟：浓缩开发，牛娜，巧克力酱，交大奶油（喊小草风味糖浆），\n图片仅供参考，请以实物为准。建议送达后尽快引用。',
+                child: Text(desc,
                   style: TextStyle(
                     fontSize: 12,
                     color: rgba(128, 128, 128, 1)
@@ -251,19 +272,27 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           children: <Widget>[
             Container(
               alignment: Alignment.centerLeft,
-              child: Text('￥27', style: TextStyle(
+              child: Text('￥${defaultValue["price"]*defaultValue["num"]}', style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: rgba(56, 56, 56, 1)),
               ),
             ),
             
-            AStepper()
+            Astppers(
+              value: defaultValue['num'],
+              min: 1,
+              onChange: (num val) {
+                setState(() {
+                  defaultValue['num'] = val;
+                });
+              },
+            )
         ],),
         Container(
           alignment: Alignment.centerLeft,
           child: 
-            Text('标准美式 ¥21+ 无糖 ¥0+ 无奶 ¥0',
+            Text('${data.basicInfo.name} ${defaultValue['specName'].replaceAll(RegExp(',\$'), '')}',
             style: TextStyle(
               color: rgba(80, 80, 80, 1),
               fontSize: 10
@@ -335,6 +364,29 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
     );
   }
 
+  /// 关闭弹窗
+  Widget _initClose() {
+    // 关闭
+    return Positioned(
+      right: 10,
+      top: 10,
+      child: InkWell(
+        child: Container(
+          padding: EdgeInsets.all(5),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: rgba(0, 0, 0, 0.3),
+            borderRadius: BorderRadius.all(Radius.circular(20))
+          ),
+          child: iconhebingxingzhuang(color: hex('#fff'), size: 16),
+        ),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      )
+    );
+  }
+
   /// 头部
   Widget _initHeader() {
     return Stack(children: <Widget>[
@@ -347,25 +399,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
         ),
       ),
 
-      // 关闭
-      Positioned(
-        right: 10,
-        top: 10,
-        child: InkWell(
-          child: Container(
-            padding: EdgeInsets.all(5),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: rgba(0, 0, 0, 0.3),
-              borderRadius: BorderRadius.all(Radius.circular(20))
-            ),
-            child: iconhebingxingzhuang(color: hex('#fff'), size: 16),
-          ),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        )
-      ),
+      _initClose(),
 
       // 收藏
       Positioned(

@@ -93,3 +93,60 @@ class _CustomStepperState extends State<AStepper> {
     );
   }
 }
+
+class Astppers extends StatelessWidget {
+  final num min;
+  final num max;
+  final Function onChange;
+  final num value;
+  const Astppers({
+    Key key,
+    this.min = 0,
+    this.max = 99,
+    this.value = 1,
+    @required this.onChange,
+  }) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        children: <Widget>[
+          AButton.icon(
+            width: 28,
+            height: 28,
+            bgColor: Colors.transparent,
+            icon: iconjianfill(size: 28, color: rgba(144, 192, 239, value == min ? 0.3 : 1)),
+            onPressed: (){
+              if(value <= min) return;
+              onChange(value - 1);
+            },
+          ),
+          Container(
+            width: 32,
+            height: 28,
+            alignment: Alignment.center,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Container(
+                padding: EdgeInsets.only(top: 2),
+                child: Text('$value',)
+              )
+            ),
+          ),
+          AButton.icon(
+            width: 28,
+            height: 28,
+            bgColor: Colors.transparent,
+            icon: iconjaifill(size: 28,color: rgba(144, 192, 239, value == max ? 0.3 : 1)),
+            onPressed: (){
+              if(value >= max) return;
+              onChange(value + 1);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-09-30 10:59:54
+ * @lastTime: 2019-10-11 16:27:12
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -16,17 +16,18 @@ export './customAppbar.dart';
 
 /// global
 class G {
-  static GlobalKey<NavigatorState> navigatorKey=GlobalKey();
+  static final GlobalKey<NavigatorState> navigatorKey=GlobalKey();
   /// toolbar routeName
-  static List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
+  static final List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
 
   /// 初始化Request
-  static Request dio = Request();
+  static final Request dio = Request();
 
-  static Loading loading = Loading();
+  /// 初始化loading
+  static final Loading loading = Loading();
 
   /// 下拉刷新样式
-  static PullToRefreshStyle pullToRefreshStyle = PullToRefreshStyle();
+  static final PullToRefreshStyle pullToRefreshStyle = PullToRefreshStyle();
 
   /// 获取当前的state
   static NavigatorState getCurrentState() => navigatorKey.currentState;
@@ -45,13 +46,13 @@ class G {
   static double screenHeight() => MediaQuery.of(getCurrentContext()).size.height;
 
   /// 跳转页面使用 G.pushNamed
-  static pushNamed(String routeName, {Object arguments}){
+  static void pushNamed(String routeName, {Object arguments}){
     // 如果跳转到toolbar页面  不能返回
     if(toobarRouteNameList.indexOf(routeName) > -1) {
-      return getCurrentState().pushReplacementNamed(routeName, arguments: arguments,);
-    } 
-    
-    getCurrentState().pushNamed(routeName, arguments: arguments);
+      getCurrentState().pushReplacementNamed(routeName, arguments: arguments,);
+    } else {
+      getCurrentState().pushNamed(routeName, arguments: arguments);
+    }
   }
 
   /// 底部border

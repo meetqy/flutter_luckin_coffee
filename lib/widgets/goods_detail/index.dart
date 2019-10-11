@@ -45,11 +45,21 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
       GoodsDetailData goodsDetailData = GoodsDetailData.fromJson(result['data']);
 
       // 格式化默认规格
-      Map<String, dynamic> specDecode = json.decode(goodsDetailData.extJson.defaultSpec.replaceAll('\'', "\""));
       Map<String, int> spec = {};
-      specDecode.forEach((key, value) {
-        spec['$key'] = int.parse(value.toString());
-      });
+      String defaultSpec = goodsDetailData.extJson?.defaultSpec;
+      if(goodsDetailData.extJson.defaultSpec == null) {
+        goodsDetailData.properties.forEach((val) {
+          spec['${val.id}'] = val.childsCurGoods[0].id;
+        }); 
+      } else {
+        Map<String, dynamic> specDecode = json.decode(defaultSpec.replaceAll('\'', "\""));
+        
+        specDecode.forEach((key, value) {
+          spec['$key'] = int.parse(value.toString());
+        });
+      }
+
+      
 
 
       Map resultPrice = await _getGoodsPrice(spec, data: goodsDetailData);

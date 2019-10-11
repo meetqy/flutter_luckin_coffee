@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-10-10 14:58:41
+ * @lastTime: 2019-10-11 16:27:49
  * @LastEditors: meetqy
  */
 
@@ -10,7 +10,6 @@ import 'dart:math';
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/category.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';

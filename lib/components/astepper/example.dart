@@ -13,6 +13,10 @@ class ExampleAStepper extends StatefulWidget {
 
 class _ExampleStepperState extends State<ExampleAStepper> {
 
+  int num1 = 1;
+  int num2 = 2;
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +35,14 @@ class _ExampleStepperState extends State<ExampleAStepper> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                   Text('基础用法'),
-                  AStepper(value: 1,)
+                  AStepper(
+                    value: num1,
+                    onChange: (val) {
+                      setState(() {
+                        num1 = val;
+                      });
+                    },
+                  )
                 ],),
               ),
               returnRow(
@@ -39,7 +50,16 @@ class _ExampleStepperState extends State<ExampleAStepper> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                   Text('限制范围2-5'),
-                  AStepper(value: 1,min: 2,max: 5,)
+                  AStepper(
+                    value: num2,
+                    min: 2,
+                    max: 5,
+                    onChange: (val) {
+                      setState(() {
+                        num2 = val;
+                      });
+                    },
+                  )
                 ],),
               ),
             ],

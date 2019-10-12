@@ -289,7 +289,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               ),
             ),
             
-            Astppers(
+            AStepper(
               value: defaultValue['num'],
               min: 1,
               onChange: (num val) {

@@ -1,7 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
-import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
@@ -91,7 +90,8 @@ class ShoppingCartListRow extends StatelessWidget {
                 ),),
                 Container(
                   margin: EdgeInsets.only(left: 10),
-                  child: AStepper()
+                  // child: AStepper()
+                  child: Container(),
                 )
               ],),
             )

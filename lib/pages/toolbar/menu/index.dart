@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-10-11 16:27:49
+ * @lastTime: 2019-10-12 16:49:37
  * @LastEditors: meetqy
  */
 
@@ -12,9 +12,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/category.dart';
+import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/goods_detail/index.dart';
+import 'package:provider/provider.dart';
 
 import 'widgets/ClassifyDesc.dart';
 import 'goods_list_row.dart';
@@ -98,13 +100,15 @@ class _MenuState extends State<Menu> {
             GoodsListRow(
               // 点击添加按钮弹出dialog
               onPress: (BuildContext context, int id) {
-                /// 弹出商品详情
+                /// 弹出商品详情  /widgets/goods_detail
                 showDialog(
                   context: context,
                   barrierDismissible: false,
                   builder: (BuildContext context) {
+                    final ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
                     return GoodsDetailDialog(
                       id: id,
+                      model: _shoppingCartModel,
                     );                  
                   }
                 );

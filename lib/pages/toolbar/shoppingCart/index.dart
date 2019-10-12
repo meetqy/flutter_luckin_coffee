@@ -1,11 +1,13 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
+import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/RecommendGoods.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/ShoppingCartListRow.dart';
+import 'package:provider/provider.dart';
 
 class ShoppingCart extends StatefulWidget {
   static _ShoppingCartState _shoppingCartState;
@@ -30,6 +32,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
   @override
   Widget build(BuildContext context) {
+    final ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
     return Stack(children: <Widget>[
         SingleChildScrollView(
           child: Container(
@@ -155,7 +158,10 @@ class _ShoppingCartState extends State<ShoppingCart> {
                 width: 120,
                 height: 60,
                 borderRadius: BorderRadius.zero,
-                onPressed: () => G.pushNamed('/order_confirm')
+                onPressed: () {
+                  print(_shoppingCartModel.value);
+                  // G.pushNamed('/order_confirm');
+                }
               )
             ],),
           ),

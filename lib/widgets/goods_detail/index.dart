@@ -6,15 +6,18 @@ import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_price/data.dart';
+import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/goods_detail/select_row.dart';
 
 class GoodsDetailDialog extends StatefulWidget {
   final int id;
+  final ShoppingCartModel model;
 
   GoodsDetailDialog({
     Key key,
-    this.id
+    this.id,
+    this.model
   }) : super(key: key);
 
   _GoodsDetailDialogState createState() => _GoodsDetailDialogState();
@@ -31,12 +34,15 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
     "num": 1,
   };
 
+  ShoppingCartModel _shoppingCartModel;
+
   GoodsDetailData data;
 
   @override
   void initState() {
     super.initState();
 
+    _shoppingCartModel = widget.model;
     Future.delayed(Duration.zero, () async{
       Map result = await G.dio.get('/shop/goods/detail', queryParameters: {
         "id": widget.id
@@ -59,9 +65,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
         });
       }
 
-      
-
-
+      // 获取当前规格的价格
       Map resultPrice = await _getGoodsPrice(spec, data: goodsDetailData);
 
       if(resultPrice['status']) {
@@ -76,37 +80,6 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
         });
       }
     });
-  }
-
-  /// 获取当前规定价格
-  Future<Map> _getGoodsPrice(Map<String, int> spec, {
-    @required GoodsDetailData data
-  }) async {
-    Map<String, dynamic> resultJson = {};
-
-    if(defaultValue['spec'].toString() == spec.toString()) return {
-      "status": false,
-      "data": null
-    };
-
-    G.loading.show(context);
-
-    String propertyChildIds = spec.toString().replaceAll(RegExp('\\s|{|}'), '');
-    // print(propertyChildIds);
-    try {
-      Map result = await G.dio.post('/shop/goods/price', queryParameters: {
-        "goodsId": data.basicInfo.id,
-        "propertyChildIds": propertyChildIds
-      });
-      resultJson['status'] = true;
-      resultJson['data'] = result;
-    } catch(e) {
-      resultJson['status'] = false;
-      resultJson['data'] = e;
-    }
-
-    G.loading.hide(context);
-    return resultJson;
   }
 
   @override
@@ -135,6 +108,38 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
         ),
       ),
     );
+  }
+
+    /// 获取当前规定价格
+  Future<Map> _getGoodsPrice(Map<String, int> spec, {
+    @required GoodsDetailData data
+  }) async {
+    Map<String, dynamic> resultJson = {};
+
+    /// status为false没有获取到规格 || 规格没有任何修改不发起请求
+    if(defaultValue['spec'].toString() == spec.toString()) return {
+      "status": false,
+      "data": null
+    };
+
+    G.loading.show(context);
+
+    String propertyChildIds = spec.toString().replaceAll(RegExp('\\s|{|}'), '');
+    // print(propertyChildIds);
+    try {
+      Map result = await G.dio.post('/shop/goods/price', queryParameters: {
+        "goodsId": data.basicInfo.id,
+        "propertyChildIds": propertyChildIds
+      });
+      resultJson['status'] = true;
+      resultJson['data'] = result;
+    } catch(e) {
+      resultJson['status'] = false;
+      resultJson['data'] = e;
+    }
+
+    G.loading.hide(context);
+    return resultJson;
   }
   
   _initContent() {
@@ -206,6 +211,8 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             Map<String, int> spec = Map.from(defaultValue['spec']);
 
             spec['${type['typeId']}'] = type['childId'];
+            _shoppingCartModel.add();
+            print(_shoppingCartModel.value);
 
             Map result = await _getGoodsPrice(spec, data: data);
             if(result['status']) {

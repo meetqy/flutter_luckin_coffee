@@ -1,14 +1,14 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-09-26 14:46:43
+ * @lastTime: 2019-10-12 17:05:16
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
-import 'package:flutter_luckin_coffee/provider/CounterModel.dart';
+import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
@@ -96,6 +96,7 @@ class _HomeState extends State<Home> {
               onPressed: () => G.pushNamed('/menu', arguments: {'msg': 'home to menu'})
             ),  
 
+            /// TODO: 测试provider局部刷新
             Consumer<CounterModel>(
               builder: (BuildContext context, CounterModel _counter, Widget child) {
                 return ARow(

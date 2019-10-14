@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-10-12 10:18:52
+ * @lastTime: 2019-10-14 17:20:03
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -65,17 +65,17 @@ v1.0版本所遗留的问题
 
 > 以上是上个版本遗留的问题 ----------------------------
 
-- [ ] provider调研
-- [ ] 接入provider
+- [x] provider调研
+- [x] 接入provider
 - [x] 网络请求调研
 - [x] 在api工厂，准备app需要的数据（持续更新）
 - [x] 菜单联调
 - [x] 请求等待返回数据增加loading
 - [x] 商品详情联调
 - [x] 菜单和商品详情交互
-- [ ] 使用provider实现加入购物车功能
-- [ ] 订单联调
-- [ ] 购物车联调
+- [x] 使用provider实现加入购物车功能
+- [x] 购物车联调
+- [ ] 购物车ui细节调整
 
 ## backlog
 

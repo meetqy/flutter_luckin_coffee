@@ -6,6 +6,7 @@ import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_price/data.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/goods_detail/select_row.dart';
@@ -24,6 +25,7 @@ class GoodsDetailDialog extends StatefulWidget {
 }
 
 class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
+  /// 当前选中规格信息
   Map defaultValue = {
     "spec": {
       // typeId: childId,
@@ -211,8 +213,6 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             Map<String, int> spec = Map.from(defaultValue['spec']);
 
             spec['${type['typeId']}'] = type['childId'];
-            _shoppingCartModel.add();
-            print(_shoppingCartModel.value);
 
             Map result = await _getGoodsPrice(spec, data: data);
             if(result['status']) {
@@ -237,7 +237,6 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
       ],
     );
   }
-
 
   /// 商品描述
   Widget _initGoodsDesc() {
@@ -309,7 +308,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
         Container(
           alignment: Alignment.centerLeft,
           child: 
-            Text('${data.basicInfo.name} ${defaultValue['specName'].replaceAll(RegExp(',\$'), '')}',
+            Text('${data.basicInfo.name} ${defaultValue['specName'].replaceAll(RegExp(',\$'), '').replaceAll(RegExp(G.regExpRules['specName']), '')}',
             style: TextStyle(
               color: rgba(80, 80, 80, 1),
               fontSize: 10
@@ -354,7 +353,28 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             bgColor: rgba(136, 175, 213, 1),
             color: hex('#fff'),
             textChild: Text('加入购物车', style: TextStyle(fontSize: 12),),
-            onPressed: () => {}
+            onPressed: () async {
+              G.loading.show(context);
+              
+              await G.sleep();
+
+              if(mounted) {
+                Map<String, dynamic> mockdata = {
+                  "id": data.basicInfo.id,
+                  "name": data.basicInfo.name,
+                  "price": defaultValue['price'],
+                  "number": defaultValue['num'],
+                  "spec": defaultValue['spec'],
+                  "specName": defaultValue['specName'],
+                };
+                ShoppingCartData shoppingCartData = ShoppingCartData.fromJson(mockdata);
+
+                _shoppingCartModel.add(shoppingCartData);
+              }
+              
+              G.loading.hide(context);
+              G.pop();
+            }
           )
         ],
       ),

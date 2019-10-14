@@ -1,13 +1,15 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/RecommendGoods.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/ShoppingCartListRow.dart';
 import 'package:provider/provider.dart';
+
+import 'widgets/shopping_cart_row.dart';
 
 class ShoppingCart extends StatefulWidget {
   static _ShoppingCartState _shoppingCartState;
@@ -30,9 +32,42 @@ class _ShoppingCartState extends State<ShoppingCart> {
     return customAppbar(title: '购物车');
   }
 
+  /// 购物车商品
+  List<Widget> buildShoppingCartList(ShoppingCartModel _shoppingCartModel, Map<String, ShoppingCartData> shoppingCartData) {
+    List<Widget> shoppingCartList = [];
+    List _list = shoppingCartData.keys.toList();
+    int _listLen = _list.length;
+
+    _list.asMap().forEach((index, key) {
+      ShoppingCartData value = shoppingCartData[key];
+
+      shoppingCartList.add(ShoppingCartRow(
+        data: value, 
+        border: index >= _listLen - 1 ? false : true,
+        onChange: (val) {
+          if(val < 1) {
+            setState(() {
+              _shoppingCartModel.remove(key);
+            });
+          } else {
+            setState(() {
+              value.number = val;
+              _shoppingCartModel.modify(key, data: value);
+            });
+          }
+        },
+      ));
+    });
+
+    return shoppingCartList;
+  }
+
   @override
   Widget build(BuildContext context) {
     final ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
+    Map<String, ShoppingCartData> shoppingCartData = _shoppingCartModel.data;
+    num totalPrice = _shoppingCartModel.totalPrice;
+
     return Stack(children: <Widget>[
         SingleChildScrollView(
           child: Container(
@@ -44,14 +79,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
               // 购物车列表展示
               Container(
                 color: hex('#fff'),
-                child: Column(children: <Widget>[
-                  ShoppingCartListRow(),
-                  ShoppingCartListRow(),
-                  ShoppingCartListRow(),
-                  ShoppingCartListRow(),
-                  ShoppingCartListRow(),
-                  ShoppingCartListRow(border: false,),
-                ],),
+                child: Column(children: buildShoppingCartList(_shoppingCartModel, shoppingCartData))
               ),
 
               // 猜你喜欢 
@@ -141,7 +169,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 10),
-                    child: Text('¥21', style: TextStyle(
+                    child: Text('¥$totalPrice', style: TextStyle(
                       color: rgba(56, 56, 56, 1),
                       fontSize: 24,
                       fontWeight: FontWeight.bold
@@ -159,8 +187,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                 height: 60,
                 borderRadius: BorderRadius.zero,
                 onPressed: () {
-                  print(_shoppingCartModel.value);
-                  // G.pushNamed('/order_confirm');
+                  G.pushNamed('/order_confirm');
                 }
               )
             ],),

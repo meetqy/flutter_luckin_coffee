@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-10-11 16:27:12
+ * @lastTime: 2019-10-14 16:40:32
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -20,11 +20,18 @@ class G {
   /// toolbar routeName
   static final List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
 
+  static final Map regExpRules = {
+    "specName": '规格:|温度:|糖度:|奶油:|无'
+  };
+
   /// 初始化Request
   static final Request dio = Request();
 
   /// 初始化loading
   static final Loading loading = Loading();
+
+  /// 手动延时
+  static sleep({ int milliseconds = 1000 }) async => await Future.delayed(Duration(milliseconds: milliseconds));
 
   /// 下拉刷新样式
   static final PullToRefreshStyle pullToRefreshStyle = PullToRefreshStyle();
@@ -54,6 +61,8 @@ class G {
       getCurrentState().pushNamed(routeName, arguments: arguments);
     }
   }
+
+  static void pop() => getCurrentState().pop();
 
   /// 底部border
   /// ```

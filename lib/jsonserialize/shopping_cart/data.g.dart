@@ -15,7 +15,8 @@ ShoppingCartData _$ShoppingCartDataFromJson(Map<String, dynamic> json) {
       spec: (json['spec'] as Map<String, dynamic>)?.map(
         (k, e) => MapEntry(k, e as int),
       ),
-      specName: json['specName'] as String);
+      specName: json['specName'] as String,
+      checked: json['checked'] as bool);
 }
 
 Map<String, dynamic> _$ShoppingCartDataToJson(ShoppingCartData instance) =>
@@ -25,5 +26,6 @@ Map<String, dynamic> _$ShoppingCartDataToJson(ShoppingCartData instance) =>
       'price': instance.price,
       'number': instance.number,
       'spec': instance.spec,
-      'specName': instance.specName
+      'specName': instance.specName,
+      'checked': instance.checked
     };

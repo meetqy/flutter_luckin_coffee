@@ -43,18 +43,23 @@ class AStepper extends StatelessWidget {
               onChange(value - 1);
             },
           ),
-          Container(
-            width: 32,
-            height: 28,
-            alignment: Alignment.center,
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Container(
-                padding: EdgeInsets.only(top: 2),
-                child: Text('$value',)
-              )
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              minWidth: 20,
+              maxHeight: 28,
+            ),
+            child: Container(
+              alignment: Alignment.center,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Container(
+                  padding: EdgeInsets.only(top: 2),
+                  child: Text('$value',)
+                )
+              ),
             ),
           ),
+          
           AButton.icon(
             width: 28,
             height: 28,

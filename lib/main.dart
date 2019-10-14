@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/menu',
+      initialRoute: '/shopping_cart',
       onGenerateRoute: router.getRoutes,
     );
   }

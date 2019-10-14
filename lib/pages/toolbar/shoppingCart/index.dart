@@ -68,132 +68,137 @@ class _ShoppingCartState extends State<ShoppingCart> {
     Map<String, ShoppingCartData> shoppingCartData = _shoppingCartModel.data;
     num totalPrice = _shoppingCartModel.totalPrice;
 
-    return Stack(children: <Widget>[
-        SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.only(bottom: 75),
-            color: rgba(248, 248, 248, 1),
-            child: Column(children: <Widget>[
-              Image.asset('lib/assets/images/order/order1.png', fit: BoxFit.cover,),
-              
-              // 购物车列表展示
-              Container(
-                color: hex('#fff'),
-                child: Column(children: buildShoppingCartList(_shoppingCartModel, shoppingCartData))
-              ),
+    bool shoppingCartIsEmpty = shoppingCartData.isEmpty;
 
-              // 猜你喜欢 
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                margin: EdgeInsets.only(top: 30),
-                child: Column(children: <Widget>[
-                  // title
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('猜你喜欢', style: TextStyle(
-                        color: rgba(56, 56, 56, 1),
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold
-                      ),),
-                      Row(children: <Widget>[
-                        icontupian19(color: rgba(148, 196, 236, 1), size: 14),
-                        Container(
-                          margin: EdgeInsets.only(left: 5),
-                          child: Text('换一批', style: TextStyle(
-                            color: rgba(144, 192, 239, 1),
-                            fontSize: 11
-                          ),),
-                        )
-                      ],)
-                  ],),
+    return Container(
+      color: rgba(248, 248, 248, 1),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.only(bottom: 75),
+              child: Column(children: <Widget>[
+                Image.asset('lib/assets/images/order/order1.png', fit: BoxFit.cover,),
+                
+                // 购物车列表展示
+                Container(
+                  color: hex('#fff'),
+                  child: shoppingCartIsEmpty ? null :
+                  Column(children: buildShoppingCartList(_shoppingCartModel, shoppingCartData))
+                ),
 
-                  // 推荐商品
-                  Container(
-                    margin: EdgeInsets.only(top: 10),
-                    child: Row(
+                // 猜你喜欢 
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  margin: EdgeInsets.only(top: 30),
+                  child: Column(children: <Widget>[
+                    // title
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        new RecommendGoods(
-                          goodsImg: 'lib/assets/images/menu/goods1.png',
-                          addOnPress: () {
-                            // dialogPage.show(context);
-                          }
-                        ),
-                        new RecommendGoods(
-                          goodsImg: 'lib/assets/images/menu/goods2.png',
-                          addOnPress: () {
-                            // dialogPage.show(context);
-                          }
-                        ),
-                        new RecommendGoods(
-                          goodsImg: 'lib/assets/images/menu/goods3.png',
-                          addOnPress: () {
-                            // dialogPage.show(context);
-                          }
-                        ),
-                      ],
-                    ),
-                  )
-                ],),
-              ),
-            ],)
-          ),
-        ),
-        
-        Positioned(
-          bottom: 0,
-          left: 0,
-          child: Container(
-            decoration: BoxDecoration(
-              border: Border(top: BorderSide(width: 1,color: rgba(242,242,242,1))),
-              color: hex('#fff'),
-            ),
-            width: G.screenWidth(),
-            height: 60,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-              // left
-              Container(
-                padding: EdgeInsets.only(left: 15),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                  Container(
-                    child: Text('应付合计', style: TextStyle(
-                      color: rgba(56, 56, 56, 1),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14
-                    ),),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 10),
-                    child: Text('¥$totalPrice', style: TextStyle(
-                      color: rgba(56, 56, 56, 1),
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold
-                    ),),
-                  )
-                ],),
-              ),
+                        Text('猜你喜欢', style: TextStyle(
+                          color: rgba(56, 56, 56, 1),
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold
+                        ),),
+                        Row(children: <Widget>[
+                          icontupian19(color: rgba(148, 196, 236, 1), size: 14),
+                          Container(
+                            margin: EdgeInsets.only(left: 5),
+                            child: Text('换一批', style: TextStyle(
+                              color: rgba(144, 192, 239, 1),
+                              fontSize: 11
+                            ),),
+                          )
+                        ],)
+                    ],),
 
-              // right button
-              AButton.normal(
-                child: Text('去结算'),
-                color: hex('#fff'),
-                bgColor: rgba(144, 192, 239, 1),
-                width: 120,
-                height: 60,
-                borderRadius: BorderRadius.zero,
-                onPressed: () {
-                  G.pushNamed('/order_confirm');
-                }
-              )
-            ],),
+                    // 推荐商品
+                    Container(
+                      margin: EdgeInsets.only(top: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          new RecommendGoods(
+                            goodsImg: 'lib/assets/images/menu/goods1.png',
+                            addOnPress: () {
+                              // dialogPage.show(context);
+                            }
+                          ),
+                          new RecommendGoods(
+                            goodsImg: 'lib/assets/images/menu/goods2.png',
+                            addOnPress: () {
+                              // dialogPage.show(context);
+                            }
+                          ),
+                          new RecommendGoods(
+                            goodsImg: 'lib/assets/images/menu/goods3.png',
+                            addOnPress: () {
+                              // dialogPage.show(context);
+                            }
+                          ),
+                        ],
+                      ),
+                    )
+                  ],),
+                ),
+              ],)
+            ),
           ),
-        )
-      ],);
+
+
+          Container(
+            child: shoppingCartIsEmpty ? null : Container(
+              decoration: BoxDecoration(
+                border: Border(top: BorderSide(width: 1,color: rgba(242,242,242,1))),
+                color: hex('#fff'),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                // left
+                Container(
+                  padding: EdgeInsets.only(left: 15),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                    Container(
+                      child: Text('应付合计', style: TextStyle(
+                        color: rgba(56, 56, 56, 1),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14
+                      ),),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: Text('¥$totalPrice', style: TextStyle(
+                        color: rgba(56, 56, 56, 1),
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold
+                      ),),
+                    )
+                  ],),
+                ),
+
+                // right button
+                AButton.normal(
+                  child: Text('去结算'),
+                  color: hex('#fff'),
+                  bgColor: rgba(144, 192, 239, 1),
+                  width: 120,
+                  height: 60,
+                  borderRadius: BorderRadius.zero,
+                  onPressed: () {
+                    G.pushNamed('/order_confirm');
+                  }
+                )
+              ],),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
 

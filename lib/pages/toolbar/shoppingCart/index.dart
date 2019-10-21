@@ -32,6 +32,37 @@ class _ShoppingCartState extends State<ShoppingCart> {
     return customAppbar(title: '购物车');
   }
 
+  Container shoppingCartNotData() {
+    return Container(
+      margin: EdgeInsets.only(bottom: 50),
+      child: Column(
+        children: <Widget>[
+          Image.asset('./lib/assets/images/shopping_cart_null.png', 
+            width: 125,
+            fit: BoxFit.contain,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10, bottom: 32),
+            child: Text('您的购物车有点寂寞', style: TextStyle(
+              color: rgba(166, 166, 166, 1),
+              fontSize: 12
+            ),),
+          ),
+          AButton.normal(
+            width: 100,
+            height: 30,
+            type: 'info',
+            color: rgba(144, 192, 239, 1),
+            borderColor: rgba(144, 192, 239, 1),
+            plain: true,
+            child: Text('去喝一杯'),
+            onPressed: () => G.pushNamed('/menu')
+          )
+        ],
+      )
+    );
+  }
+
   /// 购物车商品
   List<Widget> buildShoppingCartList(ShoppingCartModel _shoppingCartModel, Map<String, ShoppingCartData> shoppingCartData) {
     List<Widget> shoppingCartList = [];
@@ -79,13 +110,21 @@ class _ShoppingCartState extends State<ShoppingCart> {
             child: Container(
               padding: EdgeInsets.only(bottom: 75),
               child: Column(children: <Widget>[
-                Image.asset('lib/assets/images/order/order1.png', fit: BoxFit.cover,),
+                Container(
+                  child: !shoppingCartIsEmpty ? 
+                    Image.asset('lib/assets/images/order/order1.png', fit: BoxFit.cover,) : 
+                    null
+                ),
                 
                 // 购物车列表展示
                 Container(
                   color: hex('#fff'),
                   child: shoppingCartIsEmpty ? null :
                   Column(children: buildShoppingCartList(_shoppingCartModel, shoppingCartData))
+                ),
+
+                Center(
+                  child: shoppingCartIsEmpty ? shoppingCartNotData() : null
                 ),
 
                 // 猜你喜欢 

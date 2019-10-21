@@ -26,14 +26,15 @@ class ShoppingCartModel with ChangeNotifier {
       key = '${data.id}-$_index';
       data.checked = true;
       _index++;
+      _shoppingCart.addAll({
+        "$key": data
+      });
     } else {
-      data.number += _shoppingCart[key].number;
+      ShoppingCartData nowData = _shoppingCart[key];
+      nowData.number += data.number;
+      _shoppingCart["$key"] = nowData;
     }
 
-    _shoppingCart.addAll({
-      "$key": data
-    });
-    
     _calcTotal();
     notifyListeners();
   }
@@ -53,11 +54,13 @@ class ShoppingCartModel with ChangeNotifier {
 
   /// 计算总价
   _calcTotal() {
-    _totalPrice = 0;
+    double price = 0;
     _shoppingCart.values.forEach((ShoppingCartData data) {
       if(data.checked) {
-        _totalPrice +=  data.number * data.price;
+        price +=  (data.number * data.price);
       }
     });
+
+    _totalPrice = price;
   }
 }

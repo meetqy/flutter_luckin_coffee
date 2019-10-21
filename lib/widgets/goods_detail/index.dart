@@ -374,6 +374,8 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               
               G.loading.hide(context);
               G.pop();
+
+              G.toast.show(context, '加入购物车成功');
             }
           )
         ],

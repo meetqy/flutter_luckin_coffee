@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-10-14 16:40:32
+ * @lastTime: 2019-10-21 17:20:37
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/PullToRefreshStyle.dart';
 import 'package:flutter_luckin_coffee/utils/Request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
+import 'package:flutter_luckin_coffee/utils/toast.dart';
 
 export './Icon.dart';
 export './customAppbar.dart';
@@ -29,6 +30,9 @@ class G {
 
   /// 初始化loading
   static final Loading loading = Loading();
+
+  /// 初始化toask
+  static final Toast toast = Toast();
 
   /// 手动延时
   static sleep({ int milliseconds = 1000 }) async => await Future.delayed(Duration(milliseconds: milliseconds));

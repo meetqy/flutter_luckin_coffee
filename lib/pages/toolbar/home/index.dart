@@ -1,12 +1,13 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-10-12 17:05:16
+ * @lastTime: 2019-10-21 18:01:19
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/adialog/ADialog.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
@@ -40,7 +41,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-
     return SingleChildScrollView(
       child: Column(children: <Widget>[
         // 头部banner
@@ -126,6 +126,10 @@ class _HomeState extends State<Home> {
               rightChild: rightChild(
                 icon: icontupian1(size: 20, color: rgba(104, 68, 60, 1)),
               ),
+
+              onPressed: () {
+                G.toast.show(context, '加入购物车成功');
+              },
             ),
 
             ARow(

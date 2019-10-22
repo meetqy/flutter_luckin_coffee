@@ -2,7 +2,6 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
-import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class ADialog {
   final BuildContext context;
@@ -77,10 +76,10 @@ class ADialog {
 
   // 标题部分
   Widget _initTitle() {
-    return Container(
+    return title == null ? Container() : Container(
       alignment: Alignment.center,
       padding: EdgeInsets.only(top: 12),        
-      child: title == null ? null : Text(title, style: TextStyle(
+      child: Text(title, style: TextStyle(
         color: rgba(56, 56, 56, 1),
         fontSize: 16,
         fontWeight: FontWeight.bold
@@ -91,16 +90,13 @@ class ADialog {
   // 内容部分
   Widget _initContent() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 12,horizontal: 15),
+      padding: EdgeInsets.symmetric(vertical: 24,horizontal: 15),
       child: Text(content,
         style: TextStyle(
           color: rgba(153, 153, 153, 1),
           fontSize: 14,
         ),
         textAlign: TextAlign.center,
-      ),
-      decoration: BoxDecoration(
-        border: G.borderBottom(),
       ),
     );
   }
@@ -115,48 +111,50 @@ class ADialog {
     BorderRadius cancelBorderRadius,
     BorderRadius confirmBorderRadius,
   }) {
-    return Row(
-      children: <Widget>[
-        // 取消按钮
-        Container(
-          child: cancelButtonText == null ? null : Expanded(child: 
-            Container(
-              decoration: BoxDecoration(
-                border: Border(right: BorderSide(color: rgba(242, 242, 242,1))),
-              ),
-              child: AButton.normal(
-                child: cancelButtonText,
-                color: rgba(56, 56, 56, 1),
-                borderRadius: cancelBorderRadius,
-                onPressed: (){
-                  if(cancelButtonPress == null) {
-                    Navigator.pop(context);
-                  } else {
-                    cancelButtonPress();
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(top: BorderSide(color: rgba(242, 242, 242, 1)))
+      ),
+      child: Row(
+        children: <Widget>[
+          // 取消按钮
+          Container(
+            child: cancelButtonText == null ? null : Expanded(child: 
+              Container(
+                decoration: BoxDecoration(
+                  border: Border(right: BorderSide(color: rgba(242, 242, 242,1))),
+                ),
+                child: AButton.normal(
+                  child: cancelButtonText,
+                  color: rgba(56, 56, 56, 1),
+                  borderRadius: cancelBorderRadius,
+                  onPressed: (){
+                    if(cancelButtonPress == null) {
+                      Navigator.pop(context);
+                    } else {
+                      cancelButtonPress();
+                    }
                   }
-                }
-              ),
-            )
-          ),
-        ),
-        // 确认按钮
-        Container(
-          child: confirmButtonText == null ? null : Expanded(
-            child: AButton.normal(
-              child: confirmButtonText,
-              borderRadius: confirmBorderRadius,
-              color: rgba(144, 192, 239, 1),
-              onPressed: (){
-                if(confirmButtonPress == null) {
-                  Navigator.pop(context);
-                } else {
-                  confirmButtonPress();
-                }
-              }
+                ),
+              )
             ),
           ),
-        )
-      ],
+          // 确认按钮
+          Container(
+            child: confirmButtonText == null ? null : Expanded(
+              child: AButton.normal(
+                child: confirmButtonText,
+                borderRadius: confirmBorderRadius,
+                color: rgba(144, 192, 239, 1),
+                onPressed: (){
+                    if(confirmButtonPress != null) confirmButtonPress();
+                    Navigator.pop(context);
+                }
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 

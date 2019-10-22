@@ -1,6 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
+import 'package:flutter_luckin_coffee/components/adialog/ADialog.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
@@ -77,9 +78,15 @@ class _ShoppingCartState extends State<ShoppingCart> {
         border: index >= _listLen - 1 ? false : true,
         onChange: (val) {
           if(val < 1) {
-            setState(() {
-              _shoppingCartModel.remove(key);
-            });
+            ADialog.confirm(context,
+              content: '确认不要了吗？',
+              confirmButtonPress: () {
+                setState(() {
+                  _shoppingCartModel.remove(key);
+                });
+              },
+            );
+            
           } else {
             setState(() {
               value.number = val;
@@ -123,6 +130,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   Column(children: buildShoppingCartList(_shoppingCartModel, shoppingCartData))
                 ),
 
+                // 购物车为空
                 Center(
                   child: shoppingCartIsEmpty ? shoppingCartNotData() : null
                 ),

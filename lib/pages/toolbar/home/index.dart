@@ -1,13 +1,12 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-10-21 18:01:19
+ * @lastTime: 2019-10-22 09:00:44
  * @LastEditors: meetqy
  */
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/adialog/ADialog.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';

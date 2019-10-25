@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
@@ -5,11 +7,16 @@ import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/routes/index.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+String _shoppingCart;
 
 
 final router = Router();
 
-void main(){
+void main() async {
+  SharedPreferences prefs = await G.prefs;
+  _shoppingCart = await prefs.get('shoppingCart');
   runApp(
     MultiProvider(
       providers: [
@@ -21,9 +28,24 @@ void main(){
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  MyApp({Key key}) : super(key: key);
+
   @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+ @override
   Widget build(BuildContext context) {
+    final ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
+
+    if(_shoppingCart != null) {
+      Map data = json.decode(_shoppingCart);
+      _shoppingCartModel.init(data);
+    }
+    
     return MaterialApp(
       navigatorKey: G.navigatorKey,
       title: 'Flutter Luckin Coffee',

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-10-21 17:20:37
+ * @lastTime: 2019-10-25 15:11:23
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -10,6 +10,7 @@ import 'package:flutter_luckin_coffee/utils/PullToRefreshStyle.dart';
 import 'package:flutter_luckin_coffee/utils/Request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
 import 'package:flutter_luckin_coffee/utils/toast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 export './Icon.dart';
 export './customAppbar.dart';
@@ -21,9 +22,14 @@ class G {
   /// toolbar routeName
   static final List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
 
+  /// 通用正则
   static final Map regExpRules = {
+    /// 替换规格
     "specName": '规格:|温度:|糖度:|奶油:|无'
   };
+
+  /// 本地存储
+  static final Future<SharedPreferences> prefs = SharedPreferences.getInstance();
 
   /// 初始化Request
   static final Request dio = Request();
@@ -66,6 +72,7 @@ class G {
     }
   }
 
+  /// 返回页面
   static void pop() => getCurrentState().pop();
 
   /// 底部border

@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ShoppingCartModel with ChangeNotifier {
   /// 购物车索引 用作商品的id 累加
@@ -11,6 +15,15 @@ class ShoppingCartModel with ChangeNotifier {
 
   get data => _shoppingCart;
   get totalPrice => _totalPrice;
+
+  /// 初始化购物车
+  init(Map<String, dynamic> data) {
+    for(var key in data.keys) {
+      Map val = data[key];
+
+      _shoppingCart['$key'] = ShoppingCartData.fromJson(val);
+    }
+  }
 
   /// 加入购物车
   add(ShoppingCartData data) {
@@ -52,8 +65,16 @@ class ShoppingCartModel with ChangeNotifier {
     _calcTotal();
   }
 
+  /// 保存到本地
+  _saveLocal() async{
+    SharedPreferences prefs = await G.prefs;
+
+    prefs.setString("shoppingCart", json.encode(_shoppingCart));
+  }
+
   /// 计算总价
   _calcTotal() {
+    _saveLocal();
     double price = 0;
     _shoppingCart.values.forEach((ShoppingCartData data) {
       if(data.checked) {

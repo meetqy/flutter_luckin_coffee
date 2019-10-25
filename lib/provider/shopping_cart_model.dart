@@ -23,6 +23,8 @@ class ShoppingCartModel with ChangeNotifier {
 
       _shoppingCart['$key'] = ShoppingCartData.fromJson(val);
     }
+
+    _calcTotal();
   }
 
   /// 加入购物车
@@ -49,6 +51,7 @@ class ShoppingCartModel with ChangeNotifier {
     }
 
     _calcTotal();
+    _saveLocal();
     notifyListeners();
   }
 
@@ -57,12 +60,14 @@ class ShoppingCartModel with ChangeNotifier {
   }) {
     _shoppingCart[id] = data;
     _calcTotal();
+    _saveLocal();
   }
 
   /// 从购物车移除
   remove(String id) {
     _shoppingCart.remove(id);
     _calcTotal();
+    _saveLocal();
   }
 
   /// 保存到本地
@@ -74,7 +79,6 @@ class ShoppingCartModel with ChangeNotifier {
 
   /// 计算总价
   _calcTotal() {
-    _saveLocal();
     double price = 0;
     _shoppingCart.values.forEach((ShoppingCartData data) {
       if(data.checked) {

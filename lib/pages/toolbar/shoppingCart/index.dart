@@ -110,8 +110,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
     return Container(
       color: rgba(248, 248, 248, 1),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Stack(
         children: <Widget>[
           SingleChildScrollView(
             child: Container(
@@ -194,53 +193,57 @@ class _ShoppingCartState extends State<ShoppingCart> {
             ),
           ),
 
-
-          Container(
-            child: shoppingCartIsEmpty ? null : Container(
-              decoration: BoxDecoration(
-                border: Border(top: BorderSide(width: 1,color: rgba(242,242,242,1))),
-                color: hex('#fff'),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                // left
-                Container(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                    Container(
-                      child: Text('应付合计', style: TextStyle(
-                        color: rgba(56, 56, 56, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14
-                      ),),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 10),
-                      child: Text('¥$totalPrice', style: TextStyle(
-                        color: rgba(56, 56, 56, 1),
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold
-                      ),),
-                    )
-                  ],),
-                ),
-
-                // right button
-                AButton.normal(
-                  child: Text('去结算'),
+          Positioned(
+            width: G.screenWidth(),
+            bottom: 0,
+            left: 0,
+            child: Container(
+              child: shoppingCartIsEmpty ? null : Container(
+                decoration: BoxDecoration(
+                  border: Border(top: BorderSide(width: 1,color: rgba(242,242,242,1))),
                   color: hex('#fff'),
-                  bgColor: rgba(144, 192, 239, 1),
-                  width: 120,
-                  height: 60,
-                  borderRadius: BorderRadius.zero,
-                  onPressed: () {
-                    G.pushNamed('/order_confirm');
-                  }
-                )
-              ],),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                  // left
+                  Container(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                      Container(
+                        child: Text('应付合计', style: TextStyle(
+                          color: rgba(56, 56, 56, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14
+                        ),),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Text('¥$totalPrice', style: TextStyle(
+                          color: rgba(56, 56, 56, 1),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold
+                        ),),
+                      )
+                    ],),
+                  ),
+
+                  // right button
+                  AButton.normal(
+                    child: Text('去结算'),
+                    color: hex('#fff'),
+                    bgColor: rgba(144, 192, 239, 1),
+                    width: 120,
+                    height: 60,
+                    borderRadius: BorderRadius.zero,
+                    onPressed: () {
+                      G.pushNamed('/order_confirm');
+                    }
+                  )
+                ],),
+              ),
             ),
           )
         ],

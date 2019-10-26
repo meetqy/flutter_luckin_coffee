@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-10-22 09:00:44
+ * @lastTime: 2019-10-26 10:30:07
  * @LastEditors: meetqy
  */
 
@@ -11,8 +11,8 @@ import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/widgets/TakeOutBtn/index.dart';
-import 'package:flutter_luckin_coffee/widgets/index.dart';
+import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
+import 'package:flutter_luckin_coffee/widgets/take_out_btn/index.dart';
 import 'package:provider/provider.dart';
 
 class Args {

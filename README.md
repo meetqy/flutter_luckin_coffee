@@ -1,12 +1,12 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-10-26 13:09:12
+ * @lastTime: 2019-10-26 13:13:27
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
 
-flutter版瑞幸咖啡.flutter luckin coffee.
+flutter实战仿l瑞幸咖啡。Flutter combat imitation luckin coffee.
 
 ![alt text](./readme/images/githead1.png)
 

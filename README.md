@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-10-26 13:22:15
+ * @lastTime: 2019-10-26 13:27:46
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
@@ -18,7 +18,7 @@ flutter实战之瑞幸咖啡，flutter高保真还原luckin coffee。
 
 - 为什么用luckin coffee？
 
-> luckin coffee在网上能搜索到原型+设计图好像是开源的，为了方便。[luckin coffee原型+设计图](https://www.xiaopiu.com/square?libPop=project&libId=5c306b252d5cd56e70a1e640)
+> luckin coffee在网上能搜索到开源的原型+设计图,简直方便的不行。[luckin coffee原型+设计图](https://www.xiaopiu.com/square?libPop=project&libId=5c306b252d5cd56e70a1e640)
 
 ##### - 注： 正常下单请到luckin coffee官方客户端
 

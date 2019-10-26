@@ -1,14 +1,12 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-10-26 13:07:15
+ * @lastTime: 2019-10-26 13:09:12
  * @LastEditors: meetqy
  -->
 # flutter_luckin_coffee
 
-flutter版瑞幸咖啡.
-
-flutter luckin coffee.
+flutter版瑞幸咖啡.flutter luckin coffee.
 
 ![alt text](./readme/images/githead1.png)
 

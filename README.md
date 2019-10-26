@@ -4,11 +4,13 @@
  * @lastTime: 2019-10-26 13:27:46
  * @LastEditors: meetqy
  -->
+ ![app_head](./readme/images/githead1.png)
+ 
 # flutter_luckin_coffee
 
 flutter实战之瑞幸咖啡，flutter高保真还原luckin coffee。
 
-![alt text](./readme/images/githead1.png)
+
 
 ## 前言
 

@@ -2,15 +2,18 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/adialog/ADialog.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:flutter_luckin_coffee/widgets/goods_detail/index.dart';
 import 'package:provider/provider.dart';
 
 import 'widgets/shopping_cart_row.dart';
+import 'dart:math' as math;
 
 class ShoppingCart extends StatefulWidget {
   static _ShoppingCartState _shoppingCartState;
@@ -31,6 +34,45 @@ class _ShoppingCartState extends State<ShoppingCart> {
   AppBar createAppBar() {
     /// 配置appbar
     return customAppbar(title: '购物车');
+  }
+
+  GoodsList goodsList;
+  /// 排序规则：priceUp 商品升序，priceDown 商品倒序，ordersUp 销量升序，ordersDown 销量降序，addedUp 发布时间升序，addedDown 发布时间倒序
+  final orderBy = ['priceUp', 'priceDown', 'ordersUp', 'ordersDown', 'addedUp', 'addDown'];
+
+  @override
+  void initState() { 
+    super.initState();
+    
+    Future.delayed(Duration.zero, () async {
+      getGoodsList(context);
+    });
+    
+  }
+
+  getGoodsList(BuildContext context) async{
+    G.loading.show(context);
+    var reg = math.Random();
+
+    int index = reg.nextInt(5);
+
+    try {
+      Map result = await G.dio.post('/shop/goods/list',
+        queryParameters: {
+          "orderBy": orderBy[index],
+          "page": 1,
+          "pageSize": 3,
+        }
+      );
+      
+      setState(() {
+        goodsList = GoodsList.fromJson(result);
+      });
+    } catch(e) {
+      print(e);
+    }
+
+    G.loading.hide(context);
   }
 
   /// 购物车为空
@@ -109,7 +151,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
   @override
   Widget build(BuildContext context) {
-    final ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
+    ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
     Map<String, ShoppingCartData> shoppingCartData = _shoppingCartModel.data;
     num totalPrice = _shoppingCartModel.totalPrice;
 
@@ -142,7 +184,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                       child: shoppingCartIsEmpty ? shoppingCartNotData() : null
                     ),
 
-                    guessLike(),
+                    guessLike(_shoppingCartModel),
                   ],
                 )
               ),
@@ -156,61 +198,62 @@ class _ShoppingCartState extends State<ShoppingCart> {
   }
 
   /// 猜你喜欢
-  Container guessLike() {
-    return Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                margin: EdgeInsets.only(top: 15),
-                child: Column(children: <Widget>[
-                  // title
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('猜你喜欢', style: TextStyle(
-                        color: rgba(56, 56, 56, 1),
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold
-                      ),),
-                      Row(children: <Widget>[
-                        icontupian19(color: rgba(148, 196, 236, 1), size: 14),
-                        Container(
-                          margin: EdgeInsets.only(left: 5),
-                          child: Text('换一批', style: TextStyle(
-                            color: rgba(144, 192, 239, 1),
-                            fontSize: 11
-                          ),),
-                        )
-                      ],)
-                  ],),
+  Container guessLike(ShoppingCartModel model) {
+    return goodsList == null ? Container() : Container(
+      padding: EdgeInsets.symmetric(horizontal: 15),
+      margin: EdgeInsets.only(top: 15),
+      child: Column(children: <Widget>[
+        // title
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text('猜你喜欢', style: TextStyle(
+              color: rgba(56, 56, 56, 1),
+              fontSize: 15,
+              fontWeight: FontWeight.bold
+            ),),
+            GestureDetector(
+              child: Row(children: <Widget>[
+                icontupian19(color: rgba(148, 196, 236, 1), size: 14),
+                Container(
+                  margin: EdgeInsets.only(left: 5),
+                  child: Text('换一批', style: TextStyle(
+                    color: rgba(144, 192, 239, 1),
+                    fontSize: 11
+                  ),),
+                )
+              ],),
+              onTap: () => getGoodsList(context),
+            )
+        ],),
 
-                  // 推荐商品
-                  Container(
-                    margin: EdgeInsets.only(top: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        RecommendGoods(
-                          goodsImg: 'lib/assets/images/menu/goods1.png',
-                          addOnPress: () {
-                            // dialogPage.show(context);
-                          }
-                        ),
-                        RecommendGoods(
-                          goodsImg: 'lib/assets/images/menu/goods2.png',
-                          addOnPress: () {
-                            // dialogPage.show(context);
-                          }
-                        ),
-                        RecommendGoods(
-                          goodsImg: 'lib/assets/images/menu/goods3.png',
-                          addOnPress: () {
-                            // dialogPage.show(context);
-                          }
-                        ),
-                      ],
-                    ),
-                  )
-                ],),
+        // 推荐商品
+        Container(
+          margin: EdgeInsets.only(top: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: goodsList.data.map((GoodsListDatum item) {
+              return RecommendGoods(
+                data: item,
+                onPress: (int id) {
+                   /// 弹出商品详情  /widgets/goods_detail
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) {
+                      return GoodsDetailDialog(
+                        id: id,
+                        model: model,
+                      );                  
+                    }
+                  );
+                }
               );
+            }).toList(),
+          ),
+        )
+      ],),
+    );
   }
 
   /// 底部合计

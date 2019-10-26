@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-10-12 16:49:37
+ * @lastTime: 2019-10-26 14:13:38
  * @LastEditors: meetqy
  */
 
@@ -71,7 +71,7 @@ class _MenuState extends State<Menu> {
   _init(BuildContext context) async {
     G.loading.show(context);
     Iterable<Future> requestList = [
-      G.dio.get('/shop/goods/list'),  // 获取商品列表
+      G.dio.post('/shop/goods/list'),  // 获取商品列表
       G.dio.get('/shop/goods/category/all') // 获取分类列表
     ];
 

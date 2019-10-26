@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/adialog/ADialog.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/recommend_goods.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/RecommendGoods.dart';
 import 'package:provider/provider.dart';
 
 import 'widgets/shopping_cart_row.dart';
@@ -137,7 +137,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                 // 猜你喜欢 
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 15),
-                  margin: EdgeInsets.only(top: 30),
+                  margin: EdgeInsets.only(top: 15),
                   child: Column(children: <Widget>[
                     // title
                     Row(
@@ -166,19 +166,19 @@ class _ShoppingCartState extends State<ShoppingCart> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          new RecommendGoods(
+                          RecommendGoods(
                             goodsImg: 'lib/assets/images/menu/goods1.png',
                             addOnPress: () {
                               // dialogPage.show(context);
                             }
                           ),
-                          new RecommendGoods(
+                          RecommendGoods(
                             goodsImg: 'lib/assets/images/menu/goods2.png',
                             addOnPress: () {
                               // dialogPage.show(context);
                             }
                           ),
-                          new RecommendGoods(
+                          RecommendGoods(
                             goodsImg: 'lib/assets/images/menu/goods3.png',
                             addOnPress: () {
                               // dialogPage.show(context);

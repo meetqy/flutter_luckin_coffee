@@ -34,10 +34,10 @@ class AStepper extends StatelessWidget {
       child: Row(
         children: <Widget>[
           AButton.icon(
-            width: 28,
-            height: 28,
+            width: 30,
+            height: 30,
             bgColor: Colors.transparent,
-            icon: iconjianfill(size: 28, color: rgba(144, 192, 239, value == min ? 0.3 : 1)),
+            icon: iconjian(size: 30, color: rgba(144, 192, 239, value == min ? 0.3 : 1)),
             onPressed: (){
               if(value <= min) return;
               onChange(value - 1);
@@ -61,10 +61,10 @@ class AStepper extends StatelessWidget {
           ),
           
           AButton.icon(
-            width: 28,
-            height: 28,
+            width: 30,
+            height: 30,
             bgColor: Colors.transparent,
-            icon: iconjaifill(size: 28,color: rgba(144, 192, 239, value == max ? 0.3 : 1)),
+            icon: iconjaifill(size: 30,color: rgba(144, 192, 239, value == max ? 0.3 : 1)),
             onPressed: (){
               if(value >= max) return;
               onChange(value + 1);

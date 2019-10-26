@@ -12,6 +12,7 @@ class ShoppingCartRow extends StatelessWidget {
   final bool border;
   final Function onChange;
 
+  /// 购物车商品列表行
   const ShoppingCartRow({
     Key key,
     this.data,
@@ -26,7 +27,7 @@ class ShoppingCartRow extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15),
       border: Border.all(color: Colors.transparent),
       leftChild: Container(
-        width: 54,
+        width: 48,
         child: Row(children: <Widget>[
           iconqueren(color: rgba(136, 175, 213, 1), size: 24),
         ],),

@@ -6,6 +6,7 @@ class RecommendGoods extends StatelessWidget {
   final String goodsImg;
   final Function addOnPress;
   
+  /// 推荐商品
   RecommendGoods({
     this.goodsImg,
     this.addOnPress

@@ -16,7 +16,7 @@ final router = Router();
 
 void main() async {
   SharedPreferences prefs = await G.prefs;
-  _shoppingCart = await prefs.get('shoppingCart');
+  _shoppingCart = prefs.getString('shoppingCart');
   runApp(
     MultiProvider(
       providers: [

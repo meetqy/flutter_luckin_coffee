@@ -1,15 +1,15 @@
 ### 
 # @Author: meetqy
- # @since: 2019-08-16 16:23:37
- # @lastTime: 2019-10-12 10:13:21
+# @since: 2019-08-16 16:23:37
+ # @lastTime: 2019-10-26 10:02:35
  # @LastEditors: meetqy
- ###
+###
 
 # 蒲公英配置
-_api_key=""
-_uKey=""
+_api_key="12a75f1224a61181952da55318c59968"
+_uKey="291ce6edb3dbdb97c9af5a75dd06c6ad"
 # 相对于项目的路径
-_android_dir="/build/app/outputs/apk/release/app-release.apk"
+_android_dir="/build/app/outputs/apk/release/app-arm64-v8a-release.apk"
 
 # ######### 脚本样式 #############
 __LINE_BREAK_LEFT="\033[32;1m"
@@ -30,16 +30,27 @@ function errorMessage() {
 }
 
 
+
+
 # 获取flutter路径
 _flutter=`which flutter`
 
-$_flutter build apk --release --target-platform android-arm64;
+$_flutter clean;
 
 if [ $? -ne 0 ]; then
-  errorMessage '\n打包失败 🚀 🚀 🚀'
+  errorMessage 'clean失败'
   exit;
 else
-  printMessage "\n打包成功 🚀 🚀 🚀"
+  printMessage "\nclean成功,开始打包..."
+fi
+
+$_flutter build apk --split-per-abi;
+
+if [ $? -ne 0 ]; then
+  errorMessage '\n打包失败'
+  exit;
+else
+  printMessage "\n打包成功,开始上传... 🚀 🚀 🚀"
 fi
 
 printMessage "上传中..."
@@ -50,11 +61,12 @@ curl -F "file=@`pwd`$_android_dir" \
 "http://www.pgyer.com/apiv1/app/upload"
 
 if [ $? -ne 0 ]; then
-  errorMessage "\n上传失败 🚀 🚀 🚀"
+  errorMessage "\n上传失败"
   exit;
 else
   printMessage "\n上传成功 🚀 🚀 🚀"
 fi
+
 
 
 

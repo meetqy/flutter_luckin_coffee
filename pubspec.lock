@@ -423,7 +423,7 @@ packages:
       name: shared_preferences
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.5.4"
+    version: "0.5.3+5"
   shelf:
     dependency: transitive
     description:
@@ -599,4 +599,4 @@ packages:
     version: "2.2.0"
 sdks:
   dart: ">=2.3.0 <3.0.0"
-  flutter: ">=1.6.7 <2.0.0"
+  flutter: ">=1.5.0 <2.0.0"

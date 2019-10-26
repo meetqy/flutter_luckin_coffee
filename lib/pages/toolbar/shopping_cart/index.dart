@@ -76,6 +76,12 @@ class _ShoppingCartState extends State<ShoppingCart> {
       shoppingCartList.add(ShoppingCartRow(
         data: value, 
         border: index >= _listLen - 1 ? false : true,
+        onCheckBoxChange: (bool val) {
+          setState(() {
+            value.checked = val;
+            _shoppingCartModel.modify(key, data: value);
+          });
+        },
         onChange: (val) {
           if(val < 1) {
             ADialog.confirm(context,

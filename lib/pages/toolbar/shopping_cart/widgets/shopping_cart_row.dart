@@ -1,23 +1,24 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
+import 'package:flutter_luckin_coffee/components/acheckbox/ACheckBox.dart';
 import 'package:flutter_luckin_coffee/components/arow/ARow.dart';
 import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class ShoppingCartRow extends StatelessWidget {
   final ShoppingCartData data;
   final bool border;
   final Function onChange;
-
+  final Function(bool) onCheckBoxChange;
   /// 购物车商品列表行
   const ShoppingCartRow({
     Key key,
     this.data,
     this.border = true,
-    @required this.onChange
+    @required this.onChange,
+    @required this.onCheckBoxChange
   }) : super(key: key);
 
   @override
@@ -27,10 +28,14 @@ class ShoppingCartRow extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15),
       border: Border.all(color: Colors.transparent),
       leftChild: Container(
-        width: 48,
-        child: Row(children: <Widget>[
-          iconqueren(color: rgba(136, 175, 213, 1), size: 24),
-        ],),
+        margin: EdgeInsets.only(right: 15),
+        child: ACheckBox(
+          activeColor:rgba(136, 175, 213, 1),
+          width: 24,
+          radius: Radius.circular(24),
+          value: data.checked,
+          onChanged: (bool value) => onCheckBoxChange(value),
+        ),
       ),
       centerChild: Container(
         padding: EdgeInsets.symmetric(vertical: 15),
@@ -81,7 +86,7 @@ class ShoppingCartRow extends StatelessWidget {
             ),
           ),
 
-          Text('¥${data.price*data.number}', style: TextStyle(
+          Text('¥${data.price}', style: TextStyle(
             color: rgba(56, 56, 56, 1),
             fontSize: 18,
             fontWeight: FontWeight.bold

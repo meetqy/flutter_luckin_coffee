@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-10-26 13:37:13
+ * @lastTime: 2019-10-26 15:05:25
  * @LastEditors: meetqy
  -->
  ![app_head](./readme/images/githead1.png)
@@ -83,8 +83,8 @@ v1.0版本所遗留的问题
 
 - [ ] 订单交互
 - [ ] 订单功能实现
-- [ ] 猜你喜欢交互
-- [ ] 猜你喜欢联调
+- [x] 猜你喜欢交互
+- [x] 猜你喜欢联调
 
 ## backlog
 

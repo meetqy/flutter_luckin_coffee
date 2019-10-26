@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-09-26 14:05:05
+ * @lastTime: 2019-10-26 10:28:30
  * @LastEditors: meetqy
  */
 
@@ -11,7 +11,7 @@ import 'package:flutter_luckin_coffee/pages/toolbar/home/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/mine/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/order/index.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/index.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/index.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 class Toolbar extends StatefulWidget {

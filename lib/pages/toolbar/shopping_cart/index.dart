@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/abutton/index.dart';
 import 'package:flutter_luckin_coffee/components/adialog/ADialog.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/shoppingCart/widgets/recommend_goods.dart';
+import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';

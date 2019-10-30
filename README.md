@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-10-26 15:05:25
+ * @lastTime: 2019-10-30 17:53:17
  * @LastEditors: meetqy
  -->
  ![app_head](./readme/images/githead1.png)
@@ -98,6 +98,18 @@ v1.0版本所遗留的问题
 - [ADialog 弹出框](./lib/components/adialog)
 - [ARow 行](./lib/components/arow)
 - [ACheckBox 复选框](./lib/components/acheckbox)
+
+## 项目中所用到的插件及作用
+
+- [flutter_swiper](https://github.com/best-flutter/flutter_swiper) - 轮播图
+- [provider](https://github.com/rrousselGit/provider) - 状态管理
+- [pull_to_refresh](https://github.com/bytedance/pull_to_refresh) - 上拉加载，下拉刷新
+- [dio](https://github.com/flutterchina/dio) - 网络请求
+- [json_annotation](https://github.com/dart-lang/json_serializable/tree/master/json_annotation)+[json_serializable](https://github.com/dart-lang/json_serializable) - json序列化
+- [fluttertoast](https://github.com/PonnamKarthik/FlutterToast) - toast
+- [shared_preferences](https://github.com/flutter/plugins/tree/master/packages/shared_preferences) - 本地缓存
+- [iconfont_dart](https://github.com/meetqy/iconfont_dart) iconfont转换成className的调用方式
+- [color_dart](https://github.com/meetqy/color_dart) - 配合vscode插件在代码中显示颜色
 
 
 ## 开发规范

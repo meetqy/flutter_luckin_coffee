@@ -10,7 +10,7 @@
 
 flutter实战之瑞幸咖啡，flutter高保真还原luckin coffee。
 
-
+- 注：开发规范是最近才加入的（引用的flutter-go），所以代码很多地方不符合规范。
 
 ## 前言
 

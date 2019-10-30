@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-10-30 17:53:17
+ * @lastTime: 2019-10-30 17:55:42
  * @LastEditors: meetqy
  -->
  ![app_head](./readme/images/githead1.png)
@@ -91,7 +91,7 @@ v1.0版本所遗留的问题
 - [v1.x.x](./readme/backlog/v1.x.x.md)
 - [v2.x.x](./readme/backlog/v2.x.x.md)
 
-## 项目中所封装的组件
+## 项目中自己封装的组件
 
 - [AButton 按钮](./lib/components/abutton)
 - [AStepper 步进器](./lib/components/astepper)

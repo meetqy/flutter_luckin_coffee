@@ -6,8 +6,8 @@
 ###
 
 # 蒲公英配置
-_api_key="12a75f1224a61181952da55318c59968"
-_uKey="291ce6edb3dbdb97c9af5a75dd06c6ad"
+_api_key=""
+_uKey=""
 # 相对于项目的路径
 _android_dir="/build/app/outputs/apk/release/app-arm64-v8a-release.apk"
 

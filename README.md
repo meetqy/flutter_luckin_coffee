@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-11-04 11:42:18
+ * @lastTime: 2019-11-04 16:45:32
  * @LastEditors: meetqy
  -->
  ![app_head](./readme/images/githead1.png)
@@ -71,18 +71,20 @@ Tools • Dart 2.4.0
 - [ACheckBox 复选框](./lib/components/acheckbox)
 
 ## 项目中所用到的插件及作用
-- [flutter_swiper](https://github.com/best-flutter/flutter_swiper) - 轮播图
-- [provider](https://github.com/rrousselGit/provider) - 状态管理
-- [pull_to_refresh](https://github.com/bytedance/pull_to_refresh) - 上拉加载，下拉刷新
-- [dio](https://github.com/flutterchina/dio) - 网络请求
-- [json_annotation](https://github.com/dart-lang/json_serializable/tree/master/json_annotation)+[json_serializable](https://github.com/dart-lang/json_serializable) - json序列化
-- [fluttertoast](https://github.com/PonnamKarthik/FlutterToast) - toast
-- [shared_preferences](https://github.com/flutter/plugins/tree/master/packages/shared_preferences) - 本地缓存
-- [iconfont_dart](https://github.com/meetqy/iconfont_dart) iconfont转换成className的调用方式
-- [color_dart](https://github.com/meetqy/color_dart) - 配合vscode插件在代码中显示颜色
+插件 | 说明
+---- | ----
+[flutter_swiper](https://github.com/best-flutter/flutter_swiper) | 轮播图
+[provider](https://github.com/rrousselGit/provider) | 状态管理
+[pull_to_refresh](https://github.com/bytedance/pull_to_refresh) | 上拉加载，下拉刷新
+[dio](https://github.com/flutterchina/dio) | 网络请求
+[json_annotation](https://github.com/dart-lang/json_serializable/tree/master/json_annotation)+[json_serializable](https://github.com/dart-lang/json_serializable) | json序列化
+[fluttertoast](https://github.com/PonnamKarthik/FlutterToast) | toast
+[shared_preferences](https://github.com/flutter/plugins/tree/master/packages/shared_preferences) | 本地缓存
+[iconfont_dart](https://github.com/meetqy/iconfont_dart) | 快速将iconfont生成项目中可以直接调用的icon
+[color_dart](https://github.com/meetqy/color_dart) | 配合vscode插件在代码中显示颜色
 
 ## 开发规范
-[flutter-go的开发规范](https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
+[flutter-go的开发规范](./开发规范.md)
 
 ## 项目目录
 ``` tree
@@ -100,6 +102,7 @@ Tools • Dart 2.4.0
 │   └── widgets                                 // 公用widge
 ├── readme                                      // README.md相关
 ```
+
 ## 随便看看吧
 <img src="./readme/images/1.gif" width="375"/> | <img src="./readme/images/2.gif" width="375"/>
 ---- | ---

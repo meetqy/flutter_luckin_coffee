@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-11-04 11:41:20
+ * @lastTime: 2019-11-04 11:42:18
  * @LastEditors: meetqy
  -->
  ![app_head](./readme/images/githead1.png)
@@ -57,7 +57,7 @@ Tools • Dart 2.4.0
 - [x] 完成联调
 
 ### - v3.0版本侧重优化总结
-- [x] code review
+- [ ] code review
 
 ## backlog
 - [v1.x.x](./readme/backlog/v1.x.x.md)

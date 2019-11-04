@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-11-04 11:39:07
+ * @lastTime: 2019-11-04 11:41:20
  * @LastEditors: meetqy
  -->
  ![app_head](./readme/images/githead1.png)
@@ -37,42 +37,33 @@ Engine • revision fee001c93f
 Tools • Dart 2.4.0
 ```
 
-## 当前版本进度 - v3.0
-
-v1.0版本所遗留的问题
-
+## 当前版本进度 - v3.0.0
+> v1.0版本所遗留的问题
 - [ ] 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。
 - [ ] 待实现：菜单界面，点击左侧菜单，右侧商品列表跳转
 - [ ] 待解决：从非toolbar页面跳转到toolbar页面的入场动画不一致
-
-## v3.0
-
+> v3.0.0
 - [ ] 修改代码，符合新的代码规范
 - [ ] code review
 
 ### - v1.0版本侧重于页面实现
-
 - [x] 完成所有页面的开发（不包括动画交互) tag: v1.0.0-完成所有页面的开发（不包括动画交互）
 - [x] 完成动画交互
 - [x] 优化代码
 
 ### - v2.0版本侧重于前后端交互（后端用api工厂）
-
 - [x] 接入api工厂
 - [x] 准备app所需要的数据
 - [x] 完成联调
 
 ### - v3.0版本侧重优化总结
-
 - [x] code review
 
 ## backlog
-
 - [v1.x.x](./readme/backlog/v1.x.x.md)
 - [v2.x.x](./readme/backlog/v2.x.x.md)
 
 ## 项目中自己封装的组件
-
 - [AButton 按钮](./lib/components/abutton)
 - [AStepper 步进器](./lib/components/astepper)
 - [ADialog 弹出框](./lib/components/adialog)
@@ -80,7 +71,6 @@ v1.0版本所遗留的问题
 - [ACheckBox 复选框](./lib/components/acheckbox)
 
 ## 项目中所用到的插件及作用
-
 - [flutter_swiper](https://github.com/best-flutter/flutter_swiper) - 轮播图
 - [provider](https://github.com/rrousselGit/provider) - 状态管理
 - [pull_to_refresh](https://github.com/bytedance/pull_to_refresh) - 上拉加载，下拉刷新
@@ -92,11 +82,9 @@ v1.0版本所遗留的问题
 - [color_dart](https://github.com/meetqy/color_dart) - 配合vscode插件在代码中显示颜色
 
 ## 开发规范
-
 [flutter-go的开发规范](https://github.com/alibaba/flutter-go/blob/master/Flutter_Go%20%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md)
 
 ## 项目目录
-
 ``` tree
 .
 ├── lib                                         // 项目源代码
@@ -113,6 +101,5 @@ v1.0版本所遗留的问题
 ├── readme                                      // README.md相关
 ```
 ## 随便看看吧
-
 <img src="./readme/images/1.gif" width="375"/> | <img src="./readme/images/2.gif" width="375"/>
 ---- | ---

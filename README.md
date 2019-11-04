@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-10-30 17:55:42
+ * @lastTime: 2019-11-04 11:26:26
  * @LastEditors: meetqy
  -->
  ![app_head](./readme/images/githead1.png)
@@ -81,8 +81,8 @@ v1.0版本所遗留的问题
 
 # v2.1.0
 
-- [ ] 订单交互
-- [ ] 订单功能实现
+- [ ] ``订单交互``，api工厂没有提供接口暂时移除
+- [ ] ``订单功能实现``，api工厂没有提供接口暂时移除
 - [x] 猜你喜欢交互
 - [x] 猜你喜欢联调
 
@@ -135,4 +135,5 @@ v1.0版本所遗留的问题
 ```
 ## 随便看看吧
 
-<img src="./readme/images/1.gif" width="375"/>&emsp;&emsp;&emsp;&emsp;<img src="./readme/images/2.gif" width="375"/>
+<img src="./readme/images/1.gif" width="375"/> | <img src="./readme/images/2.gif" width="375"/>
+---- | ---

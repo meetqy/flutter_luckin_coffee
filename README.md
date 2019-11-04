@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-08-10 16:41:08
- * @lastTime: 2019-11-04 11:26:26
+ * @lastTime: 2019-11-04 11:39:07
  * @LastEditors: meetqy
  -->
  ![app_head](./readme/images/githead1.png)
@@ -37,7 +37,18 @@ Engine • revision fee001c93f
 Tools • Dart 2.4.0
 ```
 
-## 版本计划 · 当前版本 v2.0.0
+## 当前版本进度 - v3.0
+
+v1.0版本所遗留的问题
+
+- [ ] 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。
+- [ ] 待实现：菜单界面，点击左侧菜单，右侧商品列表跳转
+- [ ] 待解决：从非toolbar页面跳转到toolbar页面的入场动画不一致
+
+## v3.0
+
+- [ ] 修改代码，符合新的代码规范
+- [ ] code review
 
 ### - v1.0版本侧重于页面实现
 
@@ -47,44 +58,13 @@ Tools • Dart 2.4.0
 
 ### - v2.0版本侧重于前后端交互（后端用api工厂）
 
-- [ ] 接入api工厂
-- [ ] 准备app所需要的数据
-- [ ] 完成联调
+- [x] 接入api工厂
+- [x] 准备app所需要的数据
+- [x] 完成联调
 
 ### - v3.0版本侧重优化总结
 
-- [ ] code review
-
-## 当前版本进度 - 数据准备&联调
-
-v1.0版本所遗留的问题
-
-- [ ] 选择区号页面，动画效果（和iphone电话薄的效果一样）没有找到实现的方法。
-- [ ] 待实现：菜单界面，点击左侧菜单，右侧商品列表跳转
-- [ ] 待解决：从非toolbar页面跳转到toolbar页面的入场动画不一致
-
-> 以上是上个版本遗留的问题 ----------------------------
-
-# v2.0.0
-
-- [x] provider调研
-- [x] 接入provider
-- [x] 网络请求调研
-- [x] 在api工厂，准备app需要的数据（持续更新）
-- [x] 菜单联调
-- [x] 请求等待返回数据增加loading
-- [x] 商品详情联调
-- [x] 菜单和商品详情交互
-- [x] 使用provider实现加入购物车功能
-- [x] 购物车联调
-- [x] 购物车ui细节调整
-
-# v2.1.0
-
-- [ ] ~~订单交互~~，api工厂没有提供接口暂时移除
-- [ ] ~~订单功能实现~~，api工厂没有提供接口暂时移除
-- [x] 猜你喜欢交互
-- [x] 猜你喜欢联调
+- [x] code review
 
 ## backlog
 
@@ -110,7 +90,6 @@ v1.0版本所遗留的问题
 - [shared_preferences](https://github.com/flutter/plugins/tree/master/packages/shared_preferences) - 本地缓存
 - [iconfont_dart](https://github.com/meetqy/iconfont_dart) iconfont转换成className的调用方式
 - [color_dart](https://github.com/meetqy/color_dart) - 配合vscode插件在代码中显示颜色
-
 
 ## 开发规范
 

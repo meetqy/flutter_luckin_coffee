@@ -3,8 +3,6 @@
 
 > flutter luckin coffee application（仿瑞幸咖啡）
 
-## 注： 正常下单请到luckin coffee官方客户端
-
 ## 目录
 - [前言](#前言)
 - [flutter版本信息](#flutter版本信息)

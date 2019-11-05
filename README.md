@@ -1,3 +1,9 @@
+<!--
+ * @Author: meetqy
+ * @since: 2019-11-04 11:31:29
+ * @lastTime: 2019-11-05 15:29:53
+ * @LastEditors: meetqy
+ -->
 ![app_head](./readme/images/githead1.png)
 # flutter_luckin_coffee
 
@@ -24,7 +30,7 @@ Q：为什么用luckin coffee？
 
 ## 安卓扫码体验
 
-![](android.png)
+![](qrcode.png)
 
 ## flutter版本信息
 ``` sh

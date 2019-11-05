@@ -23,7 +23,7 @@ Q：为什么用luckin coffee？
 
 ## flutter版本信息
 ``` sh
-$ flutter --verison
+flutter --verison
 ```
 
 ``` sh

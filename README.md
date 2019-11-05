@@ -5,6 +5,7 @@
 
 ## 目录
 - [前言](#前言)
+- [安卓扫码体验](#安卓扫码体验)
 - [flutter版本信息](#flutter版本信息)
 - [安装](#安装)
 - [相关插件](#相关插件)
@@ -15,11 +16,15 @@
 ## 前言
 Q：为什么会有这个项目？
 
-> A：了解到了flutter这个框架，并且和rn和uniapp的实现跨平台的思路完全不一样。做了一些demo之后，感觉挺有意思的，所以想做一个完整的项目，体验学习一下。
+> 了解到了flutter这个框架，并且和rn和uniapp的实现跨平台的思路完全不一样。做了一些demo之后，感觉挺有意思的，所以想做一个完整的项目，体验学习一下。
 
 Q：为什么用luckin coffee？
 
-> A：luckin coffee在网上能搜索到开源的原型+设计图,简直方便的不行。[luckin coffee原型+设计图](https://www.xiaopiu.com/square?libPop=project&libId=5c306b252d5cd56e70a1e640)
+> luckin coffee在网上能搜索到开源的原型+设计图,简直方便的不行。[luckin coffee原型+设计图](https://www.xiaopiu.com/square?libPop=project&libId=5c306b252d5cd56e70a1e640)
+
+## 安卓扫码体验
+
+![](android.png)
 
 ## flutter版本信息
 ``` sh

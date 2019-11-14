@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
+/// 选择手机区号
 class ChoosePhoneCode extends StatefulWidget {
   ChoosePhoneCode({Key key}) : super(key: key);
 

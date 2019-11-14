@@ -7,14 +7,14 @@ import 'package:flutter_luckin_coffee/components/abutton/example.dart';
 import 'package:flutter_luckin_coffee/components/adialog/example.dart';
 import 'package:flutter_luckin_coffee/components/astepper/example.dart';
 import 'package:flutter_luckin_coffee/components/pulltorefresh/example.dart';
+import 'package:flutter_luckin_coffee/pages/choose_phone_code/index.dart';
 
 // luckin coffee 页面
-import 'package:flutter_luckin_coffee/pages/choosephonecode/index.dart';
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
-import 'package:flutter_luckin_coffee/pages/diningcode/DiningCode.dart';
-import 'package:flutter_luckin_coffee/pages/login/LoginMethod.dart';
-import 'package:flutter_luckin_coffee/pages/login/LoginPhone.dart';
-import 'package:flutter_luckin_coffee/pages/login/UserAgreement.dart';
+import 'package:flutter_luckin_coffee/pages/diningcode/dining_code.dart';
+import 'package:flutter_luckin_coffee/pages/login/login_method.dart';
+import 'package:flutter_luckin_coffee/pages/login/login_phone.dart';
+import 'package:flutter_luckin_coffee/pages/login/user_agreement.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderConfirm.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderDetail.dart';
 import 'package:flutter_luckin_coffee/pages/order/OrderEvaluation.dart';

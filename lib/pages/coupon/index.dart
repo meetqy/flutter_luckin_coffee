@@ -1,10 +1,9 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/AButton/index.dart';
+import 'package:flutter_luckin_coffee/pages/coupon/widgets/coupon_row.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-
-import 'widgets/CouponRow.dart';
 
 class Coupon extends StatefulWidget {
   Coupon({Key key}) : super(key: key);

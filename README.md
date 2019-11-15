@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-11-04 11:31:29
- * @lastTime: 2019-11-14 15:10:27
+ * @lastTime: 2019-11-15 10:19:49
  * @LastEditors: meetqy
  -->
 ![app_head](./readme/images/githead1.png)
@@ -88,6 +88,7 @@ flutter run
 * 菜单页面锚点功能未实现
 * 代码不符合开发规范
 * 优化当前代码
+* 订单数据目前是写死的假数据，api工厂暂时没有处理订单的接口，短时间之内不会联调。
 
 ## 维护者
 

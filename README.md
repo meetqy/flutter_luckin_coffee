@@ -12,7 +12,6 @@
 
 ## 目录
 - [前言](#前言)
-- [安卓扫码体验](#安卓扫码体验)
 - [flutter版本信息](#flutter版本信息)
 - [安装](#安装)
 - [相关插件](#相关插件)
@@ -31,9 +30,6 @@ Q：为什么用luckin coffee？
 
 > luckin coffee在网上能搜索到开源的原型+设计图,简直方便的不行。[luckin coffee原型+设计图](https://www.xiaopiu.com/square?libPop=project&libId=5c306b252d5cd56e70a1e640)
 
-## 安卓扫码体验
-
-![](qrcode.png)
 
 ## flutter版本信息
 

@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-11-04 11:31:29
- * @lastTime: 2019-11-18 09:24:23
+ * @lastTime: 2019-11-18 10:24:44
  * @LastEditors: meetqy
  -->
 ![app_head](./readme/images/githead1.png)
@@ -11,6 +11,7 @@
 > flutter luckin coffee application（仿瑞幸咖啡）
 
 ## 目录
+
 - [前言](#前言)
 - [flutter版本信息](#flutter版本信息)
 - [扫码下载体验](#扫码下载体验)
@@ -31,6 +32,9 @@ Q：为什么用luckin coffee？
 
 > luckin coffee在网上能搜索到开源的原型+设计图,简直方便的不行。[luckin coffee原型+设计图](https://www.xiaopiu.com/square?libPop=project&libId=5c306b252d5cd56e70a1e640)
 
+Q：数据从哪里来？
+
+> [api工厂](https://www.it120.cc/)配置商城数据，网站提供接口。
 
 ## flutter版本信息
 

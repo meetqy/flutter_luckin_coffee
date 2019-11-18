@@ -5,7 +5,7 @@
  * @LastEditors: meetqy
  */
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/abutton/index.dart';
+import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/adialog/ADialog.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 

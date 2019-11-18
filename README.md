@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-11-04 11:31:29
- * @lastTime: 2019-11-15 10:19:49
+ * @lastTime: 2019-11-18 09:21:18
  * @LastEditors: meetqy
  -->
 ![app_head](./readme/images/githead1.png)
@@ -19,6 +19,7 @@
 - [待完善](#待完善)
 - [维护者](#维护者)
 - [欢迎PR](#欢迎PR)
+- [参与贡献](#参与贡献)
 - [预览](#预览)
 
 ## 前言
@@ -97,6 +98,8 @@ flutter run
 ## 欢迎PR
 
 非常欢迎一起学习flutter! [提一个Issue](https://github.com/meetqy/flutter_luckin_coffee/issues/new) 或者提交一个 Pull Request.
+
+## 参与贡献
 
 ## 预览
 

@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-11-04 11:31:29
- * @lastTime: 2019-11-18 10:24:44
+ * @lastTime: 2019-11-18 17:10:36
  * @LastEditors: meetqy
  -->
 ![app_head](./readme/images/githead1.png)
@@ -51,7 +51,11 @@ Tools • Dart 2.5.0
 
 ## 扫码下载体验
 
-> 由于最近蒲公英更新弄掉了数据，本地安卓打包失败，没有找到原因，暂不提供安卓下载体验。
+密码：meetqy
+
+![](./qrcode.png)
+
+> 没有安卓机，只在虚拟机上面测试过。有bug欢迎提issues，待我买个安卓机在改。
 
 ## 安装
 

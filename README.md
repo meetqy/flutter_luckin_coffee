@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-11-04 11:31:29
- * @lastTime: 2019-11-18 17:10:36
+ * @lastTime: 2019-11-18 17:48:21
  * @LastEditors: meetqy
  -->
 ![app_head](./readme/images/githead1.png)
@@ -55,7 +55,7 @@ Tools • Dart 2.5.0
 
 ![](./qrcode.png)
 
-> 没有安卓机，只在虚拟机上面测试过。有bug欢迎提issues，待我买个安卓机在改。
+> 没有安卓机，只在虚拟机上面测试过，有bug欢迎提issues。
 
 ## 安装
 

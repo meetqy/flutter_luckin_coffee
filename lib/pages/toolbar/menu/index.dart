@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-10-26 14:13:38
+ * @lastTime: 2019-11-19 10:58:31
  * @LastEditors: meetqy
  */
 
@@ -70,66 +70,70 @@ class _MenuState extends State<Menu> {
 
   _init(BuildContext context) async {
     G.loading.show(context);
-    Iterable<Future> requestList = [
-      G.dio.post('/shop/goods/list'),  // 获取商品列表
-      G.dio.get('/shop/goods/category/all') // 获取分类列表
-    ];
+    try {
+      Iterable<Future> requestList = [
+        G.dio.post('/shop/goods/list'),  // 获取商品列表
+        G.dio.get('/shop/goods/category/all') // 获取分类列表
+      ];
 
-    List result =  await Future.wait(requestList);
+      List result =  await Future.wait(requestList);
 
-    GoodsList goodsList = GoodsList.fromJson(result[0]);
-    int goodsListLen = goodsList.data.length;
-    GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
+      GoodsList goodsList = GoodsList.fromJson(result[0]);
+      int goodsListLen = goodsList.data.length;
+      GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
 
-    List<Widget> goodsListWidgetsTemp = [];
-    Random rand = Random(); // 随机数
+      List<Widget> goodsListWidgetsTemp = [];
+      Random rand = Random(); // 随机数
 
-    goodsCategory.data.forEach((GoodsCategoryDatum category) {
-      // 商品列表 每类商品 标题  eg: 人气top
-      goodsListWidgetsTemp.add(
-        ClassifyDesc(
-          category.name,
-          desc: null
-        )
-      );
+      goodsCategory.data.forEach((GoodsCategoryDatum category) {
+        // 商品列表 每类商品 标题  eg: 人气top
+        goodsListWidgetsTemp.add(
+          ClassifyDesc(
+            category.name,
+            desc: null
+          )
+        );
 
-      goodsList.data.asMap().forEach((int index, GoodsListDatum goods) {
-        if(category.id == goods.categoryId) {
-          // 商品列表 商品
-          goodsListWidgetsTemp.add(
-            GoodsListRow(
-              // 点击添加按钮弹出dialog
-              onPress: (BuildContext context, int id) {
-                /// 弹出商品详情  /widgets/goods_detail
-                showDialog(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (BuildContext context) {
-                    final ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
-                    return GoodsDetailDialog(
-                      id: id,
-                      model: _shoppingCartModel,
-                    );                  
-                  }
-                );
-              },
-              data: goods,
-              border: !(index >= goodsListLen - 1),
-              activeDesc: actives[rand.nextInt(3)],
-            )
-          );
-        }
+        goodsList.data.asMap().forEach((int index, GoodsListDatum goods) {
+          if(category.id == goods.categoryId) {
+            // 商品列表 商品
+            goodsListWidgetsTemp.add(
+              GoodsListRow(
+                // 点击添加按钮弹出dialog
+                onPress: (BuildContext context, int id) {
+                  /// 弹出商品详情  /widgets/goods_detail
+                  showDialog(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) {
+                      final ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
+                      return GoodsDetailDialog(
+                        id: id,
+                        model: _shoppingCartModel,
+                      );                  
+                    }
+                  );
+                },
+                data: goods,
+                border: !(index >= goodsListLen - 1),
+                activeDesc: actives[rand.nextInt(3)],
+              )
+            );
+          }
+        });
       });
-    });
 
-    setState(() {
-      nowCategoryId = goodsCategory.data[0].id;
-      goodsListWidgets = goodsListWidgetsTemp;
-      category = goodsCategory.data;
-    });
+      setState(() {
+        nowCategoryId = goodsCategory.data[0].id;
+        goodsListWidgets = goodsListWidgetsTemp;
+        category = goodsCategory.data;
+      });
 
-    
-    G.loading.hide(context);
+      G.loading.hide(context);
+    } catch(e) {
+      print(e);
+      G.loading.hide(context);
+    }
   }
 
 

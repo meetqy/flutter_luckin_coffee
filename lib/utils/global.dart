@@ -1,12 +1,12 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-11-19 13:57:28
+ * @lastTime: 2019-11-19 14:02:52
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/Request.dart';
+import 'package:flutter_luckin_coffee/utils/request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
 import 'package:flutter_luckin_coffee/utils/toast.dart';
 import 'package:shared_preferences/shared_preferences.dart';

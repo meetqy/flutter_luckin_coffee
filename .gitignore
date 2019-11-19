@@ -8,7 +8,7 @@
 .buildlog/
 .history
 .svn/
-customUpload.sh
+custom_upload.sh
 
 # IntelliJ related
 *.iml

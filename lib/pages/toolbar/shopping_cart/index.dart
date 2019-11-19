@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
@@ -191,7 +193,9 @@ class _ShoppingCartState extends State<ShoppingCart> {
             ),
           ),
 
-          buttomBtnRow(shoppingCartIsEmpty, totalPrice)
+          buttomBtnRow(shoppingCartIsEmpty, totalPrice,
+            shoppingCartModel: _shoppingCartModel
+          )
         ],
       ),
     );
@@ -257,7 +261,9 @@ class _ShoppingCartState extends State<ShoppingCart> {
   }
 
   /// 底部合计
-  Container buttomBtnRow(bool shoppingCartIsEmpty, num totalPrice) {
+  Container buttomBtnRow(bool shoppingCartIsEmpty, num totalPrice, {
+    ShoppingCartModel shoppingCartModel
+  }) {
     return Container(
       child: shoppingCartIsEmpty ? null : Container(
         decoration: BoxDecoration(
@@ -300,6 +306,24 @@ class _ShoppingCartState extends State<ShoppingCart> {
             height: 60,
             borderRadius: BorderRadius.zero,
             onPressed: () {
+              Map<String, ShoppingCartData> shoppingCartModelData = shoppingCartModel.data;
+
+              List requestData = [];
+
+              shoppingCartModelData.values.forEach((ShoppingCartData val) {
+                Map jsonData = {
+                  "goodsId":val.id,
+                  "number":val.number,
+                  "propertyChildIds": json.encode(val.spec),
+                  "logisticsType":0, 
+                  "days": [DateTime.now().toString().split(' ')[0]]
+                };
+                
+                requestData.add(jsonData);
+              });
+              
+              String requestString = jsonEncode(requestData);
+              print(requestString);
               G.pushNamed('/order_confirm');
             }
           )

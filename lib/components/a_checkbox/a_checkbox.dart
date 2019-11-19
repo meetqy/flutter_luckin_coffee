@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/acheckbox/CheckBoxRender.dart';
+
+import 'checkbox_render.dart';
 
 class ACheckBox extends StatelessWidget {
   /// 

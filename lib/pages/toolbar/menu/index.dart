@@ -18,8 +18,8 @@ import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/goods_detail/index.dart';
 import 'package:provider/provider.dart';
 
-import 'widgets/ClassifyDesc.dart';
 import 'goods_list_row.dart';
+import 'widgets/classify_desc.dart';
 
 /// TODO: 待解决：点击左侧菜单，右侧商品列表跳转
 class Menu extends StatefulWidget {

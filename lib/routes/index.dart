@@ -7,7 +7,7 @@ import 'package:flutter_luckin_coffee/components/a_stepper/example.dart';
 
 // 组件列表
 import 'package:flutter_luckin_coffee/components/example_widgets_list.dart';
-import 'package:flutter_luckin_coffee/components/pulltorefresh/example.dart';
+import 'package:flutter_luckin_coffee/components/pull_refresh/example.dart';
 import 'package:flutter_luckin_coffee/pages/choose_phone_code/index.dart';
 
 // luckin coffee 页面

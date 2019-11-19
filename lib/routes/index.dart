@@ -3,9 +3,9 @@ import 'package:flutter_luckin_coffee/components/a_button/example.dart';
 import 'package:flutter_luckin_coffee/components/a_checkbox/example.dart';
 import 'package:flutter_luckin_coffee/components/a_dialog/example.dart';
 import 'package:flutter_luckin_coffee/components/a_row/example.dart';
+import 'package:flutter_luckin_coffee/components/a_stepper/example.dart';
 
 // 组件列表
-import 'package:flutter_luckin_coffee/components/astepper/example.dart';
 import 'package:flutter_luckin_coffee/components/example_widgets_list.dart';
 import 'package:flutter_luckin_coffee/components/pulltorefresh/example.dart';
 import 'package:flutter_luckin_coffee/pages/choose_phone_code/index.dart';

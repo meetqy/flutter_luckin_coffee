@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_checkbox/a_checkbox.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
-import 'package:flutter_luckin_coffee/components/astepper/AStepper.dart';
+import 'package:flutter_luckin_coffee/components/a_stepper/a_stepper.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 

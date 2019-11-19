@@ -1,6 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 
 
 class Loading {
@@ -50,6 +51,6 @@ class Loading {
   }
 
   hide(BuildContext context) {
-    Navigator.pop(context);
+    G.pop();
   }
 }

@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/pages/order/widgets/GoodsMsgRow.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/widgets/take_out_btn/index.dart';
+
+import 'widgets/goods_msg_row.dart';
 
 class OrderConfirm extends StatefulWidget {
   OrderConfirm({Key key}) : super(key: key);

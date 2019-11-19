@@ -1,10 +1,11 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
-import 'package:flutter_luckin_coffee/pages/order/widgets/GoodsMsgRow.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+
+import 'widgets/goods_msg_row.dart';
 
 class OrderDetail extends StatefulWidget {
   final Map args;

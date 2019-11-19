@@ -1,4 +1,4 @@
-package com.example.flutter_luckin_coffee_copy
+package com.flutter_luckin_coffee
 
 import android.os.Bundle
 

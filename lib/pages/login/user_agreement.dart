@@ -1,7 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
+
 
 class UserAgreement extends StatelessWidget {
   const UserAgreement({Key key}) : super(key: key);

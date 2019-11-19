@@ -7,7 +7,7 @@ import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
-import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
+
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/widgets/goods_detail/index.dart';
 import 'package:provider/provider.dart';

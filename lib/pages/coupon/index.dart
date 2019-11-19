@@ -2,7 +2,6 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/pages/coupon/widgets/coupon_row.dart';
-import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class Coupon extends StatefulWidget {

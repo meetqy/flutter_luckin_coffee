@@ -1,7 +1,8 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
-import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
+
 
 class StoreDetail extends StatefulWidget {
   StoreDetail();

@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-11-19 13:56:21
+ * @lastTime: 2019-11-19 13:57:28
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -14,7 +14,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'pull_to_refresh_style.dart';
 
 export './Icon.dart';
-export './customAppbar.dart';
+export './custom_appbar.dart';
 
 
 /// global

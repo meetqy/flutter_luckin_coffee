@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+
+// 组件 example
+import 'package:flutter_luckin_coffee/components/example_widgets_list.dart';
+import 'package:flutter_luckin_coffee/components/pull_to_refresh/example.dart';
+import 'package:flutter_luckin_coffee/pages/choose_phone_code/index.dart';
 import 'package:flutter_luckin_coffee/components/a_button/example.dart';
 import 'package:flutter_luckin_coffee/components/a_checkbox/example.dart';
 import 'package:flutter_luckin_coffee/components/a_dialog/example.dart';
 import 'package:flutter_luckin_coffee/components/a_row/example.dart';
 import 'package:flutter_luckin_coffee/components/a_stepper/example.dart';
-
-// 组件列表
-import 'package:flutter_luckin_coffee/components/example_widgets_list.dart';
-import 'package:flutter_luckin_coffee/components/pull_refresh/example.dart';
-import 'package:flutter_luckin_coffee/pages/choose_phone_code/index.dart';
 
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';

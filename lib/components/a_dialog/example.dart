@@ -6,8 +6,9 @@
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
-import 'package:flutter_luckin_coffee/components/adialog/ADialog.dart';
 import 'package:flutter_luckin_coffee/utils/customAppbar.dart';
+
+import 'a_dialog.dart';
 
 class ExampleADialog extends StatefulWidget {
   ExampleADialog({Key key}) : super(key: key);

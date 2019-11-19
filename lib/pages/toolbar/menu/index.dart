@@ -14,7 +14,7 @@ import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/category.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/widgets/CustomSwiper/index.dart';
+import 'package:flutter_luckin_coffee/widgets/custom_swiper/index.dart';
 import 'package:flutter_luckin_coffee/widgets/goods_detail/index.dart';
 import 'package:provider/provider.dart';
 

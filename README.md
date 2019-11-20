@@ -1,7 +1,7 @@
 <!--
  * @Author: meetqy
  * @since: 2019-11-04 11:31:29
- * @lastTime: 2019-11-19 10:31:58
+ * @lastTime: 2019-11-20 16:15:50
  * @LastEditors: meetqy
  -->
 ![app_head](./readme/images/githead1.png)
@@ -34,7 +34,7 @@ Q：为什么用luckin coffee？
 
 Q：数据从哪里来？
 
-> [api工厂](https://www.it120.cc/)配置商城数据，网站提供接口。
+> [api工厂](https://www.it120.cc/?referrer=18046)配置商城数据，网站提供接口。
 
 ## flutter版本信息
 
@@ -97,6 +97,7 @@ flutter run
 * 代码不符合开发规范
 * 优化当前代码
 * 订单联调
+* 用户名注册登录
 
 ## 维护者
 

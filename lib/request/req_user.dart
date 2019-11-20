@@ -8,7 +8,7 @@ class ReqUser {
   ReqUser(this.dio);
 
   /// 注册
-  register({
+  Future<Response> register({
     /// 验证码
     @required String code,
     /// 邮箱
@@ -17,8 +17,8 @@ class ReqUser {
     @required String pwd,
     /// true / false 是否在注册后自动完成登录【对于之前已注册的用户，自动完成登录】
     bool autoLogin = false
-  }) async {
-    return await dio.post(
+  }) {
+    return dio.post(
       '/user/email/register',
       data: {
         "code": code,
@@ -30,7 +30,7 @@ class ReqUser {
   }
 
   /// 登录
-  login({
+  Future<Response> login({
     /// 登录设备ID,自定义即可
     @required String deviceId,
     /// 登录设备名称,自定义即可
@@ -39,8 +39,8 @@ class ReqUser {
     @required String email,
     /// 密码
     @required String pwd,
-  }) async{
-    return await dio.post(
+  }) {
+    return dio.post(
       '/user/email/login',
       data: {
         "deviceId": deviceId,
@@ -52,15 +52,15 @@ class ReqUser {
   }
 
   /// 找回密码
-  resetPwd({
+  Future<Response> resetPwd({
     /// 验证码
     @required String code,
     /// 邮箱
     @required String email,
     /// 新密码
     @required String pwd,
-  }) async{
-    return await dio.post(
+  }) {
+    return dio.post(
       '/user/email/login',
       data: {
         "code": code,

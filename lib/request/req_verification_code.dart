@@ -8,11 +8,11 @@ class ReqVerificationCode {
   ReqVerificationCode(this.dio);
 
   /// 获取邮箱验证码
-  getMailCode({
+  Future<Response> getMailCode({
     /// 邮箱
     @required String mail
-  }) async{
-    return await dio.get(
+  }) {
+    return dio.get(
       '/verification/mail/get',
       queryParameters: {
         "mail": mail
@@ -21,13 +21,13 @@ class ReqVerificationCode {
   }
 
   /// 校验邮件验证码是否正确
-  checkMailCode({
+  Future<Response> checkMailCode({
     /// 验证码
     @required String code,
     /// 邮箱
     @required String mail,
-  }) async {
-    return await dio.post(
+  }) {
+    return dio.post(
       '/verification/mail/check',
       data: {
         "code": code,

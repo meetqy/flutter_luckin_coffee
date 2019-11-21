@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/',
+      initialRoute: '/login_mail',
       onGenerateRoute: router.getRoutes,
     );
   }

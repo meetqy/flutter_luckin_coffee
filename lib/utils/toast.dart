@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'global.dart';
 
 class Toast {
-
   _showDialog(BuildContext context, {
     WidgetBuilder builder
   }) {
@@ -53,13 +52,11 @@ class Toast {
               child: Material(
                 elevation: 0,
                 color: rgba(50, 50, 51, 0.7),
+                borderRadius: BorderRadius.circular(4),
                 type: MaterialType.card,
                 child: Container(
                   width: null,
                   padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                  ),
                   child: Text('$text',
                     style: TextStyle(fontSize: 14, color: hex('#fff')),
                   ),

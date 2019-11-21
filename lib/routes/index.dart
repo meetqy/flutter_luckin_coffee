@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 // 组件 example
 import 'package:flutter_luckin_coffee/components/example_widgets_list.dart';
 import 'package:flutter_luckin_coffee/components/pull_to_refresh/example.dart';
-import 'package:flutter_luckin_coffee/pages/choose_phone_code/index.dart';
 import 'package:flutter_luckin_coffee/components/a_button/example.dart';
 import 'package:flutter_luckin_coffee/components/a_checkbox/example.dart';
 import 'package:flutter_luckin_coffee/components/a_dialog/example.dart';
@@ -13,8 +12,8 @@ import 'package:flutter_luckin_coffee/components/a_stepper/example.dart';
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
 import 'package:flutter_luckin_coffee/pages/diningcode/dining_code.dart';
+import 'package:flutter_luckin_coffee/pages/login/login_mail.dart';
 import 'package:flutter_luckin_coffee/pages/login/login_method.dart';
-import 'package:flutter_luckin_coffee/pages/login/login_phone.dart';
 import 'package:flutter_luckin_coffee/pages/login/user_agreement.dart';
 import 'package:flutter_luckin_coffee/pages/order/order_confirm.dart';
 import 'package:flutter_luckin_coffee/pages/order/order_detail.dart';
@@ -38,7 +37,7 @@ class Router {
     '/menu': (BuildContext context, { Object args }) => Toolbar(arguments: args,),
     
     '/login_method': (BuildContext context, { Object args }) => LoginMethod(),
-    '/login_phone': (BuildContext context, { Object args }) => LoginPhone(),
+    '/login_mail': (BuildContext context, { Object args }) => LoginMail(),
     '/user_agreement': (BuildContext context, { Object args }) => UserAgreement(),
     '/order_evaluation': (BuildContext context, { Object args }) => OrderEvaluation(),
     '/order_confirm': (BuildContext context, { Object args }) => OrderConfirm(),
@@ -48,7 +47,6 @@ class Router {
     '/self_store': (BuildContext context, { Object args }) => SelfStore(),
     '/store_detail': (BuildContext context, { Object args }) => StoreDetail(),
     '/dining_code': (BuildContext context, { Object args }) => DiningCode(),
-    '/choose_phone_code': (BuildContext context, { Object args }) => ChoosePhoneCode(),
 
     // 组件列表
     '/example_abutton': (BuildContext context, { Object args }) => ExampleAButton(),

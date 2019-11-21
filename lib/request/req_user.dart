@@ -20,7 +20,7 @@ class ReqUser {
   }) {
     return dio.post(
       '/user/email/register',
-      data: {
+      queryParameters: {
         "code": code,
         "email": email,
         "pwd": pwd,

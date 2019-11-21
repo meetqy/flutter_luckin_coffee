@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 
-class Request {
+class Requesteses {
   Dio _dio;
 
-  Request() {
+  Requesteses() {
     _dio = _initDio();
   }
 

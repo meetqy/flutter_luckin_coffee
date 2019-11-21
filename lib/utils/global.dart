@@ -1,14 +1,15 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-11-19 14:02:52
+ * @lastTime: 2019-11-21 17:27:42
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/request/request.dart';
 import 'package:flutter_luckin_coffee/utils/request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
-import 'package:flutter_luckin_coffee/utils/toast.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'pull_to_refresh_style.dart';
@@ -26,20 +27,30 @@ class G {
   /// 通用正则
   static final Map regExpRules = {
     /// 替换规格
-    "specName": '规格:|温度:|糖度:|奶油:|无'
+    "specName": '规格:|温度:|糖度:|奶油:|无',
   };
+
+  static final Request req = Request();
+
+  static Future toast(String text) 
+    => Fluttertoast.showToast(
+      msg: text,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.CENTER,
+      timeInSecForIos: 1,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+      fontSize: 16.0
+    );
 
   /// 本地存储
   static final Future<SharedPreferences> prefs = SharedPreferences.getInstance();
 
   /// 初始化Request
-  static final Request dio = Request();
+  static final Requesteses dio = Requesteses();
 
   /// 初始化loading
   static final Loading loading = Loading();
-
-  /// 初始化toask
-  static final Toast toast = Toast();
 
   /// 手动延时
   static sleep({ int milliseconds = 1000 }) async => await Future.delayed(Duration(milliseconds: milliseconds));

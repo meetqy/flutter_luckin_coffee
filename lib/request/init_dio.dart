@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_luckin_coffee/utils/global.dart';
 
 /// 初始化dio
 Dio initDio() {
@@ -21,7 +22,11 @@ Dio initDio() {
       },
       onResponse:(Response response) async {
         // 在返回响应数据之前做一些预处理
-        return response; 
+        if(response.data['code'] == 0) {
+          return response.data;
+        } 
+
+        dio.reject(response.data['msg']);
       },
       onError: (DioError e) async {
         // 当请求失败时做一些预处理

@@ -22,6 +22,7 @@ import 'package:flutter_luckin_coffee/pages/order/order_remark.dart';
 import 'package:flutter_luckin_coffee/pages/selfstore/index.dart';
 import 'package:flutter_luckin_coffee/pages/storedetail/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/index.dart';
+import 'package:flutter_luckin_coffee/stand_ui/stand_button/example_stand_button.dart';
 
 
 class Router {
@@ -56,6 +57,7 @@ class Router {
     '/example_arow': (BuildContext context, { Object args }) => ExampleARow(),
     '/example_acheckbox': (BuildContext context, { Object args }) => ExampleACheckBox(),
     '/example_pull_to_refresh': (BuildContext context, { Object args }) => ExamplePullToRefresh(),
+    '/example_stand_button': (BuildContext context, { Object args }) => ExampleStandButton(),
   };
 
   static Router _singleton;

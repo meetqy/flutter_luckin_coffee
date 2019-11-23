@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-11-21 13:46:06
+ * @lastTime: 2019-11-23 11:48:32
  * @LastEditors: meetqy
  */
 
@@ -127,7 +127,7 @@ class _HomeState extends State<Home> {
               ),
 
               onPressed: () {
-                // G.toast.show(context, '加入购物车成功');
+                G.toast('加入购物车成功');
               },
             ),
 

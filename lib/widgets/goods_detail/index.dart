@@ -46,9 +46,9 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
 
     _shoppingCartModel = widget.model;
     Future.delayed(Duration.zero, () async{
-      Map result = await G.dio.get('/shop/goods/detail', queryParameters: {
-        "id": widget.id
-      });
+      var res = await G.req.shop.goodsDetail(id: widget.id);
+
+      Map result = res.data;
 
       GoodsDetailData goodsDetailData = GoodsDetailData.fromJson(result['data']);
 
@@ -129,10 +129,13 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
     String propertyChildIds = spec.toString().replaceAll(RegExp('\\s|{|}'), '');
     // print(propertyChildIds);
     try {
-      Map result = await G.dio.post('/shop/goods/price', queryParameters: {
-        "goodsId": data.basicInfo.id,
-        "propertyChildIds": propertyChildIds
-      });
+      var res = await G.req.shop.goodsPrice(
+        goodsId: data.basicInfo.id,
+        propertyChildIds: propertyChildIds,
+      );
+
+      Map result = await res.data;
+      
       resultJson['status'] = true;
       resultJson['data'] = result;
     } catch(e) {
@@ -375,7 +378,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               G.loading.hide(context);
               G.pop();
 
-              // G.toast.show(context, '加入购物车成功');
+              G.toast('加入购物车成功');
             }
           )
         ],

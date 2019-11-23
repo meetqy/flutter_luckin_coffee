@@ -1,13 +1,12 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-11-22 11:46:35
+ * @lastTime: 2019-11-23 11:50:01
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/request/request.dart';
-import 'package:flutter_luckin_coffee/utils/request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
 import 'package:flutter_luckin_coffee/utils/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -30,6 +29,7 @@ class G {
     "specName": '规格:|温度:|糖度:|奶油:|无',
   };
 
+  /// 初始化request
   static final Request req = Request();
 
   static Future toast(String text) 
@@ -42,9 +42,6 @@ class G {
       textColor: Colors.white,
       fontSize: 16.0
     );
-
-  /// 初始化Request
-  static final Requesteses dio = Requesteses();
 
   /// 初始化loading
   static final Loading loading = Loading();

@@ -8,11 +8,11 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
+import 'package:flutter_luckin_coffee/components/custom_swiper/index.dart';
+import 'package:flutter_luckin_coffee/components/take_out_btn/index.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/widgets/custom_swiper/index.dart';
-import 'package:flutter_luckin_coffee/widgets/take_out_btn/index.dart';
 import 'package:provider/provider.dart';
 
 class Args {

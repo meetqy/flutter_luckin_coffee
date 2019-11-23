@@ -9,7 +9,8 @@ import 'package:flutter_luckin_coffee/jsonserialize/goods_price/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/widgets/goods_detail/select_row.dart';
+
+import 'select_row.dart';
 
 class GoodsDetailDialog extends StatefulWidget {
   final int id;

@@ -9,13 +9,13 @@ import 'dart:math';
 
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_luckin_coffee/components/custom_swiper/index.dart';
+import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/category.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/widgets/custom_swiper/index.dart';
-import 'package:flutter_luckin_coffee/widgets/goods_detail/index.dart';
 import 'package:provider/provider.dart';
 
 import 'goods_list_row.dart';

@@ -70,7 +70,7 @@ class Router {
     return _singleton;
   }
 
-  // 监听route
+  /// 监听route
   Route getRoutes(RouteSettings settings) {
     String routeName = settings.name;
     final Function builder = Router._routes[routeName];

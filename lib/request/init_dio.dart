@@ -12,8 +12,8 @@ Dio initDio() {
   dio.interceptors.add(
     InterceptorsWrapper(
       onRequest:(RequestOptions options) async {
-        // 在请求被发送之前做一些事情
-        return options; //continue
+        options.queryParameters['token'] = G.user.data?.token;
+        return options; 
         // 如果你想完成请求并返回一些自定义数据，可以返回一个`Response`对象或返回`dio.resolve(data)`。
         // 这样请求将会被终止，上层then会被调用，then中返回的数据将是你的自定义数据data.
         //
@@ -22,13 +22,14 @@ Dio initDio() {
       },
       onResponse:(Response response) async {
         // 在返回响应数据之前做一些预处理
-        if(response.data['code'] == 0) {
-          return response.data;
-        } 
-
-        dio.reject(response.data['msg']);
+        if(response.data['code'] != 0) {
+          await G.toast(response.data['msg']);
+          response.data = null;
+        }
+        return response;
       },
       onError: (DioError e) async {
+        // G.toast(e.message);
         // 当请求失败时做一些预处理
         return e;//continue
       }

@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 /// 验证码相关
 class ReqVerificationCode {
-  final Dio dio;
+  final Dio _dio;
 
-  ReqVerificationCode(this.dio);
+  ReqVerificationCode(this._dio);
 
   /// 获取邮箱验证码
   Future<Response> getMailCode({
     /// 邮箱
     @required String mail
   }) {
-    return dio.get(
+    return _dio.get(
       '/verification/mail/get',
       queryParameters: {
         "mail": mail
@@ -27,7 +27,7 @@ class ReqVerificationCode {
     /// 邮箱
     @required String mail,
   }) {
-    return dio.post(
+    return _dio.post(
       '/verification/mail/check',
       data: {
         "code": code,

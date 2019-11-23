@@ -23,6 +23,16 @@ class _MineState extends State<Mine> {
   }
 
   @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(Duration.zero, () async{
+      var res = await G.req.user.detail();
+      print(res);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
@@ -65,7 +75,7 @@ class _MineState extends State<Mine> {
                     ),),
                   ),
                   rightChild: icontupian6(size: 14, color: rgba(255,255,255,.6)),
-                  onPressed: () => G.pushNamed('/login_method'),
+                  onPressed: () => G.pushNamed('/login_mail'),
                 ),
               ],
             ),

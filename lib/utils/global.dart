@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-11-21 17:27:42
+ * @lastTime: 2019-11-22 11:46:35
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/request/request.dart';
 import 'package:flutter_luckin_coffee/utils/request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
+import 'package:flutter_luckin_coffee/utils/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'pull_to_refresh_style.dart';
 
@@ -20,7 +20,7 @@ export './custom_appbar.dart';
 
 /// global
 class G {
-  static final GlobalKey<NavigatorState> navigatorKey=GlobalKey();
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
   /// toolbar routeName
   static final List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
 
@@ -42,9 +42,6 @@ class G {
       textColor: Colors.white,
       fontSize: 16.0
     );
-
-  /// 本地存储
-  static final Future<SharedPreferences> prefs = SharedPreferences.getInstance();
 
   /// 初始化Request
   static final Requesteses dio = Requesteses();
@@ -100,4 +97,17 @@ class G {
       )
     );
   }
+
+  /// 获取时间戳
+  /// 不传值 代表获取当前时间戳
+  static int getTime([DateTime time]) {
+    if(time == null) {
+      return (DateTime.now().millisecondsSinceEpoch/1000).round();
+    } else {
+      return (time.millisecondsSinceEpoch/1000).round();
+    }
+  }
+
+  /// user信息
+  static final User user = User();
 }

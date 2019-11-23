@@ -1,8 +1,13 @@
+import 'dart:async';
+
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/user/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:flutter_luckin_coffee/utils/user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class LoginMail extends StatefulWidget {
@@ -21,25 +26,78 @@ class _LoginMailState extends State<LoginMail> {
     "verify": true
   };
 
+  SharedPreferences prefs;
+
+  /// 开始倒计时 时间
+  int startTime;
+
+  /// 当前倒计时 时间
+  int countDownTime = 0;
+
+  /// 总倒计时时长
+  final int speed = 20;
+
+  Timer _timer;
+
+  @override
+  void initState() { 
+    super.initState();
+    
+    Future.delayed(Duration.zero, () async{
+      prefs = await SharedPreferences.getInstance();
+      startTime = prefs.getInt('startTime');
+
+      if(startTime != null && startTime > 0) {
+        countDown();
+      }
+    });
+  }
+
+  @override
+  void dispose() { 
+    super.dispose();
+    _timer?.cancel();
+  }
+
   /// 获取验证码
   getEmailCode() async{
     try {
       var res = await G.req.verificationCode.getMailCode(
         mail: email['value']
       );
+
+      if(res.data == null) return ;
+
+      G.toast('获取验证码成功');
+      startTime = G.getTime();
+      countDown();
     } catch(e) {
       G.toast('获取验证码失败');
     }
   }
 
+  /// 倒计时
+  countDown() {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      int nowTime = G.getTime();
+      int result = speed - (nowTime - startTime);
+      if(result < 0) _timer?.cancel();
+
+      prefs.setInt('startTime', nowTime);
+      setState(() {
+        countDownTime = result;
+      });
+    });
+  }
+
   /// 登录
   login() async{
-    // if(!email['verify'] || email['value'] == null) {
-    //   return G.toast('输入邮箱有误');
-    // } 
-    // if(!code['verify'] || code['value'] == null) {
-    //   return G.toast('验证码不正确');
-    // }
+    if(!email['verify'] || email['value'] == null) {
+      return G.toast('输入邮箱有误');
+    } 
+    if(!code['verify'] || code['value'] == null) {
+      return G.toast('验证码不正确');
+    }
 
     try {
       var res = await G.req.user.register(
@@ -48,21 +106,31 @@ class _LoginMailState extends State<LoginMail> {
         email: email['value'],
         code: code['value']
       );
-
-      // var data = await initDio().post('/user/email/register',
-      //   queryParameters: {
-      //     "code": code,
-      //     "email": email,
-      //     "pwd": 123456,
-      //     "autoLogin": true
-      //   });
       
-      G.toast('登录成功');
+      var data = res.data;
+
+      if(data == null) return null;
+
+      await getUserDetail(data['data']['token']);
+
+      await G.toast('登录成功');
+      // G.pushNamed('/mine');
     } catch(e) {
-      print(e);
       G.toast('登录失败');
     }
-    
+  }
+
+  getUserDetail(String token) async {
+    var res = await G.req.user.detail(
+      token: token
+    );
+
+    var data = res.data;
+
+    Map json = data['data'];
+    json['token'] = token;
+
+    G.user.init(json);
   }
 
   @override
@@ -82,6 +150,7 @@ class _LoginMailState extends State<LoginMail> {
               child: Image.asset('lib/assets/images/logo1.png', fit: BoxFit.cover,),
             ),
             
+            /// 输入邮箱
             Container(
               height: 55,
               decoration: BoxDecoration(
@@ -104,6 +173,7 @@ class _LoginMailState extends State<LoginMail> {
               ),
             ),
 
+            /// 验证码
             Container(
               height: 55,
               decoration: BoxDecoration(
@@ -138,16 +208,11 @@ class _LoginMailState extends State<LoginMail> {
                   ),
                 ),
 
-                Container(
-                  child: AButton.normal(
-                    child: Text('获取验证码'),
-                    color: email['verify'] && email['value']!=null ? rgba(85, 122, 157, 1) : rgba(166, 166, 166, 1),
-                    onPressed: email['verify'] && email['value']!=null ? getEmailCode : null
-                  ),
-                )
+                buildGetEmailCode()
               ],),
             ),
 
+            /// 确认
             Container(
               margin: EdgeInsets.only(top: 20),
               child: AButton.normal(
@@ -159,6 +224,7 @@ class _LoginMailState extends State<LoginMail> {
               ),
             ),
 
+            /// 协议
             Container(
             margin: EdgeInsets.only(top: 10),
             child: Row(
@@ -178,6 +244,21 @@ class _LoginMailState extends State<LoginMail> {
             ],),
           )
         ],),
+      ),
+    );
+  }
+
+  /// 获取验证码
+  Container buildGetEmailCode() {
+    return Container(
+      child: AButton.normal(
+        child: Text(countDownTime <= 0 ? "获取验证码" : 
+        countDownTime < 10 ? '0$countDownTime' : '$countDownTime'),
+        color: email['verify'] && email['value']!=null ? rgba(85, 122, 157, 1) : rgba(166, 166, 166, 1),
+        onPressed: () {
+          if(countDownTime > 0) return;
+          getEmailCode();
+        }
       ),
     );
   }

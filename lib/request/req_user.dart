@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 /// 用户管理相关
 class ReqUser {
-  final Dio dio;
+  final Dio _dio;
 
-  ReqUser(this.dio);
+  ReqUser(this._dio);
 
-  /// 注册
+  /// 注册 可用作登录
   Future<Response> register({
     /// 验证码
     @required String code,
@@ -18,7 +18,7 @@ class ReqUser {
     /// true / false 是否在注册后自动完成登录【对于之前已注册的用户，自动完成登录】
     bool autoLogin = false
   }) {
-    return dio.post(
+    return _dio.post(
       '/user/email/register',
       queryParameters: {
         "code": code,
@@ -40,9 +40,9 @@ class ReqUser {
     /// 密码
     @required String pwd,
   }) {
-    return dio.post(
+    return _dio.post(
       '/user/email/login',
-      data: {
+      queryParameters: {
         "deviceId": deviceId,
         "deviceName": deviceName,
         "email": email,
@@ -60,12 +60,24 @@ class ReqUser {
     /// 新密码
     @required String pwd,
   }) {
-    return dio.post(
+    return _dio.post(
       '/user/email/login',
-      data: {
+      queryParameters: {
         "code": code,
         "email": email,
         "pwd": pwd
+      }
+    );
+  }
+
+    /// 获取用户详情
+  Future<Response> detail({
+    @required String token
+  }) {
+    return _dio.post(
+      '/user/detail',
+      queryParameters: {
+        "token": token
       }
     );
   }

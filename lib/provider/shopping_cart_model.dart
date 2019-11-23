@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
-import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ShoppingCartModel with ChangeNotifier {
@@ -72,7 +71,7 @@ class ShoppingCartModel with ChangeNotifier {
 
   /// 保存到本地
   _saveLocal() async{
-    SharedPreferences prefs = await G.prefs;
+    SharedPreferences prefs = await SharedPreferences.getInstance();
 
     prefs.setString("shoppingCart", json.encode(_shoppingCart));
   }

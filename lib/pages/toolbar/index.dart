@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:35:23
- * @lastTime: 2019-10-26 10:28:30
+ * @lastTime: 2019-11-22 15:23:58
  * @LastEditors: meetqy
  */
 
@@ -26,7 +26,7 @@ class Toolbar extends StatefulWidget {
   static Mine _mine = Mine();
 
 
-  // 所有导航页面
+  /// 所有toolbar页面
   final Map<int, Map> pages = { 
     0: _createPage(_home, appbar: _home.getAppBar(), routeName: '/'),
     1: _createPage(_menu, appbar: _menu.getAppBar(), routeName: '/menu'),
@@ -92,13 +92,10 @@ class _NavigationState extends State<Toolbar> {
     
     Future.delayed(Duration.zero, () {
       String routeName = ModalRoute.of(context).settings.name;
-
       setState(() {
         currentIndex = widget.getPageIndex(routeName);
       }); 
     });
-
-    
   }
 
   @override

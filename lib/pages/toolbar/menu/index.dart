@@ -1,7 +1,7 @@
 /*
  * @Author: meetqy
  * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-11-19 10:58:31
+ * @lastTime: 2019-11-23 11:39:49
  * @LastEditors: meetqy
  */
 
@@ -72,15 +72,15 @@ class _MenuState extends State<Menu> {
     G.loading.show(context);
     try {
       Iterable<Future> requestList = [
-        G.dio.post('/shop/goods/list'),  // 获取商品列表
-        G.dio.get('/shop/goods/category/all') // 获取分类列表
+        G.req.shop.goodsList(),
+        G.req.shop.goodsCategoryAll(),
       ];
 
       List result =  await Future.wait(requestList);
 
-      GoodsList goodsList = GoodsList.fromJson(result[0]);
+      GoodsList goodsList = GoodsList.fromJson(result[0].data);
       int goodsListLen = goodsList.data.length;
-      GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
+      GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1].data);
 
       List<Widget> goodsListWidgetsTemp = [];
       Random rand = Random(); // 随机数

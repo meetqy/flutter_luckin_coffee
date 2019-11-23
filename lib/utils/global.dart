@@ -1,15 +1,15 @@
 /*
  * @Author: meetqy
  * @since: 2019-09-24 14:23:27
- * @lastTime: 2019-11-19 14:02:52
+ * @lastTime: 2019-11-23 11:50:01
  * @LastEditors: meetqy
  */
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/request.dart';
+import 'package:flutter_luckin_coffee/request/request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
-import 'package:flutter_luckin_coffee/utils/toast.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_luckin_coffee/utils/user.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'pull_to_refresh_style.dart';
 
@@ -19,27 +19,32 @@ export './custom_appbar.dart';
 
 /// global
 class G {
-  static final GlobalKey<NavigatorState> navigatorKey=GlobalKey();
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
   /// toolbar routeName
   static final List toobarRouteNameList = ['/', '/menu', '/order', '/shopping_cart', '/mine'];
 
   /// 通用正则
   static final Map regExpRules = {
     /// 替换规格
-    "specName": '规格:|温度:|糖度:|奶油:|无'
+    "specName": '规格:|温度:|糖度:|奶油:|无',
   };
 
-  /// 本地存储
-  static final Future<SharedPreferences> prefs = SharedPreferences.getInstance();
+  /// 初始化request
+  static final Request req = Request();
 
-  /// 初始化Request
-  static final Request dio = Request();
+  static Future toast(String text) 
+    => Fluttertoast.showToast(
+      msg: text,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.CENTER,
+      timeInSecForIos: 1,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+      fontSize: 16.0
+    );
 
   /// 初始化loading
   static final Loading loading = Loading();
-
-  /// 初始化toask
-  static final Toast toast = Toast();
 
   /// 手动延时
   static sleep({ int milliseconds = 1000 }) async => await Future.delayed(Duration(milliseconds: milliseconds));
@@ -89,4 +94,17 @@ class G {
       )
     );
   }
+
+  /// 获取时间戳
+  /// 不传值 代表获取当前时间戳
+  static int getTime([DateTime time]) {
+    if(time == null) {
+      return (DateTime.now().millisecondsSinceEpoch/1000).round();
+    } else {
+      return (time.millisecondsSinceEpoch/1000).round();
+    }
+  }
+
+  /// user信息
+  static final User user = User();
 }

@@ -11,12 +11,18 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 String _shoppingCart;
 
-
-final router = Router();
+final Router router = Router();
 
 void main() async {
-  SharedPreferences prefs = await G.prefs;
+  SharedPreferences prefs = await SharedPreferences.getInstance();
   _shoppingCart = prefs.getString('shoppingCart');
+  String user = prefs.getString('user');
+
+  if(user != null && user.isNotEmpty) {
+    /// 初始化user
+    G.user.init(json.decode(user));
+  }
+
   runApp(
     MultiProvider(
       providers: [

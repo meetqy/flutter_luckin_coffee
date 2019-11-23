@@ -59,13 +59,13 @@ class _ShoppingCartState extends State<ShoppingCart> {
     int index = reg.nextInt(5);
 
     try {
-      Map result = await G.dio.post('/shop/goods/list',
-        queryParameters: {
-          "orderBy": orderBy[index],
-          "page": 1,
-          "pageSize": 3,
-        }
+      var res = await G.req.shop.goodsList(
+        orderBy: orderBy[index],
+        page: 1,
+        pageSize: 3
       );
+
+      Map result = res.data;
       
       setState(() {
         goodsList = GoodsList.fromJson(result);

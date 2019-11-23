@@ -12,7 +12,10 @@ Dio initDio() {
   dio.interceptors.add(
     InterceptorsWrapper(
       onRequest:(RequestOptions options) async {
-        options.queryParameters['token'] = G.user.data?.token;
+        if(G.user.data != null) {
+          options.queryParameters['token'] = G.user.data.token;
+        }
+        
         return options; 
         // 如果你想完成请求并返回一些自定义数据，可以返回一个`Response`对象或返回`dio.resolve(data)`。
         // 这样请求将会被终止，上层then会被调用，then中返回的数据将是你的自定义数据data.

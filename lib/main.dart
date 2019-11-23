@@ -16,6 +16,13 @@ final Router router = Router();
 void main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   _shoppingCart = prefs.getString('shoppingCart');
+  String user = prefs.getString('user');
+
+  if(user != null && user.isNotEmpty) {
+    /// 初始化user
+    G.user.init(json.decode(user));
+  }
+
   runApp(
     MultiProvider(
       providers: [

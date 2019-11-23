@@ -15,7 +15,7 @@ class User {
     try {
       _user = UserData.fromJson(userJson);
     } catch(e) {
-      throw('initUser error,msg: $e');
+      return print('user init error, msg: $e');
     }
 
     await setString(userJson);

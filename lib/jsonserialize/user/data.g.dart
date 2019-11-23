@@ -8,6 +8,7 @@ part of 'data.dart';
 
 UserData _$UserDataFromJson(Map<String, dynamic> json) {
   return UserData(
+      city: json['city'] as String,
       dateAdd: json['dateAdd'] as String,
       dateLogin: json['dateLogin'] as String,
       email: json['email'] as String,
@@ -17,6 +18,8 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) {
       isIdcardCheck: json['isIdcardCheck'] as bool,
       isSeller: json['isSeller'] as bool,
       levelRenew: json['levelRenew'] as bool,
+      nick: json['nick'] as String,
+      province: json['province'] as String,
       source: json['source'] as int,
       sourceStr: json['sourceStr'] as String,
       status: json['status'] as int,
@@ -25,6 +28,7 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
+      'city': instance.city,
       'dateAdd': instance.dateAdd,
       'dateLogin': instance.dateLogin,
       'email': instance.email,
@@ -34,6 +38,8 @@ Map<String, dynamic> _$UserDataToJson(UserData instance) => <String, dynamic>{
       'isIdcardCheck': instance.isIdcardCheck,
       'isSeller': instance.isSeller,
       'levelRenew': instance.levelRenew,
+      'nick': instance.nick,
+      'province': instance.province,
       'source': instance.source,
       'sourceStr': instance.sourceStr,
       'status': instance.status,

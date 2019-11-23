@@ -4,9 +4,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/user/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:flutter_luckin_coffee/utils/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -35,7 +33,7 @@ class _LoginMailState extends State<LoginMail> {
   int countDownTime = 0;
 
   /// 总倒计时时长
-  final int speed = 20;
+  final int speed = 60;
 
   Timer _timer;
 
@@ -47,8 +45,14 @@ class _LoginMailState extends State<LoginMail> {
       prefs = await SharedPreferences.getInstance();
       startTime = prefs.getInt('startTime');
 
+      int nowTime = G.getTime();
+
       if(startTime != null && startTime > 0) {
-        countDown();
+        if(nowTime - startTime > 60) {
+          prefs.remove('startTime');
+        } else {
+          countDown();
+        }
       }
     });
   }
@@ -78,12 +82,14 @@ class _LoginMailState extends State<LoginMail> {
 
   /// 倒计时
   countDown() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) async{
       int nowTime = G.getTime();
       int result = speed - (nowTime - startTime);
-      if(result < 0) _timer?.cancel();
+      if(result < 0) {
+        prefs.remove('startTime');
+        _timer?.cancel();
+      }
 
-      prefs.setInt('startTime', nowTime);
       setState(() {
         countDownTime = result;
       });
@@ -98,6 +104,9 @@ class _LoginMailState extends State<LoginMail> {
     if(!code['verify'] || code['value'] == null) {
       return G.toast('验证码不正确');
     }
+
+    /// 登录前移除user， 不然登录会提示token错误
+    prefs.remove('user');
 
     try {
       var res = await G.req.user.register(
@@ -114,7 +123,7 @@ class _LoginMailState extends State<LoginMail> {
       await getUserDetail(data['data']['token']);
 
       await G.toast('登录成功');
-      // G.pushNamed('/mine');
+      G.pushNamed('/mine');
     } catch(e) {
       G.toast('登录失败');
     }
@@ -127,7 +136,7 @@ class _LoginMailState extends State<LoginMail> {
 
     var data = res.data;
 
-    Map json = data['data'];
+    Map json = data['data']['base'];
     json['token'] = token;
 
     G.user.init(json);
@@ -157,6 +166,7 @@ class _LoginMailState extends State<LoginMail> {
                 border: G.borderBottom()
               ),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   counterText: "",
                   border: InputBorder.none,

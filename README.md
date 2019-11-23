@@ -1,9 +1,3 @@
-<!--
- * @Author: meetqy
- * @since: 2019-11-04 11:31:29
- * @lastTime: 2019-11-23 11:56:37
- * @LastEditors: meetqy
- -->
 ![app_head](./readme/images/githead1.png)
 
 # flutter_luckin_coffee
@@ -94,10 +88,10 @@ flutter run
 
 ## 待完善
 
-* 菜单页面锚点功能未实现
-* 代码不符合开发规范
-* 订单模块联调
-* 新增用户管理模块
+- [ ] 菜单页面锚点功能未实现
+- [ ] 代码不符合开发规范
+- [ ] 订单模块联调
+- [x] 新增用户管理模块
 
 ## 近期计划
 
@@ -107,6 +101,7 @@ flutter run
 - [x] 新增邮箱登录联调
 - [x] 新增邮箱注册联调
 - [ ] 订单页面联调
+- [ ] 重构自定义appbar
 
 ## 维护者
 

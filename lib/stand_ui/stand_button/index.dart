@@ -210,16 +210,7 @@ class StandButton extends StatelessWidget {
 
     /// 按钮尺寸 
     /// [padding, mainAxisSize]
-    List _size = initSize();
-
-    /// 点击回调 disabled == true，无效
-    VoidCallback _onPressed = () {
-      if(disabled) {
-        return null;
-      } else {
-        return onPressed == null ? (){} : onPressed;
-      }
-    };    
+    List _size = initSize();    
 
     return Material(
       key: key,
@@ -252,7 +243,11 @@ class StandButton extends StatelessWidget {
             ],
           ),
         ),
-        onTap: _onPressed,
+        onTap: () {
+          if(!disabled) {
+            return onPressed == null ? (){} : onPressed();
+          }
+        },
       ),
     );
   }

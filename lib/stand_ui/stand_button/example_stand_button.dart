@@ -33,6 +33,7 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                         buildContainer(
                           child: StandButton(
                             text: Text('默认按钮'),
+                            onPressed: () => print('默认按钮'),
                           )
                         ),
                         buildContainer(
@@ -171,6 +172,9 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                         buildContainer(
                           child: StandButton.loading(
                             type: ButtonType.primary,
+                            onPressed: () {
+                              print('123');
+                            }
                           ),
                         ),
 

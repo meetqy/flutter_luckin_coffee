@@ -1,7 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/stand_ui/stand_button/index.dart';
-import 'package:flutter_luckin_coffee/stand_ui/stand_button/loading_button.dart';
 
 class ExampleStandButton extends StatefulWidget {
   ExampleStandButton({Key key}) : super(key: key);
@@ -239,18 +238,45 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                     Wrap(
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: <Widget>[
-                        StandButton(
-                          text: Text('渐变色按钮'),
-                          type: ButtonType.primary,
-                          gradientColor: LinearGradient(
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                            colors: [
-                              rgba(75,176,255,1),
-                              rgba(97,73,246,1),
-                            ]
+                        buildContainer(
+                          child: StandButton(
+                            text: Text('渐变色按钮'),
+                            size: ButtonSize.large,
+                            type: ButtonType.primary,
+                            gradientColor: LinearGradient(
+                              begin: Alignment.bottomLeft,
+                              end: Alignment.topRight,
+                              colors: [
+                                rgba(75,176,255,1),
+                                rgba(97,73,246,1),
+                              ]
+                            ),
+                          )
+                        ),
+
+                        buildContainer(
+                          child: StandButton(
+                            text: Text('单色按钮'),
+                            color: rgba(114, 50, 221, 1),
                           ),
-                        )
+                        ),
+
+                        buildContainer(
+                          child: StandButton(
+                            text: Text('单色按钮'),
+                            size: ButtonSize.small,
+                            plain: true,
+                            color: rgba(114, 50, 221, 1),
+                          ),
+                        ),
+                        buildContainer(
+                          child: StandButton(
+                            text: Text('单色按钮'),
+                            size: ButtonSize.mini,
+                            plain: true,
+                            color: hex('#13bb87'),
+                          ),
+                        ),
                       ],
                     )
                   ],

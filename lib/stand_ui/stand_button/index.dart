@@ -115,19 +115,20 @@ class StandButton extends StatelessWidget {
   List<Color> initColor() {
     switch(type) {
       case ButtonType.primary:
-        return handleColor(hex('#07c160'));
+        return handleColor(color == null ? hex('#07c160') : color);
 
       case ButtonType.info:
-        return handleColor(hex('#1989fa'));
+        return handleColor(color == null ? hex('#1989fa') : color);
 
       case ButtonType.danger:
-        return handleColor(hex('#ee0a24'));
+        return handleColor(color == null ? hex('#ee0a24') : color);
 
       case ButtonType.warning:
-        return handleColor(hex('#ff976a'));
+        return handleColor(color == null ? hex('#ff976a') : color);
 
       default: 
-        return handleColor(Colors.transparent);
+        return handleColor(color == null ? null : color);
+        
     }
   }
 
@@ -137,8 +138,7 @@ class StandButton extends StatelessWidget {
   /// 正常按钮: 文字为白色，背景颜色 == 边框颜色
   /// 默认按钮: 背景白色，文字黑色，边框灰色
   /// 禁用按钮: 背景颜色，文字颜色透明度.5，边框颜色0（朴素按钮边框颜色.3）
-  List<Color> handleColor(Color color) {
-    /// 默认按钮样式
+  List<Color> handleColor([Color color]) {
     List<Color> _colors = [
       /// 背景颜色
       hex('#fff'), 
@@ -148,8 +148,8 @@ class StandButton extends StatelessWidget {
       hex('#ebedf0')
     ];
 
-    /// 普通按钮
-    if(type == ButtonType.normal) {
+    /// 默认按钮
+    if(color == null && type == ButtonType.normal) {
       return _colors;
     }
 
@@ -169,6 +169,10 @@ class StandButton extends StatelessWidget {
         _colors[1].withOpacity(.5),
         _colors[2].withOpacity(plain ? .3 : 0)
       ];
+    }
+
+    if(gradientColor != null) {
+      _colors[2] = Colors.transparent;
     }
 
     return _colors;

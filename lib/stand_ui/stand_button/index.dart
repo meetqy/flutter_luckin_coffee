@@ -47,7 +47,7 @@ class StandButton extends StatelessWidget {
     this.icon,
     this.text,
     this.onPressed,
-    this.borderRadius = 2,
+    this.borderRadius,
     this.padding,
     this.size = ButtonSize.normal,
   }) : super(key: key);
@@ -83,7 +83,7 @@ class StandButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   /// 圆角
-  final double borderRadius;
+  final BorderRadius borderRadius;
 
   /// 内边距
   final EdgeInsets padding;
@@ -221,7 +221,7 @@ class StandButton extends StatelessWidget {
       textStyle: TextStyle(
         color: _colors[1],
       ),
-      borderRadius: BorderRadius.circular(borderRadius),
+      borderRadius: borderRadius == null ? BorderRadius.circular(2) :  borderRadius,
       color: _colors[0],
       child: InkWell(
         child: Container(
@@ -231,7 +231,7 @@ class StandButton extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: gradientColor,
             border: Border.all(color: _colors[2], width: 1),
-            borderRadius: BorderRadius.circular(borderRadius)
+            borderRadius: borderRadius == null ? BorderRadius.circular(2) :  borderRadius,
           ),
           child: Row(
             mainAxisSize: _size[1],

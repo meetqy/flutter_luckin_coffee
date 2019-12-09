@@ -69,7 +69,7 @@ class ShoppingCartRow extends StatelessWidget {
                 ],),
 
                 Row(children: <Widget>[
-                  Text('${data.specName.replaceAll(RegExp('\,\$'), '').replaceAll(RegExp(G.regExpRules['specName']), '')}', style: TextStyle(
+                  Text('${G.handleGoodsDesc(data.specName)}', style: TextStyle(
                     color: rgba(80, 80, 80, 1),
                     fontSize: 10
                   ),),

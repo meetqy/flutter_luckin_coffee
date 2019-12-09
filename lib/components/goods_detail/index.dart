@@ -312,7 +312,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
         Container(
           alignment: Alignment.centerLeft,
           child: 
-            Text('${data.basicInfo.name} ${defaultValue['specName'].replaceAll(RegExp(',\$'), '').replaceAll(RegExp(G.regExpRules['specName']), '')}',
+            Text('${data.basicInfo.name} ${G.handleGoodsDesc(defaultValue['specName'])}',
             style: TextStyle(
               color: rgba(80, 80, 80, 1),
               fontSize: 10

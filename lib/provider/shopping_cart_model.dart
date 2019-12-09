@@ -5,9 +5,6 @@ import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ShoppingCartModel with ChangeNotifier {
-  /// 购物车索引 用作商品的id 累加
-  int _index = 10001;
-
   Map<String, ShoppingCartData> _shoppingCart = {};
 
   num _totalPrice = 0;
@@ -37,9 +34,8 @@ class ShoppingCartModel with ChangeNotifier {
 
     
     if(key == null) {
-      key = '${data.id}-$_index';
+      key = '${data.id}';
       data.checked = true;
-      _index++;
       _shoppingCart.addAll({
         "$key": data
       });

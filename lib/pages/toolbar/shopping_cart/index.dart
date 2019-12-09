@@ -1,13 +1,13 @@
-import 'dart:convert';
-
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_dialog/a_dialog.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
+import 'package:flutter_luckin_coffee/jsonserialize/order/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
+import 'package:flutter_luckin_coffee/provider/order_model.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
@@ -154,6 +154,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
   @override
   Widget build(BuildContext context) {
     ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
+    OrderModel _orderModel = Provider.of<OrderModel>(context);
     Map<String, ShoppingCartData> shoppingCartData = _shoppingCartModel.data;
     num totalPrice = _shoppingCartModel.totalPrice;
 
@@ -194,7 +195,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
           ),
 
           buttomBtnRow(shoppingCartIsEmpty, totalPrice,
-            shoppingCartModel: _shoppingCartModel
+            shoppingCartModel: _shoppingCartModel,
+            orderModel: _orderModel
           )
         ],
       ),
@@ -262,7 +264,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
   /// 底部合计
   Container buttomBtnRow(bool shoppingCartIsEmpty, num totalPrice, {
-    ShoppingCartModel shoppingCartModel
+    ShoppingCartModel shoppingCartModel,
+    OrderModel orderModel,
   }) {
     return Container(
       child: shoppingCartIsEmpty ? null : Container(
@@ -307,24 +310,31 @@ class _ShoppingCartState extends State<ShoppingCart> {
             borderRadius: BorderRadius.zero,
             onPressed: () {
               Map<String, ShoppingCartData> shoppingCartModelData = shoppingCartModel.data;
+              // Map<String, OrderData> orderModel = 
 
-              List requestData = [];
+              List<OrderData> requestData = [];
 
               shoppingCartModelData.values.forEach((ShoppingCartData val) {
-                Map jsonData = {
-                  "goodsId":val.id,
-                  "number":val.number,
-                  "propertyChildIds": json.encode(val.spec),
-                  "logisticsType":0, 
-                  "days": [DateTime.now().toString().split(' ')[0]]
-                };
-                
-                requestData.add(jsonData);
+                if(val.checked) {
+                  Map<String, dynamic> jsonData = {
+                    "goodsId":val.id,
+                    "number":val.number,
+                    "propertyChildIds": val.spec,
+                    "logisticsType":0, 
+                    "days": [DateTime.now().toString().split(' ')[0]]
+                  };
+
+                  requestData.add(OrderData.fromJson(jsonData));
+                }
               });
-              
-              String requestString = jsonEncode(requestData);
-              print(requestString);
-              G.pushNamed('/order_confirm');
+
+              /// 没有选中商品
+              if(requestData.isEmpty) {
+                G.toast('没有要结算的商品');
+              } else {
+                orderModel.init(requestData);
+                G.pushNamed('/order_confirm');
+              }
             }
           )
         ],),

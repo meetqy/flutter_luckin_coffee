@@ -1,6 +1,5 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/stand_ui/stand_button/index.dart';
 import 'package:flutter_luckin_coffee/stand_ui/stand_dialog/normal_dialog.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 

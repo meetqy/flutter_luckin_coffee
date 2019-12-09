@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
+import 'package:flutter_luckin_coffee/provider/order_model.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:flutter_luckin_coffee/routes/index.dart';
@@ -27,7 +28,8 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: CounterModel()),
-        ChangeNotifierProvider.value(value: ShoppingCartModel())
+        ChangeNotifierProvider.value(value: ShoppingCartModel()),
+        ChangeNotifierProvider.value(value: OrderModel()),
       ],
       child: MyApp(),
     ),
@@ -69,7 +71,7 @@ class _MyAppState extends State<MyApp> {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/example_stand_button',
+      initialRoute: '/',
       onGenerateRoute: router.getRoutes,
     );
   }

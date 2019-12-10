@@ -130,9 +130,7 @@ class _LoginMailState extends State<LoginMail> {
   }
 
   getUserDetail(String token) async {
-    var res = await G.req.user.detail(
-      token: token
-    );
+    var res = await G.req.user.detail();
 
     var data = res.data;
 

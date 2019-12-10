@@ -41,14 +41,14 @@ class ReqUser {
   }
 
   /// 获取用户详情
-  Future<Response> detail({
+  Future<Response> detail() {
+    return _dio.post('/user/detail');
+  }
+
+  /// 查看用户资产
+  Future<Response> amount({
     @required String token
   }) {
-    return _dio.post(
-      '/user/detail',
-      queryParameters: {
-        "token": token
-      }
-    );
+    return _dio.post('/user/amount');
   }
 }

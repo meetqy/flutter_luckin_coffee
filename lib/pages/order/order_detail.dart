@@ -258,11 +258,51 @@ class _OrderDetailState extends State<OrderDetail> {
                     Container(
                       margin: EdgeInsets.only(top: 10),
                       child: Column(children: <Widget>[
-                        GoodsMsgRow(),
-                        GoodsMsgRow(),
-                        GoodsMsgRow(),
-                        GoodsMsgRow(),
-                        GoodsMsgRow(marginBottom: false,)
+                        Container(
+                          margin: EdgeInsets.only(bottom: 12),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                Container(
+                                  child: Text('拿铁', style: TextStyle(
+                                    fontSize: 15,
+                                    color: rgba(56, 56, 56, 1),
+                                    fontWeight: FontWeight.bold
+                                  ),),
+                                ),
+                                Container(
+                                  child: Text('asda', style: TextStyle(
+                                    fontSize: 10,
+                                    color: rgba(56, 56, 56, 1),
+                                  ),),
+                                ),
+                              ],),
+
+
+                              Row(
+                                children: <Widget>[
+                                  Text('x3', style: TextStyle(
+                                    color: rgba(80, 80, 80, 1),
+                                    fontSize: 13
+                                  ),),
+                                  Container(
+                                    margin: EdgeInsets.only(left: 80),
+                                    child: Text('¥ 20', style: TextStyle(
+                                      fontSize: 14,
+                                      color: rgba(56, 56, 56, 1),
+                                      fontWeight: FontWeight.bold
+                                    ),),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                              
+                        )
                       ],),
                     ),
 

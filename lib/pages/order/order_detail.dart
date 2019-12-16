@@ -5,8 +5,6 @@ import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
-import 'widgets/goods_msg_row.dart';
-
 class OrderDetail extends StatefulWidget {
   final Map args;
 

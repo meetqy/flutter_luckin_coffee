@@ -8,7 +8,7 @@
 
 - [前言](#前言)
 - [flutter版本信息](#flutter版本信息)
-- [扫码下载体验](#扫码下载体验)
+- [扫码下载体验-ios/android都可下载](#扫码下载体验-ios/android都可下载)
 - [安装](#安装)
 - [相关插件](#相关插件)
 - [待完善](#待完善)
@@ -44,13 +44,13 @@ Engine • revision b863200c37
 Tools • Dart 2.5.0
 ```
 
-## 扫码下载体验
+## 扫码下载体验 - ios/android都可下载
 
 密码：meetqy
 
 ![](./qrcode.png)
 
-> 没有安卓机，只在虚拟机上面测试过，有bug欢迎提issues。
+> 有bug欢迎提issues。
 
 ## 安装
 

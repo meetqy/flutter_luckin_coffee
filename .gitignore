@@ -8,8 +8,10 @@
 .buildlog/
 .history
 .svn/
-custom_upload.sh
 .vscode/
+build_android.sh
+build_ios.sh
+app/
 
 # IntelliJ related
 *.iml

@@ -15,11 +15,12 @@ String _shoppingCart;
 final Router router = Router();
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   _shoppingCart = prefs.getString('shoppingCart');
   String user = prefs.getString('user');
 
-  if(user != null && user.isNotEmpty) {
+  if (user != null && user.isNotEmpty) {
     /// 初始化user
     G.user.init(json.decode(user));
   }
@@ -44,16 +45,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
- @override
+  @override
   Widget build(BuildContext context) {
-    final ShoppingCartModel _shoppingCartModel = Provider.of<ShoppingCartModel>(context);
+    final ShoppingCartModel _shoppingCartModel =
+        Provider.of<ShoppingCartModel>(context);
 
-    if(_shoppingCart != null) {
+    if (_shoppingCart != null) {
       Map data = json.decode(_shoppingCart);
       _shoppingCartModel.init(data);
     }
-    
+
     return MaterialApp(
       navigatorKey: G.navigatorKey,
       title: 'Flutter Luckin Coffee',
@@ -64,7 +65,7 @@ class _MyAppState extends State<MyApp> {
           ),
           elevation: 0,
         ),
-        
+
         // button去除点击后的背景，注意：对appbar中的的button无效
         // buttonTheme: ButtonThemeData(
         //   splashColor: rgba(0, 0, 0, 0),

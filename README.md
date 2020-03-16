@@ -104,6 +104,10 @@ flutter run
 - [ ] 重构自定义appbar
 - [ ] 重构components（进行中...）
 
+## 已解决问题
+
+- [x] clone代码启动白屏
+
 ## 版本日志
 
 - [v1.x.x](./readme/backlog/v1.x.x.md)

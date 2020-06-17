@@ -44,7 +44,9 @@ Engine • revision b863200c37
 Tools • Dart 2.5.0
 ```
 
-## 扫码下载体验 - ios/android都可下载
+## 扫码下载体验 - ~~ios/android都可下载~~ 仅安卓可直接体验
+
+> 没做过ios版本管理的，以为只要上传到蒲公英就可以了。结果ios开发版需要添加开发者才能体验，所有ios拉代码来看了。
 
 密码：meetqy
 

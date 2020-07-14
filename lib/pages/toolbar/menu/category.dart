@@ -1,4 +1,4 @@
-import 'package:color_dart/HexColor.dart';
+import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -8,12 +8,8 @@ class Category extends StatelessWidget {
   final Function getCayegoryId;
   final int id;
 
-  const Category({
-    Key key,
-    this.data,
-    @required this.getCayegoryId,
-    this.id
-  }) : super(key: key);
+  const Category({Key key, this.data, @required this.getCayegoryId, this.id})
+      : super(key: key);
 
   List<Widget> _render() {
     List<Widget> widgets = [];
@@ -25,9 +21,8 @@ class Category extends StatelessWidget {
           alignment: Alignment.center,
           height: 44,
           decoration: BoxDecoration(
-            border: G.borderBottom(show: id == val.id),
-            color: hex('#fff').withOpacity(id == val.id ? 1.0 : 0.0)
-          ),
+              border: G.borderBottom(show: id == val.id),
+              color: hex('#fff').withOpacity(id == val.id ? 1.0 : 0.0)),
           child: Text(val.name),
         ),
       ));

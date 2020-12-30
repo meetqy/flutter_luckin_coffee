@@ -48,7 +48,6 @@ class Toolbar extends StatefulWidget {
       "routeName": routeName
     };
   }
-
   static Toolbar _singleton;
 
   Toolbar.singleton({
@@ -60,6 +59,7 @@ class Toolbar extends StatefulWidget {
     String routeName,
     Object arguments
   }) {
+    print('fffffffffffffffffffffffffffff');
     if(_singleton == null) {
       _singleton = Toolbar.singleton(routeName: routeName, arguments: arguments,);
     }

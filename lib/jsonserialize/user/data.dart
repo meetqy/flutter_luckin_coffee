@@ -1,7 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
+///part关键字, 使用part关键字可以将一个库,分解成多个dart文件,(并不推荐使用)
+///有点像C#中部分类的概念
+///!!!其中序列化相关的代码,应该可以用插件来生成.
 part 'data.g.dart';
 
+//用户数据的序列化的类
 @JsonSerializable()
 class UserData {
   String city;
@@ -45,6 +49,7 @@ class UserData {
   //反序列化
   factory UserData.fromJson(Map<String, dynamic> json) =>
       _$UserDataFromJson(json);
+
   //序列化
   Map<String, dynamic> toJson() => _$UserDataToJson(this);
 }

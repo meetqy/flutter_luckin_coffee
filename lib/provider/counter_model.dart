@@ -5,6 +5,7 @@ class CounterModel with ChangeNotifier {
   int get value => _count;
 
   void add() {
+    print('eeeeeeeeeeeeeeeeeeee');
     _count++;
     notifyListeners();
   }

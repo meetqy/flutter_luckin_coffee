@@ -40,6 +40,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    print("1111111111111111111111111111111");
     return SingleChildScrollView(
       child: Column(children: <Widget>[
         // 头部banner

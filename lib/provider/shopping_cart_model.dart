@@ -14,6 +14,7 @@ class ShoppingCartModel with ChangeNotifier {
 
   /// 初始化购物车
   init(Map<String, dynamic> data) {
+    print('cccccccccccccccccccccccccccccccccccc');
     for(var key in data.keys) {
       Map val = data[key];
 

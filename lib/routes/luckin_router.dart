@@ -26,6 +26,7 @@ import 'package:flutter_luckin_coffee/stand_ui/stand_button/example_stand_button
 import 'package:flutter_luckin_coffee/stand_ui/stand_dialog/example_stand_dialog.dart';
 
 class LuckinRouter {
+  //路由的总入口
   static final _routes = {
     /// TODO: 从非toolbar页面跳转到toolbar页面的入场动画不一致
     // 从非toolbar页面（子页面）跳转到toolbar页面（主页）实现：

@@ -10,7 +10,7 @@ class DacaiSay extends StatelessWidget {
   final String time;
 
   /// 大咖说
-  /// 
+  ///
   /// ```
   /// @param {String} avatar - 头像
   /// @param {String} name - 名字
@@ -18,16 +18,12 @@ class DacaiSay extends StatelessWidget {
   /// @param {String} desc - 描述
   /// @param {String} time - 时间
   /// ```
-  DacaiSay({
-    this.avatar,
-    this.name,
-    this.label = '',
-    this.desc = '',
-    this.time = ''
-  }) : assert(
-    avatar!=null,
-    name!=null,
-  );
+  DacaiSay(
+      {this.avatar, this.name, this.label = '', this.desc = '', this.time = ''})
+      : assert(
+          avatar != null,
+          name != null,
+        );
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +32,7 @@ class DacaiSay extends StatelessWidget {
       margin: EdgeInsets.only(top: 6),
       child: Container(
         padding: EdgeInsets.only(bottom: 8),
-        decoration: BoxDecoration(
-          border: G.borderBottom()
-        ),
+        decoration: BoxDecoration(border: G.borderBottom()),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -47,66 +41,71 @@ class DacaiSay extends StatelessWidget {
               height: 30,
               child: ClipRRect(
                 borderRadius: new BorderRadius.circular(30),
-                child: Image.asset(avatar, width: 30, height: 30, fit: BoxFit.cover,),
+                child: Image.asset(
+                  avatar,
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-
-            Expanded(child: 
-              Container(
-                margin: EdgeInsets.only(top: 10,left: 10),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(top: 10, left: 10),
                 child: Column(
                   children: <Widget>[
                     Container(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Text(name, style: TextStyle(
-                            fontSize: 12
-                          ),),
+                          Text(
+                            name,
+                            style: TextStyle(fontSize: 12),
+                          ),
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 5),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(2),
-                              color: rgba(242, 242, 242, 1)
-                            ),
+                                borderRadius: BorderRadius.circular(2),
+                                color: rgba(242, 242, 242, 1)),
                             margin: EdgeInsets.only(left: 5),
-                            child: Text(label, style: TextStyle(
-                              color: rgba(53, 60, 177, 1),
-                              fontSize: 10
-                            ),),
-                          )
-                      ],),
-                    ),
-
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      child: Column(
-                        children: <Widget>[
-                          Wrap(children: <Widget>[
-                            Text(desc,
+                            child: Text(
+                              label,
                               style: TextStyle(
-                                fontSize: 12,
-                                color: rgba(128, 128, 128, 1)
-                              ),
+                                  color: rgba(53, 60, 177, 1), fontSize: 10),
                             ),
-                          ],)
+                          )
                         ],
-                      )
+                      ),
                     ),
-
+                    Container(
+                        margin: EdgeInsets.only(top: 5),
+                        child: Column(
+                          children: <Widget>[
+                            Wrap(
+                              children: <Widget>[
+                                Text(
+                                  desc,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: rgba(128, 128, 128, 1)),
+                                ),
+                              ],
+                            )
+                          ],
+                        )),
                     Container(
                       margin: EdgeInsets.only(top: 5),
                       alignment: Alignment.centerLeft,
-                      child: Text(time, style: TextStyle(
-                        color: rgba(136, 175, 213, 1),
-                        fontSize: 12
-                      ),),
+                      child: Text(
+                        time,
+                        style: TextStyle(
+                            color: rgba(136, 175, 213, 1), fontSize: 12),
+                      ),
                     )
                   ],
                 ),
-              ) 
-            ,)
-              
+              ),
+            )
           ],
         ),
       ),

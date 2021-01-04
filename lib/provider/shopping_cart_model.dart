@@ -10,12 +10,12 @@ class ShoppingCartModel with ChangeNotifier {
   num _totalPrice = 0;
 
   get data => _shoppingCart;
+
   get totalPrice => _totalPrice;
 
   /// 初始化购物车
   init(Map<String, dynamic> data) {
-    print('cccccccccccccccccccccccccccccccccccc');
-    for(var key in data.keys) {
+    for (var key in data.keys) {
       Map val = data[key];
 
       _shoppingCart['$key'] = ShoppingCartData.fromJson(val);
@@ -33,13 +33,10 @@ class ShoppingCartModel with ChangeNotifier {
       return int.parse(keyArr[0]) == data.id && val.specName == data.specName;
     }, orElse: () => null);
 
-    
-    if(key == null) {
+    if (key == null) {
       key = '${data.id}';
       data.checked = true;
-      _shoppingCart.addAll({
-        "$key": data
-      });
+      _shoppingCart.addAll({"$key": data});
     } else {
       ShoppingCartData nowData = _shoppingCart[key];
       nowData.number += data.number;
@@ -51,9 +48,7 @@ class ShoppingCartModel with ChangeNotifier {
     notifyListeners();
   }
 
-  modify(String id, { 
-    @required ShoppingCartData data 
-  }) {
+  modify(String id, {@required ShoppingCartData data}) {
     _shoppingCart[id] = data;
     _calcTotal();
     _saveLocal();
@@ -67,7 +62,7 @@ class ShoppingCartModel with ChangeNotifier {
   }
 
   /// 保存到本地
-  _saveLocal() async{
+  _saveLocal() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     prefs.setString("shoppingCart", json.encode(_shoppingCart));
@@ -77,8 +72,8 @@ class ShoppingCartModel with ChangeNotifier {
   _calcTotal() {
     double price = 0;
     _shoppingCart.values.forEach((ShoppingCartData data) {
-      if(data.checked) {
-        price +=  (data.number * data.price);
+      if (data.checked) {
+        price += (data.number * data.price);
       }
     });
 

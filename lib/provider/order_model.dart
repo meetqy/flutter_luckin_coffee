@@ -8,7 +8,6 @@ class OrderModel with ChangeNotifier {
 
   /// 初始化
   init(List<OrderData> data) {
-    print('ddddddddddddddddddddddddddddddddddddddd');
     _orderData = {};
     data.forEach((val) {
       _orderData['${val.goodsId}'] = val;

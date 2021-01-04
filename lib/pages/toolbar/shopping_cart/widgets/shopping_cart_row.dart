@@ -12,14 +12,15 @@ class ShoppingCartRow extends StatelessWidget {
   final bool border;
   final Function onChange;
   final Function(bool) onCheckBoxChange;
+
   /// 购物车商品列表行
-  const ShoppingCartRow({
-    Key key,
-    this.data,
-    this.border = true,
-    @required this.onChange,
-    @required this.onCheckBoxChange
-  }) : super(key: key);
+  const ShoppingCartRow(
+      {Key key,
+      this.data,
+      this.border = true,
+      @required this.onChange,
+      @required this.onCheckBoxChange})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class ShoppingCartRow extends StatelessWidget {
       leftChild: Container(
         margin: EdgeInsets.only(right: 15),
         child: ACheckBox(
-          activeColor:rgba(136, 175, 213, 1),
+          activeColor: rgba(136, 175, 213, 1),
           width: 24,
           radius: Radius.circular(24),
           value: data.checked,
@@ -39,66 +40,76 @@ class ShoppingCartRow extends StatelessWidget {
       ),
       centerChild: Container(
         padding: EdgeInsets.symmetric(vertical: 15),
-        decoration: BoxDecoration(
-          border: G.borderBottom(show: border)
-        ),
-        child: Row(children: <Widget>[
-          Expanded(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                Row(children: <Widget>[
-                  Text('${data.name}', style: TextStyle(
-                    color: rgba(56, 56, 56, 1),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15
-                  ),),
-                  Container(
-                    margin: EdgeInsets.only(left: 5),
-                    child: AButton.normal(
-                      child: Text('充2赠1', style: TextStyle(fontSize: 8),),
-                      bgColor: rgba(255, 129, 2, 1),
-                      color: hex("#fff"),
-                      height: 16,
-                      width: 34,
-                      borderRadius: BorderRadius.circular(2),
-                      onPressed: () => {}
-                    ),
-                  )
-                ],),
-
-                Row(children: <Widget>[
-                  Text('${G.handleGoodsDesc(data.specName)}', style: TextStyle(
-                    color: rgba(80, 80, 80, 1),
-                    fontSize: 10
-                  ),),
-                ],),
-
-                Row(
+        decoration: BoxDecoration(border: G.borderBottom(show: border)),
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('仅限打包带走', style: TextStyle(
-                      fontSize: 10,
-                      color: rgba(85, 122, 157, 1)
-                    ),)
-                ],)
-              ],),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          '${data.name}',
+                          style: TextStyle(
+                              color: rgba(56, 56, 56, 1),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 5),
+                          child: AButton.normal(
+                              child: Text(
+                                '充2赠1',
+                                style: TextStyle(fontSize: 8),
+                              ),
+                              bgColor: rgba(255, 129, 2, 1),
+                              color: hex("#fff"),
+                              height: 16,
+                              width: 34,
+                              borderRadius: BorderRadius.circular(2),
+                              onPressed: () => {}),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          '${G.handleGoodsDesc(data.specName)}',
+                          style: TextStyle(
+                              color: rgba(80, 80, 80, 1), fontSize: 10),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          '仅限打包带走',
+                          style: TextStyle(
+                              fontSize: 10, color: rgba(85, 122, 157, 1)),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ),
-          ),
-
-          Text('¥${data.price}', style: TextStyle(
-            color: rgba(56, 56, 56, 1),
-            fontSize: 18,
-            fontWeight: FontWeight.bold
-          ),),
-          Container(
-            margin: EdgeInsets.only(left: 10),
-            child: AStepper(
-              value: data.number,
-              onChange: (val) => onChange(val),
-            )
-          )
-        ],),
+            Text(
+              '¥${data.price}',
+              style: TextStyle(
+                  color: rgba(56, 56, 56, 1),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
+            Container(
+                margin: EdgeInsets.only(left: 10),
+                child: AStepper(
+                  value: data.number,
+                  onChange: (val) => onChange(val),
+                ))
+          ],
+        ),
       ),
     );
   }

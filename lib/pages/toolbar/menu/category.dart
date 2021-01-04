@@ -7,12 +7,8 @@ class Category extends StatelessWidget {
   final Function getCayegoryId;
   final int id;
 
-  const Category({
-    Key key,
-    this.data,
-    @required this.getCayegoryId,
-    this.id
-  }) : super(key: key);
+  const Category({Key key, this.data, @required this.getCayegoryId, this.id})
+      : super(key: key);
 
   List<Widget> _render() {
     List<Widget> widgets = [];
@@ -24,9 +20,8 @@ class Category extends StatelessWidget {
           alignment: Alignment.center,
           height: 44,
           decoration: BoxDecoration(
-            border: G.borderBottom(show: id == val.id),
-            color: Color(0xffffff).withOpacity(id == val.id ? 1.0 : 0.0)
-          ),
+              border: G.borderBottom(show: id == val.id),
+              color: Color(0xffffff).withOpacity(id == val.id ? 1.0 : 0.0)),
           child: Text(val.name),
         ),
       ));

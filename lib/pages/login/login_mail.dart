@@ -40,7 +40,7 @@ class _LoginMailState extends State<LoginMail> {
   @override
   void initState() { 
     super.initState();
-    
+    print('iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
     Future.delayed(Duration.zero, () async{
       prefs = await SharedPreferences.getInstance();
       startTime = prefs.getInt('startTime');

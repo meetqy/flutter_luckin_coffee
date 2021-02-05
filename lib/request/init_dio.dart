@@ -32,7 +32,7 @@ Dio initDio() {
         return response;
       },
       onError: (DioError e) async {
-        // G.toast(e.message);
+         G.toast(e.message);
         // 当请求失败时做一些预处理
         return e;//continue
       }

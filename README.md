@@ -133,4 +133,4 @@ flutter run
 ## 预览
 
 <img src="./readme/images/1.gif" width="375"/> | <img src="./readme/images/2.gif" width="375"/> 
----- | ----
+

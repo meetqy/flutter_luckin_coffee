@@ -48,7 +48,6 @@ class Toolbar extends StatefulWidget {
       "routeName": routeName
     };
   }
-
   static Toolbar _singleton;
 
   Toolbar.singleton({

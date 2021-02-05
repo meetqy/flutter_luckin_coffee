@@ -13,20 +13,19 @@ class RecommendGoods extends StatelessWidget {
   /// 商品图片
   Widget goodsImg(String imgSrc) {
     return ClipRRect(
-      borderRadius: new BorderRadius.circular(0),
-      child: Image.network(
-        imgSrc,
-        width: 108,
-        height: 108,
-        fit: BoxFit.cover,
-      )
-    );
+        borderRadius: new BorderRadius.circular(0),
+        child: Image.network(
+          imgSrc,
+          width: 108,
+          height: 108,
+          fit: BoxFit.cover,
+        ));
   }
 
   @override
   Widget build(BuildContext context) {
     String desc = data.characteristic;
-    desc = desc.length > 20 ? desc.substring(0, 18)+'...' : desc;
+    desc = desc.length > 20 ? desc.substring(0, 18) + '...' : desc;
     return GestureDetector(
       onTap: () => onPress(data.id),
       child: Container(
@@ -50,9 +49,9 @@ class RecommendGoods extends StatelessWidget {
                   ),
                   Text(
                     '$desc',
-                    style: TextStyle(color: rgba(166, 166, 166, 1), fontSize: 10),
+                    style:
+                        TextStyle(color: rgba(166, 166, 166, 1), fontSize: 10),
                   ),
-                  
                   Container(
                     margin: EdgeInsets.only(top: 15),
                     child: Row(

@@ -13,7 +13,7 @@ enum ButtonType {
   /// 信息按钮
   info,
 
-  /// 警告按钮 
+  /// 警告按钮
   warning,
 
   /// 危险按钮
@@ -23,7 +23,7 @@ enum ButtonType {
 enum ButtonSize {
   /// 普通按钮
   normal,
-  
+
   /// 大号按钮
   large,
 
@@ -91,29 +91,27 @@ class StandButton extends StatelessWidget {
   /// 按钮尺寸
   final ButtonSize size;
 
-
   /// 加载按钮
-  static loading({
-    Key key,
-    ButtonType type = ButtonType.info,
-    double iconSize = 25,
-    Widget loadingText,
-    LoadingType loadingType = LoadingType.circular,
-    VoidCallback onPressed,
-    bool disabled = false
-  }) => LoadingButton(
-    key: key,
-    iconSize: iconSize,
-    loadingText: loadingText,
-    type: type,
-    loadingType: loadingType,
-    onPressed: onPressed,
-    disabled: disabled
-  );
+  static loading(
+          {Key key,
+          ButtonType type = ButtonType.info,
+          double iconSize = 25,
+          Widget loadingText,
+          LoadingType loadingType = LoadingType.circular,
+          VoidCallback onPressed,
+          bool disabled = false}) =>
+      LoadingButton(
+          key: key,
+          iconSize: iconSize,
+          loadingText: loadingText,
+          type: type,
+          loadingType: loadingType,
+          onPressed: onPressed,
+          disabled: disabled);
 
   /// 初始化颜色 [_color, _textColor, _borderColor]
   List<Color> initColor() {
-    switch(type) {
+    switch (type) {
       case ButtonType.primary:
         return handleColor(color == null ? hex('#07c160') : color);
 
@@ -126,14 +124,13 @@ class StandButton extends StatelessWidget {
       case ButtonType.warning:
         return handleColor(color == null ? hex('#ff976a') : color);
 
-      default: 
+      default:
         return handleColor(color == null ? null : color);
-        
     }
   }
 
   /// 处理Color
-  /// 
+  ///
   /// 朴素按钮: 背景为白色，文本颜色 == 边框颜色
   /// 正常按钮: 文字为白色，背景颜色 == 边框颜色
   /// 默认按钮: 背景白色，文字黑色，边框灰色
@@ -141,20 +138,22 @@ class StandButton extends StatelessWidget {
   List<Color> handleColor([Color color]) {
     List<Color> _colors = [
       /// 背景颜色
-      hex('#fff'), 
+      hex('#fff'),
+
       /// 文字颜色
       hex('#323233'),
-      /// 边框颜色 
+
+      /// 边框颜色
       hex('#ebedf0')
     ];
 
     /// 默认按钮
-    if(color == null && type == ButtonType.normal) {
+    if (color == null && type == ButtonType.normal) {
       return _colors;
     }
 
     /// 朴素按钮
-    if(plain) {
+    if (plain) {
       _colors[0] = hex('#fff');
       _colors[1] = _colors[2] = color;
     } else {
@@ -163,7 +162,7 @@ class StandButton extends StatelessWidget {
     }
 
     /// 禁用按钮
-     if(disabled) {
+    if (disabled) {
       _colors = [
         _colors[0].withOpacity(.5),
         _colors[1].withOpacity(.5),
@@ -171,7 +170,7 @@ class StandButton extends StatelessWidget {
       ];
     }
 
-    if(gradientColor != null) {
+    if (gradientColor != null) {
       _colors[2] = Colors.transparent;
     }
 
@@ -181,28 +180,25 @@ class StandButton extends StatelessWidget {
   /// 初始化尺寸
   /// [padding, mainAxisSize]
   List initSize() {
-    switch(size) {
-      case ButtonSize.large: 
+    switch (size) {
+      case ButtonSize.large:
         return [
-          EdgeInsets.symmetric(horizontal: 24, vertical: 12), 
+          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           MainAxisSize.max
         ];
 
-      case ButtonSize.small: 
+      case ButtonSize.small:
         return [
           EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           MainAxisSize.min
-        ]; 
+        ];
 
-      case ButtonSize.mini: 
-        return [
-          EdgeInsets.all(0),
-          MainAxisSize.min
-        ];  
+      case ButtonSize.mini:
+        return [EdgeInsets.all(0), MainAxisSize.min];
 
       default:
         return [
-          EdgeInsets.symmetric(horizontal: 24, vertical: 12), 
+          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           MainAxisSize.min
         ];
     }
@@ -212,16 +208,17 @@ class StandButton extends StatelessWidget {
   Widget build(BuildContext context) {
     List _colors = initColor();
 
-    /// 按钮尺寸 
+    /// 按钮尺寸
     /// [padding, mainAxisSize]
-    List _size = initSize();    
+    List _size = initSize();
 
     return Material(
       key: key,
       textStyle: TextStyle(
         color: _colors[1],
       ),
-      borderRadius: borderRadius == null ? BorderRadius.circular(2) :  borderRadius,
+      borderRadius:
+          borderRadius == null ? BorderRadius.circular(2) : borderRadius,
       color: _colors[0],
       child: InkWell(
         child: Container(
@@ -231,7 +228,8 @@ class StandButton extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: gradientColor,
             border: Border.all(color: _colors[2], width: 1),
-            borderRadius: borderRadius == null ? BorderRadius.circular(2) :  borderRadius,
+            borderRadius:
+                borderRadius == null ? BorderRadius.circular(2) : borderRadius,
           ),
           child: Row(
             mainAxisSize: _size[1],
@@ -241,15 +239,16 @@ class StandButton extends StatelessWidget {
                 child: icon,
               ),
               Container(
-                margin: EdgeInsets.only(left: icon != null && text != null ? 6 : 0),
+                margin:
+                    EdgeInsets.only(left: icon != null && text != null ? 6 : 0),
                 child: text,
               )
             ],
           ),
         ),
         onTap: () {
-          if(!disabled) {
-            return onPressed == null ? (){} : onPressed();
+          if (!disabled) {
+            return onPressed == null ? () {} : onPressed();
           }
         },
       ),

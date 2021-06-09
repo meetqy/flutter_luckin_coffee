@@ -45,7 +45,7 @@ flutter --verison
 ```
 
 ``` sh
-Flutter 1.9.1+hotfix.6 • channel stable • https://github.com/flutter/flutter.git
+Flutter 1.22.5 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision 68587a0916 (7 weeks ago) • 2019-09-13 19:46:58 -0700
 Engine • revision b863200c37
 Tools • Dart 2.5.0

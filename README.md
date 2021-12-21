@@ -56,6 +56,8 @@ Tools • Dart 2.5.0
 
 > 没做过 ios 版本管理的，以为只要上传到蒲公英就可以了。结果 ios 开发版需要添加开发者才能体验，所以 ios 只能拉代码来体验了。
 
+[下载地址](https://gitee.com/meetqy/flutter_luckin_coffee/releases/v2.0.0)
+
 密码：meetqy
 
 ![](./qrcode.png)

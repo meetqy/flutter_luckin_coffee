@@ -4,6 +4,10 @@
 
 > flutter luckin coffee application（仿瑞幸咖啡）
 
+## api工厂账号不知道为啥不能用了
+
+之前有克隆过的兄弟，欢迎提个iusses，或pr，附上你的id，谢谢咯
+
 ## 特别提醒
 
 作者写这个的时候，flutter 最高版本是 1.7.x。现在好像已经是 1.12.x 了吧，所以一定要切换 flutter 版本，不然可能出现插件之间不兼容的情况。另外暂时没有升级 flutter 版本的打算。**详细版本号参考后面的 flutter 版本信息**

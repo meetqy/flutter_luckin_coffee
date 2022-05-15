@@ -4,9 +4,9 @@
 
 > flutter luckin coffee application（仿瑞幸咖啡）
 
-## api工厂账号不知道为啥不能用了
+## api 工厂账号不知道为啥不能用了
 
-之前有克隆过的兄弟，欢迎提个iusses，或pr，附上你的id，谢谢咯
+之前有克隆过的兄弟，欢迎提个 iusses，或 pr，附上你的 id，谢谢咯
 
 ## 特别提醒
 

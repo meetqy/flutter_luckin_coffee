@@ -2,7 +2,7 @@
   "code": 0,
   "data": {
     "extJson": {
-      "defaultSpec": "{15457: 69272, 15459: 69278, 15460: 69289}"
+      "defaultSpec": "{'15457': 69272, '15459': 69278, '15460': 69289}"
     },
     "category": {
       "dateAdd": "2019-08-14 17:51:40",
@@ -17,7 +17,7 @@
       {
         "goodsId": 171745,
         "id": 1042868,
-        "pic": "https://dcdn.it120.cc/2019/09/29/d9837376-a348-4450-9c16-895446cb93e6.jpg",
+        "pic": "https://cdn.wcao.cc/assets/avatar/coffee/1.jpg",
         "userId": 18046
       }
     ],
@@ -46,7 +46,7 @@
       "numberSells": 0,
       "originalPrice": 11.88,
       "paixu": 0,
-      "pic": "https://dcdn.it120.cc/2019/09/29/d9837376-a348-4450-9c16-895446cb93e6.jpg",
+      "pic": "https://cdn.wcao.cc/assets/avatar/coffee/1.jpg",
       "pingtuan": false,
       "pingtuanPrice": 0.0,
       "recommendStatus": 0,

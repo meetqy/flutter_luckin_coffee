@@ -62,6 +62,8 @@ flutter:
     - lib/assets/images/order/
     - lib/jsonserialize/goods_category/mockdata.json
     - lib/jsonserialize/goods_list/mockdata.json
+    - lib/jsonserialize/goods_detail/mockdata.json
+    - lib/jsonserialize/goods_price/mockdata.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

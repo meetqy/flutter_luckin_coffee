@@ -4,7 +4,18 @@
 
 > flutter luckin coffee application（仿瑞幸咖啡）
 
-老版本使用 `api工厂`的分支 [v1.0](https://gitee.com/meetqy/flutter_luckin_coffee/tree/v1.0/),如果有之前克隆过数据的同学,可以评论区留言或则私信给我你的 id
+老版本使用 `api工厂` 的分支 [v1.0](https://gitee.com/meetqy/flutter_luckin_coffee/tree/v1.0/),如果有之前克隆过数据的同学,可以评论区留言或私信我**你的 ID**
+
+## 升级思路
+
+1. jsonserialize 中之前保留了一份 mockdata.json，使用直接读取 json 的方式代替 dio 请求
+2. 移除 dio 相关代码
+3. 移除处理请求，数据转换的特殊逻辑
+4. mock.js 生成随机数据去替代 mockdata.json
+5. `路由方面`的管理和 `provide` 改为`getx`
+6. 尽量用原生的方式去替代 a_button, a_checkbox...类似 weight
+
+> 这里不得不说一下，为啥最近又要维护这个项目了，没办法呀公司又开了个 flutter 项目，开发也接近尾声了，有了新的理解，在这个项目上实践一下。
 
 ## 进度
 
@@ -22,3 +33,5 @@
 类似于这样的：
 
 - [flutter 交友模板](https://gitee.com/meetqy/flutter_dating_template)
+
+> 一不小心打了个广告，你又能把我怎么样 😄😄😄

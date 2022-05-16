@@ -4,8 +4,11 @@
  * @lastTime: 2019-11-23 11:50:01
  * @LastEditors: meetqy
  */
+import 'dart:convert';
+
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/request/request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
 import 'package:flutter_luckin_coffee/utils/user.dart';
@@ -118,4 +121,11 @@ class G {
 
   /// user信息
   static final User user = User();
+
+  static Future<void> readJson(String filename) async {
+    final String response =
+        await rootBundle.loadString('lib/jsonserialize/$filename');
+    final data = await json.decode(response);
+    return data;
+  }
 }

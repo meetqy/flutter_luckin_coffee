@@ -1,10 +1,3 @@
-/*
- * @Author: meetqy
- * @since: 2019-08-06 11:56:11
- * @lastTime: 2019-11-23 11:39:49
- * @LastEditors: meetqy
- */
-
 import 'dart:math';
 
 import 'package:color_dart/color_dart.dart';
@@ -61,7 +54,7 @@ class _MenuState extends State<Menu> {
       });
     });
 
-    Future.delayed(Duration.zero, () {
+    Future.delayed(Duration.zero, () async {
       _init(context);
     });
 
@@ -72,15 +65,16 @@ class _MenuState extends State<Menu> {
     G.loading.show(context);
     try {
       Iterable<Future> requestList = [
-        G.req.shop.goodsList(),
-        G.req.shop.goodsCategoryAll(),
+        // G.req.shop.goodsList(),
+        G.readJson('goods_list/mockdata.json'),
+        G.readJson('goods_category/mockdata.json'),
       ];
 
       List result = await Future.wait(requestList);
 
-      GoodsList goodsList = GoodsList.fromJson(result[0].data);
+      GoodsList goodsList = GoodsList.fromJson(result[0]);
       int goodsListLen = goodsList.data.length;
-      GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1].data);
+      GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
 
       List<Widget> goodsListWidgetsTemp = [];
       Random rand = Random(); // 随机数

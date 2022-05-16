@@ -32,6 +32,7 @@ dependencies:
   json_annotation: 3.1.1
   fluttertoast: 7.1.6
   shared_preferences: 0.5.12+4
+  dart_mock: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -39,7 +40,7 @@ dev_dependencies:
   test: any
   build_runner: ^1.10.11
   json_serializable: ^3.5.1
-
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -59,6 +60,8 @@ flutter:
     - lib/assets/images/menu/
     - lib/assets/images/mine/
     - lib/assets/images/order/
+    - lib/jsonserialize/goods_category/mockdata.json
+    - lib/jsonserialize/goods_list/mockdata.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

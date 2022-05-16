@@ -60,18 +60,12 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
   getGoodsList(BuildContext context) async {
     G.loading.show(context);
-    var reg = math.Random();
-
-    int index = reg.nextInt(5);
 
     try {
-      var res = await G.req.shop
-          .goodsList(orderBy: orderBy[index], page: 1, pageSize: 3);
-
-      Map result = res.data;
+      var res = await G.readJson('/goods_list/mockdata.json');
 
       setState(() {
-        goodsList = GoodsList.fromJson(result);
+        goodsList = GoodsList.fromJson(res as Map);
       });
     } catch (e) {
       print(e);

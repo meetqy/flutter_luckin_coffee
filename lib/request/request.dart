@@ -16,7 +16,7 @@ class Request {
 
   ReqVerificationCode get verificationCode => ReqVerificationCode(_dio);
 
-  ReqShop get shop => ReqShop(_dio);
+  // ReqShop get shop => ReqShop(_dio);
 
   ReqDiscounts get discounts => ReqDiscounts(_dio);
 }

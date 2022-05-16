@@ -7,13 +7,13 @@
 ## 近期动态
 
 flutter也升级到2.10.x了，最近准备升级一下
+[v2.0分支](https://gitee.com/meetqy/flutter_luckin_coffee/tree/v2.0/)
 
 主要更新以下几个方向
 
 - flutter 版本升级
 - api 工厂测试数据替换为 mock.js（不想吐槽了，账号莫名其妙不能用了）
 - 删除|更新插件，尽量使用flutter原生组件去实现
-
 
 ## 目录
 

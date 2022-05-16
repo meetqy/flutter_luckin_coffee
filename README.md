@@ -1,6 +1,6 @@
 ![app_head](./readme/images/githead1.png)
 
-# flutter_luckin_coffee
+# flutter_luckin_coffee 2.0
 
 > flutter luckin coffee application（仿瑞幸咖啡）
 

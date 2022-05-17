@@ -1,39 +1,40 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
-import 'package:flutter_luckin_coffee/utils/global.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
+// import 'package:flutter_luckin_coffee/mock/goods_category.dart';
+// import 'package:flutter_luckin_coffee/utils/global.dart';
 
-class Category extends StatelessWidget {
-  final List<GoodsCategoryDatum> data;
-  final Function getCayegoryId;
-  final int id;
+// class Category extends StatelessWidget {
+//   final Function getCayegoryId;
+//   final int id;
 
-  const Category({Key key, this.data, @required this.getCayegoryId, this.id})
-      : super(key: key);
+//   const Category({Key key, @required this.getCayegoryId, this.id})
+//       : super(key: key);
 
-  List<Widget> _render() {
-    List<Widget> widgets = [];
-    data.forEach((val) {
-      widgets.add(InkWell(
-        key: Key('${val.id}'),
-        onTap: () => getCayegoryId(val.id),
-        child: Container(
-          alignment: Alignment.center,
-          height: 44,
-          decoration: BoxDecoration(
-              border: G.borderBottom(show: id == val.id),
-              color: Color(0xffffff).withOpacity(id == val.id ? 1.0 : 0.0)),
-          child: Text(val.name),
-        ),
-      ));
-    });
+//   List<Widget> _render() {
+//     List<Widget> widgets = [];
+//     Mocksssss.forEach((val) {
+//       var index = Mocksssss.indexOf(val);
+//       widgets.add(InkWell(
+//         key: Key('$index'),
+//         onTap: () => getCayegoryId("$index"),
+//         child: Container(
+//           alignment: Alignment.center,
+//           height: 44,
+//           decoration: BoxDecoration(
+//               border: G.borderBottom(show: id == index),
+//               color: Color(0xffffff).withOpacity(id == index ? 1.0 : 0.0)),
+//           child: Text(val),
+//         ),
+//       ));
+//     });
 
-    return widgets;
-  }
+//     return widgets;
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: _render(),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: _render(),
+//     );
+//   }
+// }

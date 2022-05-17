@@ -6,7 +6,7 @@ import 'package:flutter_luckin_coffee/components/custom_swiper/index.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
-import 'package:flutter_luckin_coffee/pages/toolbar/menu/category.dart';
+import 'package:flutter_luckin_coffee/mock/goods_category.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +40,7 @@ class _MenuState extends State<Menu> {
   /// 把商品列表，和分类的部分设置为变量。
   /// 解决：滚动页面，重复渲染
   List<Widget> goodsListWidgets = [];
-  List<GoodsCategoryDatum> category = [];
+  List<MockGoodsCategory> category = [];
 
   AppBar createAppBar() {
     return null;
@@ -63,64 +63,60 @@ class _MenuState extends State<Menu> {
 
   _init(BuildContext context) async {
     G.loading.show(context);
-    try {
-      Iterable<Future> requestList = [
-        // G.req.shop.goodsList(),
-        G.readJson('goods_list/mockdata.json'),
-        G.readJson('goods_category/mockdata.json'),
-      ];
+    Iterable<Future> requestList = [
+      // G.req.shop.goodsList(),
+      G.readJson('goods_list/mockdata.json'),
+      G.readJson('goods_category/mockdata.json'),
+    ];
 
-      List result = await Future.wait(requestList);
+    List result = await Future.wait(requestList);
 
-      GoodsList goodsList = GoodsList.fromJson(result[0]);
-      int goodsListLen = goodsList.data.length;
-      GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
+    GoodsList goodsList = GoodsList.fromJson(result[0]);
+    int goodsListLen = goodsList.data.length;
+    GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
 
-      List<Widget> goodsListWidgetsTemp = [];
-      Random rand = Random(); // 随机数
+    List<Widget> goodsListWidgetsTemp = [];
+    Random rand = Random(); // 随机数
 
-      goodsCategory.data.forEach((GoodsCategoryDatum category) {
-        // 商品列表 每类商品 标题  eg: 人气top
-        goodsListWidgetsTemp.add(ClassifyDesc(category.name, desc: null));
+    Mocksssss.forEach((String name) {
+      var categoryId = Mocksssss.indexOf(name);
+      // 商品列表 每类商品 标题  eg: 人气top
+      goodsListWidgetsTemp.add(ClassifyDesc(name, desc: '2133232ss'));
 
-        goodsList.data.asMap().forEach((int index, GoodsListDatum goods) {
-          if (category.id == goods.categoryId) {
-            // 商品列表 商品
-            goodsListWidgetsTemp.add(GoodsListRow(
-              // 点击添加按钮弹出dialog
-              onPress: (BuildContext context, int id) {
-                /// 弹出商品详情  /widgets/goods_detail
-                showDialog(
-                    context: context,
-                    barrierDismissible: false,
-                    builder: (BuildContext context) {
-                      final ShoppingCartModel _shoppingCartModel =
-                          Provider.of<ShoppingCartModel>(context);
-                      return GoodsDetailDialog(
-                        id: id,
-                        model: _shoppingCartModel,
-                      );
-                    });
-              },
-              data: goods,
-              border: !(index >= goodsListLen - 1),
-              activeDesc: actives[rand.nextInt(3)],
-            ));
-          }
-        });
+      goodsList.data.asMap().forEach((int index, GoodsListDatum goods) {
+        if (categoryId == goods.categoryId) {
+          // 商品列表 商品
+          goodsListWidgetsTemp.add(GoodsListRow(
+            // 点击添加按钮弹出dialog
+            onPress: (BuildContext context, int id) {
+              /// 弹出商品详情  /widgets/goods_detail
+              showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (BuildContext context) {
+                    final ShoppingCartModel _shoppingCartModel =
+                        Provider.of<ShoppingCartModel>(context);
+                    return GoodsDetailDialog(
+                      id: id,
+                      model: _shoppingCartModel,
+                    );
+                  });
+            },
+            data: goods,
+            border: !(index >= goodsListLen - 1),
+            activeDesc: actives[rand.nextInt(3)],
+          ));
+        }
       });
+    });
 
-      setState(() {
-        nowCategoryId = goodsCategory.data[0].id;
-        goodsListWidgets = goodsListWidgetsTemp;
-        category = goodsCategory.data;
-      });
+    setState(() {
+      nowCategoryId = 0;
+      goodsListWidgets = goodsListWidgetsTemp;
+      category = MockGoodsCategory.data();
+    });
 
-      G.loading.hide(context);
-    } catch (e) {
-      print(e);
-      G.loading.hide(context);
-    }
+    G.loading.hide(context);
   }
 
   @override
@@ -176,16 +172,27 @@ class _MenuState extends State<Menu> {
               Container(
                 width: 90,
                 color: rgba(248, 248, 248, 1),
-                child: Category(
-                  data: category,
-                  id: nowCategoryId,
-                  getCayegoryId: (id) {
-                    if (nowCategoryId != id) {
-                      setState(() {
-                        nowCategoryId = id;
-                      });
-                    }
-                  },
+                child: Column(
+                  children: category.map((item) {
+                    var index = category.indexOf(item);
+                    return InkWell(
+                      onTap: () {
+                        setState(() {
+                          nowCategoryId = index;
+                        });
+                      },
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 44,
+                        decoration: BoxDecoration(
+                            border:
+                                G.borderBottom(show: nowCategoryId == index),
+                            color: Color(0xffffff).withOpacity(
+                                nowCategoryId == index ? 1.0 : 0.0)),
+                        child: Text(item.name),
+                      ),
+                    );
+                  }).toList(),
                 ),
               ),
 

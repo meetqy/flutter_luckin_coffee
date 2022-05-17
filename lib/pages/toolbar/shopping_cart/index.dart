@@ -1,13 +1,11 @@
-import 'dart:math' as math;
-
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_dialog/a_dialog.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/order/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
+import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
 import 'package:flutter_luckin_coffee/provider/order_model.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
@@ -37,7 +35,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
     return customAppbar(title: '购物车');
   }
 
-  GoodsList goodsList;
+  List<MockGoods> goodsList = MockGoods.data();
 
   /// 排序规则：priceUp 商品升序，priceDown 商品倒序，ordersUp 销量升序，ordersDown 销量降序，addedUp 发布时间升序，addedDown 发布时间倒序
   final orderBy = [
@@ -52,26 +50,6 @@ class _ShoppingCartState extends State<ShoppingCart> {
   @override
   void initState() {
     super.initState();
-
-    Future.delayed(Duration.zero, () async {
-      getGoodsList(context);
-    });
-  }
-
-  getGoodsList(BuildContext context) async {
-    G.loading.show(context);
-
-    try {
-      var res = await G.readJson('/goods_list/mockdata.json');
-
-      setState(() {
-        goodsList = GoodsList.fromJson(res as Map);
-      });
-    } catch (e) {
-      print(e);
-    }
-
-    G.loading.hide(context);
   }
 
   /// 购物车为空
@@ -236,7 +214,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                           )
                         ],
                       ),
-                      onTap: () => getGoodsList(context),
+                      onTap: () {},
                     )
                   ],
                 ),
@@ -246,21 +224,23 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   margin: EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: goodsList.data.map((GoodsListDatum item) {
+                    children: goodsList.sublist(0, 3).map((item) {
                       return RecommendGoods(
-                          data: item,
-                          onPress: (int id) {
-                            /// 弹出商品详情  /widgets/goods_detail
-                            showDialog(
-                                context: context,
-                                barrierDismissible: false,
-                                builder: (BuildContext context) {
-                                  return GoodsDetailDialog(
-                                    id: id,
-                                    model: model,
-                                  );
-                                });
-                          });
+                        data: item,
+                        onPress: () {
+                          /// 弹出商品详情  /widgets/goods_detail
+                          showDialog(
+                            context: context,
+                            barrierDismissible: false,
+                            builder: (BuildContext context) {
+                              return GoodsDetailDialog(
+                                id: goodsList.indexOf(item),
+                                model: model,
+                              );
+                            },
+                          );
+                        },
+                      );
                     }).toList(),
                   ),
                 )

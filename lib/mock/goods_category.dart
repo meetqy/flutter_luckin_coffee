@@ -1,14 +1,5 @@
 import 'package:dart_mock/dart_mock.dart' as mock;
 
-const List<String> Mocksssss = [
-  '人气TOP',
-  '大师咖啡',
-  '瑞纳冰',
-  '经典饮品',
-  '健康轻食',
-  '鲜榨果蔬汁'
-];
-
 class MockGoodsCategory {
   final String name;
   final String desc;

@@ -7,6 +7,7 @@ import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_category/data.dart';
 import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
 import 'package:flutter_luckin_coffee/mock/goods_category.dart';
+import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +41,7 @@ class _MenuState extends State<Menu> {
   /// 把商品列表，和分类的部分设置为变量。
   /// 解决：滚动页面，重复渲染
   List<Widget> goodsListWidgets = [];
-  List<MockGoodsCategory> category = [];
+  List<MockGoodsCategory> category = MockGoodsCategory.data();
 
   AppBar createAppBar() {
     return null;
@@ -63,49 +64,44 @@ class _MenuState extends State<Menu> {
 
   _init(BuildContext context) async {
     G.loading.show(context);
-    Iterable<Future> requestList = [
-      // G.req.shop.goodsList(),
-      G.readJson('goods_list/mockdata.json'),
-      G.readJson('goods_category/mockdata.json'),
-    ];
 
-    List result = await Future.wait(requestList);
-
-    GoodsList goodsList = GoodsList.fromJson(result[0]);
-    int goodsListLen = goodsList.data.length;
-    GoodsCategory goodsCategory = GoodsCategory.fromJson(result[1]);
+    List<MockGoods> goods = MockGoods.data();
 
     List<Widget> goodsListWidgetsTemp = [];
     Random rand = Random(); // 随机数
 
-    Mocksssss.forEach((String name) {
-      var categoryId = Mocksssss.indexOf(name);
+    category.forEach((item) {
+      var categoryId = category.indexOf(item);
       // 商品列表 每类商品 标题  eg: 人气top
-      goodsListWidgetsTemp.add(ClassifyDesc(name, desc: '2133232ss'));
+      goodsListWidgetsTemp.add(ClassifyDesc(item.name, desc: item.desc));
 
-      goodsList.data.asMap().forEach((int index, GoodsListDatum goods) {
-        if (categoryId == goods.categoryId) {
+      goods.forEach((goodsItem) {
+        var goodsId = goods.indexOf(goodsItem);
+        if (categoryId == goodsItem.categoryId) {
           // 商品列表 商品
-          goodsListWidgetsTemp.add(GoodsListRow(
-            // 点击添加按钮弹出dialog
-            onPress: (BuildContext context, int id) {
-              /// 弹出商品详情  /widgets/goods_detail
-              showDialog(
+          goodsListWidgetsTemp.add(
+            GoodsListRow(
+              // 点击添加按钮弹出dialog
+              onPress: (BuildContext context) {
+                /// 弹出商品详情  /widgets/goods_detail
+                showDialog(
                   context: context,
                   barrierDismissible: false,
                   builder: (BuildContext context) {
                     final ShoppingCartModel _shoppingCartModel =
                         Provider.of<ShoppingCartModel>(context);
                     return GoodsDetailDialog(
-                      id: id,
+                      id: goodsId,
                       model: _shoppingCartModel,
                     );
-                  });
-            },
-            data: goods,
-            border: !(index >= goodsListLen - 1),
-            activeDesc: actives[rand.nextInt(3)],
-          ));
+                  },
+                );
+              },
+              data: goodsItem,
+              border: !(goodsId >= goods.length - 1),
+              activeDesc: actives[rand.nextInt(3)],
+            ),
+          );
         }
       });
     });

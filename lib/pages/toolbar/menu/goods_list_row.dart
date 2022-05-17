@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goods_list/data.dart';
+import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
@@ -8,7 +8,7 @@ class GoodsListRow extends StatelessWidget {
   final bool border;
   final String activeDesc;
   final Function onPress;
-  final GoodsListDatum data;
+  final MockGoods data;
 
   /// 创建商品
   ///
@@ -35,11 +35,12 @@ class GoodsListRow extends StatelessWidget {
         Expanded(
           child: Text(
             title,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                color: color == null ? rgba(166, 166, 166, 1) : color,
-                fontSize: fontSize,
-                fontWeight:
-                    fontWeight == null ? FontWeight.normal : fontWeight),
+              color: color == null ? rgba(166, 166, 166, 1) : color,
+              fontSize: fontSize,
+              fontWeight: fontWeight == null ? FontWeight.normal : fontWeight,
+            ),
           ),
         )
       ],
@@ -49,13 +50,14 @@ class GoodsListRow extends StatelessWidget {
   /// 商品图片
   Widget goodsImg(String imgSrc) {
     return ClipRRect(
-        borderRadius: new BorderRadius.circular(4.0),
-        child: Image.network(
-          imgSrc,
-          width: 70,
-          height: 70,
-          fit: BoxFit.cover,
-        ));
+      borderRadius: new BorderRadius.circular(4.0),
+      child: Image.network(
+        imgSrc,
+        width: 70,
+        height: 70,
+        fit: BoxFit.cover,
+      ),
+    );
   }
 
   ///活动信息
@@ -140,7 +142,7 @@ class GoodsListRow extends StatelessWidget {
                                   ),
                                   onTap: () {
                                     if (onPress != null) {
-                                      onPress(context, data.id);
+                                      onPress(context);
                                     }
                                   })
                             ],

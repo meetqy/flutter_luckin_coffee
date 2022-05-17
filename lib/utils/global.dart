@@ -9,7 +9,6 @@ import 'dart:convert';
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_luckin_coffee/request/request.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
 import 'package:flutter_luckin_coffee/utils/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -38,9 +37,6 @@ class G {
         .replaceAll(RegExp(',\$'), '')
         .replaceAll(RegExp('规格:|温度:|糖度:|奶油:|无'), '');
   }
-
-  /// 初始化request
-  static final Request req = Request();
 
   static Future toast(String text) => Fluttertoast.showToast(
       msg: text,

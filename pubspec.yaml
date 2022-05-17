@@ -28,7 +28,6 @@ dependencies:
   flutter_swiper: 1.1.6
   provider: 4.3.2+3
   pull_to_refresh: 1.6.3
-  dio: 3.0.10
   json_annotation: 3.1.1
   fluttertoast: 7.1.6
   shared_preferences: 0.5.12+4
@@ -65,6 +64,7 @@ flutter:
     - lib/jsonserialize/goods_detail/mockdata.json
     - lib/jsonserialize/goods_price/mockdata.json
     - lib/jsonserialize/shopping_cart/mockdata.json
+    - lib/jsonserialize/user/mockdata.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

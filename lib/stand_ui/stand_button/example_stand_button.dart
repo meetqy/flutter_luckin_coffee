@@ -30,11 +30,10 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                     Wrap(
                       children: <Widget>[
                         buildContainer(
-                          child: StandButton(
-                            text: Text('默认按钮'),
-                            onPressed: () => print('默认按钮'),
-                          )
-                        ),
+                            child: StandButton(
+                          text: Text('默认按钮'),
+                          onPressed: () => print('默认按钮'),
+                        )),
                         buildContainer(
                           child: StandButton(
                             type: ButtonType.primary,
@@ -96,7 +95,7 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                     )
                   ],
                 ),
-              
+
                 /// 禁用状态
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,17 +169,14 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                       children: <Widget>[
                         buildContainer(
                           child: StandButton.loading(
-                            type: ButtonType.primary,
-                            onPressed: () {
-                              print('123');
-                            }
-                          ),
+                              type: ButtonType.primary,
+                              onPressed: () {
+                                print('123');
+                              }),
                         ),
-
                         buildContainer(
-                          child: StandButton.loading(
-                            loadingText: Text('加载中...')
-                          ),
+                          child:
+                              StandButton.loading(loadingText: Text('加载中...')),
                         ),
                       ],
                     )
@@ -202,14 +198,12 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                             size: ButtonSize.large,
                           ),
                         ),
-
                         buildContainer(
                           child: StandButton(
                             text: Text('普通按钮'),
                             type: ButtonType.primary,
                           ),
                         ),
-
                         buildContainer(
                           child: StandButton(
                             text: Text('小型按钮'),
@@ -217,7 +211,6 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                             size: ButtonSize.small,
                           ),
                         ),
-
                         buildContainer(
                           child: StandButton(
                             text: Text('迷你按钮'),
@@ -239,28 +232,21 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: <Widget>[
                         buildContainer(
-                          child: StandButton(
-                            text: Text('渐变色按钮'),
-                            size: ButtonSize.large,
-                            type: ButtonType.primary,
-                            gradientColor: LinearGradient(
-                              begin: Alignment.bottomLeft,
-                              end: Alignment.topRight,
-                              colors: [
-                                rgba(75,176,255,1),
-                                rgba(97,73,246,1),
-                              ]
-                            ),
-                          )
-                        ),
-
+                            child: StandButton(
+                          text: Text('渐变色按钮'),
+                          size: ButtonSize.large,
+                          type: ButtonType.primary,
+                          gradientColor: LinearGradient(
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        )),
                         buildContainer(
                           child: StandButton(
                             text: Text('单色按钮'),
                             color: rgba(114, 50, 221, 1),
                           ),
                         ),
-
                         buildContainer(
                           child: StandButton(
                             text: Text('单色按钮'),
@@ -291,9 +277,7 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
 
   Container buildContainer({Widget child}) {
     return Container(
-      margin: EdgeInsets.only(right: 8, bottom: 8),
-      child: child
-    );
+        margin: EdgeInsets.only(right: 8, bottom: 8), child: child);
   }
 
   Row buildTitle(String text) {
@@ -301,9 +285,7 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Container(
-          margin: EdgeInsets.symmetric(vertical: 15),
-          child: Text('$text')
-        ),
+            margin: EdgeInsets.symmetric(vertical: 15), child: Text('$text')),
       ],
     );
   }

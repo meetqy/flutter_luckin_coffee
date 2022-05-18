@@ -1,12 +1,7 @@
-import 'dart:convert';
-
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_stepper/a_stepper.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goods_detail/data.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/goods_price/data.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
@@ -22,65 +17,6 @@ class GoodsDetailDialog extends StatefulWidget {
 }
 
 class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
-  /// 当前选中规格信息
-  Map defaultValue = {
-    "spec": {
-      // typeId: childId,
-      // typeId: childId,
-    },
-    "specName": "",
-    "price": 0,
-    "num": 1,
-  };
-
-  ShoppingCartModel _shoppingCartModel;
-
-  GoodsDetailData data;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _shoppingCartModel = widget.model;
-    Future.delayed(Duration.zero, () async {
-      var res = await G.readJson('/goods_detail/mockdata.json');
-
-      GoodsDetailData goodsDetailData =
-          GoodsDetailData.fromJson((res as Map)['data']);
-
-      // 格式化默认规格
-      Map<String, int> spec = {};
-      String defaultSpec = goodsDetailData.extJson?.defaultSpec;
-      if (goodsDetailData.extJson.defaultSpec == null) {
-        goodsDetailData.properties.forEach((val) {
-          spec['${val.id}'] = val.childsCurGoods[0].id;
-        });
-      } else {
-        Map<String, dynamic> specDecode =
-            json.decode(defaultSpec.replaceAll('\'', "\""));
-
-        specDecode.forEach((key, value) {
-          spec['$key'] = int.parse(value.toString());
-        });
-      }
-
-      // 获取当前规格的价格
-      Map resultPrice = await _getGoodsPrice(spec, data: goodsDetailData);
-
-      if (resultPrice['status']) {
-        GoodsPrice goodsPrice = GoodsPrice.fromJson(resultPrice['data']);
-        GoodsPriceData goodsPriceData = goodsPrice.data;
-
-        setState(() {
-          data = goodsDetailData;
-          defaultValue['spec'] = spec;
-          defaultValue['price'] = goodsPriceData.price;
-          defaultValue['specName'] = goodsPriceData.propertyChildNames;
-        });
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return AnimatedPadding(
@@ -110,45 +46,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
     );
   }
 
-  /// 获取当前规定价格
-  Future<Map> _getGoodsPrice(Map<String, int> spec,
-      {@required GoodsDetailData data}) async {
-    Map<String, dynamic> resultJson = {};
-
-    /// status为false没有获取到规格 || 规格没有任何修改不发起请求
-    if (defaultValue['spec'].toString() == spec.toString())
-      return {"status": false, "data": null};
-
-    G.loading.show(context);
-
-    // print(propertyChildIds);
-    try {
-      var res = await G.readJson('/goods_price/mockdata.json');
-
-      resultJson['status'] = true;
-      resultJson['data'] = res as Map;
-    } catch (e) {
-      resultJson['status'] = false;
-      resultJson['data'] = e;
-    }
-
-    G.loading.hide(context);
-    return resultJson;
-  }
-
   _initContent() {
-    if (data == null) {
-      return Container(
-          width: 335,
-          height: 580,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: hex('#fff'),
-          ),
-          child: Stack(
-            children: <Widget>[_initClose()],
-          ));
-    }
     return Container(
       width: 335,
       height: 580,
@@ -184,36 +82,10 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
 
   /// 选项
   _initOption() {
-    List<Widget> widgets = [];
-    data.properties.forEach((GoodsDetailProperty item) {
-      widgets.add(SelectRow(
-        id: defaultValue['spec']['${item.id}'],
-        data: item,
-        onChange: (Map type) async {
-          Map<String, int> spec = Map.from(defaultValue['spec']);
-
-          spec['${type['typeId']}'] = type['childId'];
-
-          Map result = await _getGoodsPrice(spec, data: data);
-          if (result['status']) {
-            GoodsPrice goodsPrice = GoodsPrice.fromJson(result['data']);
-            GoodsPriceData goodsPriceData = goodsPrice.data;
-
-            setState(() {
-              defaultValue['spec'] = spec;
-              defaultValue['price'] = goodsPriceData.price;
-              defaultValue['specName'] = goodsPriceData.propertyChildNames;
-            });
-          }
-        },
-      ));
-    });
     return Column(
       children: <Widget>[
-        Container(
-          child: Column(
-            children: widgets,
-          ),
+        Column(
+          children: [SelectRow(), SelectRow(), SelectRow()],
         ),
       ],
     );
@@ -221,10 +93,6 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
 
   /// 商品描述
   Widget _initGoodsDesc() {
-    String desc = data.content
-        .replaceAll(RegExp("<.*?p>"), "")
-        .replaceAll(RegExp('\\\\n'), '\n');
-
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       child: Column(
@@ -244,12 +112,15 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             children: <Widget>[
               Expanded(
                 child: Container(
-                    margin: EdgeInsets.only(top: 8),
-                    child: Text(
-                      desc,
-                      style: TextStyle(
-                          fontSize: 12, color: rgba(128, 128, 128, 1)),
-                    )),
+                  margin: EdgeInsets.only(top: 8),
+                  child: Text(
+                    "flutter luckin coffee application（仿瑞幸咖啡）",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: rgba(128, 128, 128, 1),
+                    ),
+                  ),
+                ),
               )
             ],
           )
@@ -278,7 +149,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  '￥${defaultValue["price"] * defaultValue["num"]}',
+                  '￥ 28.0',
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -286,22 +157,19 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
                 ),
               ),
               AStepper(
-                value: defaultValue['num'],
+                value: 23,
                 min: 1,
-                onChange: (num val) {
-                  setState(() {
-                    defaultValue['num'] = val;
-                  });
-                },
+                onChange: (num val) {},
               )
             ],
           ),
           Container(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '${data.basicInfo.name} ${G.handleGoodsDesc(defaultValue['specName'])}',
-                style: TextStyle(color: rgba(80, 80, 80, 1), fontSize: 10),
-              ))
+            alignment: Alignment.centerLeft,
+            child: Text(
+              '金枪鱼三明治 大,热,糖',
+              style: TextStyle(color: rgba(80, 80, 80, 1), fontSize: 10),
+            ),
+          )
         ],
       ),
     );
@@ -313,7 +181,9 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
       padding: EdgeInsets.only(left: 15, right: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
+          bottomLeft: Radius.circular(8),
+          bottomRight: Radius.circular(8),
+        ),
         color: hex('#fff'),
       ),
       height: 60,
@@ -321,65 +191,46 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           AButton.icon(
-              icon: icontupian17(
-                size: 14,
-              ),
-              textChild: Text(
-                '充2赠1',
-                style: TextStyle(fontSize: 12),
-              ),
-              color: hex('#fff'),
-              bgColor: rgba(255, 129, 2, 1),
-              height: 32,
-              onPressed: () => {}),
+            icon: icontupian17(
+              size: 14,
+            ),
+            textChild: Text(
+              '充2赠1',
+              style: TextStyle(fontSize: 12),
+            ),
+            color: hex('#fff'),
+            bgColor: rgba(255, 129, 2, 1),
+            height: 32,
+            onPressed: () => {},
+          ),
           AButton.icon(
-              height: 32,
-              icon: iconsc(
-                size: 14,
-              ),
-              textChild: Text(
-                '收藏口味',
-                style: TextStyle(fontSize: 12),
-              ),
-              color: rgba(136, 175, 213, 1),
-              bgColor: rgba(136, 175, 213, 0.3),
-              onPressed: () => {}),
+            height: 32,
+            icon: iconsc(
+              size: 14,
+            ),
+            textChild: Text(
+              '收藏口味',
+              style: TextStyle(fontSize: 12),
+            ),
+            color: rgba(136, 175, 213, 1),
+            bgColor: rgba(136, 175, 213, 0.3),
+            onPressed: () => {},
+          ),
           AButton.icon(
-              height: 32,
-              icon: icongouwuche(
-                size: 14,
-              ),
-              bgColor: rgba(136, 175, 213, 1),
-              color: hex('#fff'),
-              textChild: Text(
-                '加入购物车',
-                style: TextStyle(fontSize: 12),
-              ),
-              onPressed: () async {
-                G.loading.show(context);
-
-                await G.sleep();
-
-                if (mounted) {
-                  Map<String, dynamic> mockdata = {
-                    "id": data.basicInfo.id,
-                    "name": data.basicInfo.name,
-                    "price": defaultValue['price'],
-                    "number": defaultValue['num'],
-                    "spec": defaultValue['spec'],
-                    "specName": defaultValue['specName'],
-                  };
-                  ShoppingCartData shoppingCartData =
-                      ShoppingCartData.fromJson(mockdata);
-
-                  _shoppingCartModel.add(shoppingCartData);
-                }
-
-                G.loading.hide(context);
-                G.pop();
-
-                G.toast('加入购物车成功');
-              })
+            height: 32,
+            icon: icongouwuche(
+              size: 14,
+            ),
+            bgColor: rgba(136, 175, 213, 1),
+            color: hex('#fff'),
+            textChild: Text(
+              '加入购物车',
+              style: TextStyle(fontSize: 12),
+            ),
+            onPressed: () async {
+              /// HACK: 加入购物车
+            },
+          )
         ],
       ),
     );
@@ -459,14 +310,14 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           child: Column(
             children: <Widget>[
               Text(
-                data.basicInfo.name,
+                '金枪鱼三明治',
                 style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                     color: hex('#fff')),
               ),
               Text(
-                data.basicInfo.characteristic,
+                'Nice tuna SandWich',
                 style: TextStyle(fontSize: 14, color: hex('#fff')),
               )
             ],

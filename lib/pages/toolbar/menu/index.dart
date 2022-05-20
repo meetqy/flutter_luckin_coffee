@@ -7,7 +7,6 @@ import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/mock/goods_category.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:provider/provider.dart';
 
 import 'goods_list_row.dart';
 import 'widgets/classify_desc.dart';

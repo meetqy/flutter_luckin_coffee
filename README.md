@@ -6,6 +6,12 @@
 
 老版本使用 `api工厂` 的分支 [v1.0](https://gitee.com/meetqy/flutter_luckin_coffee/tree/v1.0/),如果有之前克隆过数据的同学,可以评论区留言或私信我**你的 ID**
 
+## Wiki
+
+总结，升级 2.0 过程中，遇到问题解决的思路，以及最终使用的方法，希望对你有帮助！！！
+
+[升级 flutter 2.0 总结](https://gitee.com/meetqy/flutter_luckin_coffee/wikis/%E5%8D%87%E7%BA%A72.0%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93?sort_id=1729161)
+
 ## 升级思路
 
 1. jsonserialize 中之前保留了一份 mockdata.json，使用直接读取 json 的方式代替 dio 请求

@@ -180,10 +180,9 @@ class _ShoppingCartState extends State<ShoppingCart> {
                             context: context,
                             barrierDismissible: false,
                             builder: (BuildContext context) {
-                              // return GoodsDetailDialog(
-                              //   id: goodsList.indexOf(item),
-                              //   model: model,
-                              // );
+                              return GoodsDetailDialog(
+                                id: goodsList.indexOf(item),
+                              );
                             },
                           );
                         },

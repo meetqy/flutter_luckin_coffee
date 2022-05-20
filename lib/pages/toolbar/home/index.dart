@@ -1,10 +1,3 @@
-/*
- * @Author: meetqy
- * @since: 2019-08-06 11:54:12
- * @lastTime: 2019-11-23 11:48:32
- * @LastEditors: meetqy
- */
-
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
@@ -12,12 +5,6 @@ import 'package:flutter_luckin_coffee/components/custom_swiper/index.dart';
 import 'package:flutter_luckin_coffee/components/take_out_btn/index.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-
-class Args {
-  static num a = 1;
-  static num b = 2;
-  static List c = [1, 2, 3, 4];
-}
 
 class Home extends StatefulWidget {
   static _HomeState _homeState;
@@ -38,7 +25,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    print("1111111111111111111111111111111");
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
@@ -104,9 +90,6 @@ class _HomeState extends State<Home> {
                   rightChild: rightChild(
                     icon: icontupian1(size: 20, color: rgba(104, 68, 60, 1)),
                   ),
-                  onPressed: () {
-                    G.toast('加入购物车成功');
-                  },
                 ),
                 ARow(
                     height: 70,

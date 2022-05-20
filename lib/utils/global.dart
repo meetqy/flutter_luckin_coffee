@@ -10,7 +10,6 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 import 'pull_to_refresh_style.dart';
 
@@ -36,15 +35,6 @@ class G {
         .replaceAll(RegExp(',\$'), '')
         .replaceAll(RegExp('规格:|温度:|糖度:|奶油:|无'), '');
   }
-
-  static Future toast(String text) => Fluttertoast.showToast(
-      msg: text,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
-      timeInSecForIosWeb: 1,
-      backgroundColor: Colors.red,
-      textColor: Colors.white,
-      fontSize: 16.0);
 
   /// 初始化loading
   static final Loading loading = Loading();

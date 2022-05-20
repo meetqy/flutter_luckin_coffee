@@ -28,7 +28,6 @@ dependencies:
   flutter_swiper: 1.1.6
   pull_to_refresh: 1.6.3
   json_annotation: 3.1.1
-  fluttertoast: 7.1.6
   dart_mock: ^1.0.2
 
 dev_dependencies:

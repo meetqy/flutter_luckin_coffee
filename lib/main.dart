@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/',
+      initialRoute: '/login_method',
       onGenerateRoute: router.getRoutes,
     );
   }

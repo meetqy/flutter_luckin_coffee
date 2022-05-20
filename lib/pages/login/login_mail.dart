@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginMail extends StatefulWidget {
   LoginMail({Key key}) : super(key: key);
@@ -16,8 +15,6 @@ class LoginMail extends StatefulWidget {
 class _LoginMailState extends State<LoginMail> {
   static Map email = {"value": null, "verify": true};
   static Map code = {"value": null, "verify": true};
-
-  SharedPreferences prefs;
 
   /// 开始倒计时 时间
   int startTime;
@@ -31,26 +28,6 @@ class _LoginMailState extends State<LoginMail> {
   Timer _timer;
 
   @override
-  void initState() {
-    super.initState();
-    print('iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
-    Future.delayed(Duration.zero, () async {
-      prefs = await SharedPreferences.getInstance();
-      startTime = prefs.getInt('startTime');
-
-      int nowTime = G.getTime();
-
-      if (startTime != null && startTime > 0) {
-        if (nowTime - startTime > 60) {
-          prefs.remove('startTime');
-        } else {
-          countDown();
-        }
-      }
-    });
-  }
-
-  @override
   void dispose() {
     super.dispose();
     _timer?.cancel();
@@ -62,7 +39,6 @@ class _LoginMailState extends State<LoginMail> {
       int nowTime = G.getTime();
       int result = speed - (nowTime - startTime);
       if (result < 0) {
-        prefs.remove('startTime');
         _timer?.cancel();
       }
 
@@ -70,18 +46,6 @@ class _LoginMailState extends State<LoginMail> {
         countDownTime = result;
       });
     });
-  }
-
-  /// 登录
-  login() async {
-    if (!email['verify'] || email['value'] == null) {
-      return G.toast('输入邮箱有误');
-    }
-    if (!code['verify'] || code['value'] == null) {
-      return G.toast('验证码不正确');
-    }
-
-    G.pushNamed('/mine');
   }
 
   @override
@@ -117,14 +81,7 @@ class _LoginMailState extends State<LoginMail> {
                     hintStyle: TextStyle(
                       fontSize: 14,
                     )),
-                onChanged: (e) {
-                  RegExp regExp = RegExp(
-                      "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+");
-                  setState(() {
-                    email['value'] = e;
-                    email['verify'] = regExp.hasMatch(e);
-                  });
-                },
+                onChanged: (e) {},
               ),
             ),
 
@@ -168,11 +125,12 @@ class _LoginMailState extends State<LoginMail> {
             Container(
               margin: EdgeInsets.only(top: 20),
               child: AButton.normal(
-                  width: 300,
-                  child: Text('确定'),
-                  bgColor: rgba(136, 175, 213, 1),
-                  color: hex('#fff'),
-                  onPressed: () => login()),
+                width: 300,
+                child: Text('确定'),
+                bgColor: rgba(136, 175, 213, 1),
+                color: hex('#fff'),
+                onPressed: () {},
+              ),
             ),
 
             /// 协议

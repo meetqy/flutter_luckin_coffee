@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'checkbox_render.dart';
 
 class ACheckBox extends StatelessWidget {
-  /// 
+  ///
   /// 注：其他参数和checkbox一样
   /// ```
   /// @param {Widget} title - 文本
@@ -13,20 +13,20 @@ class ACheckBox extends StatelessWidget {
   /// @param {Raduis} radius - 圆角
   /// @param {MainAxisAlignment} mainAxisAlignment
   /// ```
-  const ACheckBox({
-    Key key,
-    this.title,
-    this.titlePosition = 'right',
-    this.onChanged,
-    this.value,
-    this.tristate = false,
-    this.activeColor,
-    this.checkColor,
-    this.width = 18.0,
-    this.strokeWidth = 2.0,
-    this.radius,
-    this.mainAxisAlignment
-  }) : super(key: key);
+  const ACheckBox(
+      {Key key,
+      this.title,
+      this.titlePosition = 'right',
+      this.onChanged,
+      this.value,
+      this.tristate = false,
+      this.activeColor,
+      this.checkColor,
+      this.width = 18.0,
+      this.strokeWidth = 2.0,
+      this.radius,
+      this.mainAxisAlignment})
+      : super(key: key);
 
   final bool value;
   final double width;
@@ -42,17 +42,17 @@ class ACheckBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Widget control = CheckBoxRender(
-      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      width: width,
-      radius: radius,
-      tristate: tristate,
-      value: value,
-      checkColor: checkColor,
-      strokeWidth: strokeWidth,
-      activeColor: activeColor,
-      onChanged: (bool value) => onChanged != null ? onChanged(value) : null,
-    );
+    // final Widget control = CheckBoxRender(
+    //   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+    //   width: width,
+    //   radius: radius,
+    //   tristate: tristate,
+    //   value: value,
+    //   checkColor: checkColor,
+    //   strokeWidth: strokeWidth,
+    //   activeColor: activeColor,
+    //   onChanged: (bool value) => onChanged != null ? onChanged(value) : null,
+    // );
 
     return Container(
       child: InkWell(
@@ -60,8 +60,15 @@ class ACheckBox extends StatelessWidget {
         highlightColor: Colors.transparent,
         child: Container(
           child: Row(
-            mainAxisAlignment: mainAxisAlignment == null ? MainAxisAlignment.start : mainAxisAlignment,
-            children: _renderContent(control),
+            mainAxisAlignment: mainAxisAlignment == null
+                ? MainAxisAlignment.start
+                : mainAxisAlignment,
+            children: [
+              Checkbox(
+                value: false,
+                onChanged: (value) {},
+              )
+            ],
           ),
         ),
         onTap: () => onChanged != null ? onChanged(!value) : null,
@@ -70,36 +77,23 @@ class ACheckBox extends StatelessWidget {
   }
 
   List<Widget> _renderContent(Widget control) {
-
     /// 为什么title部分要使用Column包一层？
     /// 当title时文本的时候，外部的Container高度会变成text的高度，不能让外部的Container高度继承父级
 
-    if(titlePosition == 'left') {
+    if (titlePosition == 'left') {
       return [
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            title == null ? Container() : title
-          ],
+          children: <Widget>[title == null ? Container() : title],
         ),
-        Container(
-          width: width,
-          height: width,
-          child: control
-        ),
+        Container(width: width, height: width, child: control),
       ];
     } else {
       return [
-        Container(
-          width: width,
-          height: width,
-          child: control
-        ),
+        Container(width: width, height: width, child: control),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            title == null ? Container() : title
-          ],
+          children: <Widget>[title == null ? Container() : title],
         ),
       ];
     }

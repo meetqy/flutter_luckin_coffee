@@ -1,5 +1,3 @@
-///在dart中, 可以使用library命令来进行进行打包
-///可以使用export命令导出
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/routes/luckin_router.dart';
@@ -7,8 +5,7 @@ import 'package:flutter_luckin_coffee/utils/global.dart';
 
 final LuckinRouter router = LuckinRouter();
 
-///main 函数也可以设置为异步的
-void main() async {
+void main() {
   runApp(MyApp());
 }
 
@@ -39,7 +36,7 @@ class _MyAppState extends State<MyApp> {
         //   highlightColor: rgba(0, 0, 0, 0),
         // ),
       ),
-      initialRoute: '/login_method',
+      initialRoute: '/',
       onGenerateRoute: router.getRoutes,
     );
   }

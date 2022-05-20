@@ -239,6 +239,7 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                           gradientColor: LinearGradient(
                             begin: Alignment.bottomLeft,
                             end: Alignment.topRight,
+                            colors: [],
                           ),
                         )),
                         buildContainer(

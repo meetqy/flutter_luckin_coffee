@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 ///在dart中, 可以使用library命令来进行进行打包
 ///可以使用export命令导出
 import 'package:color_dart/color_dart.dart';
@@ -8,23 +6,11 @@ import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/routes/luckin_router.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 final LuckinRouter router = LuckinRouter();
 
 ///main 函数也可以设置为异步的
 void main() async {
-  //WidgetsFlutterBinding是框架和flutter引擎之间的胶水
-  WidgetsFlutterBinding.ensureInitialized();
-  //SharedPreference是NSUserDefaults(iOS) 和 SharedPreference的封装
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  //从sharePref中获得购物车和用户的信息
-  String user = prefs.getString('user');
-  if (user != null && user.isNotEmpty) {
-    /// 初始化user
-    G.user.init(json.decode(user));
-  }
-  print("user = $user");
   runApp(
     MultiProvider(
       providers: [

@@ -10,7 +10,6 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
-import 'package:flutter_luckin_coffee/utils/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import 'pull_to_refresh_style.dart';
@@ -114,9 +113,6 @@ class G {
       return (time.millisecondsSinceEpoch / 1000).round();
     }
   }
-
-  /// user信息
-  static final User user = User();
 
   static Future<void> readJson(String filename) async {
     final String response =

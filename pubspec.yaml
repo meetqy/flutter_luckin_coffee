@@ -59,7 +59,6 @@ flutter:
     - lib/assets/images/menu/
     - lib/assets/images/mine/
     - lib/assets/images/order/
-    - lib/jsonserialize/user/mockdata.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

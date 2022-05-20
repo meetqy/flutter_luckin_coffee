@@ -1,7 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/user/data.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
@@ -158,8 +157,6 @@ class _MineState extends State<Mine> {
   }
 
   ARow buildUser() {
-    UserData userData = G.user.data;
-
     return ARow(
       height: 55,
       color: Colors.transparent,
@@ -176,13 +173,13 @@ class _MineState extends State<Mine> {
       centerChild: Container(
         margin: EdgeInsets.only(left: 10),
         child: Text(
-          userData == null ? '立即登录' : userData.nick,
+          "UserName",
           style: TextStyle(color: rgba(255, 255, 255, 1), fontSize: 18),
         ),
       ),
       rightChild: icontupian6(size: 14, color: rgba(255, 255, 255, .6)),
       onPressed: () {
-        if (userData == null) return G.pushNamed('/login_mail');
+        G.pushNamed('/login_mail');
       },
     );
   }

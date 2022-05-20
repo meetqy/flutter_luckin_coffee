@@ -2,23 +2,14 @@
 ///可以使用export命令导出
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/routes/luckin_router.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:provider/provider.dart';
 
 final LuckinRouter router = LuckinRouter();
 
 ///main 函数也可以设置为异步的
 void main() async {
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(value: CounterModel()),
-      ],
-      child: MyApp(),
-    ),
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {

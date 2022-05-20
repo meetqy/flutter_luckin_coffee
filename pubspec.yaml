@@ -26,7 +26,6 @@ dependencies:
   iconfont_dart: 0.3.3
   color_dart: 0.2.1
   flutter_swiper: 1.1.6
-  provider: 4.3.2+3
   pull_to_refresh: 1.6.3
   json_annotation: 3.1.1
   fluttertoast: 7.1.6

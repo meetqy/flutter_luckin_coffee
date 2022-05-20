@@ -4,10 +4,8 @@ import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
-import 'package:flutter_luckin_coffee/provider/order_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
-import 'package:provider/provider.dart';
 
 import 'widgets/shopping_cart_row.dart';
 
@@ -82,8 +80,6 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
   @override
   Widget build(BuildContext context) {
-    OrderModel _orderModel = Provider.of<OrderModel>(context);
-
     return Container(
       color: hex('#f7f7f7'),
       child: Column(
@@ -120,7 +116,6 @@ class _ShoppingCartState extends State<ShoppingCart> {
           buttomBtnRow(
             false,
             23,
-            orderModel: _orderModel,
           )
         ],
       ),
@@ -196,11 +191,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
   }
 
   /// 底部合计
-  Container buttomBtnRow(
-    bool shoppingCartIsEmpty,
-    num totalPrice, {
-    OrderModel orderModel,
-  }) {
+  Container buttomBtnRow(bool shoppingCartIsEmpty, num totalPrice) {
     return Container(
       child: shoppingCartIsEmpty
           ? null

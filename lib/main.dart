@@ -5,7 +5,6 @@ import 'dart:convert';
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
-import 'package:flutter_luckin_coffee/provider/order_model.dart';
 import 'package:flutter_luckin_coffee/routes/luckin_router.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +29,6 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: CounterModel()),
-        ChangeNotifierProvider.value(value: OrderModel()),
       ],
       child: MyApp(),
     ),

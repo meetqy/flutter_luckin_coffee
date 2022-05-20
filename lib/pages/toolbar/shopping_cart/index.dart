@@ -1,14 +1,10 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
-import 'package:flutter_luckin_coffee/components/a_dialog/a_dialog.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/order/data.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
 import 'package:flutter_luckin_coffee/provider/order_model.dart';
-import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:provider/provider.dart';
@@ -55,86 +51,38 @@ class _ShoppingCartState extends State<ShoppingCart> {
   /// 购物车为空
   Container shoppingCartNotData() {
     return Container(
-        margin: EdgeInsets.only(bottom: 50),
-        child: Column(
-          children: <Widget>[
-            Image.asset(
-              './lib/assets/images/shopping_cart_null.png',
-              width: 125,
-              fit: BoxFit.contain,
+      margin: EdgeInsets.only(bottom: 50),
+      child: Column(
+        children: <Widget>[
+          Image.asset(
+            './lib/assets/images/shopping_cart_null.png',
+            width: 125,
+            fit: BoxFit.contain,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10, bottom: 32),
+            child: Text(
+              '您的购物车有点寂寞',
+              style: TextStyle(color: rgba(166, 166, 166, 1), fontSize: 12),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 10, bottom: 32),
-              child: Text(
-                '您的购物车有点寂寞',
-                style: TextStyle(color: rgba(166, 166, 166, 1), fontSize: 12),
-              ),
-            ),
-            AButton.normal(
-                width: 100,
-                height: 30,
-                type: 'info',
-                color: rgba(144, 192, 239, 1),
-                borderColor: rgba(144, 192, 239, 1),
-                plain: true,
-                child: Text('去喝一杯'),
-                onPressed: () => G.pushNamed('/menu'))
-          ],
-        ));
-  }
-
-  /// 购物车商品
-  List<Widget> buildShoppingCartList(ShoppingCartModel _shoppingCartModel,
-      Map<String, ShoppingCartData> shoppingCartData) {
-    List<Widget> shoppingCartList = [];
-    List _list = shoppingCartData.keys.toList();
-    int _listLen = _list.length;
-
-    _list.asMap().forEach((index, key) {
-      ShoppingCartData value = shoppingCartData[key];
-
-      shoppingCartList.add(ShoppingCartRow(
-        data: value,
-        border: index >= _listLen - 1 ? false : true,
-        onCheckBoxChange: (bool val) {
-          setState(() {
-            value.checked = val;
-            _shoppingCartModel.modify(key, data: value);
-          });
-        },
-        onChange: (val) {
-          if (val < 1) {
-            ADialog.confirm(
-              context,
-              content: '确认不要了吗？',
-              confirmButtonPress: () {
-                setState(() {
-                  _shoppingCartModel.remove(key);
-                });
-              },
-            );
-          } else {
-            setState(() {
-              value.number = val;
-              _shoppingCartModel.modify(key, data: value);
-            });
-          }
-        },
-      ));
-    });
-
-    return shoppingCartList;
+          ),
+          AButton.normal(
+              width: 100,
+              height: 30,
+              type: 'info',
+              color: rgba(144, 192, 239, 1),
+              borderColor: rgba(144, 192, 239, 1),
+              plain: true,
+              child: Text('去喝一杯'),
+              onPressed: () => G.pushNamed('/menu'))
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    ShoppingCartModel _shoppingCartModel =
-        Provider.of<ShoppingCartModel>(context);
     OrderModel _orderModel = Provider.of<OrderModel>(context);
-    Map<String, ShoppingCartData> shoppingCartData = _shoppingCartModel.data;
-    num totalPrice = _shoppingCartModel.totalPrice;
-
-    bool shoppingCartIsEmpty = shoppingCartData.isEmpty;
 
     return Container(
       color: hex('#f7f7f7'),
@@ -147,41 +95,40 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   child: Column(
                     children: <Widget>[
                       Container(
-                          child: !shoppingCartIsEmpty
-                              ? Image.asset(
-                                  'lib/assets/images/order/order1.png',
-                                  fit: BoxFit.cover,
-                                )
-                              : null),
+                        child: Image.asset(
+                          'lib/assets/images/order/order1.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
 
                       // 购物车列表展示
                       Container(
-                          color: hex('#fff'),
-                          child: shoppingCartIsEmpty
-                              ? null
-                              : Column(
-                                  children: buildShoppingCartList(
-                                      _shoppingCartModel, shoppingCartData))),
+                        color: hex('#fff'),
+                        child: Column(
+                          children: [ShoppingCartRow()],
+                        ),
+                      ),
 
-                      Center(
-                          child: shoppingCartIsEmpty
-                              ? shoppingCartNotData()
-                              : null),
+                      // 购物车没有商品
+                      // Center(child: shoppingCartNotData()),
 
-                      guessLike(_shoppingCartModel),
+                      guessLike(),
                     ],
                   )),
             ),
           ),
-          buttomBtnRow(shoppingCartIsEmpty, totalPrice,
-              shoppingCartModel: _shoppingCartModel, orderModel: _orderModel)
+          buttomBtnRow(
+            false,
+            23,
+            orderModel: _orderModel,
+          )
         ],
       ),
     );
   }
 
   /// 猜你喜欢
-  Container guessLike(ShoppingCartModel model) {
+  Container guessLike() {
     return goodsList == null
         ? Container()
         : Container(
@@ -233,10 +180,10 @@ class _ShoppingCartState extends State<ShoppingCart> {
                             context: context,
                             barrierDismissible: false,
                             builder: (BuildContext context) {
-                              return GoodsDetailDialog(
-                                id: goodsList.indexOf(item),
-                                model: model,
-                              );
+                              // return GoodsDetailDialog(
+                              //   id: goodsList.indexOf(item),
+                              //   model: model,
+                              // );
                             },
                           );
                         },
@@ -253,7 +200,6 @@ class _ShoppingCartState extends State<ShoppingCart> {
   Container buttomBtnRow(
     bool shoppingCartIsEmpty,
     num totalPrice, {
-    ShoppingCartModel shoppingCartModel,
     OrderModel orderModel,
   }) {
     return Container(
@@ -286,7 +232,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                         Container(
                           margin: EdgeInsets.only(left: 10),
                           child: Text(
-                            '¥$totalPrice',
+                            '¥ 22',
                             style: TextStyle(
                                 color: rgba(56, 56, 56, 1),
                                 fontSize: 24,
@@ -299,42 +245,16 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
                   // right button
                   AButton.normal(
-                      child: Text('去结算'),
-                      color: hex('#fff'),
-                      bgColor: rgba(144, 192, 239, 1),
-                      width: 120,
-                      height: 60,
-                      borderRadius: BorderRadius.zero,
-                      onPressed: () {
-                        Map<String, ShoppingCartData> shoppingCartModelData =
-                            shoppingCartModel.data;
-                        // Map<String, OrderData> orderModel =
-
-                        List<OrderData> requestData = [];
-
-                        shoppingCartModelData.values
-                            .forEach((ShoppingCartData val) {
-                          if (val.checked) {
-                            Map<String, dynamic> jsonData = {
-                              "goodsId": val.id,
-                              "number": val.number,
-                              "propertyChildIds": val.spec,
-                              "logisticsType": 0,
-                              "days": [DateTime.now().toString().split(' ')[0]]
-                            };
-
-                            requestData.add(OrderData.fromJson(jsonData));
-                          }
-                        });
-
-                        /// 没有选中商品
-                        if (requestData.isEmpty) {
-                          G.toast('没有要结算的商品');
-                        } else {
-                          orderModel.init(requestData);
-                          G.pushNamed('/order_confirm');
-                        }
-                      })
+                    child: Text('去结算'),
+                    color: hex('#fff'),
+                    bgColor: rgba(144, 192, 239, 1),
+                    width: 120,
+                    height: 60,
+                    borderRadius: BorderRadius.zero,
+                    onPressed: () {
+                      G.pushNamed('/order_confirm');
+                    },
+                  )
                 ],
               ),
             ),

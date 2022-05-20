@@ -6,7 +6,6 @@ import 'package:flutter_luckin_coffee/components/custom_swiper/index.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/mock/goods_category.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
-import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:provider/provider.dart';
 
@@ -86,11 +85,8 @@ class _MenuState extends State<Menu> {
                   context: context,
                   barrierDismissible: false,
                   builder: (BuildContext context) {
-                    final ShoppingCartModel _shoppingCartModel =
-                        Provider.of<ShoppingCartModel>(context);
                     return GoodsDetailDialog(
                       id: goodsId,
-                      model: _shoppingCartModel,
                     );
                   },
                 );

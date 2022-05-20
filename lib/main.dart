@@ -6,13 +6,10 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/provider/counter_model.dart';
 import 'package:flutter_luckin_coffee/provider/order_model.dart';
-import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/routes/luckin_router.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-String _shoppingCart;
 
 final LuckinRouter router = LuckinRouter();
 
@@ -23,7 +20,6 @@ void main() async {
   //SharedPreference是NSUserDefaults(iOS) 和 SharedPreference的封装
   SharedPreferences prefs = await SharedPreferences.getInstance();
   //从sharePref中获得购物车和用户的信息
-  _shoppingCart = prefs.getString('shoppingCart');
   String user = prefs.getString('user');
   if (user != null && user.isNotEmpty) {
     /// 初始化user
@@ -34,7 +30,6 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: CounterModel()),
-        ChangeNotifierProvider.value(value: ShoppingCartModel()),
         ChangeNotifierProvider.value(value: OrderModel()),
       ],
       child: MyApp(),
@@ -52,14 +47,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    final ShoppingCartModel _shoppingCartModel =
-        Provider.of<ShoppingCartModel>(context);
-
-    if (_shoppingCart != null) {
-      Map data = json.decode(_shoppingCart);
-      _shoppingCartModel.init(data);
-    }
-
     return MaterialApp(
       navigatorKey: G.navigatorKey,
       title: 'Flutter Luckin Coffee',

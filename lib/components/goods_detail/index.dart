@@ -2,16 +2,14 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_stepper/a_stepper.dart';
-import 'package:flutter_luckin_coffee/provider/shopping_cart_model.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 import 'select_row.dart';
 
 class GoodsDetailDialog extends StatefulWidget {
   final int id;
-  final ShoppingCartModel model;
 
-  GoodsDetailDialog({Key key, this.id, this.model}) : super(key: key);
+  GoodsDetailDialog({Key key, this.id}) : super(key: key);
 
   _GoodsDetailDialogState createState() => _GoodsDetailDialogState();
 }

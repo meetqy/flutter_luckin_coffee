@@ -4,23 +4,13 @@ import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_checkbox/a_checkbox.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
 import 'package:flutter_luckin_coffee/components/a_stepper/a_stepper.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class ShoppingCartRow extends StatelessWidget {
-  final ShoppingCartData data;
-  final bool border;
-  final Function onChange;
-  final Function(bool) onCheckBoxChange;
-
   /// 购物车商品列表行
-  const ShoppingCartRow(
-      {Key key,
-      this.data,
-      this.border = true,
-      @required this.onChange,
-      @required this.onCheckBoxChange})
-      : super(key: key);
+  const ShoppingCartRow({
+    Key key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +24,15 @@ class ShoppingCartRow extends StatelessWidget {
           activeColor: rgba(136, 175, 213, 1),
           width: 24,
           radius: Radius.circular(24),
-          value: data.checked,
-          onChanged: (bool value) => onCheckBoxChange(value),
+          value: true,
+          onChanged: (bool value) => {
+            /// TODO: 选中
+          },
         ),
       ),
       centerChild: Container(
         padding: EdgeInsets.symmetric(vertical: 15),
-        decoration: BoxDecoration(border: G.borderBottom(show: border)),
+        decoration: BoxDecoration(border: G.borderBottom(show: false)),
         child: Row(
           children: <Widget>[
             Expanded(
@@ -51,7 +43,7 @@ class ShoppingCartRow extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Text(
-                          '${data.name}',
+                          "拿铁",
                           style: TextStyle(
                               color: rgba(56, 56, 56, 1),
                               fontWeight: FontWeight.bold,
@@ -76,7 +68,7 @@ class ShoppingCartRow extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Text(
-                          '${G.handleGoodsDesc(data.specName)}',
+                          G.handleGoodsDesc("规格:中,温度:热,糖度:无糖"),
                           style: TextStyle(
                               color: rgba(80, 80, 80, 1), fontSize: 10),
                         ),
@@ -96,7 +88,7 @@ class ShoppingCartRow extends StatelessWidget {
               ),
             ),
             Text(
-              '¥${data.price}',
+              '¥ 24',
               style: TextStyle(
                   color: rgba(56, 56, 56, 1),
                   fontSize: 18,
@@ -105,8 +97,8 @@ class ShoppingCartRow extends StatelessWidget {
             Container(
                 margin: EdgeInsets.only(left: 10),
                 child: AStepper(
-                  value: data.number,
-                  onChange: (val) => onChange(val),
+                  value: 24.0,
+                  onChange: (val) => {},
                 ))
           ],
         ),

@@ -1,20 +1,12 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/jsonserialize/shopping_cart/data.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class GoodsMsgRow extends StatelessWidget {
-
-  GoodsMsgRow({
-    Key key,
-    this.data,
-    this.marginBottom = true
-  });
+  GoodsMsgRow({Key key, this.marginBottom = true});
 
   /// 底部距离
   final bool marginBottom;
-
-  final ShoppingCartData data;
 
   @override
   Widget build(BuildContext context) {
@@ -28,41 +20,46 @@ class GoodsMsgRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-            Container(
-              child: Text('${data.name}', style: TextStyle(
-                fontSize: 15,
-                color: rgba(56, 56, 56, 1),
-                fontWeight: FontWeight.bold
-              ),),
-            ),
-            Container(
-              child: Text('${G.handleGoodsDesc(data.specName).replaceAll(',', '/')}', style: TextStyle(
-                fontSize: 10,
-                color: rgba(56, 56, 56, 1),
-              ),),
-            ),
-          ],),
-
-
+              Container(
+                child: Text(
+                  '三问题',
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: rgba(56, 56, 56, 1),
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                child: Text(
+                  '${G.handleGoodsDesc("规格:中,温度:热,糖度:无糖").replaceAll(',', '/')}',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: rgba(56, 56, 56, 1),
+                  ),
+                ),
+              ),
+            ],
+          ),
           Row(
             children: <Widget>[
-              Text('x${data.number}', style: TextStyle(
-                color: rgba(80, 80, 80, 1),
-                fontSize: 13
-              ),),
+              Text(
+                'x23',
+                style: TextStyle(color: rgba(80, 80, 80, 1), fontSize: 13),
+              ),
               Container(
                 margin: EdgeInsets.only(left: 80),
-                child: Text('¥ ${data.price * data.number}', style: TextStyle(
-                  fontSize: 14,
-                  color: rgba(56, 56, 56, 1),
-                  fontWeight: FontWeight.bold
-                ),),
+                child: Text(
+                  '¥ 36',
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: rgba(56, 56, 56, 1),
+                      fontWeight: FontWeight.bold),
+                ),
               )
             ],
           ),
         ],
       ),
-          
     );
   }
 }

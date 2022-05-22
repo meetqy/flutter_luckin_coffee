@@ -4,47 +4,19 @@ import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 import 'widgets/shopping_cart_row.dart';
 
 class ShoppingCart extends StatefulWidget {
-  static _ShoppingCartState _shoppingCartState;
+  ShoppingCart({Key key}) : super(key: key);
 
-  getAppBar() => _shoppingCartState.createAppBar();
-
-  ShoppingCart() {
-    if (_shoppingCartState == null) {
-      _shoppingCartState = _ShoppingCartState();
-    }
-  }
-
-  _ShoppingCartState createState() => _ShoppingCartState();
+  @override
+  State<ShoppingCart> createState() => _ShoppingCartState();
 }
 
 class _ShoppingCartState extends State<ShoppingCart> {
-  AppBar createAppBar() {
-    /// 配置appbar
-    return customAppbar(title: '购物车');
-  }
-
   List<MockGoods> goodsList = MockGoods.data();
-
-  /// 排序规则：priceUp 商品升序，priceDown 商品倒序，ordersUp 销量升序，ordersDown 销量降序，addedUp 发布时间升序，addedDown 发布时间倒序
-  final orderBy = [
-    'priceUp',
-    'priceDown',
-    'ordersUp',
-    'ordersDown',
-    'addedUp',
-    'addDown'
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   /// 购物车为空
   Container shoppingCartNotData() {
@@ -80,44 +52,49 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: hex('#f7f7f7'),
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            child: SingleChildScrollView(
-              child: Container(
-                  padding: EdgeInsets.only(bottom: 20),
-                  child: Column(
-                    children: <Widget>[
-                      Container(
-                        child: Image.asset(
-                          'lib/assets/images/order/order1.png',
-                          fit: BoxFit.cover,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("购物车"),
+      ),
+      body: Container(
+        color: hex('#f7f7f7'),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: SingleChildScrollView(
+                child: Container(
+                    padding: EdgeInsets.only(bottom: 20),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          child: Image.asset(
+                            'lib/assets/images/order/order1.png',
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
 
-                      // 购物车列表展示
-                      Container(
-                        color: hex('#fff'),
-                        child: Column(
-                          children: [ShoppingCartRow()],
+                        // 购物车列表展示
+                        Container(
+                          color: hex('#fff'),
+                          child: Column(
+                            children: [ShoppingCartRow()],
+                          ),
                         ),
-                      ),
 
-                      // 购物车没有商品
-                      // Center(child: shoppingCartNotData()),
+                        // 购物车没有商品
+                        // Center(child: shoppingCartNotData()),
 
-                      guessLike(),
-                    ],
-                  )),
+                        guessLike(),
+                      ],
+                    )),
+              ),
             ),
-          ),
-          buttomBtnRow(
-            false,
-            23,
-          )
-        ],
+            buttomBtnRow(
+              false,
+              23,
+            )
+          ],
+        ),
       ),
     );
   }

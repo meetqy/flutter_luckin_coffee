@@ -29,6 +29,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
   json_annotation: ^4.5.0
   dart_mock: ^2.0.0
+  get: ^4.6.3
 
 dev_dependencies:
   flutter_test:

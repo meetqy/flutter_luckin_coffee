@@ -110,102 +110,96 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: NestedScrollView(
-        controller: _nestedScrollController,
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-                expandedHeight: 186,
-                pinned: true,
-                floating: false,
-                elevation: 0,
-                bottom: PreferredSize(
-                  child: Container(
-                    decoration: BoxDecoration(border: G.borderBottom()),
-                  ),
-                  preferredSize: Size.fromHeight(0),
-                ),
-                title: Text(
-                  '选择咖啡和小食',
-                  style: TextStyle(
-                      color: rgba(56, 56, 56, 1),
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold),
-                ),
-                backgroundColor: Colors.white,
-                flexibleSpace: FlexibleSpaceBar(
-                  background: Container(
-                    margin: EdgeInsets.only(top: 56),
-                    child: InkWell(
-                      child: Opacity(
-                        opacity: 1,
-                        child: CustomSwiper([
-                          'lib/assets/images/menu/swiper1.jpg',
-                          'lib/assets/images/menu/swiper2.png',
-                        ], height: 130),
-                      ),
-                      onTap: () {},
+    return NestedScrollView(
+      controller: _nestedScrollController,
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+        return <Widget>[
+          SliverAppBar(
+            expandedHeight: 186,
+            pinned: true,
+            floating: false,
+            elevation: 0,
+            title: Text(
+              '选择咖啡和小食',
+              style: TextStyle(
+                  color: rgba(56, 56, 56, 1),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+            ),
+            backgroundColor: Colors.white,
+            flexibleSpace: FlexibleSpaceBar(
+              background: SafeArea(
+                child: Container(
+                  margin: EdgeInsets.only(top: 56),
+                  child: InkWell(
+                    child: Opacity(
+                      opacity: 1,
+                      child: CustomSwiper([
+                        'lib/assets/images/menu/swiper1.jpg',
+                        'lib/assets/images/menu/swiper2.png',
+                      ], height: 130),
                     ),
+                    onTap: () {},
                   ),
-                ))
-          ];
-        },
-        body: Container(
-          padding: EdgeInsets.only(
-              top: _nestedScrollOffet >= 130 ? (_nestedScrollOffet - 130) : 0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              // 左侧菜单列表
-              Container(
-                width: 90,
-                color: rgba(248, 248, 248, 1),
-                child: Column(
-                  children: category.map((item) {
-                    var index = category.indexOf(item);
-                    return InkWell(
-                      onTap: () {
-                        setState(() {
-                          nowCategoryId = index;
-                        });
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 44,
-                        decoration: BoxDecoration(
-                            border:
-                                G.borderBottom(show: nowCategoryId == index),
-                            color: Color(0xffffff).withOpacity(
-                                nowCategoryId == index ? 1.0 : 0.0)),
-                        child: Text(item.name),
-                      ),
-                    );
-                  }).toList(),
                 ),
               ),
+            ),
+          )
+        ];
+      },
+      body: Container(
+        padding: EdgeInsets.only(
+            top: _nestedScrollOffet >= 130 ? (_nestedScrollOffet - 130) : 0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            // 左侧菜单列表
+            Container(
+              width: 90,
+              color: rgba(248, 248, 248, 1),
+              child: Column(
+                children: category.map((item) {
+                  var index = category.indexOf(item);
+                  return InkWell(
+                    onTap: () {
+                      setState(() {
+                        nowCategoryId = index;
+                      });
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 44,
+                      decoration: BoxDecoration(
+                          border: G.borderBottom(show: nowCategoryId == index),
+                          color: Color(0xffffff)
+                              .withOpacity(nowCategoryId == index ? 1.0 : 0.0)),
+                      child: Text(item.name),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
 
-              // 右侧商品列表
-              Container(
-                width: G.screenWidth() - 90,
-                padding: EdgeInsets.symmetric(horizontal: 14),
-                // 使用listview中的scrollcontronal导致外层的NestedScrollView效果失效，
-                // 使用NotificationListener完美解决
-                child: NotificationListener(
-                  child: ListView(
-                    physics: _nestedScrollOffet >= 130
-                        ? BouncingScrollPhysics()
-                        : ClampingScrollPhysics(),
-                    children: goodsListWidgets,
-                  ),
-                  onNotification: (ScrollNotification scrollInfo) {
-                    // print(scrollInfo);
-                    return null;
-                  },
+            // 右侧商品列表
+            Container(
+              width: G.screenWidth() - 90,
+              padding: EdgeInsets.symmetric(horizontal: 14),
+              // 使用listview中的scrollcontronal导致外层的NestedScrollView效果失效，
+              // 使用NotificationListener完美解决
+              child: NotificationListener(
+                child: ListView(
+                  physics: _nestedScrollOffet >= 130
+                      ? BouncingScrollPhysics()
+                      : ClampingScrollPhysics(),
+                  children: goodsListWidgets,
                 ),
-              )
-            ],
-          ),
+                onNotification: (ScrollNotification scrollInfo) {
+                  // print(scrollInfo);
+                  return null;
+                },
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -36,9 +36,7 @@ class LuckinRouter {
     '/mine': (BuildContext context, {Object args}) => Toolbar(),
     '/order': (BuildContext context, {Object args}) => Toolbar(),
     '/shopping_cart': (BuildContext context, {Object args}) => Toolbar(),
-    '/menu': (BuildContext context, {Object args}) => Toolbar(
-          arguments: args,
-        ),
+    '/menu': (BuildContext context, {Object args}) => Toolbar(),
 
     '/login_method': (BuildContext context, {Object args}) => LoginMethod(),
     '/login_mail': (BuildContext context, {Object args}) => LoginMail(),

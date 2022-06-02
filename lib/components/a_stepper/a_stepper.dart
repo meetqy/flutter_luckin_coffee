@@ -1,6 +1,5 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -12,7 +11,7 @@ class AStepper extends StatelessWidget {
   final num value;
 
   /// 步进器   格式： - 1 +
-  /// 
+  ///
   /// ```
   /// @param {num} min - 最小值
   /// @param {num} max - 最大值
@@ -27,7 +26,6 @@ class AStepper extends StatelessWidget {
     @required this.onChange,
   }) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,9 +35,10 @@ class AStepper extends StatelessWidget {
             width: 30,
             height: 30,
             bgColor: Colors.transparent,
-            icon: iconjian(size: 30, color: rgba(144, 192, 239, value == min ? 0.3 : 1)),
-            onPressed: (){
-              if(value <= min) return;
+            icon: iconjian(
+                size: 30, color: rgba(144, 192, 239, value == min ? 0.3 : 1)),
+            onPressed: () {
+              if (value <= min) return;
               onChange(value - 1);
             },
           ),
@@ -54,19 +53,21 @@ class AStepper extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Container(
                   padding: EdgeInsets.only(top: 2),
-                  child: Text('$value',)
-                )
+                  child: Text(
+                    '$value',
+                  ),
+                ),
               ),
             ),
           ),
-          
           AButton.icon(
             width: 30,
             height: 30,
             bgColor: Colors.transparent,
-            icon: iconjaifill(size: 30,color: rgba(144, 192, 239, value == max ? 0.3 : 1)),
-            onPressed: (){
-              if(value >= max) return;
+            icon: iconjaifill(
+                size: 30, color: rgba(144, 192, 239, value == max ? 0.3 : 1)),
+            onPressed: () {
+              if (value >= max) return;
               onChange(value + 1);
             },
           ),

@@ -91,7 +91,7 @@ class ShoppingCartRow extends StatelessWidget {
             Container(
                 margin: EdgeInsets.only(left: 10),
                 child: AStepper(
-                  value: 24.0,
+                  value: 24,
                   onChange: (val) => {},
                 ))
           ],

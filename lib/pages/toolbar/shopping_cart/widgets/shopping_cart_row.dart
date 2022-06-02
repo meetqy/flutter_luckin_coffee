@@ -1,7 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
-import 'package:flutter_luckin_coffee/components/a_checkbox/a_checkbox.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
 import 'package:flutter_luckin_coffee/components/a_stepper/a_stepper.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -20,14 +19,9 @@ class ShoppingCartRow extends StatelessWidget {
       border: Border.all(color: Colors.transparent),
       leftChild: Container(
         margin: EdgeInsets.only(right: 15),
-        child: ACheckBox(
-          activeColor: rgba(136, 175, 213, 1),
-          width: 24,
-          radius: Radius.circular(24),
+        child: Checkbox(
           value: true,
-          onChanged: (bool value) => {
-            /// TODO: 选中
-          },
+          onChanged: (value) => {},
         ),
       ),
       centerChild: Container(

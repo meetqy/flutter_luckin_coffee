@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/example.dart';
-import 'package:flutter_luckin_coffee/components/a_dialog/example.dart';
 import 'package:flutter_luckin_coffee/components/a_row/example.dart';
 import 'package:flutter_luckin_coffee/components/a_stepper/example.dart';
 
@@ -59,8 +58,6 @@ class LuckinRouter {
         ExampleWidgetsList(args: args),
     '/example_astepper': (BuildContext context, {Object args}) =>
         ExampleAStepper(),
-    '/example_adialog': (BuildContext context, {Object args}) =>
-        ExampleADialog(),
     '/example_arow': (BuildContext context, {Object args}) => ExampleARow(),
     '/example_pull_to_refresh': (BuildContext context, {Object args}) =>
         ExamplePullToRefresh(),

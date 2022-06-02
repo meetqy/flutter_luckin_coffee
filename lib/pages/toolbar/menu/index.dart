@@ -188,9 +188,9 @@ class _MenuState extends State<Menu> {
               // 使用NotificationListener完美解决
               child: NotificationListener(
                 child: ListView(
-                  physics: _nestedScrollOffet >= 130
-                      ? BouncingScrollPhysics()
-                      : ClampingScrollPhysics(),
+                  // 取消listView回弹
+                  physics: const ClampingScrollPhysics(),
+                  padding: EdgeInsets.zero,
                   children: goodsListWidgets,
                 ),
                 onNotification: (ScrollNotification scrollInfo) {

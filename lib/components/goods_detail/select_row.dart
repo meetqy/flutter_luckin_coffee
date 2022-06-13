@@ -18,9 +18,10 @@ class SelectRow extends StatelessWidget {
           style: TextStyle(fontSize: 12),
         ),
         plain: true,
-        color: isActive ? hex('#fff') : rgba(204, 192, 180, 1),
-        bgColor: isActive ? rgba(204, 192, 180, 1) : hex('#fff'),
-        borderColor: isActive ? Colors.transparent : rgba(204, 192, 180, 1),
+        color: isActive ? hex('#fff') : Color.fromRGBO(204, 192, 180, 1),
+        bgColor: isActive ? Color.fromRGBO(204, 192, 180, 1) : hex('#fff'),
+        borderColor:
+            isActive ? Colors.transparent : Color.fromRGBO(204, 192, 180, 1),
         onPressed: () {
           // Map<String, dynamic> type = {
           //   "typeId": data.id,
@@ -52,7 +53,7 @@ class SelectRow extends StatelessWidget {
                   height: 30,
                   child: Text(
                     '温度',
-                    style: TextStyle(color: rgba(56, 56, 56, 1)),
+                    style: TextStyle(color: Color.fromRGBO(56, 56, 56, 1)),
                   ),
                 ),
                 Expanded(

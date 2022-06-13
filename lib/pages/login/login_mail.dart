@@ -114,7 +114,8 @@ class _LoginMailState extends State<LoginMail> {
                     height: 25,
                     decoration: BoxDecoration(
                         border: Border(
-                            left: BorderSide(color: rgba(242, 242, 242, 1)))),
+                            left: BorderSide(
+                                color: Color.fromRGBO(242, 242, 242, 1)))),
                   ),
                   buildGetEmailCode()
                 ],
@@ -127,7 +128,7 @@ class _LoginMailState extends State<LoginMail> {
               child: AButton.normal(
                 width: 300,
                 child: Text('确定'),
-                bgColor: rgba(136, 175, 213, 1),
+                bgColor: Color.fromRGBO(136, 175, 213, 1),
                 color: hex('#fff'),
                 onPressed: () {},
               ),
@@ -141,14 +142,14 @@ class _LoginMailState extends State<LoginMail> {
                 children: <Widget>[
                   Text(
                     '点击确定，即表示以阅读并同意',
-                    style:
-                        TextStyle(fontSize: 12, color: rgba(153, 153, 153, 1)),
+                    style: TextStyle(
+                        fontSize: 12, color: Color.fromRGBO(153, 153, 153, 1)),
                   ),
                   InkWell(
                     child: Text(
                       '《注册会员服务条款》',
-                      style:
-                          TextStyle(color: rgba(85, 122, 157, 1), fontSize: 12),
+                      style: TextStyle(
+                          color: Color.fromRGBO(85, 122, 157, 1), fontSize: 12),
                     ),
                     onTap: () =>
                         Navigator.pushNamed(context, '/user_agreement'),
@@ -172,8 +173,8 @@ class _LoginMailState extends State<LoginMail> {
                   ? '0$countDownTime'
                   : '$countDownTime'),
           color: email['verify'] && email['value'] != null
-              ? rgba(85, 122, 157, 1)
-              : rgba(166, 166, 166, 1),
+              ? Color.fromRGBO(85, 122, 157, 1)
+              : Color.fromRGBO(166, 166, 166, 1),
           onPressed: () {
             if (countDownTime > 0) return;
 

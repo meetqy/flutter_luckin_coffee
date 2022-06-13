@@ -32,9 +32,9 @@ class OrderListRow extends StatelessWidget {
   /// 文字状态
   Widget textStatus() {
     var text = '';
-    var color = rgba(166, 166, 166, 1);
+    var color = Color.fromRGBO(166, 166, 166, 1);
     if (orderStatus == 1) {
-      color = rgba(136, 175, 213, 1);
+      color = Color.fromRGBO(136, 175, 213, 1);
       text = "待付款";
     } else if (orderStatus == 2)
       text = "已完成";
@@ -54,11 +54,11 @@ class OrderListRow extends StatelessWidget {
             '再来一单',
             style: TextStyle(fontSize: 12),
           ),
-          color: rgba(56, 56, 56, 1),
+          color: Color.fromRGBO(56, 56, 56, 1),
           plain: true,
           height: 28,
           width: 74,
-          borderColor: rgba(242, 242, 242, 1),
+          borderColor: Color.fromRGBO(242, 242, 242, 1),
           onPressed: () => {}),
     );
 
@@ -69,8 +69,8 @@ class OrderListRow extends StatelessWidget {
             '去支付',
             style: TextStyle(fontSize: 12),
           ),
-          color: rgba(255, 129, 2, 1),
-          borderColor: rgba(255, 129, 2, 1),
+          color: Color.fromRGBO(255, 129, 2, 1),
+          borderColor: Color.fromRGBO(255, 129, 2, 1),
           plain: true,
           height: 28,
           width: 74,
@@ -84,11 +84,11 @@ class OrderListRow extends StatelessWidget {
             '去评价',
             style: TextStyle(fontSize: 12),
           ),
-          color: rgba(144, 192, 239, 1),
+          color: Color.fromRGBO(144, 192, 239, 1),
           plain: true,
           height: 28,
           width: 74,
-          borderColor: rgba(144, 192, 239, 1),
+          borderColor: Color.fromRGBO(144, 192, 239, 1),
           onPressed: () => G.pushNamed('/order_evaluation')),
     );
 
@@ -123,8 +123,8 @@ class OrderListRow extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     '外卖订单：$orderNum',
-                    style:
-                        TextStyle(color: rgba(166, 166, 166, 1), fontSize: 12),
+                    style: TextStyle(
+                        color: Color.fromRGBO(166, 166, 166, 1), fontSize: 12),
                   ),
                   textStatus()
                 ],
@@ -138,14 +138,14 @@ class OrderListRow extends StatelessWidget {
                   Text(
                     '$address...',
                     style: TextStyle(
-                        color: rgba(56, 56, 56, 1),
+                        color: Color.fromRGBO(56, 56, 56, 1),
                         fontSize: 15,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     '$time',
-                    style:
-                        TextStyle(fontSize: 12, color: rgba(166, 166, 166, 1)),
+                    style: TextStyle(
+                        fontSize: 12, color: Color.fromRGBO(166, 166, 166, 1)),
                   )
                 ],
               ),
@@ -155,7 +155,7 @@ class OrderListRow extends StatelessWidget {
                 Text(
                   '$goodsName等   共1件商品',
                   style: TextStyle(
-                    color: rgba(80, 80, 80, 1),
+                    color: Color.fromRGBO(80, 80, 80, 1),
                     fontSize: 12,
                   ),
                 ),
@@ -170,7 +170,7 @@ class OrderListRow extends StatelessWidget {
                   Text(
                     '¥$price',
                     style: TextStyle(
-                        color: rgba(56, 56, 56, 1),
+                        color: Color.fromRGBO(56, 56, 56, 1),
                         fontSize: 14,
                         fontWeight: FontWeight.bold),
                   ),

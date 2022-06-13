@@ -89,7 +89,7 @@ class G {
     return Border(
         bottom: BorderSide(
             color: (color == null || !show)
-                ? (show ? rgba(242, 242, 242, 1) : Colors.transparent)
+                ? (show ? Color.fromRGBO(242, 242, 242, 1) : Colors.transparent)
                 : color,
             width: 1));
   }

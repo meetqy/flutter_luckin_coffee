@@ -36,7 +36,8 @@ class AStepper extends StatelessWidget {
             height: 30,
             bgColor: Colors.transparent,
             icon: iconjian(
-                size: 30, color: rgba(144, 192, 239, value == min ? 0.3 : 1)),
+                size: 30,
+                color: Color.fromRGBO(144, 192, 239, value == min ? 0.3 : 1)),
             onPressed: () {
               if (value <= min) return;
               onChange(value - 1);
@@ -65,7 +66,8 @@ class AStepper extends StatelessWidget {
             height: 30,
             bgColor: Colors.transparent,
             icon: iconjaifill(
-                size: 30, color: rgba(144, 192, 239, value == max ? 0.3 : 1)),
+                size: 30,
+                color: Color.fromRGBO(144, 192, 239, value == max ? 0.3 : 1)),
             onPressed: () {
               if (value >= max) return;
               onChange(value + 1);

@@ -2,21 +2,22 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
-
 class UserAgreement extends StatelessWidget {
   const UserAgreement({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppbar(context: context,title: "用户协议"),
+      appBar: customAppbar(context: context, title: "用户协议"),
       body: SingleChildScrollView(
-        child: SafeArea(
-          child: Container(
+          child: SafeArea(
+        child: Container(
           padding: EdgeInsets.symmetric(vertical: 10),
           width: G.screenWidth(),
-          child: Column(children: <Widget>[
-            Text('''尊敬的客户，在您下载luckin coffee程序( 下称“APP")
+          child: Column(
+            children: <Widget>[
+              Text(
+                '''尊敬的客户，在您下载luckin coffee程序( 下称“APP")
 使用我们的服务前，请仔细阅读本用户协议。
 用户协议
 本协议是您与瑞幸咖啡(北京)有限公司(以下简称“瑞
@@ -77,30 +78,31 @@ class UserAgreement extends StatelessWidget {
 7.1本用户协议部分条款或附件无效或终止的，我们有权
 根据具体情况选择是否继续履行其他条款。
 7.2本协议适用中国法律。本协议履行中发生的任何争
-议，由瑞幸咖啡所在地人民法院管辖。''', style: TextStyle(
-    color: rgba(56, 56, 56, 1),
-    fontSize: 14,
-    height: 1.4
-  ),),
-  Container(
-    padding: EdgeInsets.only(right: 10),
-    child: Row(children: <Widget>[
-      Expanded(child: 
-        Text('瑞幸咖啡(北京)有限公司',
-          style: TextStyle(
-            fontSize: 14,
-            color: rgba(56,56,56,1)
+议，由瑞幸咖啡所在地人民法院管辖。''',
+                style: TextStyle(
+                    color: Color.fromRGBO(56, 56, 56, 1),
+                    fontSize: 14,
+                    height: 1.4),
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 10),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        '瑞幸咖啡(北京)有限公司',
+                        style: TextStyle(
+                            fontSize: 14, color: Color.fromRGBO(56, 56, 56, 1)),
+                        textAlign: TextAlign.right,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
-          textAlign: TextAlign.right,
-        )
-      ,)
-    ],),
-  )
-  
-          ],),
         ),
-        )
-      ),
+      )),
     );
   }
 }

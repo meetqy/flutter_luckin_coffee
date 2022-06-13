@@ -122,7 +122,7 @@ class _MenuState extends State<Menu> {
             title: Text(
               '选择咖啡和小食',
               style: TextStyle(
-                  color: rgba(56, 56, 56, 1),
+                  color: Color.fromRGBO(56, 56, 56, 1),
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
             ),
@@ -156,7 +156,7 @@ class _MenuState extends State<Menu> {
             // 左侧菜单列表
             Container(
               width: 90,
-              color: rgba(248, 248, 248, 1),
+              color: Color.fromRGBO(248, 248, 248, 1),
               child: Column(
                 children: category.map((item) {
                   var index = category.indexOf(item);

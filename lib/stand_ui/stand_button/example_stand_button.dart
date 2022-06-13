@@ -245,7 +245,7 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                         buildContainer(
                           child: StandButton(
                             text: Text('单色按钮'),
-                            color: rgba(114, 50, 221, 1),
+                            color: Color.fromRGBO(114, 50, 221, 1),
                           ),
                         ),
                         buildContainer(
@@ -253,7 +253,7 @@ class _ExampleStandButtonState extends State<ExampleStandButton> {
                             text: Text('单色按钮'),
                             size: ButtonSize.small,
                             plain: true,
-                            color: rgba(114, 50, 221, 1),
+                            color: Color.fromRGBO(114, 50, 221, 1),
                           ),
                         ),
                         buildContainer(

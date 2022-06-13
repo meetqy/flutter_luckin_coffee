@@ -33,15 +33,16 @@ class _ShoppingCartState extends State<ShoppingCart> {
             margin: EdgeInsets.only(top: 10, bottom: 32),
             child: Text(
               '您的购物车有点寂寞',
-              style: TextStyle(color: rgba(166, 166, 166, 1), fontSize: 12),
+              style: TextStyle(
+                  color: Color.fromRGBO(166, 166, 166, 1), fontSize: 12),
             ),
           ),
           AButton.normal(
               width: 100,
               height: 30,
               type: 'info',
-              color: rgba(144, 192, 239, 1),
-              borderColor: rgba(144, 192, 239, 1),
+              color: Color.fromRGBO(144, 192, 239, 1),
+              borderColor: Color.fromRGBO(144, 192, 239, 1),
               plain: true,
               child: Text('去喝一杯'),
               onPressed: () => G.pushNamed('/menu'))
@@ -54,7 +55,11 @@ class _ShoppingCartState extends State<ShoppingCart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("购物车"),
+        title: Text(
+          "购物车",
+          style: TextStyle(color: Colors.black),
+        ),
+        backgroundColor: Colors.white,
       ),
       body: Container(
         color: hex('#f7f7f7'),
@@ -115,20 +120,23 @@ class _ShoppingCartState extends State<ShoppingCart> {
                     Text(
                       '猜你喜欢',
                       style: TextStyle(
-                          color: rgba(56, 56, 56, 1),
+                          color: Color.fromRGBO(56, 56, 56, 1),
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
                     GestureDetector(
                       child: Row(
                         children: <Widget>[
-                          icontupian19(color: rgba(148, 196, 236, 1), size: 14),
+                          icontupian19(
+                              color: Color.fromRGBO(148, 196, 236, 1),
+                              size: 14),
                           Container(
                             margin: EdgeInsets.only(left: 5),
                             child: Text(
                               '换一批',
                               style: TextStyle(
-                                  color: rgba(144, 192, 239, 1), fontSize: 11),
+                                  color: Color.fromRGBO(144, 192, 239, 1),
+                                  fontSize: 11),
                             ),
                           )
                         ],
@@ -175,7 +183,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
           : Container(
               decoration: BoxDecoration(
                 border: Border(
-                    top: BorderSide(width: 1, color: rgba(242, 242, 242, 1))),
+                    top: BorderSide(
+                        width: 1, color: Color.fromRGBO(242, 242, 242, 1))),
                 color: hex('#fff'),
               ),
               child: Row(
@@ -191,7 +200,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                           child: Text(
                             '应付合计',
                             style: TextStyle(
-                                color: rgba(56, 56, 56, 1),
+                                color: Color.fromRGBO(56, 56, 56, 1),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14),
                           ),
@@ -201,7 +210,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                           child: Text(
                             '¥ 22',
                             style: TextStyle(
-                                color: rgba(56, 56, 56, 1),
+                                color: Color.fromRGBO(56, 56, 56, 1),
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -214,7 +223,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   AButton.normal(
                     child: Text('去结算'),
                     color: hex('#fff'),
-                    bgColor: rgba(144, 192, 239, 1),
+                    bgColor: Color.fromRGBO(144, 192, 239, 1),
                     width: 120,
                     height: 60,
                     borderRadius: BorderRadius.zero,

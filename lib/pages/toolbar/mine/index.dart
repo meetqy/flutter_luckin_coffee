@@ -25,14 +25,14 @@ class _MineState extends State<Mine> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        color: rgba(248, 248, 248, 1),
+        color: Color.fromRGBO(248, 248, 248, 1),
         child: Column(
           children: <Widget>[
             // 头部
             Container(
               alignment: Alignment.centerLeft,
               height: 180,
-              color: rgba(100, 68, 60, 1),
+              color: Color.fromRGBO(100, 68, 60, 1),
               padding: EdgeInsets.only(left: 20, right: 20, top: 44),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +41,7 @@ class _MineState extends State<Mine> {
                       alignment: Alignment.centerRight,
                       margin: EdgeInsets.only(bottom: 20),
                       child: icontupian18(
-                          size: 24, color: rgba(255, 255, 255, .9))),
+                          size: 24, color: Color.fromRGBO(255, 255, 255, .9))),
                   buildUser(),
                 ],
               ),
@@ -59,10 +59,10 @@ class _MineState extends State<Mine> {
                         width: 30,
                         alignment: Alignment.centerLeft,
                         child: icontupian5(
-                            color: rgba(220, 220, 220, 1), size: 16)),
+                            color: Color.fromRGBO(220, 220, 220, 1), size: 16)),
                     centerChild: Text('个人资料'),
-                    rightChild:
-                        icontupian6(color: rgba(228, 228, 228, 1), size: 14),
+                    rightChild: icontupian6(
+                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
                   ),
                   ARow(
                     height: 50,
@@ -73,11 +73,12 @@ class _MineState extends State<Mine> {
                       child: Container(
                           padding: EdgeInsets.only(bottom: 5),
                           child: icontupian11(
-                              color: rgba(220, 220, 220, 1), size: 20)),
+                              color: Color.fromRGBO(220, 220, 220, 1),
+                              size: 20)),
                     ),
                     centerChild: Text('咖啡钱包'),
-                    rightChild:
-                        icontupian6(color: rgba(228, 228, 228, 1), size: 14),
+                    rightChild: icontupian6(
+                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
                   ),
                   ARow(
                     height: 50,
@@ -87,11 +88,12 @@ class _MineState extends State<Mine> {
                       alignment: Alignment.centerLeft,
                       child: Container(
                           child: icontupian7(
-                              color: rgba(220, 220, 220, 1), size: 20)),
+                              color: Color.fromRGBO(220, 220, 220, 1),
+                              size: 20)),
                     ),
                     centerChild: Text('优惠券'),
-                    rightChild:
-                        icontupian6(color: rgba(228, 228, 228, 1), size: 14),
+                    rightChild: icontupian6(
+                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
                     onPressed: () => G.pushNamed('/coupon'),
                   ),
                   ARow(
@@ -102,11 +104,12 @@ class _MineState extends State<Mine> {
                       alignment: Alignment.centerLeft,
                       child: Container(
                           child: icontupian15(
-                              color: rgba(220, 220, 220, 1), size: 20)),
+                              color: Color.fromRGBO(220, 220, 220, 1),
+                              size: 20)),
                     ),
                     centerChild: Text('兑换优惠'),
-                    rightChild:
-                        icontupian6(color: rgba(228, 228, 228, 1), size: 14),
+                    rightChild: icontupian6(
+                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
                   ),
                   ARow(
                     height: 50,
@@ -116,11 +119,12 @@ class _MineState extends State<Mine> {
                       alignment: Alignment.centerLeft,
                       child: Container(
                           child: icontupian9(
-                              color: rgba(220, 220, 220, 1), size: 20)),
+                              color: Color.fromRGBO(220, 220, 220, 1),
+                              size: 20)),
                     ),
                     centerChild: Text('发票管理'),
-                    rightChild:
-                        icontupian6(color: rgba(228, 228, 228, 1), size: 14),
+                    rightChild: icontupian6(
+                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
                     border: G.borderBottom(show: false),
                   ),
                 ],
@@ -135,11 +139,12 @@ class _MineState extends State<Mine> {
                 width: 30,
                 alignment: Alignment.centerLeft,
                 child: Container(
-                    child:
-                        iconshoucang(color: rgba(220, 220, 220, 1), size: 20)),
+                    child: iconshoucang(
+                        color: Color.fromRGBO(220, 220, 220, 1), size: 20)),
               ),
               centerChild: Text('帮助反馈'),
-              rightChild: icontupian6(color: rgba(228, 228, 228, 1), size: 14),
+              rightChild: icontupian6(
+                  color: Color.fromRGBO(228, 228, 228, 1), size: 14),
               border: G.borderBottom(show: false),
             ),
 
@@ -174,10 +179,12 @@ class _MineState extends State<Mine> {
         margin: EdgeInsets.only(left: 10),
         child: Text(
           "UserName",
-          style: TextStyle(color: rgba(255, 255, 255, 1), fontSize: 18),
+          style:
+              TextStyle(color: Color.fromRGBO(255, 255, 255, 1), fontSize: 18),
         ),
       ),
-      rightChild: icontupian6(size: 14, color: rgba(255, 255, 255, .6)),
+      rightChild:
+          icontupian6(size: 14, color: Color.fromRGBO(255, 255, 255, .6)),
       onPressed: () {
         G.pushNamed('/login_mail');
       },

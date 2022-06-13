@@ -101,7 +101,8 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               Expanded(
                 child: Text(
                   '商品描述',
-                  style: TextStyle(color: rgba(56, 56, 56, 1), fontSize: 13),
+                  style: TextStyle(
+                      color: Color.fromRGBO(56, 56, 56, 1), fontSize: 13),
                 ),
               )
             ],
@@ -115,7 +116,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
                     "flutter luckin coffee application（仿瑞幸咖啡）",
                     style: TextStyle(
                       fontSize: 12,
-                      color: rgba(128, 128, 128, 1),
+                      color: Color.fromRGBO(128, 128, 128, 1),
                     ),
                   ),
                 ),
@@ -133,8 +134,8 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
       padding: EdgeInsets.only(left: 15, right: 15, top: 10),
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: rgba(242, 242, 242, 1), width: 1),
-          bottom: BorderSide(color: rgba(242, 242, 242, 1), width: 1),
+          top: BorderSide(color: Color.fromRGBO(242, 242, 242, 1), width: 1),
+          bottom: BorderSide(color: Color.fromRGBO(242, 242, 242, 1), width: 1),
         ),
         color: hex('#fff'),
       ),
@@ -151,7 +152,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: rgba(56, 56, 56, 1)),
+                      color: Color.fromRGBO(56, 56, 56, 1)),
                 ),
               ),
               AStepper(
@@ -165,7 +166,8 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             alignment: Alignment.centerLeft,
             child: Text(
               '金枪鱼三明治 大,热,糖',
-              style: TextStyle(color: rgba(80, 80, 80, 1), fontSize: 10),
+              style:
+                  TextStyle(color: Color.fromRGBO(80, 80, 80, 1), fontSize: 10),
             ),
           )
         ],
@@ -197,7 +199,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               style: TextStyle(fontSize: 12),
             ),
             color: hex('#fff'),
-            bgColor: rgba(255, 129, 2, 1),
+            bgColor: Color.fromRGBO(255, 129, 2, 1),
             height: 32,
             onPressed: () => {},
           ),
@@ -210,8 +212,8 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               '收藏口味',
               style: TextStyle(fontSize: 12),
             ),
-            color: rgba(136, 175, 213, 1),
-            bgColor: rgba(136, 175, 213, 0.3),
+            color: Color.fromRGBO(136, 175, 213, 1),
+            bgColor: Color.fromRGBO(136, 175, 213, 0.3),
             onPressed: () => {},
           ),
           AButton.icon(
@@ -219,7 +221,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             icon: icongouwuche(
               size: 14,
             ),
-            bgColor: rgba(136, 175, 213, 1),
+            bgColor: Color.fromRGBO(136, 175, 213, 1),
             color: hex('#fff'),
             textChild: Text(
               '加入购物车',
@@ -241,7 +243,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           padding: EdgeInsets.all(5),
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: bgColor == null ? rgba(0, 0, 0, 0.3) : bgColor,
+              color: bgColor == null ? Color.fromRGBO(0, 0, 0, 0.3) : bgColor,
               borderRadius: BorderRadius.all(Radius.circular(20))),
           child: icon),
       onTap: () {
@@ -263,7 +265,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             padding: EdgeInsets.all(5),
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: rgba(0, 0, 0, 0.3),
+                color: Color.fromRGBO(0, 0, 0, 0.3),
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             child: iconhebingxingzhuang(color: hex('#fff'), size: 16),
           ),

@@ -30,7 +30,7 @@ class LoginMethod extends StatelessWidget {
                 width: 300,
                 child: Text('微信一键登录'),
                 color: hex('#fff'),
-                bgColor: rgba(73, 194, 101, 1),
+                bgColor: Color.fromRGBO(73, 194, 101, 1),
               ),
             ),
             Container(
@@ -38,9 +38,9 @@ class LoginMethod extends StatelessWidget {
               child: AButton.normal(
                   width: 300,
                   child: Text('邮箱验证码登录'),
-                  color: rgba(136, 175, 213, 1),
+                  color: Color.fromRGBO(136, 175, 213, 1),
                   bgColor: hex('#fff'),
-                  borderColor: rgba(136, 175, 213, 1),
+                  borderColor: Color.fromRGBO(136, 175, 213, 1),
                   plain: true,
                   onPressed: () => G.pushNamed('/login_mail')),
             ),

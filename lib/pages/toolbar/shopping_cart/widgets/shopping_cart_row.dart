@@ -39,7 +39,7 @@ class ShoppingCartRow extends StatelessWidget {
                         Text(
                           "拿铁",
                           style: TextStyle(
-                              color: rgba(56, 56, 56, 1),
+                              color: Color.fromRGBO(56, 56, 56, 1),
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),
@@ -50,7 +50,7 @@ class ShoppingCartRow extends StatelessWidget {
                                 '充2赠1',
                                 style: TextStyle(fontSize: 8),
                               ),
-                              bgColor: rgba(255, 129, 2, 1),
+                              bgColor: Color.fromRGBO(255, 129, 2, 1),
                               color: hex("#fff"),
                               height: 16,
                               width: 34,
@@ -64,7 +64,8 @@ class ShoppingCartRow extends StatelessWidget {
                         Text(
                           G.handleGoodsDesc("规格:中,温度:热,糖度:无糖"),
                           style: TextStyle(
-                              color: rgba(80, 80, 80, 1), fontSize: 10),
+                              color: Color.fromRGBO(80, 80, 80, 1),
+                              fontSize: 10),
                         ),
                       ],
                     ),
@@ -73,7 +74,8 @@ class ShoppingCartRow extends StatelessWidget {
                         Text(
                           '仅限打包带走',
                           style: TextStyle(
-                              fontSize: 10, color: rgba(85, 122, 157, 1)),
+                              fontSize: 10,
+                              color: Color.fromRGBO(85, 122, 157, 1)),
                         )
                       ],
                     )
@@ -84,7 +86,7 @@ class ShoppingCartRow extends StatelessWidget {
             Text(
               '¥ 24',
               style: TextStyle(
-                  color: rgba(56, 56, 56, 1),
+                  color: Color.fromRGBO(56, 56, 56, 1),
                   fontSize: 18,
                   fontWeight: FontWeight.bold),
             ),

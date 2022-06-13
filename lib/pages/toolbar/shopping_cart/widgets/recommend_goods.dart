@@ -47,15 +47,15 @@ class RecommendGoods extends StatelessWidget {
                       '${data.name}',
                       style: TextStyle(
                           fontSize: 11,
-                          color: rgba(56, 56, 56, 1),
+                          color: Color.fromRGBO(56, 56, 56, 1),
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                   Text(
                     '$desc',
                     overflow: TextOverflow.ellipsis,
-                    style:
-                        TextStyle(color: rgba(166, 166, 166, 1), fontSize: 10),
+                    style: TextStyle(
+                        color: Color.fromRGBO(166, 166, 166, 1), fontSize: 10),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 15),
@@ -70,14 +70,14 @@ class RecommendGoods extends StatelessWidget {
                                 '¥${data.originalPrice}',
                                 style: TextStyle(
                                     fontSize: 12,
-                                    color: rgba(255, 141, 26, 1),
+                                    color: Color.fromRGBO(255, 141, 26, 1),
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
                           ],
                         ),
                         iconjaifill(
-                          color: rgba(148, 196, 236, 1),
+                          color: Color.fromRGBO(148, 196, 236, 1),
                           size: 24,
                         ),
                       ],

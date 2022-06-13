@@ -4,7 +4,6 @@ import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
-
 class OrderEvaluation extends StatefulWidget {
   OrderEvaluation({Key key}) : super(key: key);
 
@@ -18,96 +17,117 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: hex('#fff'),
-      appBar: customAppbar(context: context, title: "评价",),
+      appBar: customAppbar(
+        context: context,
+        title: "评价",
+      ),
       body: Container(
-          color: rgba(248, 248, 248, 1),
-          child: Stack(children: <Widget>[
+        color: Color.fromRGBO(248, 248, 248, 1),
+        child: Stack(
+          children: <Widget>[
             Container(
-              child: Column(children: <Widget>[
-                Container(
-                  padding: EdgeInsets.only(top: 25),
-                  color: rgba(255, 255, 255, 1),
-                  child: Column(children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(top: 25),
+                    color: Color.fromRGBO(255, 255, 255, 1),
+                    child: Column(
                       children: <Widget>[
-                        Text('“满意”', style: TextStyle(
-                          color: rgba(56, 56, 56, 1),
-                          fontSize: 18
-                        ),)
-                    ],),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(right: 15),
-                              child: icontupian21(color: rgba(244, 236, 44, 1), size: 40)
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(left: 15),
-                              child: icontupian20(color: rgba(188, 188, 188, 1), size: 40)
+                            Text(
+                              '“满意”',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(56, 56, 56, 1),
+                                  fontSize: 18),
                             )
                           ],
                         ),
-                      ],),
-                    ),
-                    
-                    // 输入框
-                    Container(
-                      margin: EdgeInsets.only(top: 30, bottom: 20),
-                      padding: EdgeInsets.symmetric(horizontal: 15),
-                      child: Row(children: <Widget>[
-                        Expanded(child: 
-                          TextField(
-                            maxLines: 5,
-                            keyboardType: TextInputType.multiline,
-                            decoration: InputDecoration(
-                              filled: true,
-                              focusColor: rgba(248, 248, 248, 1),
-                              counterText: '',
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(4.0),
-                                ),
+                        Container(
+                          margin: EdgeInsets.only(top: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                      margin: EdgeInsets.only(right: 15),
+                                      child: icontupian21(
+                                          color:
+                                              Color.fromRGBO(244, 236, 44, 1),
+                                          size: 40)),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 15),
+                                      child: icontupian20(
+                                          color:
+                                              Color.fromRGBO(188, 188, 188, 1),
+                                          size: 40))
+                                ],
                               ),
-                              contentPadding: EdgeInsets.all(10),
-                              hintText: '请输入评价内容（可不填）',
-                              hintStyle: TextStyle(fontSize: 14,color: rgba(166, 166, 166, 1)),
-                              fillColor: rgba(248, 248, 248, 1)
-                            ),
-                          )
-                        ,)
-                      ],),
-                    )
-                  ],),
-                ),
-              ],),
-            ),
+                            ],
+                          ),
+                        ),
 
+                        // 输入框
+                        Container(
+                          margin: EdgeInsets.only(top: 30, bottom: 20),
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: TextField(
+                                  maxLines: 5,
+                                  keyboardType: TextInputType.multiline,
+                                  decoration: InputDecoration(
+                                      filled: true,
+                                      focusColor:
+                                          Color.fromRGBO(248, 248, 248, 1),
+                                      counterText: '',
+                                      border: OutlineInputBorder(
+                                        borderSide: BorderSide.none,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(4.0),
+                                        ),
+                                      ),
+                                      contentPadding: EdgeInsets.all(10),
+                                      hintText: '请输入评价内容（可不填）',
+                                      hintStyle: TextStyle(
+                                          fontSize: 14,
+                                          color:
+                                              Color.fromRGBO(166, 166, 166, 1)),
+                                      fillColor:
+                                          Color.fromRGBO(248, 248, 248, 1)),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Positioned(
               left: 0,
               bottom: 0,
-              child: Container(                
+              child: Container(
                 width: G.screenWidth(),
-                padding: EdgeInsets.only(bottom: bottom, top: bottom/2),
+                padding: EdgeInsets.only(bottom: bottom, top: bottom / 2),
                 color: hex('#fff'),
                 alignment: Alignment.center,
                 child: AButton.normal(
-                  width: 300,
-                  child: Text('提交'),
-                  bgColor: rgba(144, 192, 239, 1),
-                  color: hex('#fff'),
-                  onPressed: () => {}
-                ),
+                    width: 300,
+                    child: Text('提交'),
+                    bgColor: Color.fromRGBO(144, 192, 239, 1),
+                    color: hex('#fff'),
+                    onPressed: () => {}),
               ),
             )
-          ],),
+          ],
         ),
+      ),
     );
   }
 }

@@ -16,54 +16,66 @@ class ClassifyDesc extends StatelessWidget {
   /// @param {String} name - 名字
   /// @param {String} desc - 描述
   /// ```
-  ClassifyDesc(this.name, {
-    this.desc
-  });
+  ClassifyDesc(this.name, {this.desc});
 
-  
   _createNotDesc(String name) {
-    return Container(child: 
-      Row(children: <Widget>[
-        Text(name, style: TextStyle(
-          fontSize: 12, 
-          color: rgba(56, 56, 56, 1),
-          fontWeight: FontWeight.bold
-        ),),
-        Expanded(child: 
-          Container(
+    return Container(
+        child: Row(
+      children: <Widget>[
+        Text(
+          name,
+          style: TextStyle(
+              fontSize: 12,
+              color: Color.fromRGBO(56, 56, 56, 1),
+              fontWeight: FontWeight.bold),
+        ),
+        Expanded(
+          child: Container(
             margin: EdgeInsets.only(left: 10),
             height: 1,
-            color: rgba(242, 242, 242, 1),
-          )
-        ,)
-      ],)
-    );
+            color: Color.fromRGBO(242, 242, 242, 1),
+          ),
+        )
+      ],
+    ));
   }
 
   _create(String name, String desc) {
-    return Column(children: <Widget>[
-      Row(children: <Widget>[
-        Expanded(child: Text(name, style: TextStyle(
-          fontSize: 12, 
-          color: rgba(56, 56, 56, 1),
-          fontWeight: FontWeight.bold
-        ),),)
-      ],),
-
-      Row(children: <Widget>[
-        Text(desc, style: TextStyle(
-          fontSize: 10, 
-          color: rgba(166, 166, 166, 1),
-        ),),
-        Expanded(child: 
-          Container(
-            margin: EdgeInsets.only(left: 10),
-            height: 1,
-            color: rgba(242, 242, 242, 1),
-          )
-        ,)
-      ],)
-    ],);
+    return Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Expanded(
+              child: Text(
+                name,
+                style: TextStyle(
+                    fontSize: 12,
+                    color: Color.fromRGBO(56, 56, 56, 1),
+                    fontWeight: FontWeight.bold),
+              ),
+            )
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Text(
+              desc,
+              style: TextStyle(
+                fontSize: 10,
+                color: Color.fromRGBO(166, 166, 166, 1),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(left: 10),
+                height: 1,
+                color: Color.fromRGBO(242, 242, 242, 1),
+              ),
+            )
+          ],
+        )
+      ],
+    );
   }
 
   @override
@@ -74,4 +86,3 @@ class ClassifyDesc extends StatelessWidget {
     );
   }
 }
-

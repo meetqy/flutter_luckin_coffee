@@ -52,7 +52,8 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                         '订单信息',
                                         style: TextStyle(
                                             fontSize: 13,
-                                            color: rgba(56, 56, 56, 1),
+                                            color:
+                                                Color.fromRGBO(56, 56, 56, 1),
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
@@ -83,7 +84,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                     Text(
                                       '合计',
                                       style: TextStyle(
-                                          color: rgba(80, 80, 80, 1),
+                                          color: Color.fromRGBO(80, 80, 80, 1),
                                           fontSize: 13),
                                     ),
                                     Container(
@@ -91,7 +92,8 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                       child: Text(
                                         '¥ 28',
                                         style: TextStyle(
-                                            color: rgba(56, 56, 56, 1),
+                                            color:
+                                                Color.fromRGBO(56, 56, 56, 1),
                                             fontWeight: FontWeight.bold,
                                             fontSize: 16),
                                       ),
@@ -125,7 +127,8 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                       Text(
                                         '使用优惠券',
                                         style: TextStyle(
-                                            color: rgba(136, 175, 213, 1),
+                                            color: Color.fromRGBO(
+                                                136, 175, 213, 1),
                                             fontSize: 14),
                                       ),
                                     ],
@@ -136,12 +139,14 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                         '1个可用',
                                         style: TextStyle(
                                             fontSize: 14,
-                                            color: rgba(255, 141, 26, 1)),
+                                            color: Color.fromRGBO(
+                                                255, 141, 26, 1)),
                                       ),
                                       Container(
                                           margin: EdgeInsets.only(left: 5),
                                           child: icontupian6(
-                                              color: rgba(228, 228, 228, 1),
+                                              color: Color.fromRGBO(
+                                                  228, 228, 228, 1),
                                               size: 16))
                                     ],
                                   )
@@ -169,9 +174,12 @@ class _OrderConfirmState extends State<OrderConfirm> {
                             Text(
                               '备注特殊要求',
                               style: TextStyle(
-                                  fontSize: 14, color: rgba(56, 56, 56, 1)),
+                                  fontSize: 14,
+                                  color: Color.fromRGBO(56, 56, 56, 1)),
                             ),
-                            icontupian6(color: rgba(228, 228, 228, 1), size: 16)
+                            icontupian6(
+                                color: Color.fromRGBO(228, 228, 228, 1),
+                                size: 16)
                           ],
                         ),
                         onTap: () =>
@@ -194,7 +202,8 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                 child: Transform.scale(
                                   scale: .8,
                                   child: Checkbox(
-                                    activeColor: rgba(136, 175, 213, 1),
+                                    activeColor:
+                                        Color.fromRGBO(136, 175, 213, 1),
                                     value: true,
                                     onChanged: (flag) {},
                                   ),
@@ -206,14 +215,16 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                     Text(
                                       '我已阅读并同意',
                                       style: TextStyle(
-                                          color: rgba(128, 128, 128, 1),
+                                          color:
+                                              Color.fromRGBO(128, 128, 128, 1),
                                           fontSize: 10),
                                     ),
                                     Text(
                                       '《支付协议》',
                                       style: TextStyle(
                                           fontSize: 10,
-                                          color: rgba(85, 122, 157, 1)),
+                                          color:
+                                              Color.fromRGBO(85, 122, 157, 1)),
                                     )
                                   ],
                                 ),
@@ -227,7 +238,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                 Text(
                                   '温馨提示：仅支持开具电子发票，订单完成后可前往发票管理中开具',
                                   style: TextStyle(
-                                      color: rgba(166, 166, 166, 1),
+                                      color: Color.fromRGBO(166, 166, 166, 1),
                                       fontSize: 10),
                                 )
                               ],
@@ -257,7 +268,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                         Text(
                           '还需支付',
                           style: TextStyle(
-                              color: rgba(56, 56, 56, 1),
+                              color: Color.fromRGBO(56, 56, 56, 1),
                               fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
@@ -266,7 +277,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                           child: Text(
                             '¥ 33',
                             style: TextStyle(
-                                color: rgba(56, 56, 56, 1),
+                                color: Color.fromRGBO(56, 56, 56, 1),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24),
                           ),
@@ -275,10 +286,10 @@ class _OrderConfirmState extends State<OrderConfirm> {
                     ),
                     AButton.normal(
                         child: Text('去支付'),
-                        bgColor: rgba(144, 192, 239, 1),
+                        bgColor: Color.fromRGBO(144, 192, 239, 1),
                         width: 120,
                         height: 60,
-                        color: rgba(255, 255, 255, 1),
+                        color: Color.fromRGBO(255, 255, 255, 1),
                         borderRadius: BorderRadius.zero,
                         onPressed: () => G.pushNamed('/order_detail',
                             arguments: {"status": 1}))
@@ -303,7 +314,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
               Text(
                 '自提门店',
                 style: TextStyle(
-                    color: rgba(56, 56, 56, 1),
+                    color: Color.fromRGBO(56, 56, 56, 1),
                     fontSize: 13,
                     fontWeight: FontWeight.bold),
               ),
@@ -320,7 +331,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                       Text(
                         '青年汇店(No.1795)',
                         style: TextStyle(
-                          color: rgba(56, 56, 56, 1),
+                          color: Color.fromRGBO(56, 56, 56, 1),
                           fontSize: 15,
                         ),
                       ),
@@ -332,7 +343,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                     Text(
                       '朝阳区朝阳北路青年汇102号楼一层123室',
                       style: TextStyle(
-                        color: rgba(56, 56, 56, 1),
+                        color: Color.fromRGBO(56, 56, 56, 1),
                         fontSize: 12,
                       ),
                     ),
@@ -365,7 +376,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                 Text(
                   '立即取餐',
                   style: TextStyle(
-                      color: rgba(56, 56, 56, 1),
+                      color: Color.fromRGBO(56, 56, 56, 1),
                       fontSize: 13,
                       fontWeight: FontWeight.bold),
                 ),
@@ -374,19 +385,21 @@ class _OrderConfirmState extends State<OrderConfirm> {
                     Text(
                       '约',
                       style: TextStyle(
-                          color: rgba(128, 128, 128, 1), fontSize: 13),
+                          color: Color.fromRGBO(128, 128, 128, 1),
+                          fontSize: 13),
                     ),
                     Text(
                       '14:42',
                       style: TextStyle(
-                          color: rgba(136, 175, 213, 1),
+                          color: Color.fromRGBO(136, 175, 213, 1),
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
                       '可取',
                       style: TextStyle(
-                          color: rgba(128, 128, 128, 1), fontSize: 13),
+                          color: Color.fromRGBO(128, 128, 128, 1),
+                          fontSize: 13),
                     ),
                   ],
                 )

@@ -66,12 +66,13 @@ class DacaiSay extends StatelessWidget {
                             padding: EdgeInsets.symmetric(horizontal: 5),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(2),
-                                color: rgba(242, 242, 242, 1)),
+                                color: Color.fromRGBO(242, 242, 242, 1)),
                             margin: EdgeInsets.only(left: 5),
                             child: Text(
                               label,
                               style: TextStyle(
-                                  color: rgba(53, 60, 177, 1), fontSize: 10),
+                                  color: Color.fromRGBO(53, 60, 177, 1),
+                                  fontSize: 10),
                             ),
                           )
                         ],
@@ -87,7 +88,7 @@ class DacaiSay extends StatelessWidget {
                                   desc,
                                   style: TextStyle(
                                       fontSize: 12,
-                                      color: rgba(128, 128, 128, 1)),
+                                      color: Color.fromRGBO(128, 128, 128, 1)),
                                 ),
                               ],
                             )
@@ -99,7 +100,8 @@ class DacaiSay extends StatelessWidget {
                       child: Text(
                         time,
                         style: TextStyle(
-                            color: rgba(136, 175, 213, 1), fontSize: 12),
+                            color: Color.fromRGBO(136, 175, 213, 1),
+                            fontSize: 12),
                       ),
                     )
                   ],

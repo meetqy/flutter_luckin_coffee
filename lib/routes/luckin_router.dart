@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/example.dart';
 import 'package:flutter_luckin_coffee/components/a_row/example.dart';
-import 'package:flutter_luckin_coffee/components/a_stepper/example.dart';
-
-// 组件 example
-import 'package:flutter_luckin_coffee/components/example_widgets_list.dart';
 
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
@@ -53,10 +49,6 @@ class LuckinRouter {
     // 组件列表
     '/example_abutton': (BuildContext context, {Object args}) =>
         ExampleAButton(),
-    '/example_widgets_list': (BuildContext context, {Object args}) =>
-        ExampleWidgetsList(args: args),
-    '/example_astepper': (BuildContext context, {Object args}) =>
-        ExampleAStepper(),
     '/example_arow': (BuildContext context, {Object args}) => ExampleARow(),
     '/example_stand_button': (BuildContext context, {Object args}) =>
         ExampleStandButton(),

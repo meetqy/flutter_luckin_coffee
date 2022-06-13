@@ -25,7 +25,7 @@ class GoodsMsgRow extends StatelessWidget {
                   '三问题',
                   style: TextStyle(
                       fontSize: 15,
-                      color: rgba(56, 56, 56, 1),
+                      color: Color.fromRGBO(56, 56, 56, 1),
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -34,7 +34,7 @@ class GoodsMsgRow extends StatelessWidget {
                   '${G.handleGoodsDesc("规格:中,温度:热,糖度:无糖").replaceAll(',', '/')}',
                   style: TextStyle(
                     fontSize: 10,
-                    color: rgba(56, 56, 56, 1),
+                    color: Color.fromRGBO(56, 56, 56, 1),
                   ),
                 ),
               ),
@@ -44,7 +44,8 @@ class GoodsMsgRow extends StatelessWidget {
             children: <Widget>[
               Text(
                 'x23',
-                style: TextStyle(color: rgba(80, 80, 80, 1), fontSize: 13),
+                style: TextStyle(
+                    color: Color.fromRGBO(80, 80, 80, 1), fontSize: 13),
               ),
               Container(
                 margin: EdgeInsets.only(left: 80),
@@ -52,7 +53,7 @@ class GoodsMsgRow extends StatelessWidget {
                   '¥ 36',
                   style: TextStyle(
                       fontSize: 14,
-                      color: rgba(56, 56, 56, 1),
+                      color: Color.fromRGBO(56, 56, 56, 1),
                       fontWeight: FontWeight.bold),
                 ),
               )

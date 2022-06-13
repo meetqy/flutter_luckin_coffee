@@ -1,28 +1,14 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
 import 'package:flutter_luckin_coffee/components/custom_swiper/index.dart';
 import 'package:flutter_luckin_coffee/components/take_out_btn/index.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class Home extends StatefulWidget {
-  static _HomeState _homeState;
-
-  Home() {
-    _homeState = _HomeState();
-  }
-
-  getAppBar() => _homeState.createAppBar();
-
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  AppBar createAppBar() {
-    return null;
-  }
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -48,9 +34,10 @@ class _HomeState extends State<Home> {
                 top: 50,
                 right: 10,
                 child: rightChild(
-                    icon: icontupian4(size: 20, color: hex('#fff')),
-                    bgColor: rgba(0, 0, 0, .3),
-                    showBorder: false),
+                  icon: Icon(Icons.camera_alt),
+                  bgColor: Color.fromRGBO(0, 0, 0, .3),
+                  showBorder: false,
+                ),
               )
             ],
           ),
@@ -71,16 +58,17 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.all(0),
                     leftChild: leftChild(title: '现在下单', desc: 'ORDER NOW'),
                     rightChild: rightChild(
-                      icon: icontupian3(color: rgba(99, 71, 58, 1), size: 20),
+                      icon: icontupian3(
+                          color: Color.fromRGBO(99, 71, 58, 1), size: 20),
                     ),
-                    onPressed: () => G.pushNamed('/menu',
-                        arguments: {'msg': 'home to menu'})),
+                    onPressed: () => {}),
                 ARow(
                   height: 70,
                   padding: EdgeInsets.all(0),
                   leftChild: leftChild(title: '咖啡钱包', desc: 'COFFRR WALLET'),
                   rightChild: rightChild(
-                    icon: icontupian(size: 20, color: rgba(104, 68, 60, 1)),
+                    icon: icontupian(
+                        size: 20, color: Color.fromRGBO(104, 68, 60, 1)),
                   ),
                 ),
                 ARow(
@@ -88,19 +76,21 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.all(0),
                   leftChild: leftChild(title: '送Ta咖啡', desc: 'SEND COFFEE'),
                   rightChild: rightChild(
-                    icon: icontupian1(size: 20, color: rgba(104, 68, 60, 1)),
+                    icon: icontupian1(
+                        size: 20, color: Color.fromRGBO(104, 68, 60, 1)),
                   ),
                 ),
                 ARow(
-                    height: 70,
-                    padding: EdgeInsets.all(0),
-                    leftChild:
-                        leftChild(title: '组件列表', desc: 'CONPONENTS LIST'),
-                    rightChild: rightChild(
-                      icon: iconorder(size: 20, color: rgba(104, 68, 60, 1)),
-                    ),
-                    onPressed: () => G.pushNamed('/example_widgets_list',
-                        arguments: {'msg': 'home to list'})),
+                  height: 70,
+                  padding: EdgeInsets.all(0),
+                  leftChild:
+                      leftChild(title: '企业账号', desc: 'ENTERPRISE ACCOUNT'),
+                  rightChild: rightChild(
+                    icon: iconorder(
+                        size: 20, color: Color.fromRGBO(104, 68, 60, 1)),
+                  ),
+                  onPressed: () => {},
+                ),
                 Container(
                   child: Image.asset('lib/assets/images/home/bottom_bar.png'),
                 )
@@ -112,15 +102,18 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Container rightChild({Widget icon, Color bgColor, bool showBorder = true}) {
+  Widget rightChild({Icon icon, Color bgColor, bool showBorder = true}) {
     return Container(
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-          color: bgColor,
-          border: Border.all(
-              color: showBorder ? rgba(99, 71, 58, 1) : Colors.transparent),
-          borderRadius: BorderRadius.circular(20)),
+        color: bgColor,
+        border: Border.all(
+          color:
+              showBorder ? Color.fromRGBO(99, 71, 58, 1) : Colors.transparent,
+        ),
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: Container(
         padding: EdgeInsets.only(left: 2),
         child: icon,
@@ -138,7 +131,7 @@ class _HomeState extends State<Home> {
             Text(
               title,
               style: TextStyle(
-                  color: rgba(56, 56, 56, 1),
+                  color: Color.fromRGBO(56, 56, 56, 1),
                   fontSize: 16,
                   fontWeight: titleBlod ? FontWeight.bold : FontWeight.normal),
             )
@@ -148,7 +141,8 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             Text(
               desc,
-              style: TextStyle(color: rgba(128, 128, 128, 1), fontSize: 12),
+              style: TextStyle(
+                  color: Color.fromRGBO(128, 128, 128, 1), fontSize: 12),
             )
           ],
         )

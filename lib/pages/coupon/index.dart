@@ -20,45 +20,43 @@ class _CouponState extends State<Coupon> {
         title: '可使用优惠券',
         context: context,
       ),
-      body: Stack(children: <Widget>[
+      body: Stack(
+        children: <Widget>[
           Container(
             padding: EdgeInsets.only(left: 25, right: 25),
             child: ListView(
               padding: EdgeInsets.only(bottom: 80 + bottom),
               children: <Widget>[
                 CouponRow(),
-                    CouponRow(),
-                    CouponRow(),
-                    CouponRow(),
-                    CouponRow(),
-                    CouponRow(),
-                    CouponRow(),
-                    CouponRow(),
-                    CouponRow(),
+                CouponRow(),
+                CouponRow(),
+                CouponRow(),
+                CouponRow(),
+                CouponRow(),
+                CouponRow(),
+                CouponRow(),
+                CouponRow(),
               ],
             ),
           ),
-          
           Positioned(
             bottom: 0,
             left: 0,
             child: Container(
               color: hex('#fff'),
               alignment: Alignment.center,
-              padding: EdgeInsets.only(bottom: bottom, top: bottom/2),
+              padding: EdgeInsets.only(bottom: bottom, top: bottom / 2),
               width: G.screenWidth(),
               child: AButton.normal(
-                width: 300,
-                child: Text('保存'),
-                color: hex('#fff'),
-                bgColor: rgba(144, 192, 239, 1),
-                onPressed: () => {}
-              ),
+                  width: 300,
+                  child: Text('保存'),
+                  color: hex('#fff'),
+                  bgColor: Color.fromRGBO(144, 192, 239, 1),
+                  onPressed: () => {}),
             ),
           )
-        ],),
+        ],
+      ),
     );
   }
 }
-
-

@@ -36,7 +36,7 @@ class GoodsListRow extends StatelessWidget {
             title,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              color: color == null ? rgba(166, 166, 166, 1) : color,
+              color: color == null ? Color.fromRGBO(166, 166, 166, 1) : color,
               fontSize: fontSize,
               fontWeight: fontWeight == null ? FontWeight.normal : fontWeight,
             ),
@@ -72,7 +72,7 @@ class GoodsListRow extends StatelessWidget {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   borderRadius: new BorderRadius.circular(2.0),
-                  color: rgba(255, 129, 2, 1)),
+                  color: Color.fromRGBO(255, 129, 2, 1)),
               child: Text(
                 text,
                 style: TextStyle(color: hex('#fff'), fontSize: 8),
@@ -111,7 +111,7 @@ class GoodsListRow extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         row(data.name,
-                            color: rgba(56, 56, 56, 1),
+                            color: Color.fromRGBO(56, 56, 56, 1),
                             fontSize: 15,
                             fontWeight: FontWeight.bold),
                         row(data.characteristic.isEmpty
@@ -127,7 +127,7 @@ class GoodsListRow extends StatelessWidget {
                               Text(
                                 "¥ ${data.originalPrice}",
                                 style: TextStyle(
-                                    color: rgba(56, 56, 56, 1),
+                                    color: Color.fromRGBO(56, 56, 56, 1),
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -136,7 +136,7 @@ class GoodsListRow extends StatelessWidget {
                                     width: 25,
                                     height: 25,
                                     child: icontubiao(
-                                        color: rgba(136, 175, 213, 1),
+                                        color: Color.fromRGBO(136, 175, 213, 1),
                                         size: 25),
                                   ),
                                   onTap: () {

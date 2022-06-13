@@ -18,13 +18,13 @@ class RadiusBtn extends StatelessWidget {
         margin: EdgeInsets.only(right: 10, bottom: 10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            border: Border.all(color: rgba(204, 192, 180, 1)),
+            border: Border.all(color: Color.fromRGBO(204, 192, 180, 1)),
             borderRadius: BorderRadius.all(Radius.circular(15)),
-            color: isActive ? rgba(204, 192, 180, 1) : hex('#fff')),
+            color: isActive ? Color.fromRGBO(204, 192, 180, 1) : hex('#fff')),
         child: Text(
           text,
           style: TextStyle(
-              color: isActive ? hex('#fff') : rgba(204, 192, 180, 1),
+              color: isActive ? hex('#fff') : Color.fromRGBO(204, 192, 180, 1),
               fontSize: 14),
         ),
       ),

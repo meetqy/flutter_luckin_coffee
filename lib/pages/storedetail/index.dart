@@ -1,6 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
+
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class StoreDetail extends StatefulWidget {
@@ -52,10 +52,13 @@ class _StoreDetailState extends State<StoreDetail> {
                         ],
                       ),
                       Container(
-                          margin: EdgeInsets.only(left: 3),
-                          child: icontupian22(
-                              color: Color.fromRGBO(148, 196, 236, 1),
-                              size: 24))
+                        margin: EdgeInsets.only(left: 3),
+                        child: Icon(
+                          Icons.arrow_forward_ios_outlined,
+                          color: Color.fromRGBO(148, 196, 236, 1),
+                          size: 16,
+                        ),
+                      )
                     ],
                   ),
                   Container(

@@ -1,7 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 class RecommendGoods extends StatelessWidget {
   final Function onPress;
@@ -76,9 +75,9 @@ class RecommendGoods extends StatelessWidget {
                             ),
                           ],
                         ),
-                        iconjaifill(
+                        Icon(
+                          Icons.add_circle,
                           color: Color.fromRGBO(148, 196, 236, 1),
-                          size: 24,
                         ),
                       ],
                     ),

@@ -2,7 +2,7 @@ import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/take_out_btn/index.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
+
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 import 'widgets/goods_msg_row.dart';
@@ -143,11 +143,14 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                                 255, 141, 26, 1)),
                                       ),
                                       Container(
-                                          margin: EdgeInsets.only(left: 5),
-                                          child: icontupian6(
-                                              color: Color.fromRGBO(
-                                                  228, 228, 228, 1),
-                                              size: 16))
+                                        margin: EdgeInsets.only(left: 5),
+                                        child: Icon(
+                                          Icons.arrow_forward_ios,
+                                          color:
+                                              Color.fromRGBO(228, 228, 228, 1),
+                                          size: 16,
+                                        ),
+                                      )
                                     ],
                                   )
                                 ],
@@ -177,9 +180,11 @@ class _OrderConfirmState extends State<OrderConfirm> {
                                   fontSize: 14,
                                   color: Color.fromRGBO(56, 56, 56, 1)),
                             ),
-                            icontupian6(
-                                color: Color.fromRGBO(228, 228, 228, 1),
-                                size: 16)
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color.fromRGBO(228, 228, 228, 1),
+                              size: 16,
+                            )
                           ],
                         ),
                         onTap: () =>

@@ -1,6 +1,5 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 class CouponRow extends StatelessWidget {
   const CouponRow({
@@ -114,10 +113,15 @@ class CouponRow extends StatelessWidget {
                       Text(
                         '使用规则',
                         style: TextStyle(
-                            fontSize: 10,
-                            color: Color.fromRGBO(166, 166, 166, 1)),
+                          fontSize: 10,
+                          color: Color.fromRGBO(166, 166, 166, 1),
+                        ),
                       ),
-                      icontubiao3(color: Color.fromRGBO(153, 153, 153, 1))
+                      Icon(
+                        Icons.keyboard_arrow_down_outlined,
+                        color: Color.fromRGBO(153, 153, 153, 1),
+                        size: 14,
+                      )
                     ],
                   ),
                 ),

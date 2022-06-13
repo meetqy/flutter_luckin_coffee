@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/components/a_button/example.dart';
-import 'package:flutter_luckin_coffee/components/a_row/example.dart';
 
 // luckin coffee 页面
 import 'package:flutter_luckin_coffee/pages/coupon/index.dart';
@@ -43,11 +41,6 @@ class LuckinRouter {
     '/self_store': (BuildContext context, {Object args}) => SelfStore(),
     '/store_detail': (BuildContext context, {Object args}) => StoreDetail(),
     '/dining_code': (BuildContext context, {Object args}) => DiningCode(),
-
-    // 组件列表
-    '/example_abutton': (BuildContext context, {Object args}) =>
-        ExampleAButton(),
-    '/example_arow': (BuildContext context, {Object args}) => ExampleARow(),
   };
 
   static LuckinRouter _singleton;

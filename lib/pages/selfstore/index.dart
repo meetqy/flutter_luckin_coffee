@@ -1,6 +1,5 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
@@ -95,12 +94,15 @@ class AddressRow extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                          alignment: Alignment.centerLeft,
-                          width: 15,
-                          height: 20,
-                          child: icontubiao5(
-                              color: Color.fromRGBO(217, 217, 217, 1),
-                              size: 12)),
+                        alignment: Alignment.centerLeft,
+                        width: 15,
+                        height: 20,
+                        child: Icon(
+                          Icons.access_alarm,
+                          color: Color.fromRGBO(217, 217, 217, 1),
+                          size: 12,
+                        ),
+                      ),
                       Container(
                         margin: EdgeInsets.only(top: 1),
                         child: Text(
@@ -125,9 +127,13 @@ class AddressRow extends StatelessWidget {
                             Navigator.pushNamed(context, '/store_detail'),
                       ),
                       Container(
-                          margin: EdgeInsets.only(top: 2),
-                          child: icontupian6(
-                              color: Color.fromRGBO(85, 122, 157, 1), size: 11))
+                        margin: EdgeInsets.only(top: 2),
+                        child: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Color.fromRGBO(85, 122, 157, 1),
+                          size: 11,
+                        ),
+                      )
                     ],
                   ),
                 ],
@@ -136,11 +142,15 @@ class AddressRow extends StatelessWidget {
             Row(
               children: <Widget>[
                 Container(
-                    alignment: Alignment.centerLeft,
-                    width: 15,
-                    height: 20,
-                    child: icontubiao6(
-                        color: Color.fromRGBO(166, 166, 166, 1), size: 12)),
+                  alignment: Alignment.centerLeft,
+                  width: 15,
+                  height: 20,
+                  child: Icon(
+                    Icons.location_on_outlined,
+                    color: Color.fromRGBO(166, 166, 166, 1),
+                    size: 12,
+                  ),
+                ),
                 Container(
                   child: Text(
                     '朝阳区朝阳北路青年汇102号楼一号3室',

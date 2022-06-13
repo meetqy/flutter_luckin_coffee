@@ -54,21 +54,28 @@ class _HomeState extends State<Home> {
                   rightChild: TakeOutBtn(),
                 ),
                 ARow(
-                    height: 70,
-                    padding: EdgeInsets.all(0),
-                    leftChild: leftChild(title: '现在下单', desc: 'ORDER NOW'),
-                    rightChild: rightChild(
-                      icon: icontupian3(
-                          color: Color.fromRGBO(99, 71, 58, 1), size: 20),
+                  height: 70,
+                  padding: EdgeInsets.all(0),
+                  leftChild: leftChild(title: '现在下单', desc: 'ORDER NOW'),
+                  rightChild: rightChild(
+                    icon: Icon(
+                      Icons.shopping_bag,
+                      color: Color.fromRGBO(99, 71, 58, 1),
+                      size: 20,
                     ),
-                    onPressed: () => {}),
+                  ),
+                  onPressed: () => {},
+                ),
                 ARow(
                   height: 70,
                   padding: EdgeInsets.all(0),
                   leftChild: leftChild(title: '咖啡钱包', desc: 'COFFRR WALLET'),
                   rightChild: rightChild(
-                    icon: icontupian(
-                        size: 20, color: Color.fromRGBO(104, 68, 60, 1)),
+                    icon: Icon(
+                      Icons.wallet_giftcard,
+                      size: 20,
+                      color: Color.fromRGBO(104, 68, 60, 1),
+                    ),
                   ),
                 ),
                 ARow(
@@ -76,7 +83,7 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.all(0),
                   leftChild: leftChild(title: '送Ta咖啡', desc: 'SEND COFFEE'),
                   rightChild: rightChild(
-                    icon: icontupian1(
+                    icon: Icon(Icons.coffee,
                         size: 20, color: Color.fromRGBO(104, 68, 60, 1)),
                   ),
                 ),
@@ -86,8 +93,11 @@ class _HomeState extends State<Home> {
                   leftChild:
                       leftChild(title: '企业账号', desc: 'ENTERPRISE ACCOUNT'),
                   rightChild: rightChild(
-                    icon: iconorder(
-                        size: 20, color: Color.fromRGBO(104, 68, 60, 1)),
+                    icon: Icon(
+                      Icons.article_rounded,
+                      size: 20,
+                      color: Color.fromRGBO(104, 68, 60, 1),
+                    ),
                   ),
                   onPressed: () => {},
                 ),

@@ -4,7 +4,6 @@
  * @lastTime: 2019-08-12 10:42:54
  * @LastEditors: meetqy
  */
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
 class ClassifyDesc extends StatelessWidget {

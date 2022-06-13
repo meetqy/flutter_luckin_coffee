@@ -1,7 +1,7 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
+
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class OrderEvaluation extends StatefulWidget {
@@ -52,17 +52,21 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
                               Row(
                                 children: <Widget>[
                                   Container(
-                                      margin: EdgeInsets.only(right: 15),
-                                      child: icontupian21(
-                                          color:
-                                              Color.fromRGBO(244, 236, 44, 1),
-                                          size: 40)),
+                                    margin: EdgeInsets.only(right: 15),
+                                    child: Icon(
+                                      Icons.sentiment_satisfied_alt_outlined,
+                                      color: Color.fromRGBO(244, 236, 44, 1),
+                                      size: 56,
+                                    ),
+                                  ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 15),
-                                      child: icontupian20(
-                                          color:
-                                              Color.fromRGBO(188, 188, 188, 1),
-                                          size: 40))
+                                    margin: EdgeInsets.only(left: 15),
+                                    child: Icon(
+                                      Icons.sentiment_dissatisfied_outlined,
+                                      color: Color.fromRGBO(188, 188, 188, 1),
+                                      size: 56,
+                                    ),
+                                  )
                                 ],
                               ),
                             ],

@@ -1,7 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class Mine extends StatefulWidget {
@@ -38,10 +37,14 @@ class _MineState extends State<Mine> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                      alignment: Alignment.centerRight,
-                      margin: EdgeInsets.only(bottom: 20),
-                      child: icontupian18(
-                          size: 24, color: Color.fromRGBO(255, 255, 255, .9))),
+                    alignment: Alignment.centerRight,
+                    margin: EdgeInsets.only(bottom: 20),
+                    child: Icon(
+                      Icons.person,
+                      size: 24,
+                      color: Color.fromRGBO(255, 255, 255, .9),
+                    ),
+                  ),
                   buildUser(),
                 ],
               ),
@@ -56,13 +59,20 @@ class _MineState extends State<Mine> {
                     height: 50,
                     padding: EdgeInsets.all(0),
                     leftChild: Container(
-                        width: 30,
-                        alignment: Alignment.centerLeft,
-                        child: icontupian5(
-                            color: Color.fromRGBO(220, 220, 220, 1), size: 16)),
+                      width: 30,
+                      alignment: Alignment.centerLeft,
+                      child: Icon(
+                        Icons.badge_rounded,
+                        color: Color.fromRGBO(220, 220, 220, 1),
+                        size: 20,
+                      ),
+                    ),
                     centerChild: Text('个人资料'),
-                    rightChild: icontupian6(
-                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
+                    rightChild: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color.fromRGBO(228, 228, 228, 1),
+                      size: 16,
+                    ),
                   ),
                   ARow(
                     height: 50,
@@ -71,14 +81,20 @@ class _MineState extends State<Mine> {
                       width: 30,
                       alignment: Alignment.centerLeft,
                       child: Container(
-                          padding: EdgeInsets.only(bottom: 5),
-                          child: icontupian11(
-                              color: Color.fromRGBO(220, 220, 220, 1),
-                              size: 20)),
+                        padding: EdgeInsets.only(bottom: 5),
+                        child: Icon(
+                          Icons.card_giftcard,
+                          color: Color.fromRGBO(220, 220, 220, 1),
+                          size: 20,
+                        ),
+                      ),
                     ),
                     centerChild: Text('咖啡钱包'),
-                    rightChild: icontupian6(
-                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
+                    rightChild: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color.fromRGBO(228, 228, 228, 1),
+                      size: 16,
+                    ),
                   ),
                   ARow(
                     height: 50,
@@ -87,13 +103,19 @@ class _MineState extends State<Mine> {
                       width: 30,
                       alignment: Alignment.centerLeft,
                       child: Container(
-                          child: icontupian7(
-                              color: Color.fromRGBO(220, 220, 220, 1),
-                              size: 20)),
+                        child: Icon(
+                          Icons.discount_sharp,
+                          color: Color.fromRGBO(220, 220, 220, 1),
+                          size: 20,
+                        ),
+                      ),
                     ),
                     centerChild: Text('优惠券'),
-                    rightChild: icontupian6(
-                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
+                    rightChild: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color.fromRGBO(228, 228, 228, 1),
+                      size: 16,
+                    ),
                     onPressed: () => G.pushNamed('/coupon'),
                   ),
                   ARow(
@@ -103,13 +125,19 @@ class _MineState extends State<Mine> {
                       width: 30,
                       alignment: Alignment.centerLeft,
                       child: Container(
-                          child: icontupian15(
-                              color: Color.fromRGBO(220, 220, 220, 1),
-                              size: 20)),
+                        child: Icon(
+                          Icons.explicit_sharp,
+                          color: Color.fromRGBO(220, 220, 220, 1),
+                          size: 20,
+                        ),
+                      ),
                     ),
                     centerChild: Text('兑换优惠'),
-                    rightChild: icontupian6(
-                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
+                    rightChild: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color.fromRGBO(228, 228, 228, 1),
+                      size: 16,
+                    ),
                   ),
                   ARow(
                     height: 50,
@@ -118,13 +146,19 @@ class _MineState extends State<Mine> {
                       width: 30,
                       alignment: Alignment.centerLeft,
                       child: Container(
-                          child: icontupian9(
-                              color: Color.fromRGBO(220, 220, 220, 1),
-                              size: 20)),
+                        child: Icon(
+                          Icons.inventory,
+                          color: Color.fromRGBO(220, 220, 220, 1),
+                          size: 20,
+                        ),
+                      ),
                     ),
                     centerChild: Text('发票管理'),
-                    rightChild: icontupian6(
-                        color: Color.fromRGBO(228, 228, 228, 1), size: 14),
+                    rightChild: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color.fromRGBO(228, 228, 228, 1),
+                      size: 16,
+                    ),
                     border: G.borderBottom(show: false),
                   ),
                 ],
@@ -139,12 +173,19 @@ class _MineState extends State<Mine> {
                 width: 30,
                 alignment: Alignment.centerLeft,
                 child: Container(
-                    child: iconshoucang(
-                        color: Color.fromRGBO(220, 220, 220, 1), size: 20)),
+                  child: Icon(
+                    Icons.favorite,
+                    color: Color.fromRGBO(220, 220, 220, 1),
+                    size: 20,
+                  ),
+                ),
               ),
               centerChild: Text('帮助反馈'),
-              rightChild: icontupian6(
-                  color: Color.fromRGBO(228, 228, 228, 1), size: 14),
+              rightChild: Icon(
+                Icons.arrow_forward_ios,
+                color: Color.fromRGBO(228, 228, 228, 1),
+                size: 16,
+              ),
               border: G.borderBottom(show: false),
             ),
 
@@ -183,8 +224,11 @@ class _MineState extends State<Mine> {
               TextStyle(color: Color.fromRGBO(255, 255, 255, 1), fontSize: 18),
         ),
       ),
-      rightChild:
-          icontupian6(size: 14, color: Color.fromRGBO(255, 255, 255, .6)),
+      rightChild: Icon(
+        Icons.arrow_forward_ios,
+        size: 14,
+        color: Color.fromRGBO(255, 255, 255, .6),
+      ),
       onPressed: () {
         G.pushNamed('/login_mail');
       },

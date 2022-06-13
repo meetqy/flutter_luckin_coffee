@@ -1,7 +1,6 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
@@ -55,8 +54,11 @@ class _OrderDetailState extends State<OrderDetail> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      icontubiao7(
-                          color: Color.fromRGBO(48, 100, 157, 1), size: 10),
+                      Icon(
+                        Icons.security_outlined,
+                        color: Color.fromRGBO(48, 100, 157, 1),
+                        size: 12,
+                      ),
                       Text(
                         '慢必赔',
                         style: TextStyle(

@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/custom_swiper/index.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';

@@ -127,9 +127,11 @@ class _ShoppingCartState extends State<ShoppingCart> {
                     GestureDetector(
                       child: Row(
                         children: <Widget>[
-                          icontupian19(
-                              color: Color.fromRGBO(148, 196, 236, 1),
-                              size: 14),
+                          Icon(
+                            Icons.refresh,
+                            color: Color.fromRGBO(148, 196, 236, 1),
+                            size: 16,
+                          ),
                           Container(
                             margin: EdgeInsets.only(left: 5),
                             child: Text(

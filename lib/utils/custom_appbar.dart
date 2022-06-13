@@ -1,6 +1,5 @@
 import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 import 'global.dart';
 
@@ -30,7 +29,11 @@ AppBar customAppbar(
     leading: context == null
         ? null
         : InkWell(
-            child: icontupian8(color: Color.fromRGBO(44, 44, 44, 1), size: 16),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Color.fromRGBO(44, 44, 44, 1),
+              size: 16,
+            ),
             onTap: () => Navigator.pop(context),
           ),
     bottom: PreferredSize(

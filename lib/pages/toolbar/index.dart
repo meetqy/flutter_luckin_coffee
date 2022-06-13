@@ -4,7 +4,6 @@ import 'package:flutter_luckin_coffee/pages/toolbar/menu/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/mine/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/order/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/index.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
 
 class Toolbar extends StatefulWidget {
   Toolbar({Key key}) : super(key: key);
@@ -45,23 +44,25 @@ class _ToolbarState extends State<Toolbar> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: iconlogoNotText(),
+            icon: Icon(Icons.home),
             label: '首页',
           ),
           BottomNavigationBarItem(
-            icon: iconcaidan(),
+            icon: Icon(Icons.menu_book),
             label: '菜单',
           ),
           BottomNavigationBarItem(
-            icon: iconorder(),
+            icon: Icon(Icons.article_rounded),
             label: '订单',
           ),
           BottomNavigationBarItem(
-            icon: icongouwuche(),
+            icon: Icon(
+              Icons.shopping_cart,
+            ),
             label: '购物车',
           ),
           BottomNavigationBarItem(
-            icon: iconmine(),
+            icon: Icon(Icons.person),
             label: '我的',
           ),
         ],

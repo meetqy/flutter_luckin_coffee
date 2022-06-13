@@ -191,7 +191,8 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           AButton.icon(
-            icon: icontupian17(
+            icon: Icon(
+              Icons.card_giftcard_outlined,
               size: 14,
             ),
             textChild: Text(
@@ -205,8 +206,9 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           ),
           AButton.icon(
             height: 32,
-            icon: iconsc(
-              size: 14,
+            icon: Icon(
+              Icons.favorite_border,
+              size: 16,
             ),
             textChild: Text(
               '收藏口味',
@@ -218,8 +220,9 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           ),
           AButton.icon(
             height: 32,
-            icon: icongouwuche(
-              size: 14,
+            icon: Icon(
+              Icons.shopping_cart,
+              size: 16,
             ),
             bgColor: Color.fromRGBO(136, 175, 213, 1),
             color: hex('#fff'),
@@ -267,7 +270,11 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             decoration: BoxDecoration(
                 color: Color.fromRGBO(0, 0, 0, 0.3),
                 borderRadius: BorderRadius.all(Radius.circular(20))),
-            child: iconhebingxingzhuang(color: hex('#fff'), size: 16),
+            child: Icon(
+              Icons.close,
+              size: 16,
+              color: Colors.white,
+            ),
           ),
           onTap: () {
             Navigator.pop(context);
@@ -300,7 +307,11 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
             left: 10,
             top: 10,
             child: _circelIcon(
-              icon: iconsc(color: hex('#fff'), size: 16),
+              icon: Icon(
+                Icons.favorite_border_outlined,
+                size: 16,
+                color: Colors.white,
+              ),
             )),
 
         // 标题

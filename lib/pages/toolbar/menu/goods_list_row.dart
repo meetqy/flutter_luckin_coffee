@@ -135,9 +135,11 @@ class GoodsListRow extends StatelessWidget {
                                   child: Container(
                                     width: 25,
                                     height: 25,
-                                    child: icontubiao(
-                                        color: Color.fromRGBO(136, 175, 213, 1),
-                                        size: 25),
+                                    child: Icon(
+                                      Icons.add_circle,
+                                      color: Color.fromRGBO(136, 175, 213, 1),
+                                      size: 25,
+                                    ),
                                   ),
                                   onTap: () {
                                     if (onPress != null) {

@@ -1,8 +1,5 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
-import 'package:flutter_luckin_coffee/utils/Icon.dart';
-import 'package:flutter_luckin_coffee/utils/global.dart';
 
 class AStepper extends StatelessWidget {
   final num min;
@@ -35,9 +32,10 @@ class AStepper extends StatelessWidget {
             width: 30,
             height: 30,
             bgColor: Colors.transparent,
-            icon: iconjian(
-                size: 30,
-                color: Color.fromRGBO(144, 192, 239, value == min ? 0.3 : 1)),
+            icon: Icon(
+              Icons.do_not_disturb_on_rounded,
+              color: Color.fromRGBO(144, 192, 239, value == min ? 0.3 : 1),
+            ),
             onPressed: () {
               if (value <= min) return;
               onChange(value - 1);
@@ -65,9 +63,10 @@ class AStepper extends StatelessWidget {
             width: 30,
             height: 30,
             bgColor: Colors.transparent,
-            icon: iconjaifill(
-                size: 30,
-                color: Color.fromRGBO(144, 192, 239, value == max ? 0.3 : 1)),
+            icon: Icon(
+              Icons.add_circle,
+              color: Color.fromRGBO(144, 192, 239, value == max ? 0.3 : 1),
+            ),
             onPressed: () {
               if (value >= max) return;
               onChange(value + 1);

@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 
@@ -16,7 +15,7 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: hex('#fff'),
+      backgroundColor: Colors.white,
       appBar: customAppbar(
         context: context,
         title: "评价",
@@ -119,13 +118,13 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
               child: Container(
                 width: G.screenWidth(),
                 padding: EdgeInsets.only(bottom: bottom, top: bottom / 2),
-                color: hex('#fff'),
+                color: Colors.white,
                 alignment: Alignment.center,
                 child: AButton.normal(
                     width: 300,
                     child: Text('提交'),
                     bgColor: Color.fromRGBO(144, 192, 239, 1),
-                    color: hex('#fff'),
+                    color: Colors.white,
                     onPressed: () => {}),
               ),
             )

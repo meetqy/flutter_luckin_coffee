@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 
@@ -30,7 +29,7 @@ class RecommendGoods extends StatelessWidget {
       onTap: onPress,
       child: Container(
         width: 108,
-        color: hex('#fff'),
+        color: Colors.white,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

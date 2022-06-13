@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
 class RadiusBtn extends StatelessWidget {
@@ -20,11 +19,11 @@ class RadiusBtn extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border.all(color: Color.fromRGBO(204, 192, 180, 1)),
             borderRadius: BorderRadius.all(Radius.circular(15)),
-            color: isActive ? Color.fromRGBO(204, 192, 180, 1) : hex('#fff')),
+            color: isActive ? Color.fromRGBO(204, 192, 180, 1) : Colors.white),
         child: Text(
           text,
           style: TextStyle(
-              color: isActive ? hex('#fff') : Color.fromRGBO(204, 192, 180, 1),
+              color: isActive ? Colors.white : Color.fromRGBO(204, 192, 180, 1),
               fontSize: 14),
         ),
       ),

@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -53,7 +52,7 @@ class _LoginMailState extends State<LoginMail> {
       resizeToAvoidBottomInset: false,
       appBar: customAppbar(context: context, borderBottom: false),
       body: Container(
-        color: hex('#fff'),
+        color: Colors.white,
         padding: EdgeInsets.only(left: 35, right: 35, top: 87),
         child: Column(
           children: <Widget>[
@@ -128,7 +127,7 @@ class _LoginMailState extends State<LoginMail> {
                 width: 300,
                 child: Text('确定'),
                 bgColor: Color.fromRGBO(136, 175, 213, 1),
-                color: hex('#fff'),
+                color: Colors.white,
                 onPressed: () {},
               ),
             ),

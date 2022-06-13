@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/radius_btn.dart';
@@ -17,7 +16,7 @@ class _OrderRemarkState extends State<OrderRemark> {
         appBar: customAppbar(title: '订单备注', context: context),
         body: SingleChildScrollView(
           child: Container(
-            color: hex('#fff'),
+            color: Colors.white,
             child: Column(
               children: <Widget>[
                 Container(
@@ -66,7 +65,7 @@ class _OrderRemarkState extends State<OrderRemark> {
                   child: AButton.normal(
                       width: 300,
                       child: Text('确认'),
-                      color: hex('#fff'),
+                      color: Colors.white,
                       bgColor: Color.fromRGBO(144, 192, 239, 1),
                       onPressed: () => G.pushNamed('/order_confirm')),
                 )

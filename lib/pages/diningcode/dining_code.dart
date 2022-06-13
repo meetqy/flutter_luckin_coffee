@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
 
@@ -19,7 +18,7 @@ class _DiningCodeState extends State<DiningCode> {
             margin: EdgeInsets.only(top: 10),
             padding: EdgeInsets.symmetric(vertical: 30),
             height: 395,
-            color: hex('#fff'),
+            color: Colors.white,
             child: Column(
               children: <Widget>[
                 Row(

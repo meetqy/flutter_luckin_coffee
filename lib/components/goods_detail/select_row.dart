@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 
@@ -18,8 +17,8 @@ class SelectRow extends StatelessWidget {
           style: TextStyle(fontSize: 12),
         ),
         plain: true,
-        color: isActive ? hex('#fff') : Color.fromRGBO(204, 192, 180, 1),
-        bgColor: isActive ? Color.fromRGBO(204, 192, 180, 1) : hex('#fff'),
+        color: isActive ? Colors.white : Color.fromRGBO(204, 192, 180, 1),
+        bgColor: isActive ? Color.fromRGBO(204, 192, 180, 1) : Colors.white,
         borderColor:
             isActive ? Colors.transparent : Color.fromRGBO(204, 192, 180, 1),
         onPressed: () {

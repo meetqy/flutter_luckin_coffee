@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/take_out_btn/index.dart';
@@ -33,7 +32,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                     // 订单信息
                     Container(
                       margin: EdgeInsets.only(top: 10),
-                      color: hex('#fff'),
+                      color: Colors.white,
                       child: Column(
                         children: <Widget>[
                           contentAddress(),
@@ -111,7 +110,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                     Container(
                       margin: EdgeInsets.only(top: 10),
                       padding: EdgeInsets.symmetric(horizontal: 15),
-                      color: hex('#fff'),
+                      color: Colors.white,
                       child: Column(
                         children: <Widget>[
                           // 使用优惠
@@ -169,7 +168,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                       height: 50,
                       margin: EdgeInsets.only(top: 10),
                       padding: EdgeInsets.symmetric(horizontal: 15),
-                      color: hex('#fff'),
+                      color: Colors.white,
                       child: InkWell(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -264,7 +263,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
               child: Container(
                 padding: EdgeInsets.only(left: 15, bottom: bottom),
                 width: G.screenWidth(),
-                color: hex('#fff'),
+                color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -367,7 +366,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
       height: 80,
       padding: EdgeInsets.symmetric(horizontal: 15),
       alignment: Alignment.center,
-      color: hex('#fff'),
+      color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,

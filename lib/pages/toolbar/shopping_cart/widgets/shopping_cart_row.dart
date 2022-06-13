@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
@@ -51,7 +50,7 @@ class ShoppingCartRow extends StatelessWidget {
                                 style: TextStyle(fontSize: 8),
                               ),
                               bgColor: Color.fromRGBO(255, 129, 2, 1),
-                              color: hex("#fff"),
+                              color: Colors.white,
                               height: 16,
                               width: 34,
                               borderRadius: BorderRadius.circular(2),

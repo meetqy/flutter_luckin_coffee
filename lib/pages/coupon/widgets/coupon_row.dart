@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
 class CouponRow extends StatelessWidget {
@@ -12,7 +11,7 @@ class CouponRow extends StatelessWidget {
       margin: EdgeInsets.only(top: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(4)),
-        color: hex('#fff'),
+        color: Colors.white,
       ),
       height: 120,
       padding: EdgeInsets.all(5),

@@ -12,7 +12,6 @@ import 'package:flutter_luckin_coffee/utils/loading.dart';
 
 import 'pull_to_refresh_style.dart';
 
-export './Icon.dart';
 export './custom_appbar.dart';
 
 /// 这个类是用来处理全局的Global的tools类
@@ -101,12 +100,5 @@ class G {
     } else {
       return (time.millisecondsSinceEpoch / 1000).round();
     }
-  }
-
-  static Future<void> readJson(String filename) async {
-    final String response =
-        await rootBundle.loadString('lib/jsonserialize/$filename');
-    final data = await json.decode(response);
-    return data;
   }
 }

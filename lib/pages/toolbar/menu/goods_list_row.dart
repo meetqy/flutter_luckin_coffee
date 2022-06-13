@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -75,7 +74,7 @@ class GoodsListRow extends StatelessWidget {
                   color: Color.fromRGBO(255, 129, 2, 1)),
               child: Text(
                 text,
-                style: TextStyle(color: hex('#fff'), fontSize: 8),
+                style: TextStyle(color: Colors.white, fontSize: 8),
               ),
             ),
           );

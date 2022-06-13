@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -51,7 +50,7 @@ class _MineState extends State<Mine> {
             ),
 
             Container(
-              color: hex('#fff'),
+              color: Colors.white,
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 children: <Widget>[

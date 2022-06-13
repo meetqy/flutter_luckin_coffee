@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
@@ -62,7 +61,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
         backgroundColor: Colors.white,
       ),
       body: Container(
-        color: hex('#f7f7f7'),
+        color: Color(0xfff7f7f7),
         child: Column(
           children: <Widget>[
             Expanded(
@@ -80,7 +79,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
 
                         // 购物车列表展示
                         Container(
-                          color: hex('#fff'),
+                          color: Colors.white,
                           child: Column(
                             children: [ShoppingCartRow()],
                           ),
@@ -187,7 +186,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                 border: Border(
                     top: BorderSide(
                         width: 1, color: Color.fromRGBO(242, 242, 242, 1))),
-                color: hex('#fff'),
+                color: Colors.white,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -224,7 +223,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   // right button
                   AButton.normal(
                     child: Text('去结算'),
-                    color: hex('#fff'),
+                    color: Colors.white,
                     bgColor: Color.fromRGBO(144, 192, 239, 1),
                     width: 120,
                     height: 60,

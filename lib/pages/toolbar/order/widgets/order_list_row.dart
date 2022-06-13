@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -112,7 +111,7 @@ class OrderListRow extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: 10),
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 12),
         height: 160,
-        color: hex('#fff'),
+        color: Colors.white,
         child: Column(
           children: <Widget>[
             Container(

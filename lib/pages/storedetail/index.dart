@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -19,7 +18,7 @@ class _StoreDetailState extends State<StoreDetail> {
           children: <Widget>[
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 18),
-              color: hex('#fff'),
+              color: Colors.white,
               child: Column(
                 children: <Widget>[
                   Row(
@@ -146,7 +145,7 @@ class _StoreDetailState extends State<StoreDetail> {
             Container(
               margin: EdgeInsets.only(top: 25),
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 18),
-              color: hex('#fff'),
+              color: Colors.white,
               child: Column(
                 children: <Widget>[
                   Row(

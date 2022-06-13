@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -33,7 +32,7 @@ class _SelfStoreState extends State<SelfStore> {
         )
       ]),
       body: Container(
-        color: hex('#fff'),
+        color: Colors.white,
         child: ListView(
           children: <Widget>[
             AddressRow(),

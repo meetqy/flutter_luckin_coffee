@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 
@@ -29,7 +28,7 @@ class _OrderDetailState extends State<OrderDetail> {
   buySuccess() {
     return Container(
         padding: EdgeInsets.symmetric(vertical: 30),
-        color: hex('#fff'),
+        color: Colors.white,
         child: Column(
           children: <Widget>[
             Row(
@@ -133,7 +132,7 @@ class _OrderDetailState extends State<OrderDetail> {
   waitPayment() {
     return Container(
         padding: EdgeInsets.symmetric(vertical: 30),
-        color: hex('#fff'),
+        color: Colors.white,
         child: Column(
           children: <Widget>[
             Row(
@@ -240,7 +239,7 @@ class _OrderDetailState extends State<OrderDetail> {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                 margin: EdgeInsets.only(top: 10),
-                color: hex('#fff'),
+                color: Colors.white,
                 child: Column(
                   children: <Widget>[
                     Container(
@@ -409,7 +408,7 @@ class _OrderDetailState extends State<OrderDetail> {
               // module3
               Container(
                 margin: EdgeInsets.only(top: 10),
-                color: hex('#fff'),
+                color: Colors.white,
                 padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
                 child: Column(
                   children: <Widget>[

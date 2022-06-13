@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
 import 'global.dart';
@@ -24,7 +23,7 @@ AppBar customAppbar(
           fontSize: 18,
           fontWeight: FontWeight.bold),
     ),
-    backgroundColor: hex('#fff'),
+    backgroundColor: Colors.white,
     elevation: 0,
     leading: context == null
         ? null

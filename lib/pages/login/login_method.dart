@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
@@ -12,7 +11,7 @@ class LoginMethod extends StatelessWidget {
       appBar: customAppbar(context: context, borderBottom: false),
       body: Container(
         width: G.screenWidth(),
-        color: hex('#fff'),
+        color: Colors.white,
         child: Column(
           children: <Widget>[
             Container(
@@ -29,7 +28,7 @@ class LoginMethod extends StatelessWidget {
               child: AButton.normal(
                 width: 300,
                 child: Text('微信一键登录'),
-                color: hex('#fff'),
+                color: Colors.white,
                 bgColor: Color.fromRGBO(73, 194, 101, 1),
               ),
             ),
@@ -39,7 +38,7 @@ class LoginMethod extends StatelessWidget {
                   width: 300,
                   child: Text('邮箱验证码登录'),
                   color: Color.fromRGBO(136, 175, 213, 1),
-                  bgColor: hex('#fff'),
+                  bgColor: Colors.white,
                   borderColor: Color.fromRGBO(136, 175, 213, 1),
                   plain: true,
                   onPressed: () => G.pushNamed('/login_mail')),

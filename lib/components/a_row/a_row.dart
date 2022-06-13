@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 
 class ARow extends StatelessWidget {
@@ -46,7 +45,7 @@ class ARow extends StatelessWidget {
       child: Container(
         height: height,
         decoration: BoxDecoration(
-            color: color == null ? hex('#fff') : color,
+            color: color == null ? Colors.white : color,
             border: border == null
                 ? Border(
                     bottom: BorderSide(

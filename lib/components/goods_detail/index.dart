@@ -1,4 +1,3 @@
-import 'package:color_dart/color_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_stepper/a_stepper.dart';
@@ -53,7 +52,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           _initHeader(),
           Expanded(
             child: Container(
-              color: hex('#fff'),
+              color: Colors.white,
               padding: EdgeInsets.symmetric(vertical: 12),
               child: SingleChildScrollView(
                   child: Column(
@@ -137,7 +136,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           top: BorderSide(color: Color.fromRGBO(242, 242, 242, 1), width: 1),
           bottom: BorderSide(color: Color.fromRGBO(242, 242, 242, 1), width: 1),
         ),
-        color: hex('#fff'),
+        color: Colors.white,
       ),
       height: 60,
       child: Column(
@@ -184,7 +183,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
           bottomLeft: Radius.circular(8),
           bottomRight: Radius.circular(8),
         ),
-        color: hex('#fff'),
+        color: Colors.white,
       ),
       height: 60,
       child: Row(
@@ -199,7 +198,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               '充2赠1',
               style: TextStyle(fontSize: 12),
             ),
-            color: hex('#fff'),
+            color: Colors.white,
             bgColor: Color.fromRGBO(255, 129, 2, 1),
             height: 32,
             onPressed: () => {},
@@ -225,7 +224,7 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
               size: 16,
             ),
             bgColor: Color.fromRGBO(136, 175, 213, 1),
-            color: hex('#fff'),
+            color: Colors.white,
             textChild: Text(
               '加入购物车',
               style: TextStyle(fontSize: 12),
@@ -325,11 +324,11 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
                 style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: hex('#fff')),
+                    color: Colors.white),
               ),
               Text(
                 'Nice tuna SandWich',
-                style: TextStyle(fontSize: 14, color: hex('#fff')),
+                style: TextStyle(fontSize: 14, color: Colors.white),
               )
             ],
           ),

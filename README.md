@@ -40,4 +40,3 @@
 
 - [flutter 交友模板](https://github.com/meetqy/flutter_dating_template)
 
-> 一不小心打了个广告，你又能把我怎么样 😄😄😄

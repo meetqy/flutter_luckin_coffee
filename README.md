@@ -6,6 +6,15 @@
 
 老版本使用 `api工厂` 的分支 [v1.0](https://gitee.com/meetqy/flutter_luckin_coffee/tree/v1.0/),如果有之前克隆过数据的同学,可以评论区留言或私信我**你的 ID**
 
+## Flutter Version
+
+```
+Flutter 2.10.5 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 5464c5bac7 (8 weeks ago) • 2022-04-18 09:55:37 -0700
+Engine • revision 57d3bac3dd
+Tools • Dart 2.16.2 • DevTools 2.9.2
+```
+
 ## Wiki
 
 总结，升级 2.0 过程中，遇到问题解决的思路，以及最终使用的方法，希望对你有帮助！！！
@@ -39,4 +48,3 @@
 类似于这样的：
 
 - [flutter 交友模板](https://github.com/meetqy/flutter_dating_template)
-

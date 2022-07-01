@@ -11,7 +11,7 @@ class OrderEvaluation extends StatefulWidget {
 }
 
 class _OrderEvaluationState extends State<OrderEvaluation> {
-  double bottom = G.screenPadding().bottom; // 获取屏幕的底部距离
+  double bottom = Get.bottomBarHeight; // 获取屏幕的底部距离
 
   @override
   Widget build(BuildContext context) {

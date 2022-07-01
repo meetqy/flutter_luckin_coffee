@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 class Loading {
   show(BuildContext context) {
@@ -49,6 +49,6 @@ class Loading {
   }
 
   hide(BuildContext context) {
-    G.pop();
+    Get.back();
   }
 }

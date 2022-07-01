@@ -6,6 +6,7 @@ import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/mock/goods_category.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 import 'goods_list_row.dart';
 import 'widgets/classify_desc.dart';
@@ -169,7 +170,14 @@ class _MenuState extends State<Menu> {
                       alignment: Alignment.center,
                       height: 44,
                       decoration: BoxDecoration(
-                          border: G.borderBottom(show: nowCategoryId == index),
+                          border: Border(
+                            bottom: BorderSide(
+                              color: nowCategoryId == index
+                                  ? Color.fromRGBO(242, 242, 242, 1)
+                                  : Colors.transparent,
+                              width: 1,
+                            ),
+                          ),
                           color: Color(0xffffff)
                               .withOpacity(nowCategoryId == index ? 1.0 : 0.0)),
                       child: Text(item.name),
@@ -181,7 +189,7 @@ class _MenuState extends State<Menu> {
 
             // 右侧商品列表
             Container(
-              width: G.screenWidth() - 90,
+              width: Get.width - 90,
               padding: EdgeInsets.symmetric(horizontal: 14),
               // 使用listview中的scrollcontronal导致外层的NestedScrollView效果失效，
               // 使用NotificationListener完美解决

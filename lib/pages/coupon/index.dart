@@ -11,6 +11,8 @@ class Coupon extends StatefulWidget {
 }
 
 class _CouponState extends State<Coupon> {
+  double bottom = Get.bottomBarHeight;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,7 @@ class _CouponState extends State<Coupon> {
           Container(
             padding: EdgeInsets.only(left: 25, right: 25),
             child: ListView(
-              padding: EdgeInsets.only(bottom: 80 + Get.bottomBarHeight),
+              padding: EdgeInsets.only(bottom: 80 + bottom),
               children: <Widget>[
                 CouponRow(),
                 CouponRow(),
@@ -44,7 +46,7 @@ class _CouponState extends State<Coupon> {
               color: Colors.white,
               alignment: Alignment.center,
               padding: EdgeInsets.only(bottom: bottom, top: bottom / 2),
-              width: G.screenWidth(),
+              width: Get.width,
               child: AButton.normal(
                   width: 300,
                   child: Text('保存'),

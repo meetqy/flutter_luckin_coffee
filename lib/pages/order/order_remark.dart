@@ -86,7 +86,7 @@ class RemarkRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 20, bottom: 10),
-      decoration: BoxDecoration(border: G.borderBottom(show: borderBottom)),
+      decoration: BoxDecoration(border: cuBorderBottom(show: borderBottom)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

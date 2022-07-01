@@ -76,20 +76,6 @@ class G {
   /// 返回页面
   static void pop() => getCurrentState().pop();
 
-  /// 底部border
-  /// ```
-  /// @param {Color} color
-  /// @param {bool} show  是否显示底部border
-  /// ```
-  static Border borderBottom({Color color, bool show = true}) {
-    return Border(
-        bottom: BorderSide(
-            color: (color == null || !show)
-                ? (show ? Color.fromRGBO(242, 242, 242, 1) : Colors.transparent)
-                : color,
-            width: 1));
-  }
-
   /// 获取时间戳
   /// 不传值 代表获取当前时间戳
   static int getTime([DateTime time]) {
@@ -99,4 +85,20 @@ class G {
       return (time.millisecondsSinceEpoch / 1000).round();
     }
   }
+}
+
+/// 底部border
+/// ```
+/// @param {Color} color
+/// @param {bool} show  是否显示底部border
+/// ```
+Border cuBorderBottom({Color color, bool show = true}) {
+  return Border(
+    bottom: BorderSide(
+      color: (color == null || !show)
+          ? (show ? Color.fromRGBO(242, 242, 242, 1) : Colors.transparent)
+          : color,
+      width: 1,
+    ),
+  );
 }

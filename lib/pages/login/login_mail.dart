@@ -23,29 +23,6 @@ class _LoginMailState extends State<LoginMail> {
   /// 总倒计时时长
   final int speed = 60;
 
-  Timer _timer;
-
-  @override
-  void dispose() {
-    super.dispose();
-    _timer?.cancel();
-  }
-
-  /// 倒计时
-  countDown() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) async {
-      int nowTime = G.getTime();
-      int result = speed - (nowTime - startTime);
-      if (result < 0) {
-        _timer?.cancel();
-      }
-
-      setState(() {
-        countDownTime = result;
-      });
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +46,7 @@ class _LoginMailState extends State<LoginMail> {
             /// 输入邮箱
             Container(
               height: 55,
-              decoration: BoxDecoration(border: G.borderBottom()),
+              decoration: BoxDecoration(border: cuBorderBottom()),
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
@@ -86,7 +63,7 @@ class _LoginMailState extends State<LoginMail> {
             /// 验证码
             Container(
               height: 55,
-              decoration: BoxDecoration(border: G.borderBottom()),
+              decoration: BoxDecoration(border: cuBorderBottom()),
               child: Row(
                 children: <Widget>[
                   Flexible(

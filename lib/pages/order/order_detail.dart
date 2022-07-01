@@ -244,7 +244,7 @@ class _OrderDetailState extends State<OrderDetail> {
                   children: <Widget>[
                     Container(
                       padding: EdgeInsets.only(bottom: 12),
-                      decoration: BoxDecoration(border: G.borderBottom()),
+                      decoration: BoxDecoration(border: cuBorderBottom()),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -347,7 +347,7 @@ class _OrderDetailState extends State<OrderDetail> {
                       ),
                     ),
                     Container(
-                      decoration: BoxDecoration(border: G.borderBottom()),
+                      decoration: BoxDecoration(border: cuBorderBottom()),
                       padding: EdgeInsets.symmetric(vertical: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

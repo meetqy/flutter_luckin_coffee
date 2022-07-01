@@ -21,7 +21,7 @@
 //           alignment: Alignment.center,
 //           height: 44,
 //           decoration: BoxDecoration(
-//               border: G.borderBottom(show: id == index),
+//               border: cuBorderBottom(show: id == index),
 //               color: Color(0xffffff).withOpacity(id == index ? 1.0 : 0.0)),
 //           child: Text(val),
 //         ),

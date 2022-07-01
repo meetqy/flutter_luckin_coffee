@@ -66,7 +66,7 @@ class AddressRow extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 12),
-        decoration: BoxDecoration(border: G.borderBottom(show: borderBottom)),
+        decoration: BoxDecoration(border: cuBorderBottom(show: borderBottom)),
         child: Column(
           children: <Widget>[
             Row(

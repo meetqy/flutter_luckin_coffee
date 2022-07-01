@@ -158,7 +158,7 @@ class _MineState extends State<Mine> {
                       color: Color.fromRGBO(228, 228, 228, 1),
                       size: 16,
                     ),
-                    border: G.borderBottom(show: false),
+                    border: cuBorderBottom(show: false),
                   ),
                 ],
               ),
@@ -185,7 +185,7 @@ class _MineState extends State<Mine> {
                 color: Color.fromRGBO(228, 228, 228, 1),
                 size: 16,
               ),
-              border: G.borderBottom(show: false),
+              border: cuBorderBottom(show: false),
             ),
 
             Container(
@@ -205,7 +205,7 @@ class _MineState extends State<Mine> {
     return ARow(
       height: 55,
       color: Colors.transparent,
-      border: G.borderBottom(show: false),
+      border: cuBorderBottom(show: false),
       padding: EdgeInsets.all(0),
       leftChild: ClipRRect(
           borderRadius: new BorderRadius.circular(27),

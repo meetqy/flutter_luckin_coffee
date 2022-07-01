@@ -88,7 +88,7 @@ class GoodsListRow extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
-              border: G.borderBottom(show: border),
+              border: cuBorderBottom(show: border),
             ),
             child: Row(
               children: <Widget>[

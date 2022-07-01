@@ -25,7 +25,7 @@ class ShoppingCartRow extends StatelessWidget {
       ),
       centerChild: Container(
         padding: EdgeInsets.symmetric(vertical: 15),
-        decoration: BoxDecoration(border: G.borderBottom(show: false)),
+        decoration: BoxDecoration(border: cuBorderBottom(show: false)),
         child: Row(
           children: <Widget>[
             Expanded(

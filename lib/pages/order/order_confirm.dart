@@ -40,7 +40,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                           Container(
                             padding:
                                 EdgeInsets.only(top: 12, left: 15, right: 15),
-                            decoration: BoxDecoration(border: G.borderBottom()),
+                            decoration: BoxDecoration(border: cuBorderBottom()),
                             child: Column(
                               children: <Widget>[
                                 Container(
@@ -309,7 +309,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
 
   Container contentAddress() {
     return Container(
-      decoration: BoxDecoration(border: G.borderBottom()),
+      decoration: BoxDecoration(border: cuBorderBottom()),
       padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
       child: Column(
         children: <Widget>[

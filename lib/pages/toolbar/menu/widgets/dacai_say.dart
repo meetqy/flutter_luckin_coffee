@@ -31,7 +31,7 @@ class DacaiSay extends StatelessWidget {
       margin: EdgeInsets.only(top: 6),
       child: Container(
         padding: EdgeInsets.only(bottom: 8),
-        decoration: BoxDecoration(border: G.borderBottom()),
+        decoration: BoxDecoration(border: cuBorderBottom()),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

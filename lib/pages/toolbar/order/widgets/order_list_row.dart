@@ -116,7 +116,7 @@ class OrderListRow extends StatelessWidget {
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(bottom: 10),
-              decoration: BoxDecoration(border: G.borderBottom()),
+              decoration: BoxDecoration(border: cuBorderBottom()),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[

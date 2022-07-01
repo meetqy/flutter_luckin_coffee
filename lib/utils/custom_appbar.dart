@@ -37,7 +37,7 @@ AppBar customAppbar(
           ),
     bottom: PreferredSize(
       child: Container(
-        decoration: BoxDecoration(border: G.borderBottom(show: borderBottom)),
+        decoration: BoxDecoration(border: cuBorderBottom(show: borderBottom)),
       ),
       preferredSize: Size.fromHeight(0),
     ),

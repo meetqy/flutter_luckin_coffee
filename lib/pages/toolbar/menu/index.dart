@@ -58,7 +58,7 @@ class _MenuState extends State<Menu> {
   }
 
   _init(BuildContext context) async {
-    G.loading.show(context);
+    // G.loading.show(context);
 
     List<MockGoods> goods = MockGoods.data();
 
@@ -104,7 +104,7 @@ class _MenuState extends State<Menu> {
       category = MockGoodsCategory.data();
     });
 
-    G.loading.hide(context);
+    // G.loading.hide(context);
   }
 
   @override

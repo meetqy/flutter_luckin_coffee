@@ -4,10 +4,8 @@
  * @lastTime: 2019-11-23 11:50:01
  * @LastEditors: meetqy
  */
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_luckin_coffee/utils/loading.dart';
 
 import 'pull_to_refresh_style.dart';

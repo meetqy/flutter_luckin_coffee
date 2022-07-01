@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 class OrderListRow extends StatelessWidget {
   final int orderStatus;
@@ -73,7 +74,7 @@ class OrderListRow extends StatelessWidget {
           plain: true,
           height: 28,
           width: 74,
-          onPressed: () => G.pushNamed('/order_confirm')),
+          onPressed: () => Get.toNamed('/order_confirm')),
     );
 
     var btn3 = Container(
@@ -88,7 +89,7 @@ class OrderListRow extends StatelessWidget {
           height: 28,
           width: 74,
           borderColor: Color.fromRGBO(144, 192, 239, 1),
-          onPressed: () => G.pushNamed('/order_evaluation')),
+          onPressed: () => Get.toNamed('/order_evaluation')),
     );
 
     if (orderStatus == 1) {

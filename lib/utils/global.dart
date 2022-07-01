@@ -60,7 +60,7 @@ class G {
   static double screenHeight() =>
       MediaQuery.of(getCurrentContext()).size.height;
 
-  /// 跳转页面使用 G.pushNamed
+  /// 跳转页面使用 Get.toNamed
   static void pushNamed(String routeName, {Object arguments}) {
     // 如果跳转到toolbar页面  不能返回
     if (toobarRouteNameList.indexOf(routeName) > -1) {

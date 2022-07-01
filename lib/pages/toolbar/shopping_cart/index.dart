@@ -3,7 +3,7 @@ import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/goods_detail/index.dart';
 import 'package:flutter_luckin_coffee/mock/goods_list.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/shopping_cart/widgets/recommend_goods.dart';
-import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 import 'widgets/shopping_cart_row.dart';
 
@@ -44,7 +44,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
               borderColor: Color.fromRGBO(144, 192, 239, 1),
               plain: true,
               child: Text('去喝一杯'),
-              onPressed: () => G.pushNamed('/menu'))
+              onPressed: () => Get.toNamed('/menu'))
         ],
       ),
     );
@@ -229,7 +229,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                     height: 60,
                     borderRadius: BorderRadius.zero,
                     onPressed: () {
-                      G.pushNamed('/order_confirm');
+                      Get.toNamed('/order_confirm');
                     },
                   )
                 ],

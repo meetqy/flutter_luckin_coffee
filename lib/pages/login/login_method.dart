@@ -42,7 +42,7 @@ class LoginMethod extends StatelessWidget {
                   bgColor: Colors.white,
                   borderColor: Color.fromRGBO(136, 175, 213, 1),
                   plain: true,
-                  onPressed: () => G.pushNamed('/login_mail')),
+                  onPressed: () => Get.toNamed('/login_mail')),
             ),
           ],
         ),

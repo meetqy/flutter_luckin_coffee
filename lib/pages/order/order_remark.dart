@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/pages/toolbar/menu/widgets/radius_btn.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 class OrderRemark extends StatefulWidget {
   OrderRemark({Key key}) : super(key: key);
@@ -67,7 +68,7 @@ class _OrderRemarkState extends State<OrderRemark> {
                       child: Text('确认'),
                       color: Colors.white,
                       bgColor: Color.fromRGBO(144, 192, 239, 1),
-                      onPressed: () => G.pushNamed('/order_confirm')),
+                      onPressed: () => Get.toNamed('/order_confirm')),
                 )
               ],
             ),

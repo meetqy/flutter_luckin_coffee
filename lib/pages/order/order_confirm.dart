@@ -296,7 +296,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
                         height: 60,
                         color: Color.fromRGBO(255, 255, 255, 1),
                         borderRadius: BorderRadius.zero,
-                        onPressed: () => G.pushNamed('/order_detail',
+                        onPressed: () => Get.toNamed('/order_detail',
                             arguments: {"status": 1}))
                   ],
                 ),

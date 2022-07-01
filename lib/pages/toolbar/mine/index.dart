@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_row/a_row.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 class Mine extends StatefulWidget {
   static _MineState _mineState;
@@ -115,7 +116,7 @@ class _MineState extends State<Mine> {
                       color: Color.fromRGBO(228, 228, 228, 1),
                       size: 16,
                     ),
-                    onPressed: () => G.pushNamed('/coupon'),
+                    onPressed: () => Get.toNamed('/coupon'),
                   ),
                   ARow(
                     height: 50,
@@ -229,7 +230,7 @@ class _MineState extends State<Mine> {
         color: Color.fromRGBO(255, 255, 255, .6),
       ),
       onPressed: () {
-        G.pushNamed('/login_mail');
+        Get.toNamed('/login_mail');
       },
     );
   }

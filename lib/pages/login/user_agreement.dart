@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 class UserAgreement extends StatelessWidget {
   const UserAgreement({Key key}) : super(key: key);
@@ -12,7 +13,7 @@ class UserAgreement extends StatelessWidget {
           child: SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 10),
-          width: G.screenWidth(),
+          width: Get.width,
           child: Column(
             children: <Widget>[
               Text(

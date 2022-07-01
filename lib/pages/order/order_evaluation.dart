@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 class OrderEvaluation extends StatefulWidget {
   OrderEvaluation({Key key}) : super(key: key);
@@ -116,7 +117,7 @@ class _OrderEvaluationState extends State<OrderEvaluation> {
               left: 0,
               bottom: 0,
               child: Container(
-                width: G.screenWidth(),
+                width: Get.width,
                 padding: EdgeInsets.only(bottom: bottom, top: bottom / 2),
                 color: Colors.white,
                 alignment: Alignment.center,

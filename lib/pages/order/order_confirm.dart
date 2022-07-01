@@ -3,6 +3,7 @@ import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/take_out_btn/index.dart';
 
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 import 'widgets/goods_msg_row.dart';
 
@@ -262,7 +263,7 @@ class _OrderConfirmState extends State<OrderConfirm> {
               left: 0,
               child: Container(
                 padding: EdgeInsets.only(left: 15, bottom: bottom),
-                width: G.screenWidth(),
+                width: Get.width,
                 color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

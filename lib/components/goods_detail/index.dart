@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/components/a_stepper/a_stepper.dart';
-import 'package:flutter_luckin_coffee/utils/global.dart';
 
 import 'select_row.dart';
 

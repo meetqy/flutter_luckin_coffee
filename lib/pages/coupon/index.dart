@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_luckin_coffee/components/a_button/index.dart';
 import 'package:flutter_luckin_coffee/pages/coupon/widgets/coupon_row.dart';
 import 'package:flutter_luckin_coffee/utils/global.dart';
+import 'package:get/get.dart';
 
 class Coupon extends StatefulWidget {
   Coupon({Key key}) : super(key: key);
@@ -10,8 +11,6 @@ class Coupon extends StatefulWidget {
 }
 
 class _CouponState extends State<Coupon> {
-  double bottom = G.screenPadding().bottom;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +23,7 @@ class _CouponState extends State<Coupon> {
           Container(
             padding: EdgeInsets.only(left: 25, right: 25),
             child: ListView(
-              padding: EdgeInsets.only(bottom: 80 + bottom),
+              padding: EdgeInsets.only(bottom: 80 + Get.bottomBarHeight),
               children: <Widget>[
                 CouponRow(),
                 CouponRow(),

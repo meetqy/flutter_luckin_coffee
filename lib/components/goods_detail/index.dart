@@ -72,7 +72,12 @@ class _GoodsDetailDialogState extends State<GoodsDetailDialog> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
       child: Container(
-        decoration: BoxDecoration(border: G.borderBottom()),
+        decoration: BoxDecoration(
+          border: Border(
+            bottom:
+                BorderSide(color: Color.fromRGBO(242, 242, 242, 1), width: 1),
+          ),
+        ),
       ),
     );
   }
